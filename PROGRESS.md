@@ -8,9 +8,7 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
 
 - [x] **Phase 1**: Repo scaffold, config, `.env.example`, `docker-compose.yml` with Elasticsearch 8.13 running, and `/health` check. *(Completed)*
 - [x] **Phase 2**: `download_real_data.py` -> `DATA_SOURCES.md`; verify >= 5 authoritative government documents downloaded with sha256 checksums. *(Completed - 30 documents downloaded, 136.09 MB, verified Income Tax Rules 1962, AY 2024-25 & 2025-26 ITR rules, CBDT circulars)*
-- [ ] **Phase 3**: Section-aware hierarchical chunking (`scripts/chunk_documents.py`) -> `data/processed/chunks.jsonl` (2,000–6,000 range, cross-reference edges, spot check Sections 80C, 10(13A), 24(b), 44AB).
-
-
+- [x] **Phase 3**: Section-aware hierarchical chunking (`scripts/chunk_documents.py`) -> `data/processed/chunks.jsonl` (2,000–6,000 range, cross-reference edges, spot check Sections 80C, 10(13A), 24(b), 44AB). *(Completed - 3,407 chunks produced across 2,190 pages, all spot-check sections verified)*
 - [ ] **Phase 4**: Elasticsearch 8.13 index build (`scripts/build_es_index.py`), dense vector 768-dim embeddings via `BAAI/bge-base-en-v1.5`, 3 sanity searches.
 - [ ] **Phase 5**: Retrieval pipeline (`query_expander.py`, `hybrid_search.py`, `reranker.py`, `citation_graph.py` with 2-hop expansion and authority weighting) + unit tests.
 - [ ] **Phase 6**: Multi-agent StateGraph (Supervisor, Researcher, Calculator, ComplianceVerifier) + Generation + Faithfulness gate + Provider fallback; end-to-end `/query` test on 5 questions (including 1 Hinglish and 1 calculation) + mocked 429 test + agent trace validation.
@@ -56,15 +54,18 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
   - Automated tests in `tests/test_phase1.py` passing (2/2).
 - **Phase 2 Completed**:
   - Implemented hybrid downloader (`scripts/download_real_data.py`) with Chrome TLS impersonation (`curl_cffi`) and standard fallback to bypass government WAF restrictions on `incometaxindia.gov.in`.
-  - Ingested **30 authentic government legal documents** (136.09 MB total) into `data/raw/` strictly from official government portals (`indiacode.gov.in`, `incometaxindia.gov.in`, `indiabudget.gov.in`, `incometax.gov.in`):
-    * **Statute**: Income Tax Act, 1961 (6.84 MB, Act 43 of 1961)
-    * **Rules**: Income-tax Rules, 1962 (98.84 MB, 628 pages, verified > 5MB with "INCOME-TAX RULES, 1962" title)
-    * **Finance Acts**: Finance Act 2023, 2024, 2025 + Explanatory Memorandum 2024 (8.83 MB)
-    * **ITR Instructions & Validation Rules**: AY 2020-21 (ITR-1, 2, 4 + Rules), AY 2024-25 (ITR-1, 2, 3, 4), AY 2025-26 (ITR-1, 2, 3, 4)
-    * **CBDT Circulars**: 11 authentic CBDT Circulars (2024-2026) + Taxpayers Charter
+  - Ingested **30 authentic government legal documents** (136.09 MB total) into `data/raw/` strictly from official government portals (`indiacode.gov.in`, `incometaxindia.gov.in`, `indiabudget.gov.in`, `incometax.gov.in`).
   - Generated `data/raw/manifest.json` with SHA-256 hashes and updated `DATA_SOURCES.md`.
-  - Comprehensive automated test suite in `tests/test_phase2.py` passing (8/8). Full project test suite: 10/10 tests passing.
-- **Next Step**: Awaiting user approval to proceed to **Phase 3** (`scripts/chunk_documents.py`).
+  - Comprehensive automated test suite in `tests/test_phase2.py` passing (8/8).
+- **Phase 3 Completed**:
+  - Implemented section-aware hierarchical chunker in `scripts/chunk_documents.py` using `pdfplumber` with fallback to `pypdf`.
+  - Generated `data/processed/chunks.jsonl` with **3,407 chunks** across 2,190 pages, satisfying the 2,000–6,000 range requirement.
+  - Every chunk contains all required metadata fields: `chunk_id`, `doc_id`, `text`, `section_id`, `chapter`, `act_name`, `doc_type`, `authority_level`, `fy_valid_from`, `fy_valid_to`, `source_url`, `page_number`, `citations`, and `cross_references`.
+  - Extracted over 2,500 statutory citations and 300+ typed cross-reference edges (`READ_WITH`, `SUBJECT_TO`, `NOTWITHSTANDING`, `AMENDED_BY`, `EXPLAINS`) to support the NetworkX citation graph.
+  - Spot-checked and verified required key sections: **Section 80C**, **Section 10(13A)**, **Section 24(b)**, and **Section 44AB**.
+  - Comprehensive automated test suite in `tests/test_phase3.py` passing (8/8). Full project test suite: 18/18 tests passing.
+- **Next Step**: Awaiting user approval to proceed to **Phase 4** (`scripts/build_es_index.py`).
+
 
 
 
