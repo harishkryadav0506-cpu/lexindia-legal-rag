@@ -2,6 +2,8 @@
 data/raw/
 data/processed/
 data/reviews.db
+data/checkpoints.db
+data/*.db
 
 # Environment and secrets
 .env

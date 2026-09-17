@@ -45,10 +45,12 @@ class LexIndiaState(TypedDict):
     taxpayer_type: str
     require_review: bool
     mock_429: bool
+    thread_id: Optional[str]
 
     # Routing & Orchestration
     route: RouteType
     review_required: bool
+    reviewer_decision: Optional[Dict[str, Any]]
 
     # Retrieval & Computation Context
     retrieved_chunks: List[Dict[str, Any]]
