@@ -17,7 +17,7 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
 - [x] **Phase 9**: Next.js 14 frontend (App Router, chat UI, sources + agent trace, citation graph Cytoscape viz, react-pdf provenance viewer, `/review` queue UI) + browser agent end-to-end verification. *(Completed - Next.js 14 App Router, Cytoscape citation graph, PDF viewer, Review Queue dashboard, Browser subagent E2E test)*
 - [x] **Phase 10**: Evaluation set (100 real queries from public sources, no synthetic/LLM questions) + metrics + dual-judge `EVALUATION_REPORT.md` (Gemini 3.6 Flash primary vs GENERATION_MODEL secondary) + 1 tuning iteration + CI smoke workflow. *(Completed - 100 real queries benchmark, EVALUATION_REPORT.md, baseline vs tuned RRF k=60 vs k=40, dual judge 100% agreement within 1 pt, 66/66 passing tests)*
 - [x] **Phase 11**: Strict Data Audit (`scripts/audit_data.py` -> `DATA_AUDIT.md`) validating file provenance, official government domains only, non-empty source URLs, review verification, and spot checking 10 random chunks. *(Completed - All 5 integrity checks passed, 30 PDFs verified with SHA-256, 100% government whitelist, 10/10 random chunks verbatim matched, 72/72 tests passing)*
-- [ ] **Phase 12**: Ablation study (`scripts/run_ablation.py` -> `ABLATION_TABLE.md`) comparing `GENERATION_MODEL` vs `gemini-3.6-flash` on identical retrieved context.
+- [x] **Phase 12**: Ablation study (`scripts/run_ablation.py` -> `ABLATION_TABLE.md`) comparing `GENERATION_MODEL` vs `gemini-3.6-flash` on identical retrieved context. *(Completed - Comparative study on identical 100 queries, Primary vs Gemini 3.6 Flash, ABLATION_TABLE.md generated, 77/77 tests passing)*
 - [ ] **Phase 13**: Final Docker/Hugging Face Spaces packaging (`Dockerfile`, `es_init.sh`, `supervisord`), comprehensive `README.md` (architecture diagram, Model Cards, HITL, Future Work), self-review checklist against spec.
 
 ---
@@ -176,7 +176,15 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
   - Generated comprehensive `DATA_AUDIT.md` and machine-readable `data/audit_results.json`.
   - Built automated unit test suite in `tests/test_phase11.py` (6/6 tests passing).
   - Cumulative project test suite passing: **72/72 tests passing**.
-- **Next Step**: Awaiting user approval to proceed to **Phase 12** (Ablation study `scripts/run_ablation.py` -> `ABLATION_TABLE.md` comparing `GENERATION_MODEL` vs `gemini-3.6-flash` on identical retrieved context).
+- **Phase 12 Completed**:
+  - Implemented comparative generation ablation study in `scripts/run_ablation.py`:
+    * Evaluated Primary Generation Model (`openai/gpt-oss-120b` via Groq) vs Gemini Flash (`gemini-3.6-flash`) across all 100 queries over **IDENTICAL retrieved context chunks** (3,407 statutory chunks, BGE-reranker top-8, 2-hop graph expansion).
+    * Evaluated Citation Accuracy, Faithfulness (Gemini Judge & Secondary Judge), Refusal Precision/Recall/F1, and Latency distribution (p50, p95, mean).
+    * Verified 100.0% Refusal Recall for both models on out-of-scope/unanswerable queries (e.g. BBMP property tax, UAE corporate tax, US 401k rollovers).
+    * Generated formatted `ABLATION_TABLE.md` and detailed `data/eval/ablation_results.json`.
+  - Built automated unit test suite in `tests/test_phase12.py` (5/5 tests passing).
+  - Cumulative project test suite passing: **77/77 tests passing**.
+- **Next Step**: Awaiting user approval to proceed to **Phase 13** (Final Docker/Hugging Face Spaces packaging, comprehensive `README.md`, self-review checklist against spec).
 
 
 

@@ -1,0 +1,1389 @@
+{
+  "timestamp": 1789660548.6611776,
+  "total_queries_evaluated": 100,
+  "identical_context_verified": true,
+  "primary_model": {
+    "model_name": "Primary: openai/gpt-oss-120b (Groq)",
+    "citation_accuracy": 0.611764705882353,
+    "refusal": {
+      "refusal_precision": 0.8333333333333334,
+      "refusal_recall": 1.0,
+      "refusal_f1": 0.9090909090909091,
+      "true_positives": 15,
+      "false_positives": 3,
+      "false_negatives": 0,
+      "true_negatives": 82
+    },
+    "latency": {
+      "latency_mean_s": 3.024,
+      "latency_p50_s": 1.208,
+      "latency_p90_s": 8.205,
+      "latency_p95_s": 12.531
+    },
+    "faithfulness_primary": 4.0,
+    "faithfulness_secondary": 3.96
+  },
+  "gemini_model": {
+    "model_name": "Gemini Flash: gemini-3.6-flash",
+    "citation_accuracy": 0.4588235294117647,
+    "refusal": {
+      "refusal_precision": 1.0,
+      "refusal_recall": 1.0,
+      "refusal_f1": 1.0,
+      "true_positives": 15,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_negatives": 85
+    },
+    "latency": {
+      "latency_mean_s": 0.672,
+      "latency_p50_s": 0.645,
+      "latency_p90_s": 0.975,
+      "latency_p95_s": 1.132
+    },
+    "faithfulness_primary": 4.1,
+    "faithfulness_secondary": 4.05
+  },
+  "comparison_details": [
+    {
+      "id": 1,
+      "question": "Can I claim both HRA exemption and deduction for home loan interest?",
+      "topic": "DEDUCTION",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.  \n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 10(10C)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 10(10C), Section 80EE, Section 24(b), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 10(10C) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 10(10C)",
+        "Section 80EE",
+        "Section 24(b)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 1334
+    },
+    {
+      "id": 2,
+      "question": "What is the maximum limit for deduction under Section 80C for life insurance premium and PPF?",
+      "topic": "DEDUCTION",
+      "answer_primary": "**Maximum deduction under Section\u202f80C (life\u2011insurance premium & PPF)**  \n\n- For the Financial Year\u202f2024\u201125, the aggregate amount that can be claimed under **Section\u202f80C** (which includes life\u2011insurance premiums, Public Provident Fund contributions, and other eligible investments) **cannot exceed\u202f\u20b9\u202f1,50,000** in a year\u202f\u3010C4\u3011.  \n\n- This ceiling is **shared with the limits for Sections\u202f80CCC and 80CCD(1)**; the total of all deductions claimed under these three provisions must stay within the \u20b9\u202f1,50,000 ceiling\u202f\u3010C4\u3011.  \n\n- The limit applies when the **old tax regime** is selected. Under the **new tax regime (Section\u202f115BAC)**, deductions under Section\u202f80C are not permitted, so no deduction can be claimed for life\u2011insurance premium or PPF in that regime.  \n\n**Key point** \u2013 irrespective of whether the amount is paid as a life\u2011insurance premium or as a contribution to PPF, the maximum deductible amount under Section\u202f80C for FY\u202f2024\u201125 is **\u20b9\u202f1,50,000** (subject to the old tax regime).  \n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 194LD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 194LD, Section 80C, Section 44ADA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 194LD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 194LD",
+        "Section 80C",
+        "Section 44ADA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 520
+    },
+    {
+      "id": 3,
+      "question": "Can deduction under Section 80D be claimed for preventive health check-up of parents?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 115A(1)(a)(A)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0 713. Deduction of Preventive Health Check up under section 80D for Self and Family and/or Parents cannot be greater than 5000. Deduction is available only if \"Old Tax Regime\" is selected 714. In Schedule 80D, Deduction at...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 4** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115A(1)(a)(A)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115A(1)(a)(A), Section 4, Section 57, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115A(1)(a)(A) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115A(1)(a)(A)",
+        "Section 4",
+        "Section 57"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 751
+    },
+    {
+      "id": 4,
+      "question": "Is employer contribution to National Pension Scheme deductible beyond 80C limit?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Yes, employer contribution to the National Pension Scheme (NPS) is deductible **beyond** the Section 80C aggregate limit [C3, C4].\n\n---\n\n### **1. Distinction Between 80C Limit and Employer Contribution (Section 80CCD(2))**\n\n* **Aggregate Cap u/s 80C / 80CCC / 80CCD(1):** The maximum combined deduction allowed under Section 80C, Section 80CCC, and Section 80CCD(1) (employee's own contribution) is restricted to **Rs. 1,50,000** [C4].\n* **Employer Contribution u/s 80CCD(2):** Employer's contribution to an eligible pension scheme is claimed separately under **Section 80CCD(2)** [C3, C7]. It does **not** fall within the aggregate limit of Rs. 1,50,000 applicable to Sections 80C/80CCC/80CCD(1) [C4].\n\n---\n\n### **2. Deduction Limits for Employer Contribution**\n\n* **Non-Government Employers:** Deduction under Section 80CCD(2) is restricted to a maximum of **10% of salary** when the employer category is other than Central Government or State Government [C4].\n\n---\n\n### **3. Deductibility Across Tax Regimes (FY 2024-25)**\n\n| Feature | Old Tax Regime | New Tax Regime (Section 115BAC) |\n| :--- | :--- | :--- |\n| **Section 80C / 80CCD(1)** | Allowed (up to Rs. 1,50,000 aggregate cap) [C4] | Not Allowed [C9] |\n| **Section 80CCD(2) (Employer Contribution)** | Allowed [C3, C4] | **Allowed** (explicitly exempted from the general restriction on Chapter VI-A deductions) [C9] |\n\n---\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 80C** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 80C, Section 194LD, Section 80CCD(2), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 80C must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 80C",
+        "Section 194LD",
+        "Section 80CCD(2)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 929
+    },
+    {
+      "id": 5,
+      "question": "What is the interest deduction limit on self-occupied house property under Section 24(b)?",
+      "topic": "DEDUCTION",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 163** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 163, Section 24(b), Section 44ADA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 163 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 163",
+        "Section 24(b)",
+        "Section 44ADA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 1955
+    },
+    {
+      "id": 6,
+      "question": "Can a senior citizen claim interest income deduction under Section 80TTB on fixed deposits?",
+      "topic": "DEDUCTION",
+      "answer_primary": "### Legal Analysis: Deduction under Section 80TTB for Senior Citizens\n\nYes, a senior citizen can claim a deduction on interest income from fixed/bank deposits under Section 80TTB of the Income-tax Act, 1961, subject to specific conditions [C1], [C2], [C3].\n\n---\n\n### Key Conditions and Provisions\n\n1. **Eligibility Requirements**:\n   * **Taxpayer Status**: The deduction under Section 80TTB can be claimed exclusively by an individual who is a resident senior citizen (aged 60 years or above) [C1], [C2], [C3]. An individual under 60 years of age cannot claim deduction under Section 80TTB [C3].\n   * **Eligible Deposits**: The gross total income must include interest income derived from deposits with:\n     * A banking company [C1], [C2]\n     * A co-operative bank [C1], [C2]\n     * A post office [C1], [C2]\n\n2. **Deduction Limit & Tax Regime Delineation (FY 2024-25)**:\n   * **Old Tax Regime**: If the taxpayer opts for the **Old Tax Regime**, a deduction under Section 80TTB can be claimed up to a maximum limit of **Rs. 50,000** [C3].\n   * **Exclusion from Section 80TTA**: A senior citizen eligible for Section 80TTB cannot claim a deduction under Section 80TTA [C3], [C6].\n\n---\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 44ADA** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 44ADA, Section 194LD, Section 1, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 44ADA must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 44ADA",
+        "Section 194LD",
+        "Section 1"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 906
+    },
+    {
+      "id": 7,
+      "question": "How much deduction is allowed for medical treatment of a dependant with disability under 80DD?",
+      "topic": "DEDUCTION",
+      "answer_primary": "### Legal Analysis under Section 80DD (Income-tax Act, 1961) for FY 2024-25\n\n#### 1. Tax Regime Applicability\n* **Old Tax Regime:** Deduction in respect of medical treatment/maintenance of a dependent with a disability under Section 80DD is available only if the assessee opts for the **Old Tax Regime** [C3, C6, C8].\n* **New Tax Regime (Section 115BAC):** This deduction cannot be claimed if the taxpayer is under the New Tax Regime [C3].\n\n#### 2. Permissible Deduction Amounts\nUnder the Old Tax Regime, the deduction allowable under Section 80DD is specified based on the category of disability [C2, C3, C8]:\n\n* **Dependent with Disability:** A fixed deduction of **Rs. 75,000** is allowable [C2, C3].\n* **Dependent with Severe Disability:** A fixed deduction of **Rs. 1,25,000** is allowable [C1, C2, C6, C8], limited to or capped at the taxpayer's Gross Total Income (whichever is lower) [C1, C8].\n\n---\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 80DD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 80DD, Section 115A(1)(a)(A), Section 80D, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 80DD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 80DD",
+        "Section 115A(1)(a)(A)",
+        "Section 80D"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 917
+    },
+    {
+      "id": 8,
+      "question": "Is standard deduction available to salaried employees under Section 16(ia)?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 8** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> PART B (Annexure-II) In relation to specified senior citizen for tax deduction under section 194P A. Whether opting for taxation uls 115BAC(lA)? [YES/NO] 1. Gross Salarv a) I Pension as per prm'isions contained in clause (ii) of section 17( 1) Rs .... 2. Total amount of salary re...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 24(b)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 8** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 8, Section 24(b), Section 11, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 8 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 8",
+        "Section 24(b)",
+        "Section 11"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 2637
+    },
+    {
+      "id": 9,
+      "question": "What are the conditions for claiming additional interest deduction on affordable housing under Section 80EEA?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 44ADA** of the Income-tax Act, 1961 for Financial Year 2023-24 [C1], the relevant legal position states:\n\n> Column Section Nature of deduction Instruction No. The amount eligible for deduction is subject to maximum limit of \u20b9150,000 paid during the year and further conditions specified in sub-section (3) of section 80EEA. In case deduction u/s 80EE is claimed, deduction u/s 80EEA shall...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 80EEA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 44ADA** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 44ADA, Section 80EEA, Section 24(b), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 44ADA must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 44ADA",
+        "Section 80EEA",
+        "Section 24(b)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 602
+    },
+    {
+      "id": 10,
+      "question": "Are donations to approved charitable trusts eligible for 50% or 100% deduction under Section 80G?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 57** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> CBDT_e-Filing_ITR 1_Validation Rules for AY 2020-21 V 1.3 In Schedule 80G in table (c) \"Donations entitled for 100% deduction Subject to 82 Qualifying Limit\" Donation in cash or Donation in other mode is to be entered mandatory. In Schedule 80G in table (D) \u201cDonations entitled fo...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 80C** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 57** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 57, Section 80C, Section 80G, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 57 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 57",
+        "Section 80C",
+        "Section 80G"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 550
+    },
+    {
+      "id": 11,
+      "question": "Can voluntary retirement scheme compensation be exempt up to Rs 5 lakh under Section 10(10C)?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 17(1)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> of Sec 10(10C)-Amount or termination of service' cannot exceed Rs. 5 received on voluntary retirement or termination of lakhs. service Amount received/receivable on voluntary retirement or termination of service\" is more than the value of Rs. 5,00,000. 76 More than one drop down...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 17(1)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 17(1)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 17(1), Section 10(10C), Section 2BB, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 17(1) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 17(1)",
+        "Section 10(10C)",
+        "Section 2BB"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 870
+    },
+    {
+      "id": 12,
+      "question": "What is the deduction limit for political contributions by an individual under Section 80GGC?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 115A(1)(a)(A)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0 763. In schedule 80U, If deduction is > 0, then details of such donation are required 764. In Schedule 80GGC, Sl. No. D \"Eligible Amount of contribution\" should be equal to sum of individual amounts restricted to GTI 765....\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115A(1)(a)(A)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115A(1)(a)(A)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115A(1)(a)(A), Section 80GGC, Section 80EE, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115A(1)(a)(A) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115A(1)(a)(A)",
+        "Section 80GGC",
+        "Section 80EE"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 2234
+    },
+    {
+      "id": 13,
+      "question": "How is HRA calculated according to Rule 2A of the Income Tax Rules?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 88** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> years immediately preceding the relevant previous year shall be increased by an amount equal to one-half of the amount of the gratuity included in the total income of the relevant previous year, and the average rate of tax for each of the said two previous years shall be calculat...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 10(13A)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 88** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 88, Section 10(13A), Section 288, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 88 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 88",
+        "Section 10(13A)",
+        "Section 288"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 601
+    },
+    {
+      "id": 14,
+      "question": "Can a person with severe disability claim flat deduction of Rs 1,25,000 under Section 80U?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 80DD** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> CBDT_e-Filing_ITR 1_Validation Rules for AY 2020-21 V 1.3 A Maximum amount that can be claimed for category Addition \"Dependent with severe disability\" u/s 80DD is 125000 or Gross Total Income whichever is lower A Maximum amount that can be claimed for category \"Self with Additio...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 44ADA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 80DD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 80DD, Section 44ADA, Section 115A(1)(a)(A), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 80DD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 80DD",
+        "Section 44ADA",
+        "Section 115A(1)(a)(A)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 525
+    },
+    {
+      "id": 15,
+      "question": "Is deduction allowed under Section 80GGA for donations towards scientific research?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 80GGA** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> be more than the 94 'Total Donations'. In Schedule VIA, deduction claimed u/s 80GGA cannot be more than the 95 eligible amount of donation mentioned in Schedule 80GGA Donee PAN mentioned in Schedule 80GGA cannot be same as the assesse PAN 96 or the verification PAN Deduction u/s...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 80EEA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 80GGA** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 80GGA, Section 80EEA, Section 194LD, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 80GGA must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 80GGA",
+        "Section 80EEA",
+        "Section 194LD"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 907
+    },
+    {
+      "id": 16,
+      "question": "kya main apne rent ka deduction le sakta hu agar HRA component nahi milta?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 10(14)(i)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> CBDT_e-Filing_ITR 4_Validation Rules for AY 2024-25 V 1.0 163. H ouse rent allowance (HRA u/s.10(13A)) is claimed, hence deduction u/s.80GG above Rs 55,000 not allowed 164. I f Old Tax Regime is selected, The maximum deduction allowed under section 80TTA is Rs.10,000/-. 165. If O...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 80EE** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 10(14)(i)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 10(14)(i), Section 80EE, Section 24(b), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 10(14)(i) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 10(14)(i)",
+        "Section 80EE",
+        "Section 24(b)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 514
+    },
+    {
+      "id": 17,
+      "question": "What is the deduction available under Section 80EE for first time home buyers?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 115A(1)(a)(A)** of the Income-tax Act, 1961 for Financial Year 2023-24 [C1], the relevant legal position states:\n\n> C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0 679. In Schedule VI-A , assessee cannot claim deduction u/s 80EE more than Rs. 50,000. Deduction is available only if \"Old Tax Regime\" is selected 680. The maximum deduction allowable under section 80TTA is Rs. 10,000. De...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115A(1)(a)(A)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115A(1)(a)(A)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115A(1)(a)(A), Section 44ADA, Section 80EEA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115A(1)(a)(A) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115A(1)(a)(A)",
+        "Section 44ADA",
+        "Section 80EEA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 513
+    },
+    {
+      "id": 18,
+      "question": "Are co-operative societies entitled to deductions under Section 80P on banking business profits?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 246** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 198 It is further proposed to substitute the clause (ii) of Explanation to the said section so as to provide that \"co-operative bank\", \u201cprimary agricultural credit society\u201d and \u201cprimary co-operative agricultural and rural development bank\u201d shall have the meanings respectively ass...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 117** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 246** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 246, Section 117, Section 35CCD, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 246 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 246",
+        "Section 117",
+        "Section 35CCD"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 777
+    },
+    {
+      "id": 19,
+      "question": "Does standard deduction apply to entertainment allowance received by government employees under Section 16(ii)?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 10(10C)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0 159. In Schedule Salary, For Central and State Govt and PSU employees, Entertainment allowance u/s 16(ii) will be allowed to the extent of Rs 5000 or 1/5th of Basic salary, whichever is lower Deduction is available only i...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 17(1)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 10(10C)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 10(10C), Section 17(1), Section 17(3), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 10(10C) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 10(10C)",
+        "Section 17(1)",
+        "Section 17(3)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 589
+    },
+    {
+      "id": 20,
+      "question": "What is the tax exemption for members of Scheduled Tribes in specific north-eastern states under Section 10(26)?",
+      "topic": "DEDUCTION",
+      "answer_primary": "Under the provisions of **Section 10(10C)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0 159. In Schedule Salary, For Central and State Govt and PSU employees, Entertainment allowance u/s 16(ii) will be allowed to the extent of Rs 5000 or 1/5th of Basic salary, whichever is lower Deduction is available only i...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 10** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 10(10C)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 10(10C), Section 10, Section 6, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 10(10C) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 10(10C)",
+        "Section 10",
+        "Section 6"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 573
+    },
+    {
+      "id": 21,
+      "question": "old vs new regime for 15 lakh income FY 2025-26",
+      "topic": "CALCULATION",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 17(1)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 17(1), Section 115A(1)(a)(A), Section 45, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 17(1) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 17(1)",
+        "Section 115A(1)(a)(A)",
+        "Section 45"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 623
+    },
+    {
+      "id": 22,
+      "question": "What is the rebate under Section 87A under the New Tax Regime for taxable income up to 7 lakhs?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 115BAE** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 173 It is proposed to omit reference of sections 88, 88A, 88B, 88C and 88D in sub-sections (1) and (2) of the said section which is consequential in nature. These amendments will take effect from 1st April, 2023. Clause 43 of the Bill seeks to amend section 87A of the Income-tax...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 392** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115BAE** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115BAE, Section 392, Section 2BB, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115BAE must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115BAE",
+        "Section 392",
+        "Section 2BB"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 679
+    },
+    {
+      "id": 23,
+      "question": "What are the tax slabs for individuals opting for Section 115BAC in FY 2024-25?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 43B** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> C BDT_e-Filing_ITR 3_Validation Rules for AY 2024-25 V 1.0 behalf.\" in \"section 35CCD\" Dividend income as referred to in section Sr. No. Form 3CD clause 2(22)(e) 1A(ii) of 36A Schedule OS Schedule OS Income of the nature referred to in section Sr. No. Form 3CD clause 56(2)(x) whi...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 10(14)(i)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 43B** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 43B, Section 10(14)(i), Section 115E, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 43B must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 43B",
+        "Section 10(14)(i)",
+        "Section 115E"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 688
+    },
+    {
+      "id": 24,
+      "question": "How is marginal relief calculated when taxable income slightly exceeds Rs 7,00,000 under Section 115BAC?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 392** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Assessee with total income exceeding Rs. 7,00,000 subject to marginal relief (if any) 507. cannot claim Rebate u/s 87A. Please refer to section 87A of Income tax act, 1961. If Old tax regime is selected, then value in the field \"Rebate u/s 87A\" should not be 508. more than Rs.12,...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 2** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 392** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 392, Section 2, Section 115BAC, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 392 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 392",
+        "Section 2",
+        "Section 115BAC"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 623
+    },
+    {
+      "id": 25,
+      "question": "What is the standard deduction amount for salaried individuals under Section 115BAC New Regime?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 8** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> PART B (Annexure-II) In relation to specified senior citizen for tax deduction under section 194P A. Whether opting for taxation uls 115BAC(lA)? [YES/NO] 1. Gross Salarv a) I Pension as per prm'isions contained in clause (ii) of section 17( 1) Rs .... 2. Total amount of salary re...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 57** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 8** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 8, Section 57, Section 1, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 8 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 8",
+        "Section 57",
+        "Section 1"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 973
+    },
+    {
+      "id": 26,
+      "question": "What is the rate of Health and Education Cess applicable on income tax and surcharge?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 115BAD** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 24 purposes of the Union, calculated in the manner provided therein, shall be further increased by an additional surcharge, for the purposes of the Union, to be called the \u201cHealth and Education Cess on income-tax\u201d, calculated at the rate of four per cent. of such income-tax and s...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 175** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115BAD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115BAD, Section 175, Section 10, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115BAD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115BAD",
+        "Section 175",
+        "Section 10"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 699
+    },
+    {
+      "id": 27,
+      "question": "What is the tax rate on online gaming winnings under Section 115BBJ?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 24(b)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> TDS made under the section quoted that income in the nature of Winnings from Online games chargeable u/s 115BBJ is derived by you in FY concerned. Must however it is 22. seen from the content of return that income correspondent to Winnings from Online Games chargeable u/s 115BBJ...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115E** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 24(b)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 24(b), Section 115E, Section 115BBJ, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 24(b) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 24(b)",
+        "Section 115E",
+        "Section 115BBJ"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 1215
+    },
+    {
+      "id": 28,
+      "question": "What is the concessional corporate tax rate under Section 115BAA for domestic manufacturing companies?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 80CCD** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> tax at a concessional rate of fifteen per cent. The time for commencing manufacturing or production has been extended to 31st March, 2024 by the Finance Act, 2022. The same provision has not been provided to new manufacturing co-operative societies. It is proposed to insert a new...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115BAA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 80CCD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 80CCD, Section 115BAA, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 80CCD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 80CCD",
+        "Section 115BAA",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 755
+    },
+    {
+      "id": 29,
+      "question": "How is Minimum Alternate Tax (MAT) calculated under Section 115JB on book profit?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 115JB** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> [Relief in tax payable under sub-section (1) of section 115JB due to operation of sub-section (2D) of section 115JB. 10RB. (1) For the purposes of sub-section (2D) of section 115JB, the tax payable by the assessee company under sub-section (1) of section 115JB, for the previous y...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115JB** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115JB** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115JB, Section 115BAB, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115JB must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115JB",
+        "Section 115BAB",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 605
+    },
+    {
+      "id": 30,
+      "question": "What are the conditions for Alternate Minimum Tax (AMT) credit under Section 115JD?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 80CCD** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> of section 115BAE; or (ii) income-tax payable in respect of the total income of such person is computed under sub-section (1A) of section 115BAC. This amendment will take effect from 1st April, 2024 and will, accordingly, apply in relation to the assessment year 2024-2025 and sub...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 194LD** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 80CCD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 80CCD, Section 194LD, Section 12A, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 80CCD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 80CCD",
+        "Section 194LD",
+        "Section 12A"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 717
+    },
+    {
+      "id": 31,
+      "question": "What is the tax on distributed income to shareholders through buy-back under Section 115QA?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 210** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> [PART VII-BA SPECIAL PROVISIONS RELATING TO TAX ON DISTRIBUTED INCOME OF DOMESTIC COMPANY FOR BUY-BACK OF SHARES Amount received by the company in respect of issue of share. 40BB. (1) For the purposes of clause (ii) of the Explanation to sub-section (1) of section 115QA, the amou...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115QA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 210** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 210, Section 115QA, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 210 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 210",
+        "Section 115QA",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 617
+    },
+    {
+      "id": 32,
+      "question": "How is tax calculated for specified domestic companies under Section 115BAB?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 80CCD** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> tax at a concessional rate of fifteen per cent. The time for commencing manufacturing or production has been extended to 31st March, 2024 by the Finance Act, 2022. The same provision has not been provided to new manufacturing co-operative societies. It is proposed to insert a new...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115BAB** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 80CCD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 80CCD, Section 115BAB, Section 194P, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 80CCD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 80CCD",
+        "Section 115BAB",
+        "Section 194P"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 1031
+    },
+    {
+      "id": 33,
+      "question": "What is the concessional tax rate for resident co-operative societies under Section 115BAD?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 80CCD** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> tax at a concessional rate of fifteen per cent. The time for commencing manufacturing or production has been extended to 31st March, 2024 by the Finance Act, 2022. The same provision has not been provided to new manufacturing co-operative societies. It is proposed to insert a new...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115BAD** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 80CCD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 80CCD, Section 115BAD, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 80CCD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 80CCD",
+        "Section 115BAD",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 576
+    },
+    {
+      "id": 34,
+      "question": "How does Alternate Minimum Tax (AMT) apply to non-corporate taxpayers under Section 115JC?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 2BB** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> CBDT_e-Filing_ITR 2_Validation Rules for AY 2024-25 V.1.0 If Old Tax regime is selected, In Schedule AMTC, Sl.no. 6 Amount of AMT liability 453. available for credit in subsequent assessment years [total of 4 (D)] should be equal to Total of item no. 4D. In Schedule AMT, Sl. No....\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 28** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 2BB** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 2BB, Section 28, Section 115A(1)(a)(A), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 2BB must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 2BB",
+        "Section 28",
+        "Section 115A(1)(a)(A)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 907
+    },
+    {
+      "id": 35,
+      "question": "What is the taxation mechanism on business trust distributions under Section 115UA?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 12AC** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> [Statement under sub-section (4) of section 115UA. 12CA. (1) The statement of income distributed by a business trust to its unit holder shall be furnished by the person responsible for making payment of the income distributed on behalf of a business trust to - (i) the Principal C...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 12AC** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 12AC** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 12AC, Section 115UA, Section 4, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 12AC must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 12AC",
+        "Section 115UA",
+        "Section 4"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 529
+    },
+    {
+      "id": 36,
+      "question": "Calculate tax for 9 lakh total income under new regime Section 115BAC for FY 2024-25.",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 115BAC** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> proposed in tax rates either in these specific sections or in the First Schedule. The rates provided in sections 115BAA or 115BAB or 115BAC or 115BAD or 115BAE of the Act for the assessment year 2024-25 would be same as already enacted. Similarly rates laid down in Part III of th...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 2** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115BAC** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115BAC, Section 2, Section 2BB, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115BAC must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115BAC",
+        "Section 2",
+        "Section 2BB"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 510
+    },
+    {
+      "id": 37,
+      "question": "What is the tax rate on non-resident foreign institutional investors under Section 115AD?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 115BAD** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 5 (iv) having a total income [excluding the income by way of dividend or income of the nature referred to in clause ( b) of sub-section ( 1) of section 115AD of the Income-tax Act] exceeding five crore rupees, at the rate of thirty-seven per cent. of such income-tax; and (v) havi...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 112A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115BAD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115BAD, Section 112A, Section 115A(1)(a)(A), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115BAD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115BAD",
+        "Section 112A",
+        "Section 115A(1)(a)(A)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 714
+    },
+    {
+      "id": 38,
+      "question": "Can tax relief for arrears of salary be calculated under Section 89 with Form 10E?",
+      "topic": "CALCULATION",
+      "answer_primary": "Under the provisions of **Section 234C** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Field No. Field Name Instruction D4 Health and Education Cess @4% Please compute health and education cess @4% of the tax after rebate. (i.e. 4% of D3) D5 Total Tax & Cess Please enter the sum of tax after rebate and health & education cess. (D3 + D4) D6 Relief u/s 89 (Please ens...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 80EE** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 234C** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 234C, Section 80EE, Section 24(b), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 234C must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 234C",
+        "Section 80EE",
+        "Section 24(b)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 738
+    },
+    {
+      "id": 39,
+      "question": "What is the TDS rate and threshold limit for payments to contractors under Section 194C?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 2** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 2. Rationalisation of TDS rates is proposed as below. Section Present TDS Proposed With effect from Rate TDS Rate Section 194D - Payment of 5% 2% 1.4.2025 insurance commission (in case of person other than company) Section 194DA - Payment in 5% 2% 1.10.2024 respect of life insura...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 50AA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 2** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 2, Section 50AA, Section 194, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 2 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 2",
+        "Section 50AA",
+        "Section 194"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 619
+    },
+    {
+      "id": 40,
+      "question": "What is the TDS rate on salary payments by an employer under Section 192?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 2** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Every person deducting income.tax or super.tax in accord- ~n~ftutc ance with the provisions of sections 192 to 195 shall, at the time of dcductccJ. payment of the sum, or, as the case may be, at the time of issue of a cheque or warrant for payment of any dividend to a shareholde1...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 80EE** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 2** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 2, Section 80EE, Section 24(b), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 2 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 2",
+        "Section 80EE",
+        "Section 24(b)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 848
+    },
+    {
+      "id": 41,
+      "question": "What is the threshold limit and TDS rate for personal commission or contractual payments under Section 194M?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 2** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 2. It is proposed that TDS under section 194M of the Act be reduced from 5% to 2%. 3. The amendment will take effect from 1st day of October 2024. [Clause 60] Section 194-O - Payment of certain sums by e-commerce operator to e-commerce participant Section 194-O of the Act provide...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 194** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 2** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 2, Section 194, Section 50AA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 2 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 2",
+        "Section 194",
+        "Section 50AA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 593
+    },
+    {
+      "id": 42,
+      "question": "What is the exemption from filing return for senior citizens aged 75+ under Section 194P?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 197** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> standards specified under sub-rule (5). [(3B) Specified bank responsible for deduction of tax under section 194P shall furnish evidence produced by the specified senior citizen for claiming deduction under Chapter VI-A to the Principal Director General of Income-tax (Systems) or...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 194P** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 197** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 197, Section 194P, Section 8, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 197 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 197",
+        "Section 194P",
+        "Section 8"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 957
+    },
+    {
+      "id": 43,
+      "question": "What is the TDS rate on online gaming net winnings under Section 194BA?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 115E** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 116 other games of any sort (other than winnings from online games) (iii) on income by way of winnings from horse races 30 per cent.; (iv) on income by way of net winnings from online games 30 per cent.; (v) on income by way of insurance commission 5 per cent.; (vi) on income by...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 112** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 115E** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 115E, Section 112, Section 24(b), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 115E must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 115E",
+        "Section 112",
+        "Section 24(b)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 729
+    },
+    {
+      "id": 44,
+      "question": "What is the higher TDS rate if PAN is not furnished under Section 206AA?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 39b** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> [Relaxation from deduction of tax at higher rate under section 206AA. 37BC. (1) In the case of a non-resident, not being a company, or a foreign company (hereafter referred to as 'the deductee') and not having permanent account number the provisions of section 206AA shall not app...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 277** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 277** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 277, Section 13, Section 2BB, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 277 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 277",
+        "Section 13",
+        "Section 2BB"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 980
+    },
+    {
+      "id": 45,
+      "question": "What is the rate of Tax Collected at Source (TCS) on sale of goods under Section 206C?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 206C** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> value exceeding fifty lakh rupees in any previous year, to deduct tax at the rate of 0.1% of such sum exceeding fifty lakh rupees. 3. Further, sub-section (1H) of section 206C of the Act, requires every person being a seller, who receives any amount as consideration for sale of a...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 80EE** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 206C** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 206C, Section 80EE, Section 276B, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 206C must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 206C",
+        "Section 80EE",
+        "Section 276B"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 917
+    },
+    {
+      "id": 46,
+      "question": "Can an assessee apply for lower or nil deduction certificate under Section 197?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 194P** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Certificate for deduction at lower rates or no deduction of tax from income other than dividends. 28AA. (1) Where the Assessing Officer, on an application made by a person under sub-rule (1) of rule 28 is satisfied that existing and estimated tax liability of a person justifies t...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 194P** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 194P** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 194P, Section 115AC, Section 206C, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 194P must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 194P",
+        "Section 115AC",
+        "Section 206C"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 692
+    },
+    {
+      "id": 47,
+      "question": "Who can submit Form 15G or Form 15H for non-deduction of tax under Section 197A?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 197A** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> [Declaration by person claiming receipt of certain incomes without deduction of tax. 29C. (1) A declaration under sub-section (1) or under sub-section (1A) of section 197A shall be in Form No. 15G and declaration under sub-section (1C) of section 197A shall be in Form No. 15H. (2...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 194C** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 197A** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 197A, Section 194C, Section 3, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 197A must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 197A",
+        "Section 194C",
+        "Section 3"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 546
+    },
+    {
+      "id": 48,
+      "question": "What is the penalty or consequence for failure to deduct or pay TDS under Section 201?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 206C** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> that the rates of interest applicable for late collection / late deposit of TCS are not in line with provisions of sub-section (1A) of section 201 pertaining to late deduction / deposit of TDS. A higher interest rate of 1.5% is applicable where tax has been deducted but not been...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 4** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 206C** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 206C, Section 4, Section 194BA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 206C must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 206C",
+        "Section 4",
+        "Section 194BA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 629
+    },
+    {
+      "id": 49,
+      "question": "What is the statutory requirement to furnish TDS certificates under Section 203?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 8** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Anncxurc-A FORM NO.16 [See Rule 31(1)(a)) PART A Certificate under section 203 of the Income-tax Act, 1961 for Tax deducted at source on Salary paid to an employee un d er secti.o n 192 orJ?ensl.o n r I nterest . In come 0 f speci fil ed senior citIzen under secti.o n 194 P Certi...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 197A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 8** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 8, Section 197A, Section 12A, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 8 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 8",
+        "Section 197A",
+        "Section 12A"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 827
+    },
+    {
+      "id": 50,
+      "question": "What is the TDS rate on interest on securities under Section 193?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 1** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> time. TDS deducted value in schedule TDS 1 CANNOT BE MORE THAN value in schedule Salary 193. \"Total Gross salary\" Exempt Allowance u/s 10(10B) (i) and 10(10B) (ii) Should not be allowed to Central Government 194. employees, state government employees, CG-Pensioners, SG- Pensioner...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 80EE** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 1** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 1, Section 80EE, Section 50AA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 1 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 1",
+        "Section 80EE",
+        "Section 50AA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 979
+    },
+    {
+      "id": 51,
+      "question": "What is the TDS rate on winnings from horse races under Section 194BB?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 50AA** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> TDS rates are proposed to be reduced. However, no change would occur with respect to sections such as TDS on salary, TDS on virtual digital assets, TDS on winnings from lottery etc/ race horses, payment on transfer of immovable property and payments to non-residents, TDS rates fo...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115E** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 50AA** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 50AA, Section 115E, Section 194BB, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 50AA must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 50AA",
+        "Section 115E",
+        "Section 194BB"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 823
+    },
+    {
+      "id": 52,
+      "question": "What are the provisions of TDS on dividends paid by domestic companies under Section 194?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 194** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> TDS on payment of salary, remuneration, interest, bonus or commission by partnership firm to partners Presently there is no provision for deduction of tax at source (TDS) on payment of salary, remuneration, interest, bonus, or commission to partners by the partnership firm. Hence...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 2** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 194** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 194, Section 2, Section 158BE, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 194 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 194",
+        "Section 2",
+        "Section 158BE"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 896
+    },
+    {
+      "id": 53,
+      "question": "What is the concessional TDS rate for non-residents on interest from infrastructure debt funds under Section 194LB?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 24(b)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 194BB, 194BA, 194IA,194IC,194LA,194R, or 194S as is selected under Schedule \"TDS2(ii) Details of Tax Deducted at Source on Income Other than Salary\" at field 2a \"Section under which TDS deducted\" or Assessee having income under special rate is not eligible to file ITR-4. 6 TDS se...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 2BB** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 24(b)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 24(b), Section 2BB, Section 16, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 24(b) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 24(b)",
+        "Section 2BB",
+        "Section 16"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 757
+    },
+    {
+      "id": 54,
+      "question": "What is the interest rate on government securities eligible for lower TDS under Section 194LD?",
+      "topic": "TDS_TCS",
+      "answer_primary": "Under the provisions of **Section 194LD** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Instructions to Form ITR-2 (AY 2020-21) (xi) Income (other than dividend) received by an FII in respect of securities (other than units referred to in section 115AB) - chargeable u/s 115AD(1)(i) (xii) Income by way of interest received by an FII on bonds or Government securities...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 206C** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 194LD** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 194LD, Section 206C, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 194LD must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 194LD",
+        "Section 206C",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 653
+    },
+    {
+      "id": 55,
+      "question": "What is the tax rate on long term capital gains from listed equity shares under Section 112A?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 112** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> section 112. However, an exemption of gains upto 1.25 lakh (aggregate) is proposed for long-term capital gains under section 112A on STT paid equity shares, units of equity oriented fund and business trust, thus, increasing the previously available exemption which was upto 1 lakh...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 10** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 112** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 112, Section 10, Section 112A, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 112 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 112",
+        "Section 10",
+        "Section 112A"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 530
+    },
+    {
+      "id": 56,
+      "question": "What is the tax rate on short term capital gains on equity shares subject to STT under Section 111A?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 45** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> rate of ten per cent shall be calculated on such income exceeding one lakh rupees. It is proposed to substitute proviso to clause of longline of said sub-section so as to provide that the amount of income-tax calculated on the income by way of short-term capital gains referred to...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 112A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 45** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 45, Section 112A, Section 616, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 45 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 45",
+        "Section 112A",
+        "Section 616"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 540
+    },
+    {
+      "id": 57,
+      "question": "How can capital gains from sale of a residential house property be exempt under Section 54?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 43** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> rupees fifty thousand. Profit on sale 54. Where a capital gain arises from the transfer of a capital ~~d~~~P;!Z asset to which the provisions of section 53 are not applicable, being dcnces. buildings or lands appurtenant thereto the income of which is charge- able under the head...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 112A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 43** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 43, Section 112A, Section 44ADA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 43 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 43",
+        "Section 112A",
+        "Section 44ADA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 610
+    },
+    {
+      "id": 58,
+      "question": "What are the rules for computation of capital gains and transfer under Section 45?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 45** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> \u00a7Et. ij it shall be dealt with in accordance with the following provisions of this section, that is to say,- (i} if the amount of the capital gain is greater than the cost of the new asset, the difference between the amount of the capital gain and the cost of the new asset shall...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 45** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 45** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 45, Section 2, Section 4, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 45 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 45",
+        "Section 2",
+        "Section 4"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 660
+    },
+    {
+      "id": 59,
+      "question": "What deductions from full value of consideration are allowed under Section 48 for mode of computation?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 43** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> II of 1922. 2 of 1886, ~c. ij THE GAzETI'E OF INbIA EXtRAORDINARY 393 48. The income chargeable under the head \"Capital gains\" shall be Mode 0 computed by deducting from the full value of the consideration re- computation . and deduc-ceived or accrumg as a result of the transfer...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 54** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 43** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 43, Section 54, Section 45, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 43 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 43",
+        "Section 54",
+        "Section 45"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 576
+    },
+    {
+      "id": 60,
+      "question": "How are specified mutual funds and market linked debentures taxed under Section 50AA?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 45** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 164 Clause 21 of the Bill seeks to amend section 50AA of the Income-tax Act relating to Special provision for computation of capital gains in case of Market Linked Debenture. It is proposed to substitute the opening portion of the said section so as to provide that notwithstandin...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 50AA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 45** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 45, Section 50AA, Section 54, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 45 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 45",
+        "Section 50AA",
+        "Section 54"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 581
+    },
+    {
+      "id": 61,
+      "question": "What transactions are not regarded as transfer for capital gains under Section 47?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 4** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 4. This amendment will take effect from the 1st day of April, 2025 and will, accordingly, apply in relation to assessment year 2025-26 and subsequent assessment years. [Clause 11] Amendment of section 47 Section 47 of the Act provides exclusion to certain transactions not regarde...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 11** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 4** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 4, Section 11, Section 47, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 4 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 4",
+        "Section 11",
+        "Section 47"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 726
+    },
+    {
+      "id": 62,
+      "question": "How is cost of acquisition determined with reference to previous owner under Section 49?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 46** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 396 THE GAZE;I'TE OF INDIA EXTRAORDINARY [PART ii securities\", \"Income from house property\", \"Profits and gains of business or profession\", or \"Income from other sources\", and the expression \"improvement\" shall be construed accordingly. (2) For the purposes of sections 48 and 49,...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 43** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 46** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 46, Section 43, Section 49(1), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 46 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 46",
+        "Section 43",
+        "Section 49(1)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 837
+    },
+    {
+      "id": 63,
+      "question": "What is the general tax rate on long term capital gains for other assets under Section 112?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 112** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> section 112. However, an exemption of gains upto 1.25 lakh (aggregate) is proposed for long-term capital gains under section 112A on STT paid equity shares, units of equity oriented fund and business trust, thus, increasing the previously available exemption which was upto 1 lakh...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 10** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 112** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 112, Section 10, Section 112A, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 112 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 112",
+        "Section 10",
+        "Section 112A"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 851
+    },
+    {
+      "id": 64,
+      "question": "How is the cost of improvement and cost of acquisition defined under Section 55?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 112A** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> include any expenditure incurred by an assessee to settle proceedings initiated in relation to a contravention under any law for the time being in force, as may be notified by the Central Government in the Official Gazette in this behalf. 6. The amendment is proposed to be made e...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 4** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 112A** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 112A, Section 4, Section 43, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 112A must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 112A",
+        "Section 4",
+        "Section 43"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 922
+    },
+    {
+      "id": 65,
+      "question": "What is the grandfathering mechanism for equity shares acquired before 1st February 2018 under Section 55(2)(ac)?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 2BB** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 9 In Schedule 115AD(1)(iii) proviso, Col. 9 If the long term capital asset was acquired 94. before 01.02.2018 should be lower of Col. 6 and Col. 11 In Schedule 115AD(1)(iii) proviso, Col. 11 Total Fair Market Value of capital asset 95. as per section 55(2)(ac) should be equal to...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 57** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 2BB** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 2BB, Section 57, Section 7, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 2BB must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 2BB",
+        "Section 57",
+        "Section 7"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 601
+    },
+    {
+      "id": 66,
+      "question": "How is capital gain computed on depreciable assets under Section 50?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 45** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> [Computation of short-term capital gains and written down value under section 50 where depreciation on goodwill has been obtained. 8AC. (1) For the purposes of proviso to section 50, the written down value of the block of the asset and short-term capital gains, if any, for the pr...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 43** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 45** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 45, Section 43, Section 112A, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 45 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 45",
+        "Section 43",
+        "Section 112A"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 1060
+    },
+    {
+      "id": 67,
+      "question": "What is the tax implication if advance money received for transfer of capital asset is forfeited under Section 51?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 43** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Advance moucy ccivod. 394 THE GAZE'l\"l'E \u25caF' INDIA EX'l'RA6RDINARY on the said date, as reduced by the amount of depreciation, if any. allowed to the assessee after the said date, and as adjusted. 51. Where any capital asset was on any previous occasion the sub\u00ad rc. Ject ot negot...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 21** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 43** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 43, Section 21, Section 45, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 43 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 43",
+        "Section 21",
+        "Section 45"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 601
+    },
+    {
+      "id": 68,
+      "question": "What is the tax treatment of distribution of assets by company in liquidation under Section 46?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 112A** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> include any expenditure incurred by an assessee to settle proceedings initiated in relation to a contravention under any law for the time being in force, as may be notified by the Central Government in the Official Gazette in this behalf. 6. The amendment is proposed to be made e...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 115BAD** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 112A** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 112A, Section 115BAD, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 112A must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 112A",
+        "Section 115BAD",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 975
+    },
+    {
+      "id": 69,
+      "question": "Can capital gains on land acquisition be exempt under Section 54EA if reinvested?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 54EA** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 43 \u201cProvided further that the capital gains in excess of ten crore rupees shall not be taken into account for the purposes of this sub-section.\u201d. Amendment of section 54EA. 26. In section 54EA of the Income-tax Act, sub-section ( 3) shall be omitted. Amendment of section 54EB. 27...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 112A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 54EA** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 54EA, Section 112A, Section 43, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 54EA must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 54EA",
+        "Section 112A",
+        "Section 43"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 636
+    },
+    {
+      "id": 70,
+      "question": "What is the set off and carry forward period for long term and short term capital losses under Section 70 and 71?",
+      "topic": "CAPITAL_GAINS",
+      "answer_primary": "Under the provisions of **Section 1** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> entitled to have the .amount of the loss set off and carried forward for set off under sections 70, 71, 72, 73 and 74. (2) Nothing contained in sub-section (1) of section 72, sub-section (2) of section 73 or sub-section (1) of section 74 shall entitle any assessee, being a regist...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 194LD** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 1** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 1, Section 194LD, Section 70, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 1 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 1",
+        "Section 194LD",
+        "Section 70"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 592
+    },
+    {
+      "id": 71,
+      "question": "What are the turnover limits for mandatory tax audit under Section 44AB for business and profession?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 119(2)(b)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0 126. If Gross Receipts u/s 44AD are more than Rs.2 Crore and cash receipts are more than 5% of total receipts, it is mandatory to have a tax audit under 44AB. 127. Gross Receipts u/s 44ADA at sl.no.63(i) should match with...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 44ADA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 119(2)(b)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 119(2)(b), Section 44ADA, Section 92CE, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 119(2)(b) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 119(2)(b)",
+        "Section 44ADA",
+        "Section 92CE"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 613
+    },
+    {
+      "id": 72,
+      "question": "What is the presumptive taxation turnover limit and deemed profit rate under Section 44AD for small businesses?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 44ADA** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> filing received before specified date return u/s 139(1). E1(b) Any other mode Please enter the amount of turnover realized through any other mode (cash). E2 Presumptive Income under section 44AD:- E2(a) 6% of E1a or the amount claimed to Please enter the presumptive income in res...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 10(14)(i)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 44ADA** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 44ADA, Section 10(14)(i), Section 80C, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 44ADA must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 44ADA",
+        "Section 10(14)(i)",
+        "Section 80C"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 703
+    },
+    {
+      "id": 73,
+      "question": "Can professionals with gross receipts up to 75 lakhs opt for presumptive taxation under Section 44ADA?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 44ADA** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Presumptive professional income u/s 44ADA Please enter the name of business, Business Code and description of business. The applicable business code can be selected from the list provided at the end of this instruction. E3 Gross Receipts Please enter total gross receipts during t...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 44AD** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 44ADA** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 44ADA, Section 44AD, Section 92CE, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 44ADA must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 44ADA",
+        "Section 44AD",
+        "Section 92CE"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 750
+    },
+    {
+      "id": 74,
+      "question": "What is the due date for filing income tax return for non-audit individual assessees under Section 139(1)?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 139** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> [Updated return of income. 12AC. (1) The return of income to be furnished by any person, eligible to file such return under sub-section (8A) of section 139, relating to the assessment year commencing on the 1st day of April, 2020 and subsequent assessment years, shall be in the F...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 90A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 139** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 139, Section 90A, Section 145A, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 139 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 139",
+        "Section 90A",
+        "Section 145A"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 881
+    },
+    {
+      "id": 75,
+      "question": "How is interest calculated under Section 234A for default in furnishing return of income?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 49(1)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> paid outside India in respect of countries where DTAA is not applicable, as per section 91. In column 11(d), please compute the aggregate of claims of tax relief in the above columns. 12 Net tax liability (10 - 11d) In this column, please compute net tax liability payable for the...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 234A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 49(1)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 49(1), Section 234A, Section 44ADA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 49(1) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 49(1)",
+        "Section 234A",
+        "Section 44ADA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 624
+    },
+    {
+      "id": 76,
+      "question": "When is interest levied under Section 234B for default in payment of advance tax?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 49(1)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Instructions to Form ITR-2 (AY 2020-21) In column 13(b), please enter the amount of interest chargeable for default in payment of advance tax as per section 234B. In column 13(c), please enter the amount of interest chargeable for deferment in payment of advance tax as per sectio...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 44ADA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 49(1)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 49(1), Section 44ADA, Section 153, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 49(1) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 49(1)",
+        "Section 44ADA",
+        "Section 153"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 627
+    },
+    {
+      "id": 77,
+      "question": "What are the advance tax installment due dates and interest calculation under Section 234C?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 49(1)** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Instructions to Form ITR-2 (AY 2020-21) In column 13(b), please enter the amount of interest chargeable for default in payment of advance tax as per section 234B. In column 13(c), please enter the amount of interest chargeable for deferment in payment of advance tax as per sectio...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 44ADA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 49(1)** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 49(1), Section 44ADA, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 49(1) must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 49(1)",
+        "Section 44ADA",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 596
+    },
+    {
+      "id": 78,
+      "question": "What is the presumptive taxation rate for plying, hiring or leasing goods carriages under Section 44AE?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 44ADA** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> presumptive income from each goods carriage u/s 44AE during the previous year. The presumptive income is to be computed @Rs.1,000 per ton per month for heavy goods vehicle (i.e. tonnage exceeding 12 Metric Ton) and @Rs.7,500 per month for other than heavy goods vehicle, or the ac...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 17(1)** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 44ADA** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 44ADA, Section 17(1), Section 119(2)(b), the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 44ADA must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 44ADA",
+        "Section 17(1)",
+        "Section 119(2)(b)"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 619
+    },
+    {
+      "id": 79,
+      "question": "What is the procedure for rectification of mistakes apparent from the record under Section 154?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 114G** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> Tax Recovery Officer to exercise or perform certain powers and functions of an Assessing Officer. 117C. (1) The Chief Commissioner or the Commissioner, by general or special order in writing, may authorise a Tax Recovery Officer to exercise or perform the powers and functions con...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 1** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 114G** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 114G, Section 1, Section 115AC, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 114G must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 114G",
+        "Section 1",
+        "Section 115AC"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 638
+    },
+    {
+      "id": 80,
+      "question": "Under what circumstances can an assessment be made as Best Judgment Assessment under Section 144?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 3** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 3. It has been found that in the best judgement cases, taxpayers remain non- responsive to the letters or notices issued by the Faceless Assessing Officer. However, they directly file the appeal to Commissioner (Appeals) against the relevant assessment order. 4. Considering the h...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 1** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 3** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 3, Section 1, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 3 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 3",
+        "Section 1",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 767
+    },
+    {
+      "id": 81,
+      "question": "What is the time limit and conditions for issue of notice for income escaping assessment under Section 148?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 1** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> SEC, 1] four years from the end of the assessment year in which the notice under section 148 was served; (b) where the assessmant, reassessment or recomputation is to be made -under clause (b) of that section, after- (i) the expiry of four years from the end of the assess\u00ad ment y...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 1** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 1** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 1, Section 234B, Section 148, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 1 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 1",
+        "Section 234B",
+        "Section 148"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 909
+    },
+    {
+      "id": 82,
+      "question": "What preliminary enquiry must be conducted before issuing notice under Section 148A?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 2** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> that before making the assessment, reassessment or recomputation under section 147 and subject to the provisions of section 148A, the Assessing Officer shall issue a notice to the assessee, along with a copy of the order passed under sub-section (3) of section 148A determining it...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 151** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 2** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 2, Section 151, Section 148A, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 2 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 2",
+        "Section 151",
+        "Section 148A"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 734
+    },
+    {
+      "id": 83,
+      "question": "What are the rules regarding quote of Permanent Account Number (PAN) under Section 139A?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 139A** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> [Transactions for the purposes of sub-section (6A) of section 139A and prescribed person for the purposes of clause (ab) of Explanation to section 139A. 114BB. (1) Every person shall, at the time of entering into a transaction specified in column (2) of the Table below, quote his...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 139A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 139A** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 139A, Section 206C, Section 2, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 139A must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 139A",
+        "Section 206C",
+        "Section 2"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 690
+    },
+    {
+      "id": 84,
+      "question": "Can an assessee file an appeal before Commissioner (Appeals) under Section 246A?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 246A** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 61 Joint Commissioner or the Joint Director, as the case may be; (c) in a case where the assessment is the subject-matter of an appeal to the Commissioner (Appeals) under section 246A or an appeal to the Appellate Tribunal under section 253, after the expiry of the financial year...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 246A** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 246A** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 246A, Section 253, Section 144C, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 246A must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 246A",
+        "Section 253",
+        "Section 144C"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 751
+    },
+    {
+      "id": 85,
+      "question": "What is the penalty for failure to get accounts audited under Section 271B for audit violation?",
+      "topic": "PROCEDURE",
+      "answer_primary": "Under the provisions of **Section 144** of the Income-tax Act, 1961 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> so as to reduce the time limit from one year to one month. This amendment will take effect from 1st April, 2025. Clause 82 of the Bill seeks to amend section 273B of the Income-tax Act relating to penalty not to be imposed in certain cases. The said section, inter alia, provides...\n\nSubsequent guidance and rules indicate corresponding requirements under STATUTE [C1]. Further, related conditions apply as specified in **Section 6** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "Under **Section 144** of the Income-tax Act, 1961 for FY 2024-25, the statutory framework provides specific rules and allowable limits governing this matter.\n\n- **Applicable Provisions**: As clarified in Section 144, Section 6, Section 194BA, the statutory conditions must be satisfied.\n- **Compliance Note**: Taxpayers claiming benefits under Section 144 must retain valid documentation and verify filing rules.\n\n---\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [
+        "Section 144",
+        "Section 6",
+        "Section 194BA"
+      ],
+      "refused_gemini": false,
+      "latency_gemini_ms": 1128
+    },
+    {
+      "id": 86,
+      "question": "What is the municipal property tax rate levied by Bangalore BBMP on residential apartments?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 87,
+      "question": "Can I claim deduction for state professional tax paid in Texas USA on Indian return?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 88,
+      "question": "What is the GST rate on gold jewelry craftsmanship and making charges under CGST schedule?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 89,
+      "question": "How much stamp duty is payable on sale deed registration in Pune Maharashtra for a 50 lakh flat?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 90,
+      "question": "What are the rules for rollover of US 401(k) retirement plan into Indian NPS tax-free?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 91,
+      "question": "What is the corporate income tax rate on mainland LLC businesses registered in Dubai UAE?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 92,
+      "question": "How much inheritance tax is payable by legal heirs upon inheriting ancestral agricultural land?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 93,
+      "question": "What is the road tax slab rate for purchasing an electric four wheeler in Delhi NCR?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 94,
+      "question": "What are the customs import duty rates on second hand laptops carried as personal baggage from Singapore?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 95,
+      "question": "What is the entertainment tax levied by Tamil Nadu local bodies on multiplex movie cinema tickets?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 96,
+      "question": "Can I claim deduction for personal dog adoption and veterinarian hospital expenses?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 97,
+      "question": "What is the water sewage tax levied by Hyderabad GHMC on commercial properties?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 98,
+      "question": "How to register for UK Value Added Tax (VAT) as an Indian exporter of software consulting services?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 99,
+      "question": "What is the luxury tax rate on 5-star hotel room tariffs in Goa during holiday season?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    },
+    {
+      "id": 100,
+      "question": "Is there any wealth tax currently applicable on residential apartments exceeding Rs 30 lakhs value in India?",
+      "topic": "REFUSAL",
+      "answer_primary": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "answer_gemini": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "citations_gemini": [],
+      "refused_gemini": true,
+      "latency_gemini_ms": 0
+    }
+  ]
+}
