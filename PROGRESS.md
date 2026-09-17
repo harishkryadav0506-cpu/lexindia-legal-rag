@@ -7,8 +7,9 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
 ## 📌 Phase Checklist
 
 - [x] **Phase 1**: Repo scaffold, config, `.env.example`, `docker-compose.yml` with Elasticsearch 8.13 running, and `/health` check. *(Completed)*
-- [ ] **Phase 2**: `download_real_data.py` -> `DATA_SOURCES.md`; verify >= 5 authoritative government documents downloaded with sha256 checksums.
+- [x] **Phase 2**: `download_real_data.py` -> `DATA_SOURCES.md`; verify >= 5 authoritative government documents downloaded with sha256 checksums. *(Completed - 10 documents downloaded, 19.5 MB)*
 - [ ] **Phase 3**: Section-aware hierarchical chunking (`scripts/chunk_documents.py`) -> `data/processed/chunks.jsonl` (2,000–6,000 range, cross-reference edges, spot check Sections 80C, 10(13A), 24(b), 44AB).
+
 - [ ] **Phase 4**: Elasticsearch 8.13 index build (`scripts/build_es_index.py`), dense vector 768-dim embeddings via `BAAI/bge-base-en-v1.5`, 3 sanity searches.
 - [ ] **Phase 5**: Retrieval pipeline (`query_expander.py`, `hybrid_search.py`, `reranker.py`, `citation_graph.py` with 2-hop expansion and authority weighting) + unit tests.
 - [ ] **Phase 6**: Multi-agent StateGraph (Supervisor, Researcher, Calculator, ComplianceVerifier) + Generation + Faithfulness gate + Provider fallback; end-to-end `/query` test on 5 questions (including 1 Hinglish and 1 calculation) + mocked 429 test + agent trace validation.
@@ -52,5 +53,11 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
   - Created `docker/docker-compose.yml` with Elasticsearch 8.13.0 running single-node (`lexindia-es` container healthy on port 9200).
   - Built FastAPI application (`src/api/main.py`) with `/health` endpoint connected to ES.
   - Automated tests in `tests/test_phase1.py` passing (2/2).
-- **Next Step**: Awaiting user approval to proceed to **Phase 2** (`download_real_data.py`).
+- **Phase 2 Completed**:
+  - Implemented `scripts/download_real_data.py` with polite backoff, sha256 checksum generation, and manifest generation.
+  - Downloaded 10 authentic government documents (19.5 MB total) into `data/raw/` strictly from whitelisted government portals (`indiacode.gov.in`, `indiabudget.gov.in`, `incometax.gov.in`).
+  - Updated `DATA_SOURCES.md` logging all titles, authority levels, URLs, sizes, and SHA-256 hashes.
+  - Automated verification tests in `tests/test_phase2.py` passing (4/4). Total suite: 6/6 tests passing.
+- **Next Step**: Awaiting user approval to proceed to **Phase 3** (`scripts/chunk_documents.py`).
+
 
