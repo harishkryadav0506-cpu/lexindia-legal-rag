@@ -4,6 +4,8 @@ data/processed/
 data/reviews.db
 data/checkpoints.db
 data/*.db
+data/*.db-wal
+data/*.db-shm
 
 # Environment and secrets
 .env

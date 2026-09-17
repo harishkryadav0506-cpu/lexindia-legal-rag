@@ -273,5 +273,566 @@
     "action": "edit",
     "reviewer_note": "Verified against Section 80C(2)(xviii)",
     "verified_at": "2026-09-17T12:09:54.907513+00:00"
+  },
+  {
+    "thread_id": "thread_6dbd6663cf28",
+    "query": "What is the Section 80C deduction limit for FY 2024-25?",
+    "financial_year": "2024-25",
+    "draft_answer": "**Section 80C – Deduction Limit for FY 2024‑25**\n\n| Tax regime | Maximum amount that can be claimed under Section 80C (including the related subsections 80CCC and 80CCD(1)) |\n|------------|----------------------------------------------------------------------------------------------|\n| **Old (default) tax regime** | **₹ 1,50,000** – the aggregate of deductions under 80C, 80CCC and 80CCD(1) may not exceed this amount【C1】. |\n| **New tax regime (Section 115BAC)** | No deduction is permitted; the sum of deductions under 80C, 80CCC and 80CCD(1) must be **zero**【C2】【C5】. |\n\n### Legal basis\n* The ITR‑2 validation rules for AY 2024‑25 state that “Sum of deductions u/s 80C, 80CCC and 80CCD(1) is more than Rs. 150 000” is a validation error, confirming the statutory ceiling of **₹ 1.5  lakh** for the old regime【C1】.  \n* For the new tax regime, the same validation rules expressly require that the sum of these deductions be **not more than zero**【C2】, and the ITR‑3 rules reiterate that deductions under 80C (and the related sections) cannot be claimed when the new regime is selected【C5】.\n\n### Practical implication\n- An individual taxpayer (salaried) filing under the **old tax regime** can claim up to **₹ 1,50,000** under Section 80C (including 80CCC and 80CCD(1)).  \n- If the taxpayer opts for the **new tax regime** (Section 115BAC), no deduction under Section 80C (or its related subsections) is allowed.\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "final_answer": "**Section 80C – Deduction Limit for FY 2024‑25**\n\n| Tax regime | Maximum amount that can be claimed under Section 80C (including the related subsections 80CCC and 80CCD(1)) |\n|------------|----------------------------------------------------------------------------------------------|\n| **Old (default) tax regime** | **₹ 1,50,000** – the aggregate of deductions under 80C, 80CCC and 80CCD(1) may not exceed this amount【C1】. |\n| **New tax regime (Section 115BAC)** | No deduction is permitted; the sum of deductions under 80C, 80CCC and 80CCD(1) must be **zero**【C2】【C5】. |\n\n### Legal basis\n* The ITR‑2 validation rules for AY 2024‑25 state that “Sum of deductions u/s 80C, 80CCC and 80CCD(1) is more than Rs. 150 000” is a validation error, confirming the statutory ceiling of **₹ 1.5  lakh** for the old regime【C1】.  \n* For the new tax regime, the same validation rules expressly require that the sum of these deductions be **not more than zero**【C2】, and the ITR‑3 rules reiterate that deductions under 80C (and the related sections) cannot be claimed when the new regime is selected【C5】.\n\n### Practical implication\n- An individual taxpayer (salaried) filing under the **old tax regime** can claim up to **₹ 1,50,000** under Section 80C (including 80CCC and 80CCD(1)).  \n- If the taxpayer opts for the **new tax regime** (Section 115BAC), no deduction under Section 80C (or its related subsections) is allowed.\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr2_validation_rules_ay2024_25_p27_c44",
+        "section_id": "Section 2BB",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
+        "page_number": 27,
+        "score": 0.5472765326499939,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C2]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p15_c24",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 15,
+        "score": 0.4558577299118042,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C3]",
+        "chunk_id": "itr4_validation_rules_ay2025_26_p16_c26",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 16,
+        "score": 0.42129256725311276,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C4]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p16_c26",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 16,
+        "score": 0.4122366428375244,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr3_validation_rules_ay2024_25_p44_c71",
+        "section_id": "Section 115A(1)(a)(A)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-filing_ITR-3_Validation%20Rules%20-%20V1.0_AY%2024-25.pdf",
+        "page_number": 44,
+        "score": 0.26078136563301085,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C6]",
+        "chunk_id": "finance_act_2023_p163_c195",
+        "section_id": "Section 2",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
+        "page_number": 163,
+        "score": 0.21401269733905792,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C7]",
+        "chunk_id": "cbdt_circular_03_2025_p1_c0",
+        "section_id": "Section 192",
+        "doc_type": "circular",
+        "source_url": "https://www.incometaxindia.gov.in/documents/d/guest/circular-no-03-2025-pdf",
+        "page_number": 1,
+        "score": 0.19829223304986954,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C8]",
+        "chunk_id": "itr3_validation_rules_ay2024_25_p42_c68",
+        "section_id": "Section 115A(1)(a)(A)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-filing_ITR-3_Validation%20Rules%20-%20V1.0_AY%2024-25.pdf",
+        "page_number": 42,
+        "score": 0.15204588174819947,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C9]",
+        "chunk_id": "finance_act_2023_p27_c29",
+        "section_id": "Section 111A",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
+        "page_number": 27,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C10]",
+        "chunk_id": "finance_act_2023_p27_c30",
+        "section_id": "Section 111A",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
+        "page_number": 27,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C11]",
+        "chunk_id": "finance_act_2023_p28_c31",
+        "section_id": "Section 111A",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
+        "page_number": 28,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C12]",
+        "chunk_id": "finance_act_2024_p29_c35",
+        "section_id": "Section 111A",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 29,
+        "score": 0.5,
+        "graph_expanded": true
+      }
+    ],
+    "action": "approve",
+    "reviewer_note": "",
+    "verified_at": "2026-09-17T12:35:58.802494+00:00"
+  },
+  {
+    "thread_id": "thread_5f0f8421d45b",
+    "query": "Can I claim Section 80D deduction without health checkup?",
+    "financial_year": "2024-25",
+    "draft_answer": "**Yes**, you can claim a deduction under Section 80D without undergoing or claiming expenses for a preventive health checkup [C1], [C2], [C5]. Preventive health checkup expenses are merely an optional component within Section 80D [C1], [C2], [C5]. You can claim Section 80D deductions solely based on health insurance premium payments made for yourself, your family, or your parents [C1], [C2], [C4], [C5].\n\n---\n\n### Key Provisions & Regime Applicability (FY 2024-25)\n\n#### 1. Tax Regime Applicability\n* **Old Tax Regime:** Deductions under Section 80D are permitted [C1], [C2], [C5].\n* **New Tax Regime (Section 115BAC):** Deductions under Section 80D are **not allowed** [C1], [C2], [C6]. If the New Tax Regime is selected, Schedule 80D must be left blank or reported as zero [C1], [C2].\n\n---\n\n### Structure of Section 80D Deductions (Old Tax Regime)\n\nIf you are filing under the Old Tax Regime, Section 80D allows deductions for health insurance premiums regardless of whether you claim preventive health checkup expenses [C1], [C2], [C4], [C5]:\n\n| Category / Deduction Component | Non-Senior Citizen Limit | Senior Citizen Limit | Reporting Requirements |\n| :--- | :--- | :--- | :--- |\n| **Self & Family (Health Insurance)** | Up to ₹25,000 [C5] | Up to ₹50,000 [C1], [C2], [C5] | Name of Insurer and Policy Number required [C4] |\n| **Parents (Health Insurance)** | Up to ₹25,000 [C1], [C2], [C5] | Up to ₹50,000 [C1], [C2], [C5] | Name of Insurer and Policy Number required [C4] |\n| **Preventive Health Checkup** *(Optional)* | Capped at ₹5,000 combined across all fields [C1], [C2], [C5] | Included within overall sub-limits [C1], [C2] | Not mandatory to claim health insurance [C1], [C2] |\n\n#### Overall Maximum Ceiling:\n* The aggregate eligible deduction under Schedule 80D across all categories (Self, Family, and Parents) is subject to a maximum limit of **₹1,00,000** [C1], [C2], [C5].\n\n---\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "final_answer": "Under Section 80D, deduction up to Rs 25,000 is allowed for health insurance premiums. Preventive health check-up is allowed up to Rs 5,000 within the overall ceiling.",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p49_c78",
+        "section_id": "Section 115A(1)(a)(A)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 49,
+        "score": 0.5779328227043151,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C2]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p17_c28",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 17,
+        "score": 0.4753348588943481,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C3]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p53_c85",
+        "section_id": "Section 115A(1)(a)(A)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 53,
+        "score": 0.46707401275634763,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C4]",
+        "chunk_id": "itr2_validation_rules_ay2025_26_p44_c76",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
+        "page_number": 44,
+        "score": 0.4201900362968445,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr4_validation_rules_ay2025_26_p13_c20",
+        "section_id": "Section 17(1)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 13,
+        "score": 0.3627591848373413,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C6]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p16_c26",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 16,
+        "score": 0.3075188040733337,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C7]",
+        "chunk_id": "income_tax_rules_1962_p548_c845",
+        "section_id": "Section 285BA",
+        "doc_type": "rules",
+        "source_url": "https://www.incometaxindia.gov.in/documents/20117/1842422/Income-tax-Rules-1962_2026-04-01_05-44-55_6f86ac_en.pdf/912570c2-a404-2a4c-ac17-e93ea54d2602?version=11.0&t=1775132171126&download=true",
+        "page_number": 548,
+        "score": 0.23543339297175406,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C8]",
+        "chunk_id": "itr1_validation_rules_ay2025_26_p12_c18",
+        "section_id": "Section 1",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 12,
+        "score": 0.22530051469802856,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C9]",
+        "chunk_id": "finance_act_2024_p57_c68",
+        "section_id": "Section 151",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 57,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C10]",
+        "chunk_id": "finance_act_2024_p190_c250",
+        "section_id": "Section 151",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 190,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C11]",
+        "chunk_id": "finance_act_2024_p190_c251",
+        "section_id": "Section 151",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 190,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C12]",
+        "chunk_id": "finance_act_2024_p191_c252",
+        "section_id": "Section 151",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 191,
+        "score": 0.5,
+        "graph_expanded": true
+      }
+    ],
+    "action": "edit",
+    "reviewer_note": "Clarified preventive checkup limit within overall ceiling",
+    "verified_at": "2026-09-17T12:37:42.317814+00:00"
+  },
+  {
+    "thread_id": "thread_6c4ea5a351ed",
+    "query": "Deduction for home loan principal repayment under 80C",
+    "financial_year": "2024-25",
+    "draft_answer": "I cannot find sufficient authoritative guidance for this query.  \n\n*LexIndia provides legal information, not professional tax advice.*",
+    "final_answer": "Home loan principal repayment is deductible under Section 80C up to Rs 1.5 Lakh per financial year.",
+    "citations": [],
+    "action": "edit",
+    "reviewer_note": "Verified against Section 80C(2)(xviii)",
+    "verified_at": "2026-09-17T12:38:44.673925+00:00"
+  },
+  {
+    "thread_id": "thread_be7c6ccb4b39",
+    "query": "old vs new regime for 15 lakh income FY 2025-26",
+    "financial_year": "2024-25",
+    "draft_answer": "## Tax Computation Analysis for FY 2025-26\n\nFor an annual taxable salary income of **Rs 1,500,000**, the comparative analysis between the **Old Tax Regime** and the **New Tax Regime (Section 115BAC)** is summarized below [C1]:\n\n### Tax Computation Comparison (2025-26)\n\n| Component | Old Tax Regime | New Tax Regime (Sec 115BAC) |\n| :--- | :--- | :--- |\n| **Gross Total Income** | Rs 1,500,000 | Rs 1,500,000 |\n| **Standard Deduction** | Rs 50,000 [C1] | Rs 75,000 [C2] |\n| **Chapter VI-A Deductions (80C, 80D, 24b)** | Rs 175,000 [C3] | *Not Available* |\n| **Total Deductions** | Rs 225,000 | Rs 75,000 |\n| **Taxable Income** | Rs 1,275,000 | Rs 1,425,000 |\n| **Calculated Base Tax** | Rs 195,000 | Rs 125,000 |\n| **Rebate u/s 87A** | -Rs 0 | -Rs 0 [C4] |\n| **Health & Education Cess (4%)** | Rs 7,800 | Rs 5,000 |\n| **Total Tax Payable** | **Rs 202,800** | **Rs 130,000** |\n\n**Recommendation:** **New Tax Regime (Section 115BAC)** saves **Rs 72,800** annually.\n\n### Statutory Provisions & Deductions Considered:\n- **Section 115BAC (New Regime)**: Provides concessional slab rates with higher standard deduction [C1].\n- **Section 87A Rebate**: Available up to Rs 25,000 for taxable income up to Rs 7,00,000 under New Regime [C2].\n- **Old Regime Deductions**: Section 80C (Rs 1,50,000) and Section 80D (Rs 25,000) apply only under the Old Regime [C3].\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "final_answer": "## Tax Computation Analysis for FY 2025-26\n\nFor an annual taxable salary income of **Rs 1,500,000**, the comparative analysis between the **Old Tax Regime** and the **New Tax Regime (Section 115BAC)** is summarized below [C1]:\n\n### Tax Computation Comparison (2025-26)\n\n| Component | Old Tax Regime | New Tax Regime (Sec 115BAC) |\n| :--- | :--- | :--- |\n| **Gross Total Income** | Rs 1,500,000 | Rs 1,500,000 |\n| **Standard Deduction** | Rs 50,000 [C1] | Rs 75,000 [C2] |\n| **Chapter VI-A Deductions (80C, 80D, 24b)** | Rs 175,000 [C3] | *Not Available* |\n| **Total Deductions** | Rs 225,000 | Rs 75,000 |\n| **Taxable Income** | Rs 1,275,000 | Rs 1,425,000 |\n| **Calculated Base Tax** | Rs 195,000 | Rs 125,000 |\n| **Rebate u/s 87A** | -Rs 0 | -Rs 0 [C4] |\n| **Health & Education Cess (4%)** | Rs 7,800 | Rs 5,000 |\n| **Total Tax Payable** | **Rs 202,800** | **Rs 130,000** |\n\n**Recommendation:** **New Tax Regime (Section 115BAC)** saves **Rs 72,800** annually.\n\n### Statutory Provisions & Deductions Considered:\n- **Section 115BAC (New Regime)**: Provides concessional slab rates with higher standard deduction [C1].\n- **Section 87A Rebate**: Available up to Rs 25,000 for taxable income up to Rs 7,00,000 under New Regime [C2].\n- **Old Regime Deductions**: Section 80C (Rs 1,50,000) and Section 80D (Rs 25,000) apply only under the Old Regime [C3].\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "citations": [],
+    "action": "approve",
+    "reviewer_note": "",
+    "verified_at": "2026-09-17T13:15:05.941509+00:00"
+  },
+  {
+    "thread_id": "thread_62936b1c6517",
+    "query": "What is the Section 80C deduction limit for FY 2024-25?",
+    "financial_year": "2024-25",
+    "draft_answer": "**Section 80C deduction limit for FY 2024‑25**\n\n- The maximum amount that can be claimed under **Section 80C** (together with the related limits for Sections 80CCC and 80CCD(1)) is **₹ 1,50,000** per financial year [**C1**].\n\n- **Regime‑specific note**  \n  - Under the **New (default) Tax Regime** (Section 115BAC), deductions under Section 80C (and the other listed Chapter VI‑A deductions) are **not permitted**; the system validates that the sum of deductions under 80C, 80CCC and 80CCD(1) must be zero [**C3**][**C4**][**C5**].\n\n- Under the **Old Tax Regime**, the ₹ 1,50,000 ceiling applies, and any claim exceeding this amount will be rejected by the e‑filing validation rules [**C1**].\n\n---\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "final_answer": "**Section 80C deduction limit for FY 2024‑25**\n\n- The maximum amount that can be claimed under **Section 80C** (together with the related limits for Sections 80CCC and 80CCD(1)) is **₹ 1,50,000** per financial year [**C1**].\n\n- **Regime‑specific note**  \n  - Under the **New (default) Tax Regime** (Section 115BAC), deductions under Section 80C (and the other listed Chapter VI‑A deductions) are **not permitted**; the system validates that the sum of deductions under 80C, 80CCC and 80CCD(1) must be zero [**C3**][**C4**][**C5**].\n\n- Under the **Old Tax Regime**, the ₹ 1,50,000 ceiling applies, and any claim exceeding this amount will be rejected by the e‑filing validation rules [**C1**].\n\n---\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr2_validation_rules_ay2024_25_p27_c44",
+        "section_id": "Section 2BB",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
+        "page_number": 27,
+        "score": 0.5472765326499939,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C2]",
+        "chunk_id": "explanatory_memo_finance_bill_2024_p13_c11",
+        "section_id": "Section 2",
+        "doc_type": "circular",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
+        "page_number": 13,
+        "score": 0.5307928591966629,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C3]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p15_c24",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 15,
+        "score": 0.4558577299118042,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C4]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p16_c26",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 16,
+        "score": 0.4122366428375244,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr3_validation_rules_ay2024_25_p44_c71",
+        "section_id": "Section 115A(1)(a)(A)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-filing_ITR-3_Validation%20Rules%20-%20V1.0_AY%2024-25.pdf",
+        "page_number": 44,
+        "score": 0.26078136563301085,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C6]",
+        "chunk_id": "finance_act_2023_p163_c195",
+        "section_id": "Section 2",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
+        "page_number": 163,
+        "score": 0.21401269733905792,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C7]",
+        "chunk_id": "cbdt_circular_03_2025_p1_c0",
+        "section_id": "Section 192",
+        "doc_type": "circular",
+        "source_url": "https://www.incometaxindia.gov.in/documents/d/guest/circular-no-03-2025-pdf",
+        "page_number": 1,
+        "score": 0.19829223304986954,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C8]",
+        "chunk_id": "itr3_validation_rules_ay2024_25_p42_c68",
+        "section_id": "Section 115A(1)(a)(A)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-filing_ITR-3_Validation%20Rules%20-%20V1.0_AY%2024-25.pdf",
+        "page_number": 42,
+        "score": 0.15204588174819947,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C9]",
+        "chunk_id": "finance_act_2024_p14_c14",
+        "section_id": "Section 115BAA",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 14,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C10]",
+        "chunk_id": "finance_act_2024_p15_c15",
+        "section_id": "Section 115BAA",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 15,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C11]",
+        "chunk_id": "finance_act_2024_p15_c16",
+        "section_id": "Section 115BAA",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 15,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C12]",
+        "chunk_id": "finance_act_2024_p25_c30",
+        "section_id": "Section 115BAA",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 25,
+        "score": 0.5,
+        "graph_expanded": true
+      }
+    ],
+    "action": "approve",
+    "reviewer_note": "",
+    "verified_at": "2026-09-17T13:22:59.386975+00:00"
+  },
+  {
+    "thread_id": "thread_ca81018b0ea2",
+    "query": "Can I claim Section 80D deduction without health checkup?",
+    "financial_year": "2024-25",
+    "draft_answer": "**Short answer**\n\nYes. Under the **Old Tax Regime** you may claim the Section 80D deduction for health‑insurance premiums even if you do **not** incur any preventive health‑check‑up expense. The preventive‑check‑up component is a *separate* sub‑limit (₹ 5,000) that is optional; it does not have to be claimed in order to take the main insurance‑premium deduction.  \n\n---\n\n### Legal basis (FY 2024‑25)\n\n| Provision | What it says | Relevance to the question |\n|-----------|--------------|---------------------------|\n| **C1 – ITR‑3 Validation Rules (AY 2025‑26)** | “Deduction of Preventive Health Check‑up under section 80D … cannot be greater than ₹ 5,000. Deduction is available only if **‘Old Tax Regime’** is selected.” | Confirms that the preventive‑check‑up amount is a *limited* component of the overall 80D deduction and is only allowed in the Old Regime. |\n| **C2 – ITR‑4 Validation Rules (AY 2024‑25)** | “If Old Tax Regime is selected, … the amount of preventive health check‑up of all the fields combined together should not exceed **₹ 5,000**.” | Reinforces that the check‑up amount is an *additional* ceiling, not a prerequisite for the whole 80D claim. |\n| **C5 – ITR‑4 Validation Rules (AY 2025‑26)** | “If Old Tax Regime is selected, … Deduction at Sl. No. 1a ‘Self and Family’ will be allowed to the extent of **₹ 25,000** … the amount of preventive health check‑up … should not exceed **₹ 5,000**.” | Shows the two distinct limits: ₹ 25,000 for insurance premium (self/family) and a separate ₹ 5,000 cap for preventive health check‑up. |\n| **C6 – ITR‑4 Validation Rules (AY 2024‑25)** | “If New tax regime is selected, then deduction u/s 80D cannot be claimed … Schedule 80D should be blank if **‘New Tax Regime’** is selected.” | Indicates that any 80D claim (including insurance premium) is unavailable under the New Regime, but says nothing about a mandatory health‑check‑up under the Old Regime. |\n| **C8 – ITR‑1 Validation Rules (AY 2025‑26)** | Re‑states the same limits: “Deduction at Sl. No. 1a Self and Family will be allowed to the extent of **₹ 25,000** … the amount of preventive health check‑up … should not exceed **₹ 5,000**.” | Again separates the insurance‑premium limit from the preventive‑check‑up limit. |\n\n**Interpretation**\n\n- The **overall Section 80D deduction** consists of two parts:  \n  1. **Health‑insurance premium** (₹ 25,000 for self + family, ₹ 50,000 if senior‑citizen, etc.).  \n  2. **Preventive health‑check‑up** (maximum ₹ 5,000).  \n\n- The validation rules treat the preventive‑check‑up amount as an *optional* sub‑component that **must not exceed ₹ 5,000** if claimed. There is **no requirement** that a",
+    "final_answer": "Under Section 80D, deduction up to Rs 25,000 is allowed for health insurance premiums. Preventive health check-up is allowed up to Rs 5,000 within the overall ceiling.",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p49_c78",
+        "section_id": "Section 115A(1)(a)(A)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 49,
+        "score": 0.5779328227043151,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C2]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p17_c28",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 17,
+        "score": 0.4753348588943481,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C3]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p53_c85",
+        "section_id": "Section 115A(1)(a)(A)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 53,
+        "score": 0.46707401275634763,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C4]",
+        "chunk_id": "itr2_validation_rules_ay2025_26_p44_c76",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
+        "page_number": 44,
+        "score": 0.4201900362968445,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr4_validation_rules_ay2025_26_p13_c20",
+        "section_id": "Section 17(1)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 13,
+        "score": 0.3627591848373413,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C6]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p16_c26",
+        "section_id": "Section 10(14)(i)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 16,
+        "score": 0.3075188040733337,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C7]",
+        "chunk_id": "income_tax_rules_1962_p548_c845",
+        "section_id": "Section 285BA",
+        "doc_type": "rules",
+        "source_url": "https://www.incometaxindia.gov.in/documents/20117/1842422/Income-tax-Rules-1962_2026-04-01_05-44-55_6f86ac_en.pdf/912570c2-a404-2a4c-ac17-e93ea54d2602?version=11.0&t=1775132171126&download=true",
+        "page_number": 548,
+        "score": 0.23543339297175406,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C8]",
+        "chunk_id": "itr1_validation_rules_ay2025_26_p12_c18",
+        "section_id": "Section 1",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 12,
+        "score": 0.22530051469802856,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C9]",
+        "chunk_id": "finance_act_2025_p70_c81",
+        "section_id": "Section 101",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Finance_Bill.pdf",
+        "page_number": 70,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C10]",
+        "chunk_id": "finance_act_2024_p195_c260",
+        "section_id": "Section 153",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 195,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C11]",
+        "chunk_id": "finance_act_2024_p195_c261",
+        "section_id": "Section 153",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 195,
+        "score": 0.5,
+        "graph_expanded": true
+      },
+      {
+        "citation_id": "[C12]",
+        "chunk_id": "finance_act_2024_p196_c262",
+        "section_id": "Section 153",
+        "doc_type": "finance_act",
+        "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
+        "page_number": 196,
+        "score": 0.5,
+        "graph_expanded": true
+      }
+    ],
+    "action": "edit",
+    "reviewer_note": "Clarified preventive checkup limit within overall ceiling",
+    "verified_at": "2026-09-17T13:23:51.048936+00:00"
+  },
+  {
+    "thread_id": "thread_686c4f25eb78",
+    "query": "Deduction for home loan principal repayment under 80C",
+    "financial_year": "2024-25",
+    "draft_answer": "I cannot find sufficient authoritative guidance for this query.  \n\n*LexIndia provides legal information, not professional tax advice.*",
+    "final_answer": "Home loan principal repayment is deductible under Section 80C up to Rs 1.5 Lakh per financial year.",
+    "citations": [],
+    "action": "edit",
+    "reviewer_note": "Verified against Section 80C(2)(xviii)",
+    "verified_at": "2026-09-17T13:25:39.809399+00:00"
   }
 ]
