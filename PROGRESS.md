@@ -6,7 +6,7 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
 
 ## 📌 Phase Checklist
 
-- [ ] **Phase 1**: Repo scaffold, config, `.env.example`, `docker-compose.yml` with Elasticsearch 8.13 running, and `/health` check.
+- [x] **Phase 1**: Repo scaffold, config, `.env.example`, `docker-compose.yml` with Elasticsearch 8.13 running, and `/health` check. *(Completed)*
 - [ ] **Phase 2**: `download_real_data.py` -> `DATA_SOURCES.md`; verify >= 5 authoritative government documents downloaded with sha256 checksums.
 - [ ] **Phase 3**: Section-aware hierarchical chunking (`scripts/chunk_documents.py`) -> `data/processed/chunks.jsonl` (2,000–6,000 range, cross-reference edges, spot check Sections 80C, 10(13A), 24(b), 44AB).
 - [ ] **Phase 4**: Elasticsearch 8.13 index build (`scripts/build_es_index.py`), dense vector 768-dim embeddings via `BAAI/bge-base-en-v1.5`, 3 sanity searches.
@@ -46,5 +46,11 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
 ---
 
 ## 🕒 Current Status
-- **Initialized**: Repo scaffolded, folder structure created, `SPEC.md` saved verbatim, `.gitignore` created, `PROGRESS.md` established.
-- **Next Step**: Awaiting user approval to proceed to **Phase 1**.
+- **Phase 1 Completed**:
+  - Scaffolded full project structure with `.gitignore`, `requirements.txt`, `pyproject.toml`, and `.env.example`.
+  - Implemented typed `src/config.py` with model role definitions (`GENERATION_MODEL`, `EXPANSION_MODEL`, `JUDGE_PRIMARY`, `JUDGE_SECONDARY`).
+  - Created `docker/docker-compose.yml` with Elasticsearch 8.13.0 running single-node (`lexindia-es` container healthy on port 9200).
+  - Built FastAPI application (`src/api/main.py`) with `/health` endpoint connected to ES.
+  - Automated tests in `tests/test_phase1.py` passing (2/2).
+- **Next Step**: Awaiting user approval to proceed to **Phase 2** (`download_real_data.py`).
+
