@@ -1,0 +1,476 @@
+{
+  "timestamp": "2026-09-17T20:20:00Z",
+  "overall_passed": true,
+  "check_1_file_integrity": {
+    "check_name": "Check 1: File Integrity & Cryptographic Checksum Verification",
+    "total_manifest_entries": 30,
+    "success_entries": 30,
+    "verified_files": [
+      {
+        "filename": "income_tax_act_1961.pdf",
+        "title": "Income Tax Act, 1961 (Act No. 43 of 1961)",
+        "doc_type": "statute",
+        "authority_level": 1,
+        "size_bytes": 7169125,
+        "size_mb": 6.84,
+        "sha256": "f21154ca2c37c90fc4bfe0b464e3ab6b0b5ad84dda641b9383a87aa38e75ec66",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "income_tax_rules_1962.pdf",
+        "title": "Income-tax Rules, 1962 (Official CBDT Notification)",
+        "doc_type": "rules",
+        "authority_level": 2,
+        "size_bytes": 103643017,
+        "size_mb": 98.84,
+        "sha256": "e5ef4405ccb7feb490c6c4ceab16acbd3a307f38ef99a7a32dc57fb7c82115b3",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "finance_act_2023.pdf",
+        "title": "Finance Act 2023 (Bill as Introduced/Enacted)",
+        "doc_type": "finance_act",
+        "authority_level": 1,
+        "size_bytes": 2855810,
+        "size_mb": 2.72,
+        "sha256": "6184718c69bc211dd572413262a7ee6c151f6f7533ed58041f78d061b4b219f3",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "finance_act_2024.pdf",
+        "title": "Finance Act 2024 (Budget 2024-25)",
+        "doc_type": "finance_act",
+        "authority_level": 1,
+        "size_bytes": 2042626,
+        "size_mb": 1.95,
+        "sha256": "f95eed4c679bc742b1be8641c2ea24e14dab5a640d3882e27f23a4e8e5256bc8",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "finance_act_2025.pdf",
+        "title": "Finance Bill / Act 2025 (Budget 2025-26)",
+        "doc_type": "finance_act",
+        "authority_level": 1,
+        "size_bytes": 1904925,
+        "size_mb": 1.82,
+        "sha256": "78458589dca5ad3152ae4e493cede2215678860c0af01578cb221f60eb355602",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "explanatory_memo_finance_bill_2024.pdf",
+        "title": "Explanatory Memorandum to Finance Bill 2024",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 2451861,
+        "size_mb": 2.34,
+        "sha256": "e590279f98a9ec698e3e5855b5732341aafec11fdf42b5f5eed4b1cd4cfc95a1",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_taxpayers_charter.pdf",
+        "title": "CBDT Taxpayers Charter Commitment",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 208103,
+        "size_mb": 0.2,
+        "sha256": "91c2490f65676f39db8b2ee4eb1b7a7b92f2ced59ea22f8c71421efbe6524544",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "instructions_itr1_ay2020_21.pdf",
+        "title": "Instructions for filing ITR-1 (Sahaj) AY 2020-21",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 375769,
+        "size_mb": 0.36,
+        "sha256": "bd6d1115a1e42cf92e914ff5a24aa4adf8f52936133caf22d93754730641fc93",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "instructions_itr2_ay2020_21.pdf",
+        "title": "Instructions for filing ITR-2 AY 2020-21",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 1828576,
+        "size_mb": 1.74,
+        "sha256": "3dd915e55b2e164668e8fac44c7ce7af28549173e39e28dc3406c593215b8879",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "instructions_itr4_ay2020_21.pdf",
+        "title": "Instructions for filing ITR-4 (Sugam) AY 2020-21",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 575219,
+        "size_mb": 0.55,
+        "sha256": "2607ce1940df7d5caee7e2b663cf717046c429048f30a2e877b263d28093a426",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr1_rules_ay2020_21.pdf",
+        "title": "ITR-1 Form Filling Rules & Specifications AY 2020-21",
+        "doc_type": "rules",
+        "authority_level": 2,
+        "size_bytes": 242793,
+        "size_mb": 0.23,
+        "sha256": "d96859f9ecf3bf11d072752e6e0e259baccc4541f562031f6e7ee99ed3ddaf94",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr1_validation_rules_ay2024_25.pdf",
+        "title": "CBDT e-Filing ITR-1 Validation Rules AY 2024-25",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 583021,
+        "size_mb": 0.56,
+        "sha256": "27101007a831c935bbf7b28904daa2f5c0191116b72617daf3c9aad15b6c90a4",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr2_validation_rules_ay2024_25.pdf",
+        "title": "CBDT e-Filing ITR-2 Validation Rules AY 2024-25",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 606883,
+        "size_mb": 0.58,
+        "sha256": "045b8b91e32c79c04d4d01503c5aa710c2368383bd1abbe83fc0bfc9b0b1d6c8",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr3_validation_rules_ay2024_25.pdf",
+        "title": "CBDT e-Filing ITR-3 Validation Rules AY 2024-25",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 982656,
+        "size_mb": 0.94,
+        "sha256": "3be07db208949e31d85c66a385851f4b664d38c5dcf65fceafaf0d52e9837c5a",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr4_validation_rules_ay2024_25.pdf",
+        "title": "CBDT e-Filing ITR-4 Validation Rules AY 2024-25",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 442689,
+        "size_mb": 0.42,
+        "sha256": "0ad380400e234b7b98185c2d66c33f1239bf547e2cf2be41c1f0181ab9372a3e",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr1_validation_rules_ay2025_26.pdf",
+        "title": "CBDT e-Filing ITR-1 Validation Rules AY 2025-26",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 518433,
+        "size_mb": 0.49,
+        "sha256": "f995e5a133d4fa1df25ccaaa3d8c42287f6a55f461572d7f37e626ad6b23bb81",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr2_validation_rules_ay2025_26.pdf",
+        "title": "CBDT e-Filing ITR-2 Validation Rules AY 2025-26",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 728181,
+        "size_mb": 0.69,
+        "sha256": "941c0ff6dbe434be3b608c54794c7391be0b39603a97e0fb6c71a15ecf0a4398",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr3_validation_rules_ay2025_26.pdf",
+        "title": "CBDT e-Filing ITR-3 Validation Rules AY 2025-26",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 1101485,
+        "size_mb": 1.05,
+        "sha256": "2ebbcb2d61273d86ac2977e5e122d44d1d5e7e9847c43b3791b227a2397319a4",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "itr4_validation_rules_ay2025_26.pdf",
+        "title": "CBDT e-Filing ITR-4 Validation Rules AY 2025-26",
+        "doc_type": "itr_instructions",
+        "authority_level": 4,
+        "size_bytes": 580534,
+        "size_mb": 0.55,
+        "sha256": "3f1b0e222277db51e9baf2341fc3c33168ec206638349247aa06e09d6faf985c",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_06_2026.pdf",
+        "title": "CBDT Circular No. 06/2026 - Condonation of delay in Form 10AB u/s 80G(5)",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 3204618,
+        "size_mb": 3.06,
+        "sha256": "cc4238745db8f4ec56fb8a97c8ed6cb9287a6609adca5b602a1829fcbe8b0072",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_05_2026.pdf",
+        "title": "CBDT Circular No. 05/2026 - Safe harbour rules for rough diamonds in SNZs",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 363406,
+        "size_mb": 0.35,
+        "sha256": "027dfd694de80e0b64d9d1c286b143e595e1f3dd0107e9de5efabbe3544e08b2",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_04_2026.pdf",
+        "title": "CBDT Circular No. 04/2026 - Document Identification Number (DIN) Generation",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 559776,
+        "size_mb": 0.53,
+        "sha256": "ffa0e21cd3db036707a4850414aa2e7d673d4be28ee1991a1fd3f1c1222c5e78",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_14_2025.pdf",
+        "title": "CBDT Circular No. 14/2025 - Extension of timelines for audit reports FY 2024-25",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 572468,
+        "size_mb": 0.55,
+        "sha256": "a6427527295bc3b07dc75d4d64c5da89e45277d31a94c2c5faa0ab1c919e4fd4",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_07_2025.pdf",
+        "title": "CBDT Circular No. 07/2025 - Processing valid returns pursuant to order u/s 119(2)(b)",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 484158,
+        "size_mb": 0.46,
+        "sha256": "c64fc582ee52bf0e456b6473f5f1a06caa4157873af6c988f16cb52c15a25c18",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_04_2025.pdf",
+        "title": "CBDT Circular No. 04/2025 - FAQs on Guidelines for Compounding of Offences",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 3144636,
+        "size_mb": 3.0,
+        "sha256": "a432e38913c68f4f176310cf2e69805e291aa054e73d6973bba9fc26d8c44476",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_03_2025.pdf",
+        "title": "CBDT Circular No. 03/2025 - Salary TDS Deduction u/s 192 FY 2024-25",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 3575932,
+        "size_mb": 3.41,
+        "sha256": "c69e098e34a32236d035bfcf093ef55f766407bc41c0c74e0f7cd97cdd2e4c09",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_21_2024.pdf",
+        "title": "CBDT Circular No. 21/2024 - Extension of due date for belated/revised returns AY 2024-25",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 414410,
+        "size_mb": 0.4,
+        "sha256": "36698b706a085adcb870788a43f79f7d74ba70cd48b780ae0be070ba11039348",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_20_2024.pdf",
+        "title": "CBDT Circular No. 20/2024 - Direct Tax Vivad Se Vishwas Scheme timeline",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 131703,
+        "size_mb": 0.13,
+        "sha256": "30e94b59cf5d6f2559742170eef71bd675e2ce310d6dc88dcd2dc04672c00725",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_09_2024.pdf",
+        "title": "CBDT Circular No. 09/2024 - Monetary limits for department appeals before ITAT/HC/SC",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 227807,
+        "size_mb": 0.22,
+        "sha256": "2a6303f84212b2900a61917275a4fa7d32ca8ad0f170944253256bcfed8cb5f6",
+        "status": "VERIFIED_VALID"
+      },
+      {
+        "filename": "cbdt_circular_03_2024.pdf",
+        "title": "CBDT Circular No. 03/2024 - Order under section 119 of the Income-tax Act, 1961",
+        "doc_type": "circular",
+        "authority_level": 3,
+        "size_bytes": 1179061,
+        "size_mb": 1.12,
+        "sha256": "ad2ffdbce221a995a90d0fc4e426e2795824666a8b5fd207540462d424f12e1d",
+        "status": "VERIFIED_VALID"
+      }
+    ],
+    "failed_files": [],
+    "passed": true
+  },
+  "check_2_domain_whitelist": {
+    "check_name": "Check 2: Official Government Domain Whitelist Verification",
+    "allowed_domains": [
+      "cbic.gov.in",
+      "gstcouncil.gov.in",
+      "incometax.gov.in",
+      "incometaxindia.gov.in",
+      "indiabudget.gov.in",
+      "indiacode.gov.in",
+      "indiacode.nic.in",
+      "itat.gov.in",
+      "sci.gov.in"
+    ],
+    "manifest_urls_checked": 30,
+    "chunk_urls_checked": 3407,
+    "disallowed_urls": [],
+    "passed": true
+  },
+  "check_3_benchmark_provenance": {
+    "check_name": "Check 3: Real Benchmark Query Provenance Verification",
+    "total_queries": 100,
+    "answerable_count": 85,
+    "refusal_count": 15,
+    "topic_distribution": {
+      "DEDUCTION": 20,
+      "CALCULATION": 18,
+      "TDS_TCS": 16,
+      "CAPITAL_GAINS": 16,
+      "PROCEDURE": 15,
+      "REFUSAL": 15
+    },
+    "missing_url_queries": [],
+    "invalid_gold_sections": [],
+    "passed": true
+  },
+  "check_4_chunk_spotchecks": {
+    "check_name": "Check 4: Anti-Hallucination Chunk Provenance & PDF Spot-Checks",
+    "sample_size": 10,
+    "spot_checks": [
+      {
+        "sample_num": 1,
+        "chunk_id": "instructions_itr2_ay2020_21_p72_c140",
+        "source_doc": "instructions_itr2_ay2020_21.pdf",
+        "section_id": "Section 55(2)(ac)",
+        "recorded_page": 72,
+        "matched_page": 72,
+        "search_snippet": "zero or null for more than two house",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 2,
+        "chunk_id": "income_tax_rules_1962_p31_c59",
+        "source_doc": "income_tax_rules_1962.pdf",
+        "section_id": "Section 18",
+        "recorded_page": 31,
+        "matched_page": 31,
+        "search_snippet": "exploration site or a project execution site or",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 3,
+        "chunk_id": "income_tax_act_1961_p64_c102",
+        "source_doc": "income_tax_act_1961.pdf",
+        "section_id": "Section 1",
+        "recorded_page": 64,
+        "matched_page": 64,
+        "search_snippet": "the gaze ite of india extraordinary part ii",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 4,
+        "chunk_id": "itr4_validation_rules_ay2024_25_p18_c31",
+        "source_doc": "itr4_validation_rules_ay2024_25.pdf",
+        "section_id": "Section 10(14)(i)",
+        "recorded_page": 18,
+        "matched_page": 18,
+        "search_snippet": "schedule 80g if donation is made same pan",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 5,
+        "chunk_id": "income_tax_rules_1962_p468_c729",
+        "source_doc": "income_tax_rules_1962.pdf",
+        "section_id": "Section 288",
+        "recorded_page": 468,
+        "matched_page": 468,
+        "search_snippet": "the repayment of loan previously raised for the",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 6,
+        "chunk_id": "income_tax_rules_1962_p373_c606",
+        "source_doc": "income_tax_rules_1962.pdf",
+        "section_id": "Section 39b",
+        "recorded_page": 373,
+        "matched_page": 373,
+        "search_snippet": "returns regarding tax deducted at source on computer",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 7,
+        "chunk_id": "income_tax_rules_1962_p313_c517",
+        "source_doc": "income_tax_rules_1962.pdf",
+        "section_id": "Section 139",
+        "recorded_page": 313,
+        "matched_page": 313,
+        "search_snippet": "exercise of option under sub section 4 of",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 8,
+        "chunk_id": "income_tax_rules_1962_p102_c174",
+        "source_doc": "income_tax_rules_1962.pdf",
+        "section_id": "Section 45",
+        "recorded_page": 102,
+        "matched_page": 102,
+        "search_snippet": "guidelines for notification of zero coupon bond 8b",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 9,
+        "chunk_id": "itr4_validation_rules_ay2024_25_p8_c10",
+        "source_doc": "itr4_validation_rules_ay2024_25.pdf",
+        "section_id": "Section 17(1)",
+        "recorded_page": 8,
+        "matched_page": 8,
+        "search_snippet": "cbdt e filing itr 4 validation rules for",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      },
+      {
+        "sample_num": 10,
+        "chunk_id": "income_tax_rules_1962_p14_c22",
+        "source_doc": "income_tax_rules_1962.pdf",
+        "section_id": "Section 8",
+        "recorded_page": 14,
+        "matched_page": 14,
+        "search_snippet": "percentage of government grant for considering university ho",
+        "verified_in_pdf": true,
+        "status": "PASS"
+      }
+    ],
+    "passed": true,
+    "matched_count": 10,
+    "match_rate": 100.0
+  },
+  "check_5_review_store": {
+    "check_name": "Check 5: Human-in-the-Loop Review Store & Training Pairs Audit",
+    "reviews_db_exists": true,
+    "total_reviews": 29,
+    "decided_reviews": 17,
+    "pending_reviews": 12,
+    "human_pairs_count": 13,
+    "passed": true
+  }
+}

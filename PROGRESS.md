@@ -16,8 +16,8 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
 - [x] **Phase 8**: MCP server (`src/mcp_server.py`) using official `mcp` FastMCP SDK, exposing 3 tools over stdio + streamable-http, pytest client tests, README configuration snippet. *(Completed - FastMCP server, 3 tools search_tax_law, calculate_tax, traverse_citation_graph, stdio ClientSession integration, README snippet, 5/5 tests passing)*
 - [x] **Phase 9**: Next.js 14 frontend (App Router, chat UI, sources + agent trace, citation graph Cytoscape viz, react-pdf provenance viewer, `/review` queue UI) + browser agent end-to-end verification. *(Completed - Next.js 14 App Router, Cytoscape citation graph, PDF viewer, Review Queue dashboard, Browser subagent E2E test)*
 - [x] **Phase 10**: Evaluation set (100 real queries from public sources, no synthetic/LLM questions) + metrics + dual-judge `EVALUATION_REPORT.md` (Gemini 3.6 Flash primary vs GENERATION_MODEL secondary) + 1 tuning iteration + CI smoke workflow. *(Completed - 100 real queries benchmark, EVALUATION_REPORT.md, baseline vs tuned RRF k=60 vs k=40, dual judge 100% agreement within 1 pt, 66/66 passing tests)*
-- [ ] **Phase 11**: Strict Data Audit (`scripts/audit_data.py` -> `DATA_AUDIT.md`) validating file provenance, official government domains only, non-empty source URLs, review verification, and spot checking 10 random chunks.
-- [ ] **Phase 12**: Ablation study (`scripts/run_ablation.py` -> `ABLATION_TABLE.md`) comparing `GENERATION_MODEL` vs `gemini-2.5-flash` on identical retrieved context.
+- [x] **Phase 11**: Strict Data Audit (`scripts/audit_data.py` -> `DATA_AUDIT.md`) validating file provenance, official government domains only, non-empty source URLs, review verification, and spot checking 10 random chunks. *(Completed - All 5 integrity checks passed, 30 PDFs verified with SHA-256, 100% government whitelist, 10/10 random chunks verbatim matched, 72/72 tests passing)*
+- [ ] **Phase 12**: Ablation study (`scripts/run_ablation.py` -> `ABLATION_TABLE.md`) comparing `GENERATION_MODEL` vs `gemini-3.6-flash` on identical retrieved context.
 - [ ] **Phase 13**: Final Docker/Hugging Face Spaces packaging (`Dockerfile`, `es_init.sh`, `supervisord`), comprehensive `README.md` (architecture diagram, Model Cards, HITL, Future Work), self-review checklist against spec.
 
 ---
@@ -166,7 +166,17 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
   - Added CI smoke test workflow in `.github/workflows/eval_smoke.yml`.
   - Built comprehensive unit test suite in `tests/test_phase10.py` (10/10 tests passing).
   - Cumulative project test suite passing: **66/66 tests passing**.
-- **Next Step**: Awaiting user approval to proceed to **Phase 11** (`audit/` — Strict data provenance audit script `scripts/audit_data.py` -> `DATA_AUDIT.md`).
+- **Phase 11 Completed**:
+  - Implemented strict multi-stage automated data audit in `scripts/audit_data.py` covering all 5 core integrity checks:
+    * **Check 1 (Cryptographic Integrity)**: 100% of 30 official downloaded PDFs in `data/raw/` verified against their SHA-256 digests and validated `%PDF-` file magic headers (0 corruptions, 0 missing files).
+    * **Check 2 (Strict Whitelist)**: Verified that 100% of source URLs in `manifest.json`, `DATA_SOURCES.md`, and all 3,407 processed chunks in `data/processed/chunks.jsonl` originate strictly from approved official government domains (`incometaxindia.gov.in`, `incometax.gov.in`, `indiabudget.gov.in`, `cbic.gov.in`, `gstcouncil.gov.in`, `indiacode.nic.in`, `indiacode.gov.in`, `itat.gov.in`, `sci.gov.in`). Zero commercial or third-party blog links.
+    * **Check 3 (Benchmark Authenticity)**: Audited all 100 queries in `data/eval/real_queries_100.json`. Verified 0 missing forum URLs, 85 answerable queries mapped to valid statutory provisions in the corpus, and 15 out-of-scope refusal queries with empty gold citations.
+    * **Check 4 (Anti-Hallucination Spot-Checks)**: Randomly sampled 10 chunks from `data/processed/chunks.jsonl` with fixed seed `42` and performed page-level verbatim text extraction and substring verification against raw PDFs on disk. Achieved **10/10 (100.0%) verified match rate**.
+    * **Check 5 (HITL Review Store)**: Verified schema and records in SQLite `data/reviews.db` and supervised fine-tuning pairs in `data/eval/human_verified_pairs.json`.
+  - Generated comprehensive `DATA_AUDIT.md` and machine-readable `data/audit_results.json`.
+  - Built automated unit test suite in `tests/test_phase11.py` (6/6 tests passing).
+  - Cumulative project test suite passing: **72/72 tests passing**.
+- **Next Step**: Awaiting user approval to proceed to **Phase 12** (Ablation study `scripts/run_ablation.py` -> `ABLATION_TABLE.md` comparing `GENERATION_MODEL` vs `gemini-3.6-flash` on identical retrieved context).
 
 
 
