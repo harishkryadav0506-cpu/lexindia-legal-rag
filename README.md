@@ -36,4 +36,51 @@ docker compose -f docker/docker-compose.yml up -d
 
 ---
 
+## 🔌 Using LexIndia as an MCP Server
+
+LexIndia implements the official Model Context Protocol (MCP) using the FastMCP Python SDK (`src/mcp_server.py`), exposing 3 citation-grounded tools over `stdio` and `streamable-http`:
+
+1. **`search_tax_law`**: Hybrid BM25 + dense vector + cross-encoder retrieval returning top statutory chunks and citations with 2-hop statutory graph expansion.
+2. **`calculate_tax`**: Deterministic slab computation comparing Old vs New Regime (Section 115BAC) with Standard Deduction (Section 16(ia)), Section 87A rebate, and 4% Health & Education Cess.
+3. **`traverse_citation_graph`**: Multi-hop ego subgraph extraction showing typed legal relationships (`READ_WITH`, `SUBJECT_TO`, `AMENDED_BY`, `EXPLAINS`).
+
+### Claude Desktop Configuration
+
+To connect LexIndia to Claude Desktop or any MCP-compatible client (Cursor, Gemini CLI, Zed), add the following configuration snippet to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "lexindia": {
+      "command": "python",
+      "args": [
+        "d:\\LexIndia -----  Legal RAG System for Indian Tax Law\\src\\mcp_server.py",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "PYTHONPATH": "d:\\LexIndia -----  Legal RAG System for Indian Tax Law",
+        "GROQ_API_KEY": "your_groq_api_key_here",
+        "GEMINI_API_KEY": "your_gemini_api_key_here",
+        "ES_URL": "http://localhost:9200"
+      }
+    }
+  }
+}
+```
+
+### Running Standalone
+
+Over `stdio`:
+```bash
+python src/mcp_server.py --transport stdio
+```
+
+Over `streamable-http`:
+```bash
+python src/mcp_server.py --transport streamable-http --host 127.0.0.1 --port 8001
+```
+
+---
+
 *This document will be incrementally enriched as each phase progresses.*

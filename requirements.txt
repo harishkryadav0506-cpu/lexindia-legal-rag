@@ -22,7 +22,7 @@ langgraph-checkpoint-sqlite>=2.0.0
 langchain-core>=0.1.30
 
 # MCP (Model Context Protocol) SDK
-mcp>=1.0.0
+mcp>=1.0.0,<2.0.0
 
 # Document Parsing & Ingestion
 pdfplumber>=0.11.0

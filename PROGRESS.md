@@ -11,8 +11,9 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
 - [x] **Phase 3**: Section-aware hierarchical chunking (`scripts/chunk_documents.py`) -> `data/processed/chunks.jsonl` (2,000–6,000 range, cross-reference edges, spot check Sections 80C, 10(13A), 24(b), 44AB). *(Completed - 3,407 chunks produced across 2,190 pages, all spot-check sections verified)*
 - [x] **Phase 4**: Elasticsearch 8.13 index build (`scripts/build_es_index.py`), dense vector 768-dim embeddings via `BAAI/bge-base-en-v1.5`, 3 sanity searches. *(Completed - 3,407 documents indexed on ES 8.13 with 768-dim cosine embeddings, all 3 sanity searches verified)*
 - [x] **Phase 5**: Retrieval pipeline (`query_expander.py`, `hybrid_search.py`, `reranker.py`, `citation_graph.py` with 2-hop expansion and authority weighting) + unit tests. *(Completed - multi-variant RRF fusion, CrossEncoder BGE reranker with authority weighting, 2-hop NetworkX citation graph expansion, 8/8 tests passing)*
+- [x] **Phase 6**: Multi-agent StateGraph (Supervisor, Researcher, Calculator, ComplianceVerifier) + Generation + Faithfulness gate + Provider fallback; end-to-end `/query` test on 5 questions (including 1 Hinglish and 1 calculation) + mocked 429 test + agent trace validation. *(Completed - LangGraph 4-agent graph, slab-wise tax calculator, CrossEncoder faithfulness gate, live Gemini fallback on mocked 429, 10/10 tests passing)*
 - [x] **Phase 7**: Human-in-the-Loop (HITL) — `human_review` node with LangGraph `interrupt()`, `SqliteSaver` checkpointer, review endpoints (`/reviews/pending`, `/reviews/{thread_id}/decision`, `/reviews/stats`), `review_store.py`, append to `human_verified_pairs.json`. *(Completed - LangGraph interrupt/Command resume, SQLite review store, review endpoints, human_verified_pairs.json append, 9/9 tests passing)*
-- [ ] **Phase 8**: MCP server (`src/mcp_server.py`) using official `mcp` FastMCP SDK, exposing 3 tools over stdio + streamable-http, pytest client tests, README configuration snippet.
+- [x] **Phase 8**: MCP server (`src/mcp_server.py`) using official `mcp` FastMCP SDK, exposing 3 tools over stdio + streamable-http, pytest client tests, README configuration snippet. *(Completed - FastMCP server, 3 tools search_tax_law, calculate_tax, traverse_citation_graph, stdio ClientSession integration, README snippet, 5/5 tests passing)*
 - [ ] **Phase 9**: Next.js 14 frontend (App Router, chat UI, sources + agent trace, citation graph Cytoscape viz, react-pdf provenance viewer, `/review` queue UI) + browser agent end-to-end verification.
 - [ ] **Phase 10**: Evaluation set (100 real queries from public sources, no synthetic/LLM questions) + metrics + dual-judge `EVALUATION_REPORT.md` (Gemini 2.5 Flash primary vs GENERATION_MODEL secondary) + 1 tuning iteration.
 - [ ] **Phase 11**: Strict Data Audit (`scripts/audit_data.py` -> `DATA_AUDIT.md`) validating file provenance, official government domains only, non-empty source URLs, review verification, and spot checking 10 random chunks.
@@ -107,8 +108,22 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
     * `GET /graph`: extracts ego subgraph around specified section with configurable hops.
     * `GET /health`: cluster health, ES connectivity, and database existence check.
     * In-memory sliding window rate limiter (30 req/min) and CORS configuration.
-  - Comprehensive automated test suite in `tests/test_phase7.py` passing (9/9). Full project test suite: **51/51 tests passing**.
-- **Next Step**: Awaiting user approval to proceed to **Phase 8** (`src/mcp_server.py` — official `mcp` FastMCP SDK, 3 tax research tools over stdio + streamable-http, pytest client tests, README configuration snippet).
+  - Comprehensive automated test suite in `tests/test_phase7.py` passing (9/9). Full project test suite: 51/51 tests passing.
+- **Phase 8 Completed**:
+  - Implemented official Model Context Protocol (MCP) server in `src/mcp_server.py` using FastMCP Python SDK (`mcp>=1.0.0,<2.0.0`):
+    * Exposes exactly 3 statutory tax research tools:
+      1. `search_tax_law(query, financial_year)`: executes multi-variant hybrid search + cross-encoder reranking + 2-hop statutory graph expansion, returning structured chunks with citations (`chunk_id`, `section_id`, `doc_type`, `authority_level`, `source_url`, `page_number`, `score`, `text`).
+      2. `calculate_tax(fy, gross_income, deductions)`: computes deterministic slab-wise tax breakdown comparing Old vs New Regime (Section 115BAC), standard deduction, Section 87A rebate, 4% cess, and markdown comparison table.
+      3. `traverse_citation_graph(section_id, hops)`: extracts typed ego subgraph (`READ_WITH`, `SUBJECT_TO`, `AMENDED_BY`, `EXPLAINS`) from the NetworkX knowledge graph.
+    * Reuses the exact same retrieval, calculation, and graph engines as the FastAPI backend (single source of truth).
+    * Supports both `stdio` and `streamable-http` transports.
+  - Added comprehensive "Using LexIndia as an MCP Server" documentation in `README.md` with complete `claude_desktop_config.json` snippet and standalone CLI execution commands.
+  - Built automated test suite in `tests/test_phase8.py` covering:
+    * Tool registration and schema inspection.
+    * Direct in-process tool execution.
+    * Full client-server integration over stdio using official `mcp.client.stdio.stdio_client` and `ClientSession`.
+  - Phase 8 tests passing (5/5). Total project test suite: **56/56 tests passing**.
+- **Next Step**: Awaiting user approval to proceed to **Phase 9** (`frontend/` — Next.js 14 App Router, chat UI, sources + agent trace, Cytoscape graph viz, react-pdf provenance viewer, `/review` queue UI, and end-to-end browser agent verification).
 
 
 

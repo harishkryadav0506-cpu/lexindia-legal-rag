@@ -187,6 +187,7 @@ def calc_tax_old_vs_new(
     return {
         "gross_income": gross_income,
         "financial_year": fy,
+        "fy": fy,
         "old_regime": {
             "deductions": total_old_deductions,
             "taxable_income": old_taxable_income,
