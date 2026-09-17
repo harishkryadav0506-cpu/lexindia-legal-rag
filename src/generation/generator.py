@@ -33,30 +33,38 @@ class AnswerGenerator:
         self.groq_base_url = settings.GROQ_BASE_URL
         self.gemini_api_key = settings.GEMINI_API_KEY
 
+    _groq_exhausted: bool = False
+
     def _call_groq(self, user_prompt: str, mock_429: bool = False) -> str:
         """Execute generation via Groq OpenAI-compatible client."""
-        if mock_429:
-            raise RuntimeError("HTTP 429: Too Many Requests - Rate limit exceeded (mocked)")
+        if mock_429 or AnswerGenerator._groq_exhausted:
+            raise RuntimeError("HTTP 429: Rate limit reached on Groq (daily quota / rapid limit)")
 
         from openai import OpenAI
         client = OpenAI(
             api_key=self.groq_api_key,
             base_url=self.groq_base_url,
-            timeout=30.0
+            timeout=20.0,
+            max_retries=0
         )
-        response = client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": user_prompt}
-            ],
-            temperature=0.1,
-            max_tokens=1024
-        )
-        return response.choices[0].message.content.strip()
+        try:
+            response = client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.1,
+                max_tokens=1024
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as e:
+            if "429" in str(e) or "rate_limit" in str(e).lower():
+                AnswerGenerator._groq_exhausted = True
+            raise e
 
     def _call_gemini_fallback(self, user_prompt: str, reason: str) -> Tuple[str, Dict[str, Any]]:
-        """Fallback to gemini-2.5-flash on Groq 429/5xx with structured telemetry."""
+        """Fallback to gemini-3.6-flash on Groq 429/5xx with structured telemetry."""
         t0 = time.time()
         logger.warning(
             f"GENERATOR PROVIDER FALLBACK TRIGGERED: {self.model} -> {self.fallback_model} | Reason: {reason}"
@@ -64,8 +72,8 @@ class AnswerGenerator:
         from google import genai
         client = genai.Client(api_key=self.gemini_api_key)
         full_contents = f"{SYSTEM_PROMPT}\n\n{user_prompt}"
-        # Try configured fallback model, then fallback candidates
-        candidate_models = [self.fallback_model, "gemini-3.6-flash", "gemini-flash-latest"]
+        # Try working active Gemini models
+        candidate_models = ["gemini-3.6-flash", "gemini-flash-latest", self.fallback_model]
         last_gemini_err = None
         for gm in candidate_models:
             try:

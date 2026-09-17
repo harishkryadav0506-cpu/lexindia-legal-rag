@@ -83,25 +83,36 @@ class QueryExpander:
 
         return [var_a, var_b, var_c]
 
+    _groq_exhausted: bool = False
+
     def _call_groq(self, query: str) -> List[str]:
         """Invoke primary expansion model via Groq OpenAI-compatible client."""
+        if QueryExpander._groq_exhausted:
+            raise RuntimeError("HTTP 429: Rate limit reached on Groq (daily quota / rapid limit)")
+
         from openai import OpenAI
         client = OpenAI(
             api_key=self.groq_api_key,
             base_url=self.groq_base_url,
-            timeout=15.0
+            timeout=15.0,
+            max_retries=0
         )
-        response = client.chat.completions.create(
-            model=self.expansion_model,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": f"Query: {query}"}
-            ],
-            temperature=0.3,
-            max_tokens=300
-        )
-        raw_text = response.choices[0].message.content.strip()
-        return self._parse_variants(raw_text)
+        try:
+            response = client.chat.completions.create(
+                model=self.expansion_model,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": f"Query: {query}"}
+                ],
+                temperature=0.3,
+                max_tokens=300
+            )
+            raw_text = response.choices[0].message.content.strip()
+            return self._parse_variants(raw_text)
+        except Exception as e:
+            if "429" in str(e) or "rate_limit" in str(e).lower():
+                QueryExpander._groq_exhausted = True
+            raise e
 
     def _call_gemini_fallback(self, query: str, reason: str) -> List[str]:
         """Fallback to gemini-2.5-flash and log structured fallback event."""

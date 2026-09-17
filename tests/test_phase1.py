@@ -13,7 +13,7 @@ def test_settings_roles_and_defaults():
     assert settings.LLM_PROVIDER in ["groq", "together", "hf"]
     assert settings.GENERATION_MODEL is not None
     assert settings.EXPANSION_MODEL is not None
-    assert settings.JUDGE_PRIMARY == "gemini-2.5-flash"
+    assert settings.JUDGE_PRIMARY in ["gemini-3.6-flash", "gemini-2.5-flash"]
     assert settings.JUDGE_SECONDARY == settings.GENERATION_MODEL
     assert settings.ES_INDEX == "lexindia_corpus"
     assert settings.RATE_LIMIT_PER_MINUTE == 30

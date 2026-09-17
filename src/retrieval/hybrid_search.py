@@ -120,8 +120,29 @@ class HybridSearcher:
         4. Returns top_k deduplicated candidates sorted by RRF score.
         """
         query_variants = self.query_expander.expand(query)
-        # Combine original query with the 3 variants
         all_variants = [query] + [v for v in query_variants if v and v != query]
+        return self.search_with_variants(
+            query=query,
+            variants=all_variants,
+            financial_year=financial_year,
+            doc_type=doc_type,
+            min_authority_level=min_authority_level,
+            top_k=top_k
+        )
+
+    def search_with_variants(
+        self,
+        query: str,
+        variants: List[str],
+        financial_year: Optional[str] = None,
+        doc_type: Optional[str] = None,
+        min_authority_level: Optional[int] = None,
+        top_k: int = 30
+    ) -> List[Dict[str, Any]]:
+        """Execute hybrid search given pre-computed query variants."""
+        all_variants = list(variants) if variants else [query]
+        if query not in all_variants:
+            all_variants = [query] + all_variants
 
         filters = self._build_filters(
             financial_year=financial_year,

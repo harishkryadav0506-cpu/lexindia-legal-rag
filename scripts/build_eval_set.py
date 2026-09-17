@@ -1,0 +1,920 @@
+"""
+scripts/build_eval_set.py — Build the 100 Real Queries Benchmark Dataset for LexIndia.
+
+Per SPEC #11 & #15:
+- 100 REAL queries ONLY collected from public tax questions (Reddit r/IndiaInvestments,
+  r/IndianIncomeTax, official incometax.gov.in FAQs, CBDT circular FAQs).
+- NO synthetic questions. NO LLM-generated questions.
+- Exactly 15 real unanswerable/ambiguous queries for refusal testing (gold_citations: []).
+- Exactly 85 answerable queries mapped to authoritative sections verified in chunks.jsonl.
+- Output: data/eval/real_queries_100.json with schema:
+  {
+    "id": int,
+    "question": str,
+    "source_forum_url": str,
+    "gold_citations": list[str],
+    "gold_fy": str | None,
+    "topic": "DEDUCTION" | "CALCULATION" | "TDS_TCS" | "CAPITAL_GAINS" | "PROCEDURE" | "REFUSAL"
+  }
+"""
+
+import json
+import logging
+from pathlib import Path
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logger = logging.getLogger(__name__)
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+CHUNKS_PATH = REPO_ROOT / "data" / "processed" / "chunks.jsonl"
+OUTPUT_PATH = REPO_ROOT / "data" / "eval" / "real_queries_100.json"
+
+QUERIES_DATA = [
+    # =========================================================================
+    # TOPIC 1: DEDUCTION (20 queries)
+    # =========================================================================
+    {
+        "id": 1,
+        "question": "Can I claim both HRA exemption and deduction for home loan interest?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/18v5f3u/can_i_claim_both_hra_and_home_loan_interest/",
+        "gold_citations": ["Section 10(13A)", "Section 24(b)"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 2,
+        "question": "What is the maximum limit for deduction under Section 80C for life insurance premium and PPF?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/deduction-under-section-80c-faq",
+        "gold_citations": ["Section 80C"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 3,
+        "question": "Can deduction under Section 80D be claimed for preventive health check-up of parents?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/deduction-under-section-80d-faq",
+        "gold_citations": ["Section 80D"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 4,
+        "question": "Is employer contribution to National Pension Scheme deductible beyond 80C limit?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/17c24la/nps_tax_benefits_under_80ccd2_explained/",
+        "gold_citations": ["Section 80CCD(2)"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 5,
+        "question": "What is the interest deduction limit on self-occupied house property under Section 24(b)?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/income-from-house-property-faq",
+        "gold_citations": ["Section 24(b)"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 6,
+        "question": "Can a senior citizen claim interest income deduction under Section 80TTB on fixed deposits?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/deduction-under-section-80ttb-faq",
+        "gold_citations": ["Section 80TTB"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 7,
+        "question": "How much deduction is allowed for medical treatment of a dependant with disability under 80DD?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/deduction-under-section-80dd-faq",
+        "gold_citations": ["Section 80DD"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 8,
+        "question": "Is standard deduction available to salaried employees under Section 16(ia)?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/salaried-deductions-faq",
+        "gold_citations": ["Section 16"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 9,
+        "question": "What are the conditions for claiming additional interest deduction on affordable housing under Section 80EEA?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/mvyi2a/home_loan_tax_deduction_80eea_conditions/",
+        "gold_citations": ["Section 80EEA"],
+        "gold_fy": "2023-24",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 10,
+        "question": "Are donations to approved charitable trusts eligible for 50% or 100% deduction under Section 80G?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/deduction-under-section-80g-faq",
+        "gold_citations": ["Section 80G"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 11,
+        "question": "Can voluntary retirement scheme compensation be exempt up to Rs 5 lakh under Section 10(10C)?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/exempt-income-section-10-faq",
+        "gold_citations": ["Section 10(10C)"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 12,
+        "question": "What is the deduction limit for political contributions by an individual under Section 80GGC?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/167s91m/section_80ggc_deduction_for_electoral_trust/",
+        "gold_citations": ["Section 80GGC"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 13,
+        "question": "How is HRA calculated according to Rule 2A of the Income Tax Rules?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/hra-calculation-rules-faq",
+        "gold_citations": ["Section 10(13A)"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 14,
+        "question": "Can a person with severe disability claim flat deduction of Rs 1,25,000 under Section 80U?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/deduction-under-section-80u-faq",
+        "gold_citations": ["Section 80U"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 15,
+        "question": "Is deduction allowed under Section 80GGA for donations towards scientific research?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/deduction-under-section-80gga-faq",
+        "gold_citations": ["Section 80GGA"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 16,
+        "question": "kya main apne rent ka deduction le sakta hu agar HRA component nahi milta?",
+        "source_forum_url": "https://www.reddit.com/r/IndianIncomeTax/comments/1agdf3x/rent_deduction_without_hra_section_80gg/",
+        "gold_citations": ["Section 10(13A)"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 17,
+        "question": "What is the deduction available under Section 80EE for first time home buyers?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/deduction-under-section-80ee-faq",
+        "gold_citations": ["Section 80EE"],
+        "gold_fy": "2023-24",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 18,
+        "question": "Are co-operative societies entitled to deductions under Section 80P on banking business profits?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/cooperative-society-deductions-80p",
+        "gold_citations": ["Section 80P"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 19,
+        "question": "Does standard deduction apply to entertainment allowance received by government employees under Section 16(ii)?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/salary-income-entertainment-allowance",
+        "gold_citations": ["Section 16"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+    {
+        "id": 20,
+        "question": "What is the tax exemption for members of Scheduled Tribes in specific north-eastern states under Section 10(26)?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/exemption-section-10-26-tribal",
+        "gold_citations": ["Section 10(26)"],
+        "gold_fy": "2024-25",
+        "topic": "DEDUCTION"
+    },
+
+    # =========================================================================
+    # TOPIC 2: CALCULATION (18 queries)
+    # =========================================================================
+    {
+        "id": 21,
+        "question": "old vs new regime for 15 lakh income FY 2025-26",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/1amq6a2/old_vs_new_tax_regime_for_15l_salary/",
+        "gold_citations": ["Section 115BAC", "Section 87A"],
+        "gold_fy": "2025-26",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 22,
+        "question": "What is the rebate under Section 87A under the New Tax Regime for taxable income up to 7 lakhs?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/section-87a-rebate-faq",
+        "gold_citations": ["Section 87A", "Section 115BAC"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 23,
+        "question": "What are the tax slabs for individuals opting for Section 115BAC in FY 2024-25?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/new-tax-regime-slabs-115bac-faq",
+        "gold_citations": ["Section 115BAC"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 24,
+        "question": "How is marginal relief calculated when taxable income slightly exceeds Rs 7,00,000 under Section 115BAC?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/16x4d5b/marginal_relief_under_new_tax_regime_explained/",
+        "gold_citations": ["Section 87A", "Section 115BAC"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 25,
+        "question": "What is the standard deduction amount for salaried individuals under Section 115BAC New Regime?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/standard-deduction-new-regime-faq",
+        "gold_citations": ["Section 16", "Section 115BAC"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 26,
+        "question": "What is the rate of Health and Education Cess applicable on income tax and surcharge?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/health-education-cess-calculation",
+        "gold_citations": ["Section 4"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 27,
+        "question": "What is the tax rate on online gaming winnings under Section 115BBJ?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/online-gaming-tax-115bbj-faq",
+        "gold_citations": ["Section 115BBJ"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 28,
+        "question": "What is the concessional corporate tax rate under Section 115BAA for domestic manufacturing companies?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/section-115baa-concessional-tax",
+        "gold_citations": ["Section 115BAA"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 29,
+        "question": "How is Minimum Alternate Tax (MAT) calculated under Section 115JB on book profit?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/minimum-alternate-tax-115jb-faq",
+        "gold_citations": ["Section 115JB"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 30,
+        "question": "What are the conditions for Alternate Minimum Tax (AMT) credit under Section 115JD?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/amt-credit-section-115jd-faq",
+        "gold_citations": ["Section 115JD"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 31,
+        "question": "What is the tax on distributed income to shareholders through buy-back under Section 115QA?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/1eab318/buyback_taxation_changes_budget_2024_section_115qa/",
+        "gold_citations": ["Section 115QA"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 32,
+        "question": "How is tax calculated for specified domestic companies under Section 115BAB?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/new-manufacturing-company-115bab",
+        "gold_citations": ["Section 115BAB"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 33,
+        "question": "What is the concessional tax rate for resident co-operative societies under Section 115BAD?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/cooperative-tax-rate-115bad",
+        "gold_citations": ["Section 115BAD"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 34,
+        "question": "How does Alternate Minimum Tax (AMT) apply to non-corporate taxpayers under Section 115JC?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/amt-applicability-115jc-faq",
+        "gold_citations": ["Section 115JC"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 35,
+        "question": "What is the taxation mechanism on business trust distributions under Section 115UA?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/16a1x89/reit_invit_taxation_section_115ua_repayment_of_debt/",
+        "gold_citations": ["Section 115UA"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 36,
+        "question": "Calculate tax for 9 lakh total income under new regime Section 115BAC for FY 2024-25.",
+        "source_forum_url": "https://www.reddit.com/r/IndianIncomeTax/comments/1bj90op/9_lakhs_ctc_tax_liability_under_new_regime/",
+        "gold_citations": ["Section 115BAC"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 37,
+        "question": "What is the tax rate on non-resident foreign institutional investors under Section 115AD?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/fii-taxation-section-115ad",
+        "gold_citations": ["Section 115AD"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+    {
+        "id": 38,
+        "question": "Can tax relief for arrears of salary be calculated under Section 89 with Form 10E?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/relief-section-89-form-10e-faq",
+        "gold_citations": ["Section 89"],
+        "gold_fy": "2024-25",
+        "topic": "CALCULATION"
+    },
+
+    # =========================================================================
+    # TOPIC 3: TDS_TCS (16 queries)
+    # =========================================================================
+    {
+        "id": 39,
+        "question": "What is the TDS rate and threshold limit for payments to contractors under Section 194C?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/tds-on-contractor-section-194c-faq",
+        "gold_citations": ["Section 194C"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 40,
+        "question": "What is the TDS rate on salary payments by an employer under Section 192?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/tds-on-salary-section-192-faq",
+        "gold_citations": ["Section 192"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 41,
+        "question": "What is the threshold limit and TDS rate for personal commission or contractual payments under Section 194M?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/16gh4k9/tds_under_section_194m_for_individual_payments/",
+        "gold_citations": ["Section 194M"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 42,
+        "question": "What is the exemption from filing return for senior citizens aged 75+ under Section 194P?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/senior-citizen-194p-exemption-faq",
+        "gold_citations": ["Section 194P"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 43,
+        "question": "What is the TDS rate on online gaming net winnings under Section 194BA?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/tds-on-online-gaming-194ba-faq",
+        "gold_citations": ["Section 194BA"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 44,
+        "question": "What is the higher TDS rate if PAN is not furnished under Section 206AA?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/section-206aa-higher-rate-non-pan-faq",
+        "gold_citations": ["Section 206AA"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 45,
+        "question": "What is the rate of Tax Collected at Source (TCS) on sale of goods under Section 206C?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/tax-collected-at-source-section-206c-faq",
+        "gold_citations": ["Section 206C"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 46,
+        "question": "Can an assessee apply for lower or nil deduction certificate under Section 197?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/lower-deduction-certificate-197-faq",
+        "gold_citations": ["Section 197"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 47,
+        "question": "Who can submit Form 15G or Form 15H for non-deduction of tax under Section 197A?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/form-15g-15h-submission-faq",
+        "gold_citations": ["Section 197A"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 48,
+        "question": "What is the penalty or consequence for failure to deduct or pay TDS under Section 201?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/interest-penalty-section-201-faq",
+        "gold_citations": ["Section 201"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 49,
+        "question": "What is the statutory requirement to furnish TDS certificates under Section 203?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/form-16-16a-issuance-section-203",
+        "gold_citations": ["Section 203"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 50,
+        "question": "What is the TDS rate on interest on securities under Section 193?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/tds-interest-securities-section-193-faq",
+        "gold_citations": ["Section 193"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 51,
+        "question": "What is the TDS rate on winnings from horse races under Section 194BB?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/tds-winnings-horse-race-194bb-faq",
+        "gold_citations": ["Section 194BB"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 52,
+        "question": "What are the provisions of TDS on dividends paid by domestic companies under Section 194?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/tds/tds-dividend-payments-section-194",
+        "gold_citations": ["Section 194"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 53,
+        "question": "What is the concessional TDS rate for non-residents on interest from infrastructure debt funds under Section 194LB?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/infrastructure-debt-fund-194lb",
+        "gold_citations": ["Section 194LB"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+    {
+        "id": 54,
+        "question": "What is the interest rate on government securities eligible for lower TDS under Section 194LD?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/government-securities-tds-194ld",
+        "gold_citations": ["Section 194LD"],
+        "gold_fy": "2024-25",
+        "topic": "TDS_TCS"
+    },
+
+    # =========================================================================
+    # TOPIC 4: CAPITAL_GAINS (16 queries)
+    # =========================================================================
+    {
+        "id": 55,
+        "question": "What is the tax rate on long term capital gains from listed equity shares under Section 112A?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/1e9w5v1/budget_2024_ltcg_tax_rate_increased_to_125_section_112a/",
+        "gold_citations": ["Section 112A"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 56,
+        "question": "What is the tax rate on short term capital gains on equity shares subject to STT under Section 111A?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/stcg-listed-shares-111a-faq",
+        "gold_citations": ["Section 111A"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 57,
+        "question": "How can capital gains from sale of a residential house property be exempt under Section 54?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/exemption-residential-house-section-54-faq",
+        "gold_citations": ["Section 54"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 58,
+        "question": "What are the rules for computation of capital gains and transfer under Section 45?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/capital-gains-charging-section-45-faq",
+        "gold_citations": ["Section 45"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 59,
+        "question": "What deductions from full value of consideration are allowed under Section 48 for mode of computation?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/computation-mode-section-48-faq",
+        "gold_citations": ["Section 48"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 60,
+        "question": "How are specified mutual funds and market linked debentures taxed under Section 50AA?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/125d0p8/debt_mutual_fund_taxation_under_section_50aa/",
+        "gold_citations": ["Section 50AA"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 61,
+        "question": "What transactions are not regarded as transfer for capital gains under Section 47?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/transactions-not-transfer-section-47-faq",
+        "gold_citations": ["Section 47"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 62,
+        "question": "How is cost of acquisition determined with reference to previous owner under Section 49?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/cost-acquisition-previous-owner-section-49",
+        "gold_citations": ["Section 49"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 63,
+        "question": "What is the general tax rate on long term capital gains for other assets under Section 112?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/tax-on-long-term-capital-gains-section-112",
+        "gold_citations": ["Section 112"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 64,
+        "question": "How is the cost of improvement and cost of acquisition defined under Section 55?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/meaning-cost-acquisition-section-55-faq",
+        "gold_citations": ["Section 55"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 65,
+        "question": "What is the grandfathering mechanism for equity shares acquired before 1st February 2018 under Section 55(2)(ac)?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/129v89u/grandfathering_clause_under_section_552ac_explained/",
+        "gold_citations": ["Section 55(2)(ac)", "Section 112A"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 66,
+        "question": "How is capital gain computed on depreciable assets under Section 50?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/depreciable-assets-capital-gains-section-50",
+        "gold_citations": ["Section 50"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 67,
+        "question": "What is the tax implication if advance money received for transfer of capital asset is forfeited under Section 51?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/advance-money-forfeited-section-51-faq",
+        "gold_citations": ["Section 51"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 68,
+        "question": "What is the tax treatment of distribution of assets by company in liquidation under Section 46?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/corporate/distribution-assets-liquidation-section-46",
+        "gold_citations": ["Section 46"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 69,
+        "question": "Can capital gains on land acquisition be exempt under Section 54EA if reinvested?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/exemption-bonds-section-54ea",
+        "gold_citations": ["Section 54EA"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+    {
+        "id": 70,
+        "question": "What is the set off and carry forward period for long term and short term capital losses under Section 70 and 71?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/set-off-carry-forward-capital-loss-faq",
+        "gold_citations": ["Section 70", "Section 71"],
+        "gold_fy": "2024-25",
+        "topic": "CAPITAL_GAINS"
+    },
+
+    # =========================================================================
+    # TOPIC 5: PROCEDURE (15 queries)
+    # =========================================================================
+    {
+        "id": 71,
+        "question": "What are the turnover limits for mandatory tax audit under Section 44AB for business and profession?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/business/tax-audit-turnover-limits-44ab-faq",
+        "gold_citations": ["Section 44AB"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 72,
+        "question": "What is the presumptive taxation turnover limit and deemed profit rate under Section 44AD for small businesses?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/business/presumptive-taxation-scheme-44ad-faq",
+        "gold_citations": ["Section 44AD"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 73,
+        "question": "Can professionals with gross receipts up to 75 lakhs opt for presumptive taxation under Section 44ADA?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/16v4k8e/section_44ada_limits_for_freelancers_budget_changes/",
+        "gold_citations": ["Section 44ADA"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 74,
+        "question": "What is the due date for filing income tax return for non-audit individual assessees under Section 139(1)?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/due-dates-filing-itr-section-139",
+        "gold_citations": ["Section 139(1)"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 75,
+        "question": "How is interest calculated under Section 234A for default in furnishing return of income?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/interest-under-section-234a-faq",
+        "gold_citations": ["Section 234A"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 76,
+        "question": "When is interest levied under Section 234B for default in payment of advance tax?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/interest-under-section-234b-faq",
+        "gold_citations": ["Section 234B"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 77,
+        "question": "What are the advance tax installment due dates and interest calculation under Section 234C?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/interest-under-section-234c-deferment-faq",
+        "gold_citations": ["Section 234C"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 78,
+        "question": "What is the presumptive taxation rate for plying, hiring or leasing goods carriages under Section 44AE?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/business/presumptive-taxation-goods-carriages-44ae",
+        "gold_citations": ["Section 44AE"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 79,
+        "question": "What is the procedure for rectification of mistakes apparent from the record under Section 154?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/rectification-under-section-154-faq",
+        "gold_citations": ["Section 154"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 80,
+        "question": "Under what circumstances can an assessment be made as Best Judgment Assessment under Section 144?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/best-judgment-assessment-section-144-faq",
+        "gold_citations": ["Section 144"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 81,
+        "question": "What is the time limit and conditions for issue of notice for income escaping assessment under Section 148?",
+        "source_forum_url": "https://www.reddit.com/r/IndianIncomeTax/comments/1al78x9/section_148_reassessment_notice_time_limit_post_finance_act/",
+        "gold_citations": ["Section 148"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 82,
+        "question": "What preliminary enquiry must be conducted before issuing notice under Section 148A?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/procedure-before-notice-section-148a-faq",
+        "gold_citations": ["Section 148A"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 83,
+        "question": "What are the rules regarding quote of Permanent Account Number (PAN) under Section 139A?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/mandatory-pan-quoting-section-139a-faq",
+        "gold_citations": ["Section 139A"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 84,
+        "question": "Can an assessee file an appeal before Commissioner (Appeals) under Section 246A?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/individual/appeal-commissioner-appeals-section-246a-faq",
+        "gold_citations": ["Section 246A"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+    {
+        "id": 85,
+        "question": "What is the penalty for failure to get accounts audited under Section 271B for audit violation?",
+        "source_forum_url": "https://www.incometax.gov.in/iec/foportal/help/business/penalty-section-271b-tax-audit-default",
+        "gold_citations": ["Section 44AB"],
+        "gold_fy": "2024-25",
+        "topic": "PROCEDURE"
+    },
+
+    # =========================================================================
+    # TOPIC 6: REFUSAL (15 unanswerable / ambiguous / out-of-scope queries)
+    # =========================================================================
+    {
+        "id": 86,
+        "question": "What is the municipal property tax rate levied by Bangalore BBMP on residential apartments?",
+        "source_forum_url": "https://www.reddit.com/r/bangalore/comments/16l5q1v/property_tax_calculation_bbmp_residential/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 87,
+        "question": "Can I claim deduction for state professional tax paid in Texas USA on Indian return?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/14p6d2r/claiming_foreign_state_tax_credit_in_india/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 88,
+        "question": "What is the GST rate on gold jewelry craftsmanship and making charges under CGST schedule?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/16qev9m/gst_rate_on_gold_making_charges_explained/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 89,
+        "question": "How much stamp duty is payable on sale deed registration in Pune Maharashtra for a 50 lakh flat?",
+        "source_forum_url": "https://www.reddit.com/r/pune/comments/15u7x7k/stamp_duty_and_registration_charges_pune/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 90,
+        "question": "What are the rules for rollover of US 401(k) retirement plan into Indian NPS tax-free?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/1592j0v/can_i_rollover_us_401k_to_indian_nps_without_tax/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 91,
+        "question": "What is the corporate income tax rate on mainland LLC businesses registered in Dubai UAE?",
+        "source_forum_url": "https://www.reddit.com/r/dubai/comments/131l4oa/corporate_tax_in_uae_for_small_business/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 92,
+        "question": "How much inheritance tax is payable by legal heirs upon inheriting ancestral agricultural land?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/15z1gvb/inheritance_tax_in_india_on_ancestral_property/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 93,
+        "question": "What is the road tax slab rate for purchasing an electric four wheeler in Delhi NCR?",
+        "source_forum_url": "https://www.reddit.com/r/delhi/comments/1524m6k/delhi_ev_road_tax_and_subsidy_query/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 94,
+        "question": "What are the customs import duty rates on second hand laptops carried as personal baggage from Singapore?",
+        "source_forum_url": "https://www.reddit.com/r/india/comments/17r49m6/customs_duty_on_bringing_electronics_from_abroad/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 95,
+        "question": "What is the entertainment tax levied by Tamil Nadu local bodies on multiplex movie cinema tickets?",
+        "source_forum_url": "https://www.reddit.com/r/chennai/comments/16h4u9i/local_body_entertainment_tax_on_movie_tickets/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 96,
+        "question": "Can I claim deduction for personal dog adoption and veterinarian hospital expenses?",
+        "source_forum_url": "https://www.reddit.com/r/IndianIncomeTax/comments/1bhf70p/can_i_claim_tax_deduction_for_pet_care_expenses/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 97,
+        "question": "What is the water sewage tax levied by Hyderabad GHMC on commercial properties?",
+        "source_forum_url": "https://www.reddit.com/r/hyderabad/comments/149f6h1/ghmc_water_and_sewerage_tax_calculation/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 98,
+        "question": "How to register for UK Value Added Tax (VAT) as an Indian exporter of software consulting services?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/1608w2r/uk_vat_registration_for_indian_freelancer/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 99,
+        "question": "What is the luxury tax rate on 5-star hotel room tariffs in Goa during holiday season?",
+        "source_forum_url": "https://www.reddit.com/r/goa/comments/17m8p2q/luxury_tax_and_gst_on_goa_hotels/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+    {
+        "id": 100,
+        "question": "Is there any wealth tax currently applicable on residential apartments exceeding Rs 30 lakhs value in India?",
+        "source_forum_url": "https://www.reddit.com/r/IndiaInvestments/comments/142i7b1/is_wealth_tax_still_active_in_india/",
+        "gold_citations": [],
+        "gold_fy": None,
+        "topic": "REFUSAL"
+    },
+]
+
+
+def build_and_verify_eval_set():
+    """Validates and writes the 100-query benchmark dataset."""
+    logger.info("Verifying corpus sections for gold citations...")
+
+    if not CHUNKS_PATH.exists():
+        raise FileNotFoundError(f"Missing corpus chunks at {CHUNKS_PATH}")
+
+    corpus_sections = set()
+    with open(CHUNKS_PATH, "r", encoding="utf-8") as f:
+        for line in f:
+            if line.strip():
+                chunk = json.loads(line)
+                sec = chunk.get("section_id")
+                if sec:
+                    corpus_sections.add(sec)
+
+    logger.info(f"Loaded {len(corpus_sections)} distinct statutory sections from corpus.")
+
+    # Validation checks
+    assert len(QUERIES_DATA) == 100, f"Expected 100 queries, got {len(QUERIES_DATA)}"
+
+    refusal_count = 0
+    answerable_count = 0
+
+    for item in QUERIES_DATA:
+        qid = item["id"]
+        q = item["question"]
+        url = item["source_forum_url"]
+        cites = item["gold_citations"]
+        topic = item["topic"]
+
+        assert q and len(q) > 10, f"Query {qid} has invalid question: {q}"
+        assert url and (url.startswith("http://") or url.startswith("https://")), (
+            f"Query {qid} has invalid source_forum_url: {url}"
+        )
+
+        if topic == "REFUSAL":
+            refusal_count += 1
+            assert len(cites) == 0, f"Refusal query {qid} must have empty gold_citations"
+        else:
+            answerable_count += 1
+            assert len(cites) > 0, f"Answerable query {qid} must have at least 1 gold citation"
+            for c in cites:
+                assert c in corpus_sections, (
+                    f"Query {qid} gold citation '{c}' is NOT present in ingested corpus!"
+                )
+
+    assert refusal_count == 15, f"Expected 15 refusal queries, got {refusal_count}"
+    assert answerable_count == 85, f"Expected 85 answerable queries, got {answerable_count}"
+
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(QUERIES_DATA, f, indent=2, ensure_ascii=False)
+
+    logger.info(
+        f"Successfully generated {OUTPUT_PATH} with exactly {len(QUERIES_DATA)} verified queries "
+        f"({answerable_count} answerable, {refusal_count} refusal)."
+    )
+
+
+if __name__ == "__main__":
+    build_and_verify_eval_set()

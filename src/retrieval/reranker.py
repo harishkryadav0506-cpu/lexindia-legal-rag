@@ -50,9 +50,9 @@ class Reranker:
         if not candidates:
             return []
 
-        # Prepare sentence pairs for cross-encoder
-        pairs = [(query, c["text"]) for c in candidates]
-        raw_scores = self.model.predict(pairs)
+        # Prepare sentence pairs for cross-encoder (truncate to first 500 chars for speed & statutory header focus)
+        pairs = [(query, c.get("text", "")[:500]) for c in candidates]
+        raw_scores = self.model.predict(pairs, batch_size=32, show_progress_bar=False)
 
         reranked_chunks = []
         for chunk, score in zip(candidates, raw_scores):
