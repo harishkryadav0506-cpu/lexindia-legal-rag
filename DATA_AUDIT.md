@@ -14,7 +14,7 @@
 | **Check 2: Domain Whitelist** | Government gazettes and portals only | **30 URLs checked** (0 violations) | **PASS** |
 | **Check 3: Benchmark Provenance** | 100 Real queries from public tax forums | **100 real queries** (85 answerable, 15 refusal) | **PASS** |
 | **Check 4: Anti-Hallucination Spot-Check** | 10 Random chunks verified vs original PDFs | **10 / 10 verbatim verified (100.0%)** | **PASS** |
-| **Check 5: HITL Review Store** | SQLite `reviews.db` and training pairs | **36 review records** (21 decided, 16 verified pairs) | **PASS** |
+| **Check 5: HITL Review Store** | SQLite `reviews.db` and training pairs | **45 review records** (25 decided, 19 verified pairs) | **PASS** |
 
 ---
 
@@ -123,10 +123,10 @@ A reproducible random sample of 10 chunks from `data/processed/chunks.jsonl` was
 
 Audited operational records in `data/reviews.db` and training pairs in `data/eval/human_verified_pairs.json`:
 - **SQLite Database Path**: `data/reviews.db`
-- **Total Reviews Tracked**: 36
-- **Decided Reviews**: 21
-- **Pending Reviews**: 15
-- **Human-Verified Supervised Pairs**: 16 entries
+- **Total Reviews Tracked**: 45
+- **Decided Reviews**: 25
+- **Pending Reviews**: 20
+- **Human-Verified Supervised Pairs**: 19 entries
 - **HITL Audit Status**: **PASS**
 
 ---
