@@ -10,7 +10,7 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
 - [x] **Phase 2**: `download_real_data.py` -> `DATA_SOURCES.md`; verify >= 5 authoritative government documents downloaded with sha256 checksums. *(Completed - 30 documents downloaded, 136.09 MB, verified Income Tax Rules 1962, AY 2024-25 & 2025-26 ITR rules, CBDT circulars)*
 - [x] **Phase 3**: Section-aware hierarchical chunking (`scripts/chunk_documents.py`) -> `data/processed/chunks.jsonl` (2,000–6,000 range, cross-reference edges, spot check Sections 80C, 10(13A), 24(b), 44AB). *(Completed - 3,407 chunks produced across 2,190 pages, all spot-check sections verified)*
 - [x] **Phase 4**: Elasticsearch 8.13 index build (`scripts/build_es_index.py`), dense vector 768-dim embeddings via `BAAI/bge-base-en-v1.5`, 3 sanity searches. *(Completed - 3,407 documents indexed on ES 8.13 with 768-dim cosine embeddings, all 3 sanity searches verified)*
-- [ ] **Phase 5**: Retrieval pipeline (`query_expander.py`, `hybrid_search.py`, `reranker.py`, `citation_graph.py` with 2-hop expansion and authority weighting) + unit tests.
+- [x] **Phase 5**: Retrieval pipeline (`query_expander.py`, `hybrid_search.py`, `reranker.py`, `citation_graph.py` with 2-hop expansion and authority weighting) + unit tests. *(Completed - multi-variant RRF fusion, CrossEncoder BGE reranker with authority weighting, 2-hop NetworkX citation graph expansion, 8/8 tests passing)*
 - [ ] **Phase 6**: Multi-agent StateGraph (Supervisor, Researcher, Calculator, ComplianceVerifier) + Generation + Faithfulness gate + Provider fallback; end-to-end `/query` test on 5 questions (including 1 Hinglish and 1 calculation) + mocked 429 test + agent trace validation.
 - [ ] **Phase 7**: Human-in-the-Loop (HITL) — `human_review` node with LangGraph `interrupt()`, `SqliteSaver` checkpointer, review endpoints (`/reviews/pending`, `/reviews/{thread_id}/decision`, `/reviews/stats`), `review_store.py`, append to `human_verified_pairs.json`.
 - [ ] **Phase 8**: MCP server (`src/mcp_server.py`) using official `mcp` FastMCP SDK, exposing 3 tools over stdio + streamable-http, pytest client tests, README configuration snippet.
@@ -73,8 +73,15 @@ Tracking project milestones, architectural decisions, and evaluation metrics for
     * **BM25 Lexical**: Section 80C deduction limit (top score 27.35)
     * **kNN Dense Vector**: Rule 2A / Section 10(13A) HRA exemption calculation (cosine similarity 0.8742)
     * **Hybrid Filtered**: Section 44AB audit turnover limits with `authority_level <= 2` filter (top score 22.83)
-  - Comprehensive automated test suite in `tests/test_phase4.py` passing (6/6). Full project test suite: 24/24 tests passing.
-- **Next Step**: Awaiting user approval to proceed to **Phase 5** (`src/retrieval/` — query expansion, hybrid search, RRF fusion, reranker, and citation graph).
+  - Comprehensive automated test suite in `tests/test_phase4.py` passing (6/6).
+- **Phase 5 Completed**:
+  - Implemented `src/retrieval/query_expander.py`: expands queries into exactly 3 variants using Groq `EXPANSION_MODEL` (qwen/qwen3.8-27b) with automatic fallback to `gemini-2.5-flash` on 429/5xx and deterministic legal reformulation.
+  - Implemented `src/retrieval/hybrid_search.py`: multi-variant BM25 + kNN execution fused with Reciprocal Rank Fusion (RRF, $k=60$) supporting metadata filtering (`financial_year`, `doc_type`, `min_authority_level`).
+  - Implemented `src/retrieval/reranker.py`: neural cross-encoder reranking using `BAAI/bge-reranker-base` with mandatory statutory authority weighting ($\{1: 1.0, 2: 0.95, 3: 0.85, 4: 0.6\}$).
+  - Implemented `src/retrieval/citation_graph.py`: NetworkX DiGraph (519 nodes, 1,184 edges) with typed relationships (`READ_WITH`, `SUBJECT_TO`, `NOTWITHSTANDING`, `AMENDED_BY`, `EXPLAINS`), 2-hop neighbor expansion (+4 chunks flagged `graph_expanded=True`), and `/graph` ego subgraph extraction.
+  - Automated test suite in `tests/test_phase5.py` passing (8/8). Full project test suite: 32/32 tests passing.
+- **Next Step**: Awaiting user approval to proceed to **Phase 6** (`src/agents/` — LangGraph StateGraph, 4 multi-agent roles, generation with provider fallback, faithfulness gate, and end-to-end evaluation queries).
+
 
 
 
