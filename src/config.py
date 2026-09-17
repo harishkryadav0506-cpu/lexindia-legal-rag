@@ -65,6 +65,7 @@ class Settings(BaseSettings):
     PROCESSED_DATA_DIR: Path = BASE_DIR / "data" / "processed"
     EVAL_DATA_DIR: Path = BASE_DIR / "data" / "eval"
     REVIEWS_DB_PATH: Path = BASE_DIR / "data" / "reviews.db"
+    CHECKPOINTS_DB_PATH: Path = BASE_DIR / "data" / "checkpoints.db"
 
     # Feature Flags & System Options
     ENABLE_GST: bool = Field(default=False, description="Enable secondary GST corpus indexing & retrieval")
