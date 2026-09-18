@@ -64,9 +64,9 @@ LexIndia employs a resilient, role-based LLM architecture designed for strict st
 
 | Role | Default Model | Provider | Context Window | Primary Function | Fallback Chain |
 | :--- | :--- | :--- | :---: | :--- | :--- |
-| **Primary Generation** | `openai/gpt-oss-120b` | Groq | 8,192 tokens | Legal answer synthesis, inline citations (`[C1]`), regime notes | $\to$ `gemini-3.6-flash` $\to$ Grounded Synthesis |
-| **Query Expansion** | `qwen/qwen3.8-27b` | Groq | 8,192 tokens | Generates exactly 3 legal search variants & handles Hinglish | $\to$ `gemini-3.6-flash` $\to$ Deterministic Expansion |
-| **Fallback & Primary Judge** | `gemini-3.6-flash` | Google GenAI | 1,000,000 tokens | Independent cross-model evaluation & live rate-limit failover | $\to$ Grounded Fallback |
+| **Primary Generation** | `openai/gpt-oss-120b` | Groq | 131,072 tokens | Legal answer synthesis, inline citations (`[C1]`), regime notes | $\to$ `gemini-3.5-flash` $\to$ `gemini-flash-latest` $\to$ Grounded Synthesis |
+| **Query Expansion** | `qwen/qwen3.8-27b` | Groq | 131,042 tokens | Generates exactly 3 legal search variants & handles Hinglish | $\to$ `gemini-3.5-flash` $\to$ `gemini-flash-latest` $\to$ Deterministic Expansion |
+| **Fallback & Primary Judge** | `gemini-3.5-flash` | Google GenAI | 1,048,576 tokens | Independent cross-model evaluation & live rate-limit failover | $\to$ `gemini-flash-latest` $\to$ Grounded Fallback |
 | **Dense Embeddings** | `BAAI/bge-base-en-v1.5` | Local / HuggingFace | 512 tokens | 768-dimensional dense semantic vectors indexed in Elasticsearch | Local In-Memory |
 | **Cross-Encoder Reranker** | `BAAI/bge-reranker-base` | Local / HuggingFace | 512 tokens | Deep transformer re-ranking with statutory authority weighting | Local In-Memory |
 

@@ -73,7 +73,7 @@ class AnswerGenerator:
         client = genai.Client(api_key=self.gemini_api_key)
         full_contents = f"{SYSTEM_PROMPT}\n\n{user_prompt}"
         # Try working active Gemini models
-        candidate_models = ["gemini-3.6-flash", "gemini-flash-latest", self.fallback_model]
+        candidate_models = [self.fallback_model, "gemini-3.5-flash", "gemini-flash-latest", "gemini-3.6-flash"]
         last_gemini_err = None
         for gm in candidate_models:
             try:

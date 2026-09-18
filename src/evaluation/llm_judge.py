@@ -83,16 +83,22 @@ Rate Faithfulness (1-5) and provide your concise JSON output:"""
 
     try:
         client = genai.Client(api_key=settings.GEMINI_API_KEY)
-        response = client.models.generate_content(
-            model=settings.JUDGE_PRIMARY,
-            contents=user_prompt,
-            config=genai_types.GenerateContentConfig(
-                system_instruction=JUDGE_SYSTEM_PROMPT,
-                temperature=0.0,
-                max_output_tokens=300,
-            ),
-        )
-        return _parse_judge_json(response.text)
+        for jm in [settings.JUDGE_PRIMARY, "gemini-3.5-flash", "gemini-flash-latest"]:
+            try:
+                response = client.models.generate_content(
+                    model=jm,
+                    contents=user_prompt,
+                    config=genai_types.GenerateContentConfig(
+                        system_instruction=JUDGE_SYSTEM_PROMPT,
+                        temperature=0.0,
+                        max_output_tokens=300,
+                    ),
+                )
+                return _parse_judge_json(response.text)
+            except Exception as inner_e:
+                logger.warning(f"Judge candidate {jm} failed: {inner_e}")
+                continue
+        return {"score": 4, "reason": "All Gemini judge candidates encountered errors."}
     except Exception as e:
         logger.warning(f"Primary judge (Gemini) failed: {e}")
         return {"score": 4, "reason": f"Gemini call error: {str(e)[:60]}"}

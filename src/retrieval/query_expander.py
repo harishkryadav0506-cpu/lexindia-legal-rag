@@ -115,30 +115,38 @@ class QueryExpander:
             raise e
 
     def _call_gemini_fallback(self, query: str, reason: str) -> List[str]:
-        """Fallback to gemini-2.5-flash and log structured fallback event."""
+        """Fallback to verified Gemini models and log structured fallback event."""
         t0 = time.time()
         logger.warning(
-            f"FALLBACK TRIGGERED: {self.expansion_model} -> gemini-2.5-flash | Reason: {reason}"
+            f"FALLBACK TRIGGERED: {self.expansion_model} -> {settings.JUDGE_PRIMARY} | Reason: {reason}"
         )
         from google import genai
         client = genai.Client(api_key=self.gemini_api_key)
         prompt = f"{SYSTEM_PROMPT}\n\nUser Query: {query}"
-        response = client.models.generate_content(
-            model=settings.JUDGE_PRIMARY,
-            contents=prompt,
-        )
-        latency_ms = int((time.time() - t0) * 1000)
-        fallback_event = {
-            "event": "provider_fallback",
-            "component": "query_expander",
-            "model_from": self.expansion_model,
-            "model_to": settings.JUDGE_PRIMARY,
-            "reason": reason,
-            "latency_ms": latency_ms
-        }
-        logger.info(f"STRUCTURED_FALLBACK_EVENT: {json.dumps(fallback_event)}")
-        raw_text = response.text.strip()
-        return self._parse_variants(raw_text)
+        candidate_models = [settings.JUDGE_PRIMARY, "gemini-3.5-flash", "gemini-flash-latest"]
+        last_err = None
+        for gm in candidate_models:
+            try:
+                response = client.models.generate_content(
+                    model=gm,
+                    contents=prompt,
+                )
+                latency_ms = int((time.time() - t0) * 1000)
+                fallback_event = {
+                    "event": "provider_fallback",
+                    "component": "query_expander",
+                    "model_from": self.expansion_model,
+                    "model_to": gm,
+                    "reason": reason,
+                    "latency_ms": latency_ms
+                }
+                logger.info(f"STRUCTURED_FALLBACK_EVENT: {json.dumps(fallback_event)}")
+                raw_text = response.text.strip()
+                return self._parse_variants(raw_text)
+            except Exception as e:
+                last_err = e
+                continue
+        raise last_err or RuntimeError("All Gemini fallback candidates failed")
 
     def _parse_variants(self, raw_text: str) -> List[str]:
         """Parse 3 query variants from model output."""

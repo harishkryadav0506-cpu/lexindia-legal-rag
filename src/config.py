@@ -46,7 +46,7 @@ class Settings(BaseSettings):
 
     # Fallback & Evaluation Models
     GEMINI_API_KEY: Optional[str] = Field(default=None, description="Google Gemini API Key")
-    JUDGE_PRIMARY: str = Field(default="gemini-3.6-flash", description="Primary cross-model evaluation judge")
+    JUDGE_PRIMARY: str = Field(default="gemini-3.5-flash", description="Primary cross-model evaluation judge (verified live)")
 
     @property
     def JUDGE_SECONDARY(self) -> str:
