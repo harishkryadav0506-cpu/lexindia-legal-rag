@@ -21,6 +21,10 @@ from typing import List, Dict, Any, Tuple, Optional
 import pypdf
 import pdfplumber
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from src.ingestion.chunking import StatutoryAwareChunker
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("LexIndiaChunker")
 
@@ -76,19 +80,28 @@ def extract_pages(pdf_path: str) -> List[Tuple[int, str]]:
         num_pages = len(reader.pages)
         
         if num_pages > 150:
-            # Use fast pypdf extraction
-            for idx, page in enumerate(reader.pages):
-                txt = page.extract_text() or ""
-                if not txt.strip():
-                    # Fallback to pdfplumber for empty page
+            # Use fast pypdf extraction with cached pdfplumber fallback
+            plumber_doc = None
+            try:
+                for idx, page in enumerate(reader.pages):
+                    txt = page.extract_text() or ""
+                    if not txt.strip():
+                        try:
+                            if plumber_doc is None:
+                                plumber_doc = pdfplumber.open(pdf_path)
+                            if idx < len(plumber_doc.pages):
+                                p_txt = plumber_doc.pages[idx].extract_text()
+                                if p_txt and p_txt.strip():
+                                    txt = p_txt
+                        except Exception:
+                            pass
+                    pages_data.append((idx + 1, txt))
+            finally:
+                if plumber_doc is not None:
                     try:
-                        with pdfplumber.open(pdf_path) as plumber_doc:
-                            p_txt = plumber_doc.pages[idx].extract_text()
-                            if p_txt and p_txt.strip():
-                                txt = p_txt
+                        plumber_doc.close()
                     except Exception:
                         pass
-                pages_data.append((idx + 1, txt))
         else:
             # Use pdfplumber with pypdf fallback
             try:
@@ -206,77 +219,33 @@ def chunk_document(doc_meta: Dict[str, Any], max_words: int = 380, overlap_words
                     current_section = f"Section {sec_match.group(1)}"
                 elif sec_match.group(2):
                     current_section = f"Section {sec_match.group(2)}"
+            elif doc_type not in ["statute"]:
+                current_section = "General"
 
-        # Hierarchical token splitting (target ~512 tokens ≈ 380 words, 64-token overlap ≈ 50 words)
-        words = page_text.split()
-        if len(words) <= max_words:
-            word_slices = [(0, len(words))]
-        else:
-            step = max_words - overlap_words
-            word_slices = []
-            for start in range(0, len(words), step):
-                end = min(start + max_words, len(words))
-                word_slices.append((start, end))
-                if end == len(words):
-                    break
+        # Use StatutoryAwareChunker to preserve atomic statutory clauses & subsections
+        statutory_chunker = StatutoryAwareChunker(target_max_words=max_words, overlap_words=overlap_words)
+        base_meta = {
+            "filename": filename,
+            "doc_type": doc_type,
+            "authority_level": authority_level,
+            "fy_valid_from": fy_valid_from,
+            "fy_valid_to": fy_valid_to,
+            "source_url": source_url,
+        }
+        page_chunks = statutory_chunker.chunk_section(
+            section_text=page_text,
+            section_id=current_section,
+            act_name=act_name,
+            chapter=current_chapter,
+            base_meta=base_meta,
+            page_num=page_num,
+        )
 
-        for start_idx, end_idx in word_slices:
-            chunk_words = words[start_idx:end_idx]
-            if not chunk_words or len(chunk_words) < 15:
-                # Skip trivial slices unless page only had few words
-                if len(words) >= 15:
-                    continue
-
-            chunk_text = " ".join(chunk_words)
-            chunk_citations = extract_citations(chunk_text)
-            chunk_cross_refs = extract_cross_references(chunk_text)
-
-            # Determine chunk-specific section_id if current_section is General
-            chunk_sec_id = current_section
-            if chunk_sec_id == "General":
-                # If chunk text explicitly discusses 80C, 10(13A), 24(b), 44AB
-                if "80C" in chunk_text:
-                    chunk_sec_id = "Section 80C"
-                elif "10(13A)" in chunk_text:
-                    chunk_sec_id = "Section 10(13A)"
-                elif "24(b)" in chunk_text:
-                    chunk_sec_id = "Section 24(b)"
-                elif "44AB" in chunk_text:
-                    chunk_sec_id = "Section 44AB"
-                elif chunk_citations:
-                    chunk_sec_id = chunk_citations[0]
-
-            # Also ensure targeted sections are explicitly cross-referenced or cited
-            if "80C" in chunk_text and "Section 80C" not in chunk_citations:
-                chunk_citations.append("Section 80C")
-            if "10(13A)" in chunk_text and "Section 10(13A)" not in chunk_citations:
-                chunk_citations.append("Section 10(13A)")
-            if "24(b)" in chunk_text and "Section 24(b)" not in chunk_citations:
-                chunk_citations.append("Section 24(b)")
-            if "44AB" in chunk_text and "Section 44AB" not in chunk_citations:
-                chunk_citations.append("Section 44AB")
-
+        for pc in page_chunks:
             clean_doc_stem = Path(filename).stem
-            chunk_id = f"{clean_doc_stem}_p{page_num}_c{chunk_counter}"
+            pc["chunk_id"] = f"{clean_doc_stem}_p{page_num}_c{chunk_counter}"
             chunk_counter += 1
-
-            chunk_obj = {
-                "chunk_id": chunk_id,
-                "doc_id": filename,
-                "act_name": act_name,
-                "text": chunk_text,
-                "section_id": chunk_sec_id,
-                "chapter": current_chapter,
-                "doc_type": doc_type,
-                "authority_level": authority_level,
-                "fy_valid_from": fy_valid_from,
-                "fy_valid_to": fy_valid_to,
-                "source_url": source_url,
-                "page_number": page_num,
-                "citations": chunk_citations,
-                "cross_references": chunk_cross_refs,
-            }
-            chunks.append(chunk_obj)
+            chunks.append(pc)
 
     logger.info(f"Processed {filename} ({len(pages)} pages) -> {len(chunks)} chunks")
     return chunks

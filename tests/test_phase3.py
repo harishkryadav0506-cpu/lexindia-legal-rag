@@ -113,3 +113,50 @@ def test_citations_and_cross_references_extracted():
             total_cross_refs += len(c.get("cross_references", []))
     assert total_citations > 500, f"Expected > 500 citations extracted, got {total_citations}"
     assert total_cross_refs > 100, f"Expected > 100 cross-references extracted, got {total_cross_refs}"
+
+
+def test_statutory_chunk_boundaries():
+    """Verify StatutoryAwareChunker does not sever numbered sub-sections or clauses."""
+    import re
+    from src.ingestion.chunking import StatutoryAwareChunker
+
+    sample_statutory_text = """
+    80C. Deduction in respect of life insurance premia, deferred annuity, contributions to provident fund, subscription to certain equity shares or debentures, etc.
+    (1) In computing the total income of an assessee, being an individual or a Hindu undivided family, there shall be deducted, in accordance with and subject to the provisions of this section, the whole of the amount paid or deposited in the previous year, being the aggregate of the sums referred to in sub-section (2), as does not exceed one hundred and fifty thousand rupees.
+    (2) The sums referred to in sub-section (1) shall be any sums paid or deposited in the previous year by the assessee—
+    (a) to effect or to keep in force an insurance on the life of persons specified in sub-section (4);
+    (b) to effect or to keep in force a contract for a deferred annuity, not being an annuity plan referred to in clause (j), on the life of persons specified in sub-section (4);
+    (c) by way of deduction from the salary payable by or on behalf of the Government to any individual;
+    (d) as a contribution by an individual to any provident fund to which the Provident Funds Act, 1925 applies.
+    Provided that in the case of a person with disability, additional deduction applies.
+    Explanation.—For the extent of this section, premium includes renewal amounts.
+    """
+
+    chunker = StatutoryAwareChunker(target_max_words=60, overlap_words=10)
+    base_meta = {
+        "filename": "Income_Tax_Act_1961.pdf",
+        "doc_type": "statute",
+        "authority_level": 1,
+        "source_url": "https://indiacode.nic.in"
+    }
+    chunks = chunker.chunk_section(
+        section_text=sample_statutory_text,
+        section_id="Section 80C",
+        act_name="Income-tax Act, 1961",
+        chapter="Chapter VIA",
+        base_meta=base_meta,
+        page_num=45
+    )
+
+    assert len(chunks) >= 2, "Long section should split into multiple chunks"
+
+    # Assert that no chunk splits across a sub-clause indicator
+    for chunk in chunks:
+        text = chunk["text"]
+        subclause_matches = re.findall(r'(\([0-9]+[A-Z]*\)|\([a-z]\)|\([ivx]+\))', text)
+        for sc in subclause_matches:
+            assert sc.startswith("(") and sc.endswith(")")
+        assert chunk["section_id"] == "Section 80C"
+        assert chunk["act_name"] == "Income-tax Act, 1961"
+        assert "Section 80C" in chunk["citations"]
+

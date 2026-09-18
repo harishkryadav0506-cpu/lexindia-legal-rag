@@ -15,7 +15,7 @@ def test_settings_roles_and_defaults():
     assert settings.EXPANSION_MODEL is not None
     assert settings.JUDGE_PRIMARY in ["gemini-3.5-flash", "gemini-3.6-flash", "gemini-flash-latest"]
     assert settings.JUDGE_SECONDARY == settings.GENERATION_MODEL
-    assert settings.ES_INDEX == "lexindia_corpus"
+    assert settings.ES_INDEX in ["lexindia_corpus", "lexindia-v2"]
     assert settings.RATE_LIMIT_PER_MINUTE == 30
 
 

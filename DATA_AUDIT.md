@@ -14,7 +14,7 @@
 | **Check 2: Domain Whitelist** | Government gazettes and portals only | **30 URLs checked** (0 violations) | **PASS** |
 | **Check 3: Benchmark Provenance** | 100 Real queries from public tax forums | **100 real queries** (85 answerable, 15 refusal) | **PASS** |
 | **Check 4: Anti-Hallucination Spot-Check** | 10 Random chunks verified vs original PDFs | **10 / 10 verbatim verified (100.0%)** | **PASS** |
-| **Check 5: HITL Review Store** | SQLite `reviews.db` and training pairs | **61 review records** (33 decided, 25 verified pairs) | **PASS** |
+| **Check 5: HITL Review Store** | SQLite `reviews.db` and training pairs | **77 review records** (41 decided, 31 verified pairs) | **PASS** |
 
 ---
 
@@ -103,16 +103,16 @@ A reproducible random sample of 10 chunks from `data/processed/chunks.jsonl` was
 
 | # | Chunk ID | Source Raw Document | Section / Header | Recorded Page | Matched Page | Match Status |
 | :-: | :--- | :--- | :--- | :-: | :-: | :---: |
-| 1 | `instructions_itr2_ay2020_21_p72_c140` | `instructions_itr2_ay2020_21.pdf` | Section 55(2)(ac) | p.72 | p.72 | **PASS** |
-| 2 | `income_tax_rules_1962_p31_c59` | `income_tax_rules_1962.pdf` | Section 18 | p.31 | p.31 | **PASS** |
+| 1 | `instructions_itr2_ay2020_21_p66_c132` | `instructions_itr2_ay2020_21.pdf` | General | p.66 | p.66 | **PASS** |
+| 2 | `income_tax_rules_1962_p31_c59` | `income_tax_rules_1962.pdf` | General | p.31 | p.31 | **PASS** |
 | 3 | `income_tax_act_1961_p64_c102` | `income_tax_act_1961.pdf` | Section 1 | p.64 | p.64 | **PASS** |
-| 4 | `itr4_validation_rules_ay2024_25_p18_c31` | `itr4_validation_rules_ay2024_25.pdf` | Section 10(14)(i) | p.18 | p.18 | **PASS** |
-| 5 | `income_tax_rules_1962_p468_c729` | `income_tax_rules_1962.pdf` | Section 288 | p.468 | p.468 | **PASS** |
-| 6 | `income_tax_rules_1962_p373_c606` | `income_tax_rules_1962.pdf` | Section 39b | p.373 | p.373 | **PASS** |
-| 7 | `income_tax_rules_1962_p313_c517` | `income_tax_rules_1962.pdf` | Section 139 | p.313 | p.313 | **PASS** |
-| 8 | `income_tax_rules_1962_p102_c174` | `income_tax_rules_1962.pdf` | Section 45 | p.102 | p.102 | **PASS** |
-| 9 | `itr4_validation_rules_ay2024_25_p8_c10` | `itr4_validation_rules_ay2024_25.pdf` | Section 17(1) | p.8 | p.8 | **PASS** |
-| 10 | `income_tax_rules_1962_p14_c22` | `income_tax_rules_1962.pdf` | Section 8 | p.14 | p.14 | **PASS** |
+| 4 | `itr4_validation_rules_ay2024_25_p10_c15` | `itr4_validation_rules_ay2024_25.pdf` | Section 44AD | p.10 | p.10 | **PASS** |
+| 5 | `income_tax_rules_1962_p469_c729` | `income_tax_rules_1962.pdf` | Rule 5 | p.469 | p.469 | **PASS** |
+| 6 | `income_tax_rules_1962_p375_c606` | `income_tax_rules_1962.pdf` | Section 197 | p.375 | p.375 | **PASS** |
+| 7 | `income_tax_rules_1962_p317_c517` | `income_tax_rules_1962.pdf` | Section 115BAC | p.317 | p.317 | **PASS** |
+| 8 | `income_tax_rules_1962_p102_c174` | `income_tax_rules_1962.pdf` | Section 2 | p.102 | p.102 | **PASS** |
+| 9 | `itr3_validation_rules_ay2024_25_p74_c121` | `itr3_validation_rules_ay2024_25.pdf` | Section 33AB | p.74 | p.74 | **PASS** |
+| 10 | `income_tax_rules_1962_p14_c22` | `income_tax_rules_1962.pdf` | Section 10 | p.14 | p.14 | **PASS** |
 
 - **Spot-Check Verification Rate**: **100.0%** (10 / 10 chunks verified verbatim from official government PDFs)
 - **Anti-Hallucination Status**: **STRICT PASS (Corpus Provenance Verified)**
@@ -123,10 +123,10 @@ A reproducible random sample of 10 chunks from `data/processed/chunks.jsonl` was
 
 Audited operational records in `data/reviews.db` and training pairs in `data/eval/human_verified_pairs.json`:
 - **SQLite Database Path**: `data/reviews.db`
-- **Total Reviews Tracked**: 61
-- **Decided Reviews**: 33
-- **Pending Reviews**: 28
-- **Human-Verified Supervised Pairs**: 25 entries
+- **Total Reviews Tracked**: 77
+- **Decided Reviews**: 41
+- **Pending Reviews**: 36
+- **Human-Verified Supervised Pairs**: 31 entries
 - **HITL Audit Status**: **PASS**
 
 ---

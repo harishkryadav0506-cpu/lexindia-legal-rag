@@ -55,7 +55,7 @@ class Settings(BaseSettings):
 
     # Search & Vector Indexing
     ES_URL: str = Field(default="http://localhost:9200", description="Elasticsearch cluster URL")
-    ES_INDEX: str = Field(default="lexindia_corpus", description="Elasticsearch corpus index name")
+    ES_INDEX: str = Field(default="lexindia-v2", description="Elasticsearch corpus index name")
     EMBEDDING_MODEL_NAME: str = Field(default="BAAI/bge-base-en-v1.5", description="Local dense vector model")
     RERANKER_MODEL_NAME: str = Field(default="BAAI/bge-reranker-base", description="Local cross-encoder reranker")
 

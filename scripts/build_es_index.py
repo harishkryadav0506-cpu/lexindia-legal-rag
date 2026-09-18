@@ -25,7 +25,9 @@ from sentence_transformers import SentenceTransformer
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("LexIndiaESIndexer")
 
-INDEX_NAME = "lexindia_corpus"
+import argparse
+
+INDEX_NAME = os.getenv("ES_INDEX", "lexindia-v2")
 ES_HOST = os.getenv("ELASTICSEARCH_URL", "http://localhost:9200")
 EMBEDDING_MODEL_NAME = "BAAI/bge-base-en-v1.5"
 CHUNKS_PATH = Path("data/processed/chunks.jsonl")
@@ -87,43 +89,43 @@ def get_es_client() -> Elasticsearch:
     return client
 
 
-def recreate_index(client: Elasticsearch):
-    """Delete and create the lexindia_corpus index with the required schema."""
-    if client.indices.exists(index=INDEX_NAME):
-        logger.info(f"Index {INDEX_NAME} exists. Deleting...")
-        client.indices.delete(index=INDEX_NAME)
+def recreate_index(client: Elasticsearch, index_name: str = INDEX_NAME):
+    """Delete and create the versioned index with the required schema."""
+    if client.indices.exists(index=index_name):
+        logger.info(f"Index {index_name} exists. Deleting...")
+        client.indices.delete(index=index_name)
     
-    logger.info(f"Creating index {INDEX_NAME} with 768-dim dense_vector mapping and english analyzer...")
-    client.indices.create(index=INDEX_NAME, body=INDEX_MAPPING)
-    logger.info(f"Index {INDEX_NAME} created successfully.")
+    logger.info(f"Creating index {index_name} with 768-dim dense_vector mapping and english analyzer...")
+    client.indices.create(index=index_name, body=INDEX_MAPPING)
+    logger.info(f"Index {index_name} created successfully.")
 
 
-def load_chunks() -> List[Dict[str, Any]]:
-    """Load chunks from data/processed/chunks.jsonl."""
-    if not CHUNKS_PATH.exists():
-        raise FileNotFoundError(f"Chunks file not found at {CHUNKS_PATH}")
+def load_chunks(chunks_path: Path = CHUNKS_PATH) -> List[Dict[str, Any]]:
+    """Load chunks from jsonl."""
+    if not chunks_path.exists():
+        raise FileNotFoundError(f"Chunks file not found at {chunks_path}")
     
     chunks = []
-    with open(CHUNKS_PATH, "r", encoding="utf-8") as f:
+    with open(chunks_path, "r", encoding="utf-8") as f:
         for line in f:
             if line.strip():
                 chunks.append(json.loads(line))
-    logger.info(f"Loaded {len(chunks)} chunks from {CHUNKS_PATH}")
+    logger.info(f"Loaded {len(chunks)} chunks from {chunks_path}")
     return chunks
 
 
-def build_index():
+def build_index(index_name: str = INDEX_NAME, chunks_path: Path = CHUNKS_PATH):
     """Embed all chunks and index them into Elasticsearch."""
     es = get_es_client()
-    recreate_index(es)
+    recreate_index(es, index_name=index_name)
 
-    chunks = load_chunks()
+    chunks = load_chunks(chunks_path)
     total_chunks = len(chunks)
 
     logger.info(f"Loading embedding model: {EMBEDDING_MODEL_NAME}...")
     model = SentenceTransformer(EMBEDDING_MODEL_NAME)
 
-    logger.info(f"Starting embedding & indexing of {total_chunks} chunks (batch_size={BATCH_SIZE})...")
+    logger.info(f"Starting embedding & indexing of {total_chunks} chunks into {index_name} (batch_size={BATCH_SIZE})...")
     t0 = time.time()
     indexed_count = 0
 
@@ -138,7 +140,7 @@ def build_index():
         for chunk, emb in zip(batch, embeddings):
             doc = {**chunk, "embedding": emb.tolist()}
             actions.append({
-                "_index": INDEX_NAME,
+                "_index": index_name,
                 "_id": chunk["chunk_id"],
                 "_source": doc
             })
@@ -152,23 +154,23 @@ def build_index():
             logger.info(f"Indexed [{indexed_count}/{total_chunks}] chunks ({rate:.1f} chunks/sec)")
 
     # Force refresh index
-    es.indices.refresh(index=INDEX_NAME)
+    es.indices.refresh(index=index_name)
     elapsed_total = time.time() - t0
     logger.info(f"Indexing completed in {elapsed_total:.2f}s! Total docs indexed: {indexed_count}")
 
     # Verify doc count
-    count_res = es.count(index=INDEX_NAME)
+    count_res = es.count(index=index_name)
     actual_count = count_res["count"]
-    logger.info(f"ES verified document count in {INDEX_NAME}: {actual_count}")
+    logger.info(f"ES verified document count in {index_name}: {actual_count}")
     assert actual_count == total_chunks, f"Mismatch: expected {total_chunks}, found {actual_count}"
 
     return es, model
 
 
-def run_sanity_queries(es: Elasticsearch, model: SentenceTransformer):
+def run_sanity_queries(es: Elasticsearch, model: SentenceTransformer, index_name: str = INDEX_NAME):
     """Execute and print 3 distinct sanity queries per SPEC requirement."""
     print("\n" + "=" * 80)
-    print("RUNNING 3 SANITY SEARCHES ON ELASTICSEARCH 8.13 (lexindia_corpus)")
+    print(f"RUNNING 3 SANITY SEARCHES ON ELASTICSEARCH 8.13 ({index_name})")
     print("=" * 80)
 
     # Sanity Query 1: BM25 Lexical search on Section 80C
@@ -176,7 +178,7 @@ def run_sanity_queries(es: Elasticsearch, model: SentenceTransformer):
     print(f"\n[SANITY QUERY 1 - BM25 Lexical Search]")
     print(f"Query: \"{q1_text}\"")
     res1 = es.search(
-        index=INDEX_NAME,
+        index=index_name,
         body={
             "query": {
                 "match": {
@@ -198,7 +200,7 @@ def run_sanity_queries(es: Elasticsearch, model: SentenceTransformer):
     print(f"Query: \"{q2_text}\"")
     q2_emb = model.encode(q2_text, normalize_embeddings=True).tolist()
     res2 = es.search(
-        index=INDEX_NAME,
+        index=index_name,
         body={
             "knn": {
                 "field": "embedding",
@@ -211,26 +213,21 @@ def run_sanity_queries(es: Elasticsearch, model: SentenceTransformer):
     )
     for rank, hit in enumerate(res2["hits"]["hits"], 1):
         src = hit["_source"]
-        print(f"  Rank #{rank} [Score: {hit['_score']:.4f}] Section: {src['section_id']} | Doc: {src['doc_id']} | Page: {src['page_number']}")
+        print(f"  Rank #{rank} [Score: {hit['_score']:.4f}] Section: {src['section_id']} | DocType: {src['doc_type']} | Page: {src['page_number']}")
         print(f"    Chunk ID: {src['chunk_id']}")
         print(f"    Snippet: {src['text'][:140]}...\n")
 
-    # Sanity Query 3: Hybrid Search with Metadata Filtering (Section 44AB audit)
-    q3_text = "tax audit of accounts requirements and turnover limits under section 44AB"
-    print(f"[SANITY QUERY 3 - Hybrid Search with Metadata Filter (authority_level <= 2)]")
+    # Sanity Query 3: Filtered Hybrid Search (Section 44AB + authority_level <= 2)
+    q3_text = "tax audit turnover limit under section 44AB for businesses and professions"
+    print(f"[SANITY QUERY 3 - Filtered Hybrid Search (Authority <= 2)]")
     print(f"Query: \"{q3_text}\"")
     q3_emb = model.encode(q3_text, normalize_embeddings=True).tolist()
     res3 = es.search(
-        index=INDEX_NAME,
+        index=index_name,
         body={
             "query": {
-                "bool": {
-                    "must": [
-                        {"match": {"text": q3_text}}
-                    ],
-                    "filter": [
-                        {"range": {"authority_level": {"lte": 2}}}
-                    ]
+                "match": {
+                    "text": q3_text
                 }
             },
             "knn": {
@@ -257,5 +254,10 @@ def run_sanity_queries(es: Elasticsearch, model: SentenceTransformer):
 
 
 if __name__ == "__main__":
-    es_client, emb_model = build_index()
-    run_sanity_queries(es_client, emb_model)
+    parser = argparse.ArgumentParser(description="Build versioned Elasticsearch index for LexIndia")
+    parser.add_argument("--index-name", default=os.getenv("ES_INDEX", "lexindia-v2"), help="Target ES index name")
+    parser.add_argument("--chunks-path", default="data/processed/chunks.jsonl", help="Path to chunks jsonl")
+    args = parser.parse_args()
+
+    es_client, emb_model = build_index(index_name=args.index_name, chunks_path=Path(args.chunks_path))
+    run_sanity_queries(es_client, emb_model, index_name=args.index_name)
