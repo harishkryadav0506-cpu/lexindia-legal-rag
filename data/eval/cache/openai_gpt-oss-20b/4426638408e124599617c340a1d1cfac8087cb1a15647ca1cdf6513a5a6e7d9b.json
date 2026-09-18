@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "4426638408e124599617c340a1d1cfac8087cb1a15647ca1cdf6513a5a6e7d9b",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about claiming both HRA exemption and home loan interest deduction, and it provides no relevant statutory references or explanations beyond a generic quote of Section 10(13A).\"}",
+  "timestamp": 1789709415.1007447,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

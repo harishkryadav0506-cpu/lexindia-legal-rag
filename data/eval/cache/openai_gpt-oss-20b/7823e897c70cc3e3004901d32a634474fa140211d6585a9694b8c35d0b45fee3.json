@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "7823e897c70cc3e3004901d32a634474fa140211d6585a9694b8c35d0b45fee3",
+  "response": "{\"score\": 2, \"reason\": \"The answer introduces specific deduction amounts (₹75,000 for a dependent with disability) and a regime restriction (old tax regime only) that are not present in the provided statutory excerpts, which only mention a ₹1,25,000 limit for severe disability and contain no mention of regime or the 75,000 figure.\"}",
+  "timestamp": 1789755243.9509926,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

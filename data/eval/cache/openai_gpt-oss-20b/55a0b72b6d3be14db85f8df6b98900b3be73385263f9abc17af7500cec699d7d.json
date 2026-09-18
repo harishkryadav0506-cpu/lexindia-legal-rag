@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "55a0b72b6d3be14db85f8df6b98900b3be73385263f9abc17af7500cec699d7d",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context lacks the full text of Section 80P and therefore cannot determine eligibility, which is fully supported by the supplied excerpts.\"}",
+  "timestamp": 1789755514.2554967,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "382f10f87b182a4291ce6803990bc57afdbd09dee1dfa24112b2b0447d3cbd32",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to state the correct deduction amount (Rs. 75,000) for a dependent with disability under 80DD and",
+  "timestamp": 1789709466.3396676,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "7c37cc9978a9d69ed42c27b5fb6b788f0a82155c119405e8c9962af4b48f743f",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly refuses to provide guidance because the provided statutory excerpts contain no information on US 401(k) rollovers into Indian NPS.\"}",
+  "timestamp": 1789756979.465013,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b1370d0737fe07d6152d2a3cb2707c17d2cce1daa56914a6bb4a4565bfdcedbb",
+  "response": "{\"score\": 5, \"reason\": \"The answer appropriately refuses to provide a deduction amount because the provided context does not contain the specific Section 80EE provision for first‑time home buyers, aligning with the evaluation criteria for a fully faithful refusal.\"}",
+  "timestamp": 1789755496.1077108,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

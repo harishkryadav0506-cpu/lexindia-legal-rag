@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "f341940368e40bd9fbab360b97f2033f6f3a61163d0026d62fa616f5cf765fe9",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the penalty under Section 271B and instead references unrelated Section 44AB, providing no factual support from the provided context.\"}",
+  "timestamp": 1789756892.8716364,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

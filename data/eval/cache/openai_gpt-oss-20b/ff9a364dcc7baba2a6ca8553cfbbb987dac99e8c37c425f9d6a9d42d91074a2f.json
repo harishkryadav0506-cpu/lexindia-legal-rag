@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "ff9a364dcc7baba2a6ca8553cfbbb987dac99e8c37c425f9d6a9d42d91074a2f",
+  "response": "{\"score\": 1, \"reason\": \"The answer provides no factual information from the context, fails to state any time limit or conditions for issuing a notice under Section 148, and appears to be fabricated.\"}",
+  "timestamp": 1789756825.1945746,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

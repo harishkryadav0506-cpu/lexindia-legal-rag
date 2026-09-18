@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "d0c512e121f430df775b6536ab1037baf06a0e9d372819411d90688f77d822df",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory guidance is present in the provided context, which is consistent with the absence of any road tax slab information.\"}",
+  "timestamp": 1789757030.1124718,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "15aa15cb2477786a75692100d02fe8c87bfaed5c084fe575cdbc6c734c19b018",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 203 or the requirement to furnish TDS certificates; it references unrelated sections (153C, 54) and contains no support for the requested statutory requirement.\"}",
+  "timestamp": 1789756230.1934917,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

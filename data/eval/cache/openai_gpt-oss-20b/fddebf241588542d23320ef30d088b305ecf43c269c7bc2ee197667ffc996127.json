@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "fddebf241588542d23320ef30d088b305ecf43c269c7bc2ee197667ffc996127",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to state the actual interest deduction limit for self",
+  "timestamp": 1789709463.3665318,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

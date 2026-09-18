@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "bdba8dffee908ceae0fa14a220a72d2b9946f280f21d67a52859c39afa2f85b2",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The answer correctly identifies that the provided context does not contain the specific TDS rate and threshold limit for Section 194C, and accurately reflects what is present in the context without hallucinating the missing information.\"}\n```",
+  "timestamp": 1789757162.5311656,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

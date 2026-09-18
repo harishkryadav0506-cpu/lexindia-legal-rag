@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "8d3bdb80a133ab311c7f6dab169089a0a9d46a1482860e724bc74bbf57a1041e",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The model correctly recognizes that the provided context lacks sufficient information to answer whether both HRA and home loan interest can be claimed simultaneously, and properly declines to hallucinate an answer.\"}\n```",
+  "timestamp": 1789715242.648818,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

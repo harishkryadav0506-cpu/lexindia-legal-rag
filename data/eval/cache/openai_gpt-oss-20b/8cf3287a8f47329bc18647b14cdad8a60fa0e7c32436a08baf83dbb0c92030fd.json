@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "8cf3287a8f47329bc18647b14cdad8a60fa0e7c32436a08baf83dbb0c92030fd",
+  "response": "{\"score\": 1, \"reason\": \"The answer merely repeats fragments of the statutory text without addressing the question, omits key provisions, and introduces unrelated references, thus it is a hallucination of the required rules.\"}",
+  "timestamp": 1789756412.9122794,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "58d426395f9531ba289b5d759ca74f9a2bacae2113b135126d64df469fe5bda4",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not list any deductions from the full value of consideration as required by Section 48 and contains irrelevant or fabricated references, making it completely unfaithful to the provided statutory context.\"}",
+  "timestamp": 1789756431.8661811,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

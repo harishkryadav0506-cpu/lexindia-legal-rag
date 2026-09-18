@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e33059d00027e7ea41282c926910f9c9f64e120b36499151a910316d7afa9a47",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context does not contain specific guidance on claiming a deduction for state professional tax paid in Texas, which aligns with the absence of such provisions in the retrieved statutory excerpts.\"}",
+  "timestamp": 1789756928.1752026,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

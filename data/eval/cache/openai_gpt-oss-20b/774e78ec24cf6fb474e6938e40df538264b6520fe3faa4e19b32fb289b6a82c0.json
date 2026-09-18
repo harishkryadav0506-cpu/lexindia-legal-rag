@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "774e78ec24cf6fb474e6938e40df538264b6520fe3faa4e19b32fb289b6a82c0",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question of who can submit the forms and merely restates the form requirement, lacking any reference to the eligible persons.\"}",
+  "timestamp": 1789756183.4037807,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

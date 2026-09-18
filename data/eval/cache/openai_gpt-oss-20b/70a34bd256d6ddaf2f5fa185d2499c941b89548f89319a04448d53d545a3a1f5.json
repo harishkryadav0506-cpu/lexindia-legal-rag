@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "70a34bd256d6ddaf2f5fa185d2499c941b89548f89319a04448d53d545a3a1f5",
+  "response": "{\"score\": 1, \"reason\": \"The answer fabricates details about Section 54, misrepresents its content, and fails to address the question about exemption of capital gains from sale of a residential house property.\"}",
+  "timestamp": 1789756393.8935995,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

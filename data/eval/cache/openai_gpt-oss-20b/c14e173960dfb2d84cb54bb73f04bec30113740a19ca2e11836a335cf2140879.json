@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "c14e173960dfb2d84cb54bb73f04bec30113740a19ca2e11836a335cf2140879",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the grandfathering mechanism for equity shares under Section 55(2)(ac) and instead cites unrelated provisions (Section 112A, Section 47). It contains fabricated references and fails to reflect the provided statutory context.\"}",
+  "timestamp": 1789756542.7648604,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

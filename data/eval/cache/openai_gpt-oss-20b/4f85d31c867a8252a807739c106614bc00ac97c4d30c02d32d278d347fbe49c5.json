@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "4f85d31c867a8252a807739c106614bc00ac97c4d30c02d32d278d347fbe49c5",
+  "response": "{\"score\": 1, \"reason\": \"The answer introduces Section 16(ia) and standard deduction details that are not present in the provided statutory context, making the response largely fabricated.\"}",
+  "timestamp": 1789755593.743885,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

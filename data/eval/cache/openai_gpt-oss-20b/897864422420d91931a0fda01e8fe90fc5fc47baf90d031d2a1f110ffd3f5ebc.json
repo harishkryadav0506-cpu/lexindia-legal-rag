@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "897864422420d91931a0fda01e8fe90fc5fc47baf90d031d2a1f110ffd3f5ebc",
+  "response": "{\"score\": 5, \"reason\": \"The answer accurately reflects the provided context, correctly cites the HRA provisions present, acknowledges the absence of Section 24(b) and other home loan interest rules, and refrains from inventing any new legal provisions.\"}",
+  "timestamp": 1789716464.7790809,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

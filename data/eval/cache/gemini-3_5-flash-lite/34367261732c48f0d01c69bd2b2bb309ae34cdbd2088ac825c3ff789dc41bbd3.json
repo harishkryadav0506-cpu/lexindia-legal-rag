@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "34367261732c48f0d01c69bd2b2bb309ae34cdbd2088ac825c3ff789dc41bbd3",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer discusses standard deductions, Section 16, and tax regimes with numbers completely absent from the provided context chunks, which only mention rules on 80U, 80GGC, 80DD, 10(14)(i), 10(13A), 80D, and 80CCD(1B).\"}\n```",
+  "timestamp": 1789757158.8571544,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

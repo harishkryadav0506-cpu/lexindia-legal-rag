@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "cd950e574bbe50945991688aad2f826424efb0556ce1bb94ea9f3962d1099f97",
+  "response": "{\"score\": 1, \"reason\": \"The answer discusses Section 115JC and unrelated details, failing to address the conditions for AMT credit under Section 115JD as requested.\"}",
+  "timestamp": 1789755801.7342174,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "e39294a7533c149a9a168c7d9bd4c43898b0ab7fed2fdfcff37209e2428e8a0c",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The answer accurately reflects the only information present in the context regarding Section 194M (the reduction of TDS from 5% to 2%), and since the context lacks any mention of a threshold limit for Section 194M, it properly sticks to the provided text.\"}\n```",
+  "timestamp": 1789757166.1059291,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

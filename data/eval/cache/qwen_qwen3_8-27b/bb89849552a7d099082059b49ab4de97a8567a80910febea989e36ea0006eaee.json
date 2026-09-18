@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "bb89849552a7d099082059b49ab4de97a8567a80910febea989e36ea0006eaee",
+  "response": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the analysis regarding Section 80C:\n\n**Section 80C Overview**\nSection 80C of the Income-tax Act, 1961 provides for a deduction from income [C1]. Specifically, this section allows for a deduction of up to Rs 1,50,000 [C1]. This deduction is applicable for investments in Provident Fund (PF) and life insurance [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789715806.473494,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

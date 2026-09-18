@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_hash": "7d9b5345f9d1c8365a7ee13ebd51baee5d87b6dd27cff5b1a4a3251cb7d860ec",
+  "response": "**Answer**\n\nYes. Under the **old tax regime** an individual can claim a deduction under **Section 80D** for the amount spent on **preventive health‑check‑up of parents** (as well as for self and family). The deduction is subject to a **maximum of ₹5,000** for the preventive‑check‑up component, and it must be entered in the “Preventive Health Check‑up” field of Schedule 80D.\n\n**Legal basis**\n\n| Point | Authority |\n|-------|------------|\n| Deduction for preventive health‑check‑up of self, family **and/or parents** is permitted, but the amount **cannot exceed ₹5,000**. | [C1] |\n| The deduction is **available only when the “Old Tax Regime” is selected**. | [C1] |\n| The I‑TR validation rules require that, for the old regime, the **combined amount of preventive health‑check‑up** entered in all relevant fields be checked (i.e., the ₹5,000 ceiling applies to the total of those fields). | [C2] |\n| Schedule 80D contains a specific field labelled **“Preventive Health Checkup”** where the amount paid during the year must be entered. | [C8] |\n\n**Practical implication for a salaried individual (FY 2024‑25)**  \n\n1. **Select the Old Tax Regime** on the I‑TR.  \n2. In **Schedule 80D**, fill the “Preventive Health Check‑up” field with the amount actually paid for the parents’ check‑up.  \n3. Ensure that the amount does not exceed **₹5,000** in total (including any preventive check‑up claimed for self or other family members).  \n\nIf the taxpayer opts for the **new tax regime**, the preventive‑health‑check‑up deduction is **not available**.  \n\n---\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789708741.280349,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-120b"
+  }
+}

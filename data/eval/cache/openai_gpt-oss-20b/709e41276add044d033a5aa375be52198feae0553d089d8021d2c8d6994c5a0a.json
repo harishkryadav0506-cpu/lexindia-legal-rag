@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "709e41276add044d033a5aa375be52198feae0553d089d8021d2c8d6994c5a0a",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about Section 80C limits for life insurance premium and PPF, instead discusses NPS contributions, which is not supported by the provided context.\"}",
+  "timestamp": 1789755126.1616411,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "908dd2e70ea614d860d7ffa287b7919b4b4bdcc00040cae476f302a6ee204c45",
+  "response": "{\"score\": 5, \"reason\": \"The answer accurately reflects the provided statutory excerpts, cites only the information present (HRA limits, regime restriction, 80EEA), and correctly states that no guidance on home‑loan interest is available in the context.\"}",
+  "timestamp": 1789755473.7759414,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "782ccae486d284c4b2495ec12ef3c47bde6923a41621240ea9de127fac759069",
+  "response": "Based on the provided authoritative legal context for Financial Year 2024-25, the analysis regarding the Section 80C limit is as follows:\n\n*   **Maximum Deduction Limit**: The maximum deduction allowable under Section 80C of the Income-tax Act, 1961, is **Rs. 1,50,000** [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789714043.089451,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "d19e72be1f9f88d1b00b3f49bb2561d4aa44d071a66e0f64e9cc591de4b4323d",
+  "response": "{\"score\":1,\"reason\":\"Answer does not address the question and contains no relevant statutory references from the provided context.\"}",
+  "timestamp": 1789756603.8282187,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

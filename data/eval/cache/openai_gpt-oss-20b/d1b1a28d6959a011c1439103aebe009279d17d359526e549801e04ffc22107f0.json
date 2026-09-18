@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "d1b1a28d6959a011c1439103aebe009279d17d359526e549801e04ffc22107f0",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory guidance is found in the provided context, which indeed contains no duty rates for second‑hand laptops.\"}",
+  "timestamp": 1789757048.1361887,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

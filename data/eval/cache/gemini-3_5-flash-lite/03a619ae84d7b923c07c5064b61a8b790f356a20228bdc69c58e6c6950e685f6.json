@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "03a619ae84d7b923c07c5064b61a8b790f356a20228bdc69c58e6c6950e685f6",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The generated answer correctly evaluates the lack of complete explicit turnover limits directly answering the question in the provided context and avoids hallucinating rules not present in the text chunks.\"}\n```",
+  "timestamp": 1789757170.871093,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

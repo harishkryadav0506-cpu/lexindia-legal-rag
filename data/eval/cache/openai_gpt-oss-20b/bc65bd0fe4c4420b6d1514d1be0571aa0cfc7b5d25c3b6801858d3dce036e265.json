@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "bc65bd0fe4c4420b6d1514d1be0571aa0cfc7b5d25c3b6801858d3dce036e265",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory guidance is found in the provided context, which is consistent with the absence of wealth‑tax provisions in the excerpts.\"}",
+  "timestamp": 1789757152.1291206,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

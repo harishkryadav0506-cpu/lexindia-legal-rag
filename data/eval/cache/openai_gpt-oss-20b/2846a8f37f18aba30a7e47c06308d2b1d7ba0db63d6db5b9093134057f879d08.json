@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "2846a8f37f18aba30a7e47c06308d2b1d7ba0db63d6db5b9093134057f879d08",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the TCS rate under Section 206C and instead discusses unrelated TDS provisions, thus it is entirely fabricated and unfaithful to the provided context.\"}",
+  "timestamp": 1789756137.9935467,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "010fb48fe9796f44606eeacabea7f54d00a010ff077287ff66e3a87020999b89",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory information is available in the provided context, which is consistent with the absence of any mention of Hyderabad GHMC water sewage tax.\"}",
+  "timestamp": 1789757098.7168045,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

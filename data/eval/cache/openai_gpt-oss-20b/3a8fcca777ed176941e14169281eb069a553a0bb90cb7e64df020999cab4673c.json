@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "3a8fcca777ed176941e14169281eb069a553a0bb90cb7e64df020999cab4673c",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory guidance is found in the provided context, which is consistent with the absence of any provisions about pet adoption or veterinary expenses.\"}",
+  "timestamp": 1789757081.7283144,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

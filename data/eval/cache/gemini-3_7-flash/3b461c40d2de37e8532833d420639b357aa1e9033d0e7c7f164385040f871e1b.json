@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.7-flash",
+  "prompt_hash": "3b461c40d2de37e8532833d420639b357aa1e9033d0e7c7f164385040f871e1b",
+  "response": "```json\n{\"score\": ",
+  "timestamp": 1789708946.598397,
+  "metadata": {
+    "serving_model": "gemini-3.7-flash"
+  }
+}

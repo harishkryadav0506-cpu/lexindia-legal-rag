@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b0797a51a95ab9e1b8f6e6543e5421989be47aeaa3a2f2835fbeb67bb8847ca5",
+  "response": "{\"score\":5,\"reason\":\"The answer accurately reflects the amount and scope of the deduction as stated in the provided context, with no added or omitted provisions.\"}",
+  "timestamp": 1789715686.2607415,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

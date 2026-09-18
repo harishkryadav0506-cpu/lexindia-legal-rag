@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "40360258eb22d2509f1ab28c85f4582f578a5721370d5aa860953450180cebcc",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not provide the required turnover limit or deemed profit rate, and it includes irrelevant or fabricated references, making it entirely unfaithful to the provided context.\"}",
+  "timestamp": 1789756671.6992505,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

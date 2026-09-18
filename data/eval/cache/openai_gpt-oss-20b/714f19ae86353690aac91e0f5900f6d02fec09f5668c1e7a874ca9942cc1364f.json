@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "714f19ae86353690aac91e0f5900f6d02fec09f5668c1e7a874ca9942cc1364f",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not provide the requested concessional tax rate and contains unrelated, fabricated excerpts, making it entirely unfaithful to the provided statutory context.\"}",
+  "timestamp": 1789755865.5783014,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

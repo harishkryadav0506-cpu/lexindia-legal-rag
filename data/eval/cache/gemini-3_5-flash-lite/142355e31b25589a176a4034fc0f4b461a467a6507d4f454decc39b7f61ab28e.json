@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "142355e31b25589a176a4034fc0f4b461a467a6507d4f454decc39b7f61ab28e",
+  "response": "```json\n{\"score\": 2, \"reason\": \"The answer provides information about Section 80CCH and copies text fragments rather than extracting the specific TDS rate on salary under Section 192, which is actually stated in the context under Section 192 as the 'average rate of income-tax and average rate of super-tax'.\"}\n```",
+  "timestamp": 1789757164.2553086,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

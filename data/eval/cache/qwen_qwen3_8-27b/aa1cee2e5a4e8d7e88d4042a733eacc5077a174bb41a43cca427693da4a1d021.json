@@ -1,0 +1,7 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "aa1cee2e5a4e8d7e88d4042a733eacc5077a174bb41a43cca427693da4a1d021",
+  "response": "[\"Comparison of tax liability under the old regime (Section 115BAC(1A) with exemptions under Sections 80C, 80D, 24(b), 10(13A)) versus the new regime (Section 115BAC(1A) with revised slabs and 0% basic exemption limit) for an individual with total income of INR 15,00,000 for Assessment Year 2026-27 (Financial Year 2025-26) under the Income-tax Act, 1961.\", \"Which income tax regime is cheaper for a salary of 15 lakhs in 2025-26: the old system with deductions like HRA and 80C, or the new system with lower tax rates but no deductions?\", \"FY 2025-26 tax calculation 15 lakh income old regime vs new regime slab rates 115BAC exemption limits comparison\"]",
+  "timestamp": 1789744394.3335853,
+  "metadata": {}
+}

@@ -1,0 +1,7 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "74b8c2cba3710d741ed5a54aedd3813f84a47f381451ae5c02754eeba7b577cd",
+  "response": "[\"Income-tax Act, 1961, Section 194M: TDS rate and threshold limit for payments to residents for purchase of goods or services exceeding specified limit\", \"What is the maximum amount I can pay to a person for goods or services before I have to deduct TDS, and what percentage should I deduct under Section 194M?\", \"Section 194M TDS threshold limit 300000 rate 5% personal commission contractual payments purchase of goods services\"]",
+  "timestamp": 1789744896.5875404,
+  "metadata": {}
+}

@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "40c2f430d9b3e11f771e5db2796cea2632fb19b7e7def6d807d1dcf4276dc4ae",
+  "response": "Based on the provided authoritative legal context, there is insufficient specific guidance to provide the detailed calculation formula or step-by-step method for marginal relief under Section 115BAC for the Financial Year 2024-25.\n\nWhile the context confirms that marginal relief is applicable to assesses with total income exceeding Rs. 7,00,000 [C2], and references the existence of Section 115BAC and its amendments [C5], it does not contain the specific statutory text of Section 115BAC(1A) or the explanatory provisions detailing how the \"tax payable\" and \"amount by which total income exceeds Rs. 7,00,000\" are compared to determine the relief amount. The provided chunks focus on surcharge rates [C1], [C6], general tax slabs for other entities or future years [C8], and unrelated procedural sections [C10], [C11], [C12].\n\nI cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789722124.0707004,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

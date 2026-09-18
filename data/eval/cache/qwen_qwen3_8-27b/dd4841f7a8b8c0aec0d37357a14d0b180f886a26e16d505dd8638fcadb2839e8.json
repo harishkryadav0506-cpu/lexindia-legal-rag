@@ -1,0 +1,7 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "dd4841f7a8b8c0aec0d37357a14d0b180f886a26e16d505dd8638fcadb2839e8",
+  "response": "[\"Income-tax Act 1961 Section 80CCD(2) employer contribution to National Pension System deduction limit 14% of salary\", \"Can I claim tax deduction for my company's NPS contribution separately from my 80C limit?\", \"Section 80CCD(2) vs Section 80C employer NPS contribution additional deduction limit\"]",
+  "timestamp": 1789744109.6273582,
+  "metadata": {}
+}

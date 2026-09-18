@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "811698bfefb67a11dcf28be012b9ea8db763f9e4c83e6bbad952746fa9a44ff9",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 50 or capital gain computation on depreciable assets; it incorrectly cites Section 11 and provides no relevant statutory references, thus it is completely hallucinated.\"}",
+  "timestamp": 1789756559.7308288,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

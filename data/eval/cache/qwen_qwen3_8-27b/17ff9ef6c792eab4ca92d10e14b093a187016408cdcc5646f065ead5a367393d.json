@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "17ff9ef6c792eab4ca92d10e14b093a187016408cdcc5646f065ead5a367393d",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly identifies that the provided context lacks the specific statutory provisions (Section 24) required to answer the question about claiming both HRA and home loan interest, and accurately summarizes the available HRA rules from the context before refusing to provide unsupported legal advice.\"}",
+  "timestamp": 1789715243.9427233,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

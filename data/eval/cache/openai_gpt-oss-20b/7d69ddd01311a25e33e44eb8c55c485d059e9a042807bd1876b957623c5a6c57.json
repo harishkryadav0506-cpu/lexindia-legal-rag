@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "7d69ddd01311a25e33e44eb8c55c485d059e9a042807bd1876b957623c5a6c57",
+  "response": "{\"score\": 1, \"reason\": \"The answer incorrectly references Section 115JB, misidentifies the relevant section, and claims insufficient information despite the context providing key details about Section 115JC (rate, Form 29C, surcharge rule).\"}",
+  "timestamp": 1789755883.0774496,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

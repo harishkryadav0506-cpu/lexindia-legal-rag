@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "4ce944cdfe129a518732421208a3e0ac3fc9abe269143047b4439c7e396a0506",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context contains no information about UK VAT registration, which aligns with the absence of relevant statutory material.\"}",
+  "timestamp": 1789757115.3798103,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

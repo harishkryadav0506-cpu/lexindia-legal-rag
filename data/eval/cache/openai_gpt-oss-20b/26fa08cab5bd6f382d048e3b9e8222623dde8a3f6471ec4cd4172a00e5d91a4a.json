@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "26fa08cab5bd6f382d048e3b9e8222623dde8a3f6471ec4cd4172a00e5d91a4a",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context does not contain explicit stamp duty information for Pune, Maharashtra, and therefore cannot provide a specific amount.\"}",
+  "timestamp": 1789756962.6952863,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

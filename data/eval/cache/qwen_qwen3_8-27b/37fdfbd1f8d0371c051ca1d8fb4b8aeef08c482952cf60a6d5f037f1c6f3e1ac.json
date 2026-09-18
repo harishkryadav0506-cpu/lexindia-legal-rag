@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "37fdfbd1f8d0371c051ca1d8fb4b8aeef08c482952cf60a6d5f037f1c6f3e1ac",
+  "response": "Based on the provided authoritative legal context, there is **no specific mention** of the monetary limit (e.g., ₹2,00,000) for the interest deduction on self-occupied house property under Section 24(b) for Financial Year 2024-25.\n\nThe provided chunks contain the following relevant but insufficient information:\n*   **[C2]** and **[C6]** reference \"interest on borrowed capital\" and \"total of interest paid u/s 24(b)\" in the context of ITR validation rules, requiring that the value in Schedule House Property matches the value in Schedule 24(b). However, they do not state the statutory limit for self-occupied properties.\n*   **[C3]** and **[C6]** mention validation errors if \"more than two house is claimed to be self-occupied\" or if \"interest on borrowed capital has been claimed as deduction for more than two self occupied property,\" but they do not define the deduction limit itself.\n*   **[C1]** discusses non-deductible charges payable from income outside India, which is not directly applicable to the standard domestic self-occupied house property limit.\n\nSince the specific statutory limit for Section 24(b) interest deduction on self-occupied house property is not present in the provided text, I cannot provide a legally grounded answer with citations.\n\nI cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789714933.2676516,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

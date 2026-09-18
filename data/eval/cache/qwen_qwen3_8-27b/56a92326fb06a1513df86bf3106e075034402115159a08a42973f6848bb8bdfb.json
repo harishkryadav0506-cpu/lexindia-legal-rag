@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "56a92326fb06a1513df86bf3106e075034402115159a08a42973f6848bb8bdfb",
+  "response": "Based on the provided authoritative legal context, I cannot provide a complete legal analysis regarding the simultaneous claim of House Rent Allowance (HRA) exemption and home loan interest deduction, as the specific statutory provisions governing home loan interest (Section 24(b)) and the explicit conditions for claiming both are not present in the provided chunks.\n\nThe provided context contains the following relevant information:\n*   **HRA Exemption (Section 10(13A)):** The context details the calculation limits for HRA exemption, stating it is the lowest of actual HRA received, actual rent paid minus 10% of salary, or 40%/50% of salary depending on the city type [C2] [C3]. It also notes that this deduction is available only if the old tax regime is opted [C1].\n*   **Home Loan Interest (Section 80EEA):** The context mentions Section 80EEA, which provides a deduction for interest on a loan taken for certain house properties, subject to a maximum limit of ₹50,000 [C5]. However, it does not contain the primary provision for home loan interest deduction (Section 24(b)) nor does it specify the interaction or mutual exclusivity rules between HRA and home loan interest deductions.\n\nSince the provided chunks do not contain the specific legal guidance on whether these two benefits can be claimed simultaneously or the conditions under which they might be restricted, I must adhere to the refusal protocol.\n\nI cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789716123.3594007,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

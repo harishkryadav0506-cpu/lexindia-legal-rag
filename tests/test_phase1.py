@@ -13,9 +13,9 @@ def test_settings_roles_and_defaults():
     assert settings.LLM_PROVIDER in ["groq", "together", "hf"]
     assert settings.GENERATION_MODEL is not None
     assert settings.EXPANSION_MODEL is not None
-    assert settings.JUDGE_PRIMARY in ["gemini-3.5-flash", "gemini-3.6-flash", "gemini-flash-latest"]
+    assert settings.JUDGE_PRIMARY in ["openai/gpt-oss-20b", "gemini-3.5-flash", "gemini-3.6-flash", "gemini-flash-latest"]
     assert settings.JUDGE_SECONDARY == settings.GENERATION_MODEL
-    assert settings.ES_INDEX in ["lexindia_corpus", "lexindia-v2"]
+    assert settings.ES_INDEX in ["lexindia_corpus", "lexindia-v2", "lexindia_production"]
     assert settings.RATE_LIMIT_PER_MINUTE == 30
 
 

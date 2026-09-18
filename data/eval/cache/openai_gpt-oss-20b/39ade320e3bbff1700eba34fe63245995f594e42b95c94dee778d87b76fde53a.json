@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "39ade320e3bbff1700eba34fe63245995f594e42b95c94dee778d87b76fde53a",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly refuses to provide a rate because none of the provided statutory excerpts mention the BBMP municipal property tax rate for residential apartments.\"}",
+  "timestamp": 1789756911.2514937,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

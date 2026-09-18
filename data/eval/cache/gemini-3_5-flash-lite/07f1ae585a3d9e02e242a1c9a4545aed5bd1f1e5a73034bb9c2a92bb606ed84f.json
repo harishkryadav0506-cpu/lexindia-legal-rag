@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "07f1ae585a3d9e02e242a1c9a4545aed5bd1f1e5a73034bb9c2a92bb606ed84f",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context does not contain sufficient information to answer the question about the 75 lakhs threshold under Section 44ADA, and faithfully reflects only the limited text retrieved without hallucinating the rule.\"}",
+  "timestamp": 1789757173.0954287,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

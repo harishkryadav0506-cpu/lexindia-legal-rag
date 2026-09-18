@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "2789874767e843a09104ef11a9cc5df5c172f0df3b4e4da85d21ce4d23a67126",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about set‑off and carry‑forward periods for long‑term and short‑term capital losses under Sections 70 and 71, and it contains no relevant statutory references from the provided context.\"}",
+  "timestamp": 1789756637.4951332,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

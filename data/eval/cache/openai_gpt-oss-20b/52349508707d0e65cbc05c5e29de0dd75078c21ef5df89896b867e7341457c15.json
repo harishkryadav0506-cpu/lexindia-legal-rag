@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "52349508707d0e65cbc05c5e29de0dd75078c21ef5df89896b867e7341457c15",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 55 or define cost of improvement/acquisition; it instead discusses unrelated sections, thus it is completely hallucinated.\"}",
+  "timestamp": 1789756524.0805287,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

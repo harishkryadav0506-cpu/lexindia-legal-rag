@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "75b22222d17b2564f607614e57b6e1056e90d0043a205a7d22cf0a8d5b1e7b41",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The model states that it cannot find sufficient authoritative guidance to answer the specific question based on the provided text, and instead cites the exact context chunks available regarding Section 10(13A).\"}\n```",
+  "timestamp": 1789709522.0548933,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

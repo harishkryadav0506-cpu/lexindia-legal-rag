@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b634589c94699233d19a6a99eed7ee6e6e56e1ea813b5708a73e94e343821257",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states the Health and Education Cess rate as 4%, directly supported by the provided statutory excerpts, and does not introduce any unsupported claims.\"}",
+  "timestamp": 1789755717.7427802,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

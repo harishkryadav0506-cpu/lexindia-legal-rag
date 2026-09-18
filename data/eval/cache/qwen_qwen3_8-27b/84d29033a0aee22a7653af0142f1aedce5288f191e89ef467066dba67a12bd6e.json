@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "84d29033a0aee22a7653af0142f1aedce5288f191e89ef467066dba67a12bd6e",
+  "response": "Based on the provided authoritative legal context for Financial Year 2023-24, the conditions for claiming the additional interest deduction on affordable housing under Section 80EEA are as follows:\n\n**1. Maximum Deduction Limit**\nThe amount eligible for deduction under Section 80EEA is subject to a maximum limit of **₹1,50,000** paid during the year [C1]. This limit is further reinforced by validation rules stating that the deduction under Section 80EEA cannot exceed ₹1,50,000 [C3].\n\n**2. Property Value Restriction**\nThe deduction under Section 80EEA can be claimed only on residential house property having a **stamp duty value up to ₹45 Lakhs** [C5].\n\n**3. Mutual Exclusivity with Section 80EE**\nAn assessee cannot claim both Section 80EE and Section 80EEA simultaneously. Only one of these deductions is allowed [C3]. Specifically, if a deduction under Section 80EE is claimed, the deduction under Section 80EEA shall not be allowed [C1]. Validation rules confirm that if the deduction claimed under Section 80EEA is greater than zero, the deduction claimed under Section 80EE cannot be greater than zero [C3].\n\n**4. Tax Regime Restriction**\nThe deduction under Section 80EEA is available only if the **\"Old Tax Regime\"** is selected [C7]. If the New Tax Regime is selected, the deduction under Section 80EEA should not be more than zero [C4].\n\n**5. Documentation Requirements**\nTo claim the deduction, the taxpayer must provide **\"Details of Bank from which loan is taken\"** [C5].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789715063.4144545,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b54b98880918e7281dfc29151d07c107fb5ad74ca6c292c2c24f0aa742c7b1e4",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the requested tax calculation and introduces deductions and caps (e.g., Rs. 75,000 standard deduction) that are not present in the provided statutory excerpts, indicating hallucination.\"}",
+  "timestamp": 1789755930.7178054,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

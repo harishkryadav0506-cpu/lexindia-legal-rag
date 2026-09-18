@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "1edfb9a492e8cc3effa6339c06c00ed5dc74d99544effdaf3f97fad0fc6ca7c4",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer completely hallucinates a detailed legal analysis about NPS and Section 80CCD(2), which is entirely absent from the provided context chunks that only mention Section 80C and Rule 5.\"}\n```",
+  "timestamp": 1789757155.629931,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

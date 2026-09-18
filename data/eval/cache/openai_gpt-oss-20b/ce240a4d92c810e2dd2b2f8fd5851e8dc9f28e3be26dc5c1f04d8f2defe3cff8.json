@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "ce240a4d92c810e2dd2b2f8fd5851e8dc9f28e3be26dc5c1f04d8f2defe3cff8",
+  "response": "{\"score\": 1, \"reason\": \"The answer discusses health and education cess, not Section 89 or Form 10E, and does not address the question about arrears of salary relief.\"}",
+  "timestamp": 1789755978.3578181,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "a59b38a577bcc8fa29a8b38076e3dd5d89f3ca9b80005518e8c970371615b59d",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly cites the proposed 5% to 2% TDS rate and the effective date, but it omits the threshold limit required for Section",
+  "timestamp": 1789756042.3523123,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

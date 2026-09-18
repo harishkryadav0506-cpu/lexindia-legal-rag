@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "0b43d1eb592f32209e3393d930f64877ac484eb25d54be155515ae1948af0e27",
+  "response": "Based on the provided authoritative legal context for the Financial Year 2024-25, the standard deduction for salaried individuals under the New Tax Regime (Section 115BAC) is **Rs. 75,000**.\n\n**Legal Analysis:**\n\n*   **Standard Deduction Limit:** The validation rules for the Income Tax Return explicitly state that in the case of the New Tax Regime, a taxpayer who is an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C4].\n*   **Regime Specificity:** This limit is distinct from the Old Tax Regime, where different deduction rules apply (such as specific limits on family pension deductions under Section 57(iia)) [C1]. The Rs. 75,000 limit is specifically tied to the election of the New Tax Regime under Section 115BAC [C4].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789722186.031464,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

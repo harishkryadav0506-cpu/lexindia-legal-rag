@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "3248d2111834d4c9f09310f27c9d771bc8c4e52757cd5a96c1fcde24c574ddfb",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The generated legal answer accurately states the deduction limit under Section 80C as Rs 1,50,000, which is directly supported by the provided statutory context.\"}\n```",
+  "timestamp": 1789753893.9422634,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

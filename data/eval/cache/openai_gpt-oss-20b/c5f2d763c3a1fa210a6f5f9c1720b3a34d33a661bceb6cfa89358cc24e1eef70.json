@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "c5f2d763c3a1fa210a6f5f9c1720b3a34d33a661bceb6cfa89358cc24e1eef70",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not mention the concessional corporate tax rate under Section 115BAA and instead cites unrelated sections, thus it is completely hallucinated.\"}",
+  "timestamp": 1789755760.6603367,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

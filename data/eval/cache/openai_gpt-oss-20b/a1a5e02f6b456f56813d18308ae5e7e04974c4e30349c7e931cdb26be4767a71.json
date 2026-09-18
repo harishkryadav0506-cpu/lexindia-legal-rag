@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "a1a5e02f6b456f56813d18308ae5e7e04974c4e30349c7e931cdb26be4767a71",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question and contains no reference to Section 115AD or the tax rate for non‑resident foreign institutional investors, thus it is completely unfaithful.\"}",
+  "timestamp": 1789755956.836485,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

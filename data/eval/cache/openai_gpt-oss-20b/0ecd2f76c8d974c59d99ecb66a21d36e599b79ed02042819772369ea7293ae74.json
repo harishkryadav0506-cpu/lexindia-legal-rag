@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "0ecd2f76c8d974c59d99ecb66a21d36e599b79ed02042819772369ea7293ae74",
+  "response": "{\"score\": 5, \"reason\": \"All statements in the answer are directly supported by the provided statutory excerpts, with no added or misrepresented provisions.\"}",
+  "timestamp": 1789716569.4354105,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "8c439633475c915fe6761a43f0f138e73c299b9819fb65847ea46604d85711e7",
+  "response": "{\"score\":1,\"reason\":\"The answer fails to address the 75‑lakh threshold question and contains no direct support from the provided statutory excerpts; it appears fabricated.\"}",
+  "timestamp": 1789756688.6217673,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

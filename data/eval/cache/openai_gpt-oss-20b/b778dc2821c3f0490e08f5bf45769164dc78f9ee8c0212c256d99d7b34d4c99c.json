@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b778dc2821c3f0490e08f5bf45769164dc78f9ee8c0212c256d99d7b34d4c99c",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the requested tax exemption for Scheduled Tribes under Section 10(26) and instead discusses unrelated provisions of Section 10 and 80C, thus it is completely unfaithful to the question and the provided context.\"}",
+  "timestamp": 1789755571.2221866,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

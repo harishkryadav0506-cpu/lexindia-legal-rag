@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "49aaf7f374d625d42ec372b89cf0e1960357a723ce074c24f3396ff6d3d072a9",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the due date question and instead cites unrelated sections, showing hallucination and lack of alignment with the provided context.\"}",
+  "timestamp": 1789756705.4331234,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

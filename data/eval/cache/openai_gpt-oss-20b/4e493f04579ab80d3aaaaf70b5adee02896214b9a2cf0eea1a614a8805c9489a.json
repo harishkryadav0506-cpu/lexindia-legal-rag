@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "4e493f04579ab80d3aaaaf70b5adee02896214b9a2cf0eea1a614a8805c9489a",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not mention the 7500 per month rate for goods carriage under Section 44AE and incorrectly cites Section 44AB, thus it is completely hallucinated relative to the provided context.\"}",
+  "timestamp": 1789756773.9584045,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

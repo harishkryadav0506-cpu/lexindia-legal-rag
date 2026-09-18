@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "5c6e40c91165020389c2e20426528e7209785df38d67800fadb95c933df8ea94",
+  "response": "{\"score\": 1, \"reason\": \"The answer invents a 30% tax rate and cites sections not present in the provided context; the context actually states that Section 115BB",
+  "timestamp": 1789755737.4106026,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "945be0c520f73aa34538fc7af2334aaf3081a9136990219a5799465f27ed8ae8",
+  "response": "Based on the provided authoritative legal context for Financial Year 2024-25, the deduction allowed under Section 80DD for the medical treatment of a dependent with disability is determined by the severity of the disability and the taxpayer's Gross Total Income (GTI).\n\n**Deduction Limits under Section 80DD**\n\nThe deduction is available only if the **Old Tax Regime** is selected [C3]. The specific limits are as follows:\n\n*   **Dependent with Disability:** The maximum amount that can be claimed is **₹75,000** [C2]. This amount is subject to the limit of the Gross Total Income (GTI) [C6].\n*   **Dependent with Severe Disability:** The maximum amount that can be claimed is **₹1,25,000** [C2]. This amount is also subject to the limit of the Gross Total Income (GTI) [C6].\n\n**Key Conditions and Validations**\n\n*   **Regime Restriction:** Deduction under Section 80DD is available only if the \"Old Tax Regime\" is selected in the Income Tax Return (ITR) [C3].\n*   **Gross Total Income Cap:** For both categories, the deduction cannot exceed the Gross Total Income of the assessee [C1], [C6].\n*   **Validation Rules:**\n    *   For a \"Dependent with disability,\" the claimed amount should be equal to ₹75,000 (subject to GTI) [C2], [C3].\n    *   For a \"Dependent with severe disability,\" the claimed amount should be equal to ₹1,25,000 (subject to GTI) [C2], [C6].\n    *   If the amount entered is less than or more than these specified limits (subject to GTI), it may trigger validation errors in the e-filing system [C6], [C7].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789721099.3443384,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

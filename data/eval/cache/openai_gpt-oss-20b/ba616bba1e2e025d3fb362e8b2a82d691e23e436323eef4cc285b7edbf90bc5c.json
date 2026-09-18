@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "ba616bba1e2e025d3fb362e8b2a82d691e23e436323eef4cc285b7edbf90bc5c",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to address the question, omits any reference to Section 144, and only cites unrelated sections, thus it is not supported by the provided context.\"}",
+  "timestamp": 1789756808.2220438,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

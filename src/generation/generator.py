@@ -22,46 +22,63 @@ from src.generation.prompts import (
     build_generation_prompt,
 )
 
+from src.utils.llm_cache import llm_cache
+from src.utils.groq_rate_limiter import groq_pacer
+
 logger = logging.getLogger("LexIndiaGenerator")
 
 
 class AnswerGenerator:
     def __init__(self):
         self.model = settings.GENERATION_MODEL
-        self.fallback_model = settings.JUDGE_PRIMARY  # gemini-2.5-flash
+        self.fallback_model = settings.JUDGE_CROSS_FAMILY
         self.groq_api_key = settings.GROQ_API_KEY
         self.groq_base_url = settings.GROQ_BASE_URL
         self.gemini_api_key = settings.GEMINI_API_KEY
 
-    _groq_exhausted: bool = False
-
     def _call_groq(self, user_prompt: str, mock_429: bool = False) -> str:
-        """Execute generation via Groq OpenAI-compatible client."""
-        if mock_429 or AnswerGenerator._groq_exhausted:
-            raise RuntimeError("HTTP 429: Rate limit reached on Groq (daily quota / rapid limit)")
+        """Execute generation via Groq OpenAI-compatible client with dynamic rate pacing and retry."""
+        if mock_429:
+            raise RuntimeError("HTTP 429: Simulated Rate limit reached on Groq")
 
-        from openai import OpenAI
+        from openai import OpenAI, RateLimitError
         client = OpenAI(
             api_key=self.groq_api_key,
             base_url=self.groq_base_url,
-            timeout=20.0,
+            timeout=30.0,
             max_retries=0
         )
-        try:
-            response = client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": user_prompt}
-                ],
-                temperature=0.1,
-                max_tokens=1024
-            )
-            return response.choices[0].message.content.strip()
-        except Exception as e:
-            if "429" in str(e) or "rate_limit" in str(e).lower():
-                AnswerGenerator._groq_exhausted = True
-            raise e
+
+        max_retries = 3
+        for attempt in range(max_retries + 1):
+            # Dynamic token pacing before request (full prompt + retrieved chunks ~2.5k tokens, safe ceiling 4,800 TPM)
+            groq_pacer.wait_before_request(model=self.model, estimated_tokens=2500, safe_tpm_ceiling=4800)
+            try:
+                raw_res = client.chat.completions.with_raw_response.create(
+                    model=self.model,
+                    messages=[
+                        {"role": "system", "content": SYSTEM_PROMPT},
+                        {"role": "user", "content": user_prompt}
+                    ],
+                    temperature=0.1,
+                    max_tokens=600
+                )
+                parsed = raw_res.parse()
+                usage_tokens = getattr(parsed, "usage", None) and getattr(parsed.usage, "total_tokens", None)
+                groq_pacer.record_response(raw_res.headers, model=self.model, usage_tokens=usage_tokens)
+                content = parsed.choices[0].message.content.strip()
+                return content
+            except RateLimitError as rle:
+                if attempt < max_retries:
+                    retry_after = getattr(rle, "response", None) and rle.response.headers.get("retry-after")
+                    groq_pacer.handle_rate_limit(retry_after, model=self.model, error_message=str(rle))
+                    continue
+                raise rle
+            except Exception as e:
+                if ("429" in str(e) or "rate_limit" in str(e).lower()) and attempt < max_retries:
+                    groq_pacer.handle_rate_limit(model=self.model, error_message=str(e))
+                    continue
+                raise e
 
     def _call_gemini_fallback(self, user_prompt: str, reason: str) -> Tuple[str, Dict[str, Any]]:
         """Fallback to gemini-3.6-flash on Groq 429/5xx with structured telemetry."""
@@ -154,56 +171,75 @@ class AnswerGenerator:
         fallback_model = None
         fallback_event = None
         raw_answer = ""
+        cached = False
+        serving_model = self.model
 
-        # Try Groq primary model
-        if (self.groq_api_key and self.groq_api_key != "your_groq_api_key_here") or mock_429:
-            try:
-                raw_answer = self._call_groq(user_prompt, mock_429=mock_429)
-            except Exception as e:
-                err_str = str(e)
-                logger.warning(f"Primary model generation failed ({e}), attempting fallback...")
-                fallback_used = True
-                # Trigger fallback to Gemini
-                if self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
-                    try:
-                        raw_answer, fallback_event = self._call_gemini_fallback(user_prompt, err_str)
-                        fallback_model = fallback_event["model_to"]
-                    except Exception as gemini_err:
-                        logger.error(f"Gemini fallback failed: {gemini_err}")
+        # 1. Check persistent LLM cache
+        cached_entry = llm_cache.get(self.model, user_prompt)
+        if cached_entry and cached_entry.get("response") and not mock_429:
+            raw_answer = cached_entry["response"]
+            cached = True
+            serving_model = cached_entry.get("model", self.model)
+            logger.debug(f"LLM Cache HIT for model {self.model}")
+        else:
+            # 2. Try Groq primary model with dynamic rate pacing
+            if (self.groq_api_key and self.groq_api_key != "your_groq_api_key_here") or mock_429:
+                try:
+                    raw_answer = self._call_groq(user_prompt, mock_429=mock_429)
+                    serving_model = self.model
+                    llm_cache.set(self.model, user_prompt, raw_answer, metadata={"serving_model": self.model})
+                except Exception as e:
+                    err_str = str(e)
+                    logger.warning(f"Primary model generation failed ({e}), attempting fallback...")
+                    fallback_used = True
+                    # Trigger fallback to Gemini
+                    if self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
+                        try:
+                            raw_answer, fallback_event = self._call_gemini_fallback(user_prompt, err_str)
+                            fallback_model = fallback_event["model_to"]
+                            serving_model = fallback_model
+                        except Exception as gemini_err:
+                            logger.error(f"Gemini fallback failed: {gemini_err}")
+                            raw_answer = self._offline_synthesize(question, chunks, financial_year)
+                            fallback_model = "offline_fallback"
+                            serving_model = "offline_fallback"
+                            fallback_event = {
+                                "event": "provider_fallback",
+                                "component": "generator",
+                                "model_from": self.model,
+                                "model_to": "offline_fallback",
+                                "reason": f"{err_str} | Gemini: {gemini_err}",
+                                "latency_ms": 0
+                            }
+                    else:
                         raw_answer = self._offline_synthesize(question, chunks, financial_year)
                         fallback_model = "offline_fallback"
+                        serving_model = "offline_fallback"
                         fallback_event = {
                             "event": "provider_fallback",
                             "component": "generator",
                             "model_from": self.model,
                             "model_to": "offline_fallback",
-                            "reason": f"{err_str} | Gemini: {gemini_err}",
+                            "reason": err_str,
                             "latency_ms": 0
                         }
-                else:
+
+            elif self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
+                try:
+                    raw_answer, fallback_event = self._call_gemini_fallback(user_prompt, "Groq unconfigured")
+                    fallback_used = True
+                    fallback_model = self.fallback_model
+                    serving_model = fallback_model
+                except Exception as e:
+                    logger.error(f"Gemini generation failed: {e}")
                     raw_answer = self._offline_synthesize(question, chunks, financial_year)
                     fallback_model = "offline_fallback"
-                    fallback_event = {
-                        "event": "provider_fallback",
-                        "component": "generator",
-                        "model_from": self.model,
-                        "model_to": "offline_fallback",
-                        "reason": err_str,
-                        "latency_ms": 0
-                    }
+                    serving_model = "offline_fallback"
 
-
-        elif self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
-            try:
-                raw_answer, fallback_event = self._call_gemini_fallback(user_prompt, "Groq unconfigured")
-                fallback_used = True
-                fallback_model = self.fallback_model
-            except Exception as e:
-                logger.error(f"Gemini generation failed: {e}")
+            else:
                 raw_answer = self._offline_synthesize(question, chunks, financial_year)
-
-        else:
-            raw_answer = self._offline_synthesize(question, chunks, financial_year)
+                fallback_model = "offline_fallback"
+                serving_model = "offline_fallback"
 
         # Check refusal
         refused = EXACT_REFUSAL_PHRASE in raw_answer
@@ -230,5 +266,7 @@ class AnswerGenerator:
             "fallback_used": fallback_used,
             "fallback_model": fallback_model,
             "fallback_event": fallback_event,
+            "serving_model": serving_model,
+            "cached": cached,
             "citations": citations_meta
         }

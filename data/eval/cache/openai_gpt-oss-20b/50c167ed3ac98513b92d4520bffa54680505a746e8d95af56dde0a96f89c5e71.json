@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "50c167ed3ac98513b92d4520bffa54680505a746e8d95af56dde0a96f89c5e71",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context contains no information about Tamil Nadu entertainment tax, which aligns with the absence of such details in the retrieved statutory excerpts.\"}",
+  "timestamp": 1789757064.908412,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

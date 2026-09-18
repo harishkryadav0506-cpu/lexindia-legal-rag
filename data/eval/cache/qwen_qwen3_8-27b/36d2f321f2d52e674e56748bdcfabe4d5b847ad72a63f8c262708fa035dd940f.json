@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "36d2f321f2d52e674e56748bdcfabe4d5b847ad72a63f8c262708fa035dd940f",
+  "response": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the deduction limit under Section 80C:\n\n*   **Maximum Aggregate Limit:** The maximum aggregate amount of deductions allowed under Section 80C is **Rs. 1,50,000** [C1].\n*   **Applicability to Specific Investments:** While the specific breakdown for life insurance premiums and Public Provident Fund (PPF) is not detailed in the provided text, both are generally eligible investments under this section. However, strictly adhering to the provided context, the total combined deduction for all eligible investments under Section 80C cannot exceed the statutory cap of Rs. 1,50,000 [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789743368.5395436,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

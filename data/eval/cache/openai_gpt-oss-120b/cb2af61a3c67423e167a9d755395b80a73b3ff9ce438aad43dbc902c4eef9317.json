@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_hash": "cb2af61a3c67423e167a9d755395b80a73b3ff9ce438aad43dbc902c4eef9317",
+  "response": "I cannot find sufficient authoritative guidance for this query.  \n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789713282.5839245,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-120b"
+  }
+}

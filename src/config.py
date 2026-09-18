@@ -36,17 +36,28 @@ class Settings(BaseSettings):
 
     # Model Roles (Role-based configuration as mandated by SPEC)
     GENERATION_MODEL: str = Field(
-        default="openai/gpt-oss-120b",
-        description="Primary Generation LLM role (e.g. openai/gpt-oss-120b or llama-3.3-70b-versatile)"
+        default="qwen/qwen3.8-27b",
+        description="Primary Generation LLM role (e.g. qwen/qwen3.8-27b)"
     )
     EXPANSION_MODEL: str = Field(
         default="qwen/qwen3.8-27b",
         description="Query Expansion LLM role"
     )
 
-    # Fallback & Evaluation Models
+    # Fallback & Evaluation Models (Self-preference guardrail enforced)
     GEMINI_API_KEY: Optional[str] = Field(default=None, description="Google Gemini API Key")
-    JUDGE_PRIMARY: str = Field(default="gemini-3.5-flash", description="Primary cross-model evaluation judge (verified live)")
+    JUDGE_PRIMARY: str = Field(
+        default="openai/gpt-oss-20b",
+        description="Primary LLM judge on Groq with full coverage (independent from generation model)"
+    )
+    JUDGE_CROSS_FAMILY: str = Field(
+        default="gemini-3.5-flash-lite",
+        description="Cross-family spot-check judge on Google GenAI (stratified slice)"
+    )
+    JUDGE_DIAGNOSTIC: str = Field(
+        default="qwen/qwen3.8-27b",
+        description="Diagnostic self-preference judge (excluded from headline metrics)"
+    )
 
     @property
     def JUDGE_SECONDARY(self) -> str:
@@ -55,7 +66,7 @@ class Settings(BaseSettings):
 
     # Search & Vector Indexing
     ES_URL: str = Field(default="http://localhost:9200", description="Elasticsearch cluster URL")
-    ES_INDEX: str = Field(default="lexindia-v2", description="Elasticsearch corpus index name")
+    ES_INDEX: str = Field(default="lexindia_production", description="Elasticsearch production alias / index name")
     EMBEDDING_MODEL_NAME: str = Field(default="BAAI/bge-base-en-v1.5", description="Local dense vector model")
     RERANKER_MODEL_NAME: str = Field(default="BAAI/bge-reranker-base", description="Local cross-encoder reranker")
 

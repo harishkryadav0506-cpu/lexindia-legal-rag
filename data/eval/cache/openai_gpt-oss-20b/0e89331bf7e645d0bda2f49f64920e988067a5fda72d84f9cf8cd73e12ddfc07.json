@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "0e89331bf7e645d0bda2f49f64920e988067a5fda72d84f9cf8cd73e12ddfc07",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly cites the Rs.1,50,000 aggregate cap and life‑insurance premium deduction, but it adds PPF as an eligible item without explicit support in the provided context.\"}",
+  "timestamp": 1789715107.0934484,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

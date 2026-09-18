@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "af8fea34ec4499307c467130e3e4d649e94f63084a7e1a7224d5dc776482dcb6",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states the aggregate 80C limit of Rs.1,50,000 and identifies life insurance premium and PPF as part of that limit, matching the provided statutory excerpts without adding unsupported provisions.\"}",
+  "timestamp": 1789716484.1144779,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

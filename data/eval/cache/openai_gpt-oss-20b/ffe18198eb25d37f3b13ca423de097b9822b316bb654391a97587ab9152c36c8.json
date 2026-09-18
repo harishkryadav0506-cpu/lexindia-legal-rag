@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "ffe18198eb25d37f3b13ca423de097b9822b316bb654391a97587ab9152c36c8",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about Section 16(ia) standard deduction and instead references unrelated Section 194P, showing a clear hallucination and lack of alignment with the provided context.\"}",
+  "timestamp": 1789709467.2753394,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

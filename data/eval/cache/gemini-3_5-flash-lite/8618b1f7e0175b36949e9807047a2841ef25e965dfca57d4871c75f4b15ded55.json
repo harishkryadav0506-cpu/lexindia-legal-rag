@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "8618b1f7e0175b36949e9807047a2841ef25e965dfca57d4871c75f4b15ded55",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer completely hallucinates provisions about capital gains from a residential house property under Section 54, which are not present in the provided context chunks (the chunks discuss debt securities, market-linked debentures, section 54ED, etc.).\"}\n```",
+  "timestamp": 1789757169.5795224,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

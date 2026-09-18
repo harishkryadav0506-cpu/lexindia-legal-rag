@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "3cc8b0828cb62623be966193b0e0cc078eb6a5a57b78b9317cbd888129165500",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context does not contain the specific interest deduction limit under Section 24(b) and therefore cannot provide it, which is fully supported by the absence of that detail in the retrieved chunks.\"}",
+  "timestamp": 1789755204.092788,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

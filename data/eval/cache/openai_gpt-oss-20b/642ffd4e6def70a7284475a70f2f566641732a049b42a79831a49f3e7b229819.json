@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "642ffd4e6def70a7284475a70f2f566641732a049b42a79831a49f3e7b229819",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not state the correct maximum deduction limit for life insurance premium and PPF (Rs. 1,50,000) and instead repeats unrelated text, effectively hallucinating the response.\"}",
+  "timestamp": 1789709416.7279255,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

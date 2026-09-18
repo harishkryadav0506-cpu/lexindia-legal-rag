@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "9c14aad1768c70225b28158192a515f858a81fbfa4e9e82048808e6207e32cc9",
+  "response": "Based on the provided authoritative legal context, here is the analysis regarding the maximum limit for deductions under Section 80C for FY 2024-25:\n\n**Maximum Limit for Section 80C Deductions**\n\nThe aggregate amount of deductions admissible under Section 80C, Section 80CCC, and Section 80CCD(1) is restricted to a maximum limit of **Rs. 1,50,000** [C1]. This cap applies to the combined total of all eligible investments and payments, including life insurance premiums and contributions to the Public Provident Fund (PPF) [C1].\n\n**Eligible Investments under Section 80C**\n\nThe following specific investments are eligible for deduction under Section 80C, subject to the overall cap mentioned above:\n*   **Life Insurance Premiums:** The amount paid or deposited towards life insurance premiums is eligible for deduction [C2].\n*   **Provident Fund Contributions:** Contributions to any Provident Fund set up by the Government, employees' contribution to a recognized Provident Fund, or an approved superannuation fund are eligible [C4].\n\n**Validation Rules**\n\nFor taxpayers selecting the **Old Tax Regime**, the sum of deductions claimed under Section 80C, Section 80CCC, and Section 80CCD(1) cannot exceed Rs. 1,50,000 [C3].\n\n*Note: The provided context does not contain specific slab rates or details regarding the New Tax Regime (Section 115BAC) for FY 2024-25, but the statutory limit for Section 80C remains Rs. 1,50,000 as per the cited provisions.*\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789714823.0100722,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

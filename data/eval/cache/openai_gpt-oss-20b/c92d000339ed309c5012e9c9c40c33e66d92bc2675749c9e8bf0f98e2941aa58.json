@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "c92d000339ed309c5012e9c9c40c33e66d92bc2675749c9e8bf0f98e2941aa58",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to state the actual tax rates (10% before 23 July 2024, 12.5% thereafter) or the specific Section 115QA provisions, and instead gives a generic, unsupported statement.\"}",
+  "timestamp": 1789755819.8783026,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

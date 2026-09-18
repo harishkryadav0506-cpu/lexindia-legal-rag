@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "bf9ac5d897c52f771ace7fa7b63c60b478bf3208c6ca1097556015476e138017",
+  "response": "{\"score\": 1, \"reason\": \"The answer contains fabricated references and does not address the question; it fails to reflect any of the actual statutory provisions provided.\"}",
+  "timestamp": 1789756586.1573539,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

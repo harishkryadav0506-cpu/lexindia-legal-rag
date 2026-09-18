@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "8a55ac36e04cfa0edcaf7dfa6fe5f23f926f3f701c5feda7a6a703b7f0faccf5",
+  "response": "Based on the provided authoritative legal context, there is insufficient information to determine whether co-operative societies are entitled to deductions under Section 80P on banking business profits.\n\nThe provided context contains the following relevant but incomplete references:\n*   **Section 80P Definitions:** The context mentions that \"co-operative bank,\" \"primary agricultural credit society,\" and \"primary co-operative agricultural and rural development bank\" have specific meanings assigned to them in the Explanation to sub-section (4) of section 80P [C1]. However, it does not provide the text of Section 80P itself, nor does it specify the conditions, eligibility criteria, or the nature of profits (e.g., banking business) that qualify for the deduction.\n*   **Exemptions for Co-operative Societies:** The context lists certain incomes derived by co-operative societies that are exempt from tax, such as interest and dividends from investments with other co-operative societies, and income from letting godowns or warehouses [C4]. It does not mention Section 80P in relation to these exemptions or banking profits.\n*   **Other Provisions:** The other chunks relate to surcharge rates [C2], definitions of directors/managers [C3], payment modes [C5], manufacturing incentives [C6], retirement benefits [C7, C9, C11], housing finance institutions [C8], and fund conditions [C12], none of which address the specific deduction under Section 80P for banking business profits of co-operative societies.\n\nTherefore, I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789721750.3943396,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "f91443fcdb42a607e6ef837fc25ea33d7f682497c2d9d3af45ce1bbbfb341209",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to address the question about Section 201, cites unrelated sections, and provides no penalty information, thus it is completely unfaithful.\"}",
+  "timestamp": 1789756207.580368,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

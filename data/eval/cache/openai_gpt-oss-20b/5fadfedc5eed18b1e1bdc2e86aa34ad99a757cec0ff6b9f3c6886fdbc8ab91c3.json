@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "5fadfedc5eed18b1e1bdc2e86aa34ad99a757cec0ff6b9f3c6886fdbc8ab91c3",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly refuses to provide an answer because the provided statutory context contains no information on inheritance tax for ancestral agricultural land.\"}",
+  "timestamp": 1789757013.131305,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

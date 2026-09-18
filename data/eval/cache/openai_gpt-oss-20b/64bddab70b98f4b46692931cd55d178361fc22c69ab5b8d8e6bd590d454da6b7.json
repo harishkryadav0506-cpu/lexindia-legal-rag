@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "64bddab70b98f4b46692931cd55d178361fc22c69ab5b8d8e6bd590d454da6b7",
+  "response": "{\"score\": 2, \"reason\": \"The answer incorrectly refuses to answer the question, even though the provided context contains explicit references to 50% and 100% deduction categories under Section 80G, making",
+  "timestamp": 1789755311.3538566,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

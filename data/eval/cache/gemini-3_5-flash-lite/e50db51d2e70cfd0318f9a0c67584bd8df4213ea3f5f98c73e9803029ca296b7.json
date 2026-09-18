@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "e50db51d2e70cfd0318f9a0c67584bd8df4213ea3f5f98c73e9803029ca296b7",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The answer correctly states that the provided context lacks sufficient authoritative guidance to answer the specific question about claiming both HRA and home loan interest deduction together, and appropriately reflects the limited context available.\"}\n```",
+  "timestamp": 1789757154.0615134,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "8c3c9588730bcd6ed4bbe96242a26aaf96c181eb8051dd83ad1d0b06f4e5f860",
+  "response": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the claim of deduction under Section 80TTB for a senior citizen:\n\n**Eligibility and Scope**\n*   **Senior Citizen Status:** The deduction under Section 80TTB is exclusively available to senior citizens. An assessee who is less than 60 years of age cannot claim this deduction [C3].\n*   **Nature of Income:** The deduction applies specifically to income by way of interest on deposits with a bank, a co-operative bank, or a post office [C1], [C2].\n*   **Residency:** The provision is applicable to a \"resident senior citizen\" whose gross total income includes such interest income [C2].\n\n**Limitations and Conditions**\n*   **Maximum Limit:** If the Old Tax Regime is selected, the maximum limit for the deduction under Section 80TTB is ₹50,000/- [C3].\n*   **Regime Restriction:** The validation rules indicate that the deduction under Section 80TTB is claimable if the Old Tax Regime is selected [C3].\n*   **Source of Income:** The deduction is restricted to interest income. It cannot be claimed on other types of income from other sources [C3].\n\n**Conclusion**\nYes, a resident senior citizen can claim a deduction under Section 80TTB on interest income from fixed deposits (deposits with banks, co-operative banks, or post offices), provided they are opting for the Old Tax Regime. The maximum deduction allowable is ₹50,000 [C1], [C2], [C3].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789721015.445011,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

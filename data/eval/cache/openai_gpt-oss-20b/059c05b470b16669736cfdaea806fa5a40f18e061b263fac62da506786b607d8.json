@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "059c05b470b16669736cfdaea806fa5a40f18e061b263fac62da506786b607d8",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to address the question directly, merely repeats fragments of the statutory text without confirming whether an assessee can apply for a lower or nil deduction certificate under Section 197.\"}",
+  "timestamp": 1789756160.9916568,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

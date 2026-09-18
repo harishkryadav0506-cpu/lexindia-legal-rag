@@ -83,35 +83,38 @@ class QueryExpander:
 
         return [var_a, var_b, var_c]
 
-    _groq_exhausted: bool = False
-
     def _call_groq(self, query: str) -> List[str]:
-        """Invoke primary expansion model via Groq OpenAI-compatible client."""
-        if QueryExpander._groq_exhausted:
-            raise RuntimeError("HTTP 429: Rate limit reached on Groq (daily quota / rapid limit)")
-
+        """Invoke primary expansion model via Groq OpenAI-compatible client with dynamic rate pacing."""
         from openai import OpenAI
+        from src.utils.groq_rate_limiter import groq_pacer
         client = OpenAI(
             api_key=self.groq_api_key,
             base_url=self.groq_base_url,
             timeout=15.0,
             max_retries=0
         )
+        groq_pacer.wait_before_request(model=self.expansion_model, estimated_tokens=300)
         try:
-            response = client.chat.completions.create(
+            raw_res = client.chat.completions.with_raw_response.create(
                 model=self.expansion_model,
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": f"Query: {query}"}
                 ],
                 temperature=0.3,
-                max_tokens=300
+                max_tokens=250
             )
-            raw_text = response.choices[0].message.content.strip()
-            return self._parse_variants(raw_text)
+            parsed = raw_res.parse()
+            usage_tokens = getattr(parsed, "usage", None) and getattr(parsed.usage, "total_tokens", None)
+            groq_pacer.record_response(raw_res.headers, model=self.expansion_model, usage_tokens=usage_tokens)
+            raw_text = parsed.choices[0].message.content.strip()
+            variants = self._parse_variants(raw_text)
+            from src.utils.llm_cache import llm_cache
+            llm_cache.set(self.expansion_model, f"EXPANSION::{query}", json.dumps(variants))
+            return variants
         except Exception as e:
             if "429" in str(e) or "rate_limit" in str(e).lower():
-                QueryExpander._groq_exhausted = True
+                groq_pacer.handle_rate_limit(model=self.expansion_model, error_message=str(e))
             raise e
 
     def _call_gemini_fallback(self, query: str, reason: str) -> List[str]:
@@ -171,6 +174,17 @@ class QueryExpander:
         query = query.strip()
         if not query:
             return ["", "", ""]
+
+        # 1. Check persistent LLM cache
+        from src.utils.llm_cache import llm_cache
+        cached = llm_cache.get(self.expansion_model, f"EXPANSION::{query}")
+        if cached and cached.get("response"):
+            try:
+                variants = json.loads(cached["response"])
+                if isinstance(variants, list) and len(variants) >= 3:
+                    return [str(v).strip() for v in variants[:3]]
+            except Exception:
+                pass
 
         # If Groq API key is present, attempt primary model with retries
         if self.groq_api_key and self.groq_api_key != "your_groq_api_key_here":

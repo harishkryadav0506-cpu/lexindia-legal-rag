@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_hash": "eb0e4cbbe4634420af80127a6c678abe9f51639df39dc7ac9db39678605112d7",
+  "response": "I cannot find sufficient authoritative guidance for this query.",
+  "timestamp": 1789708798.0331717,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-120b"
+  }
+}

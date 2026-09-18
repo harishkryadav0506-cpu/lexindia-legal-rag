@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "a19e71ead57cdaf5b26a731f407398bf6ea72e0409a06c4334ed3ca96c4309b0",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer discusses standard deductions and salary provisions under Section 16, which are completely unrelated to the question asked about tax slabs for Section 115BAC in FY 2024-25, and hallucinates statutory rules not present in the provided context.\"}\n```",
+  "timestamp": 1789757161.5400674,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

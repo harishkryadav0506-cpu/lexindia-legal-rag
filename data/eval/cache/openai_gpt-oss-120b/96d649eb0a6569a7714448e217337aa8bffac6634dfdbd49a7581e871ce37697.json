@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_hash": "96d649eb0a6569a7714448e217337aa8bffac6634dfdbd49a7581e871ce37697",
+  "response": "",
+  "timestamp": 1789709523.311318,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-120b"
+  }
+}

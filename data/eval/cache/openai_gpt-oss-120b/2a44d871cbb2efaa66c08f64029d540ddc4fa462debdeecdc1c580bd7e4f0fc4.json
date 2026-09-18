@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_hash": "2a44d871cbb2efaa66c08f64029d540ddc4fa462debdeecdc1c580bd7e4f0fc4",
+  "response": "{\"score\": 2, \"reason\": \"The answer correctly cites Section 10(13A) covering HRA, but adds the claim that HRA is exempt subject to limits, which is not present in the provided context.\"}",
+  "timestamp": 1789713712.950781,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-120b"
+  }
+}

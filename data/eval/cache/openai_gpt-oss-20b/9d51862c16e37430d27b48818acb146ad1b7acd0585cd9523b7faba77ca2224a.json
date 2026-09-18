@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "9d51862c16e37430d27b48818acb146ad1b7acd0585cd9523b7faba77ca2224a",
+  "response": "{\"score\": 5, \"reason\": \"The answer accurately reflects that the provided context does not contain the specific MAT calculation details, and it does not introduce any unsupported claims.\"}",
+  "timestamp": 1789755777.7434576,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

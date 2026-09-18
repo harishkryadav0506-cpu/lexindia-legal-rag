@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "0788e45e3f9d0323506ecbf71e2ec9637fb7fa05980f7fbd836e34be5663b6e6",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to state the turnover thresholds (₹10 cr for business, ₹75 lakh for profession) and instead provides unrelated excerpts, making it completely unfaithful to the provided context.\"}",
+  "timestamp": 1789756654.4947774,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

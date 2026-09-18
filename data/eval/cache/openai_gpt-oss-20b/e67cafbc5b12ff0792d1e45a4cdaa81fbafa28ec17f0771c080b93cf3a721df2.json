@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e67cafbc5b12ff0792d1e45a4cdaa81fbafa28ec17f0771c080b93cf3a721df2",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 234C, misreferences Section 2, and provides no accurate due dates or interest calculation, contradicting the provided context.\"}",
+  "timestamp": 1789756757.1316414,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

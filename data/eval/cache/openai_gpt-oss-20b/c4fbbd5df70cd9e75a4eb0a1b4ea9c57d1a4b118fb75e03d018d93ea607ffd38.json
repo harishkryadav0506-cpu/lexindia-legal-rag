@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "c4fbbd5df70cd9e75a4eb0a1b4ea9c57d1a4b118fb75e03d018d93ea607ffd38",
+  "response": "{\"score\": 1, \"reason\": \"The answer introduces and cites statutory provisions (e.g., Section 16(ia), Section 115BAC, specific caps) that are not present in the provided context, misinterprets the question, and fabricates details about standard deduction applicability to entertainment allowance.\"}",
+  "timestamp": 1789755541.9154944,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

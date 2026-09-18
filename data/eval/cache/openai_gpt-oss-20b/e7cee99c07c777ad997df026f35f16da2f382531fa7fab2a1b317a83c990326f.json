@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e7cee99c07c777ad997df026f35f16da2f382531fa7fab2a1b317a83c990326f",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to state the tax rate and provides no relevant statutory reference supporting a rate; it merely repeats fragments of the instructions without addressing the question.\"}",
+  "timestamp": 1789756373.1901512,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

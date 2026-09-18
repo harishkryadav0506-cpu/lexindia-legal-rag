@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e52d0f331d03425d722018c616d65213f6873348a5c20c07cca54dd2b92e90fe",
+  "response": "{\"score\": 1, \"reason\": \"The answer adds details about exemption limits that are not present in the provided statutory context.\"}",
+  "timestamp": 1789713695.7129006,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

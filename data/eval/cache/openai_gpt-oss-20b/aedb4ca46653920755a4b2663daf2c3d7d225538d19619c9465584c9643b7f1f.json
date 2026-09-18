@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "aedb4ca46653920755a4b2663daf2c3d7d225538d19619c9465584c9643b7f1f",
+  "response": "{\"score\": 1, \"reason\": \"The answer discusses online gaming winnings under Section 115BBJ, which is unrelated to the question about TDS rates for non-residents on interest from infrastructure debt funds under Section 194LB. It contains no supported information from the provided context.\"}",
+  "timestamp": 1789756315.989605,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

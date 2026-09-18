@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "375073788309cf69a3b1eeae4547f44b0d17b695b0f510163e8177452eb27ddc",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the required preliminary enquiry before issuing notice under Section 148A and contains no supporting statutory references from the provided context.\"}",
+  "timestamp": 1789756842.0007799,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

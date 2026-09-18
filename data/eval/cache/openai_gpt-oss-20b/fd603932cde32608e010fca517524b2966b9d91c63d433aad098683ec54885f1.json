@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "fd603932cde32608e010fca517524b2966b9d91c63d433aad098683ec54885f1",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the TDS rate under Section 194BB and instead cites unrelated provisions, demonstrating a complete fabrication of the requested information.\"}",
+  "timestamp": 1789756276.198274,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

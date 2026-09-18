@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "d9e683f6ed921a6061b7b289d6ba2d82adbcce886f4c1732903f73483cd93777",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to address the question, contains no substantive legal conclusions, and does not reference any specific provisions or numbers from the provided context.\"}",
+  "timestamp": 1789756452.7682915,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

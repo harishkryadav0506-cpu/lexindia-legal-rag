@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "499a2a2de2150ad148a007dfebdc2489eb44ad61c6189a61f9e71f1e1e69834c",
+  "response": "{\"score\": 1, \"reason\": \"The answer fabricates references to Section 92E and provides no accurate or supported information about Section 139A’s PAN quoting rules, contradicting the provided context.\"}",
+  "timestamp": 1789756858.8325038,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

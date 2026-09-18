@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "d440c390e24ad6b7f4d668af8562cc8954d0f044fab6bc7e246a49b52cd2e2bc",
+  "response": "Based on the provided authoritative legal context for Financial Year 2024-25, the rate of Health and Education Cess applicable on income tax and surcharge is **4%**.\n\n**Legal Analysis:**\n\n*   **Rate of Cess:** The Health and Education Cess on income-tax is calculated at the rate of **four per cent (4%)** of the income-tax and surcharge [C1] [C2] [C3] [C4].\n*   **Applicability for FY 2024-25:** For the assessment year 2024-25, the \"Health and Education Cess\" is explicitly levied at the rate of **4%** on the amount of income-tax so computed, inclusive of surcharge wherever applicable [C5].\n*   **Calculation Basis:** The cess is calculated on the total tax amount, which includes the base income tax and any applicable surcharge [C1] [C3] [C5].\n*   **Marginal Relief:** No marginal relief is available in respect of the Health and Education Cess [C5].\n*   **Computation Sequence:** In the computation of total tax payable, the Health and Education Cess is added to the tax and surcharge to determine the final tax liability before any other specific reliefs (such as under Section 89) are applied [C6] [C7].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789722248.1392248,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

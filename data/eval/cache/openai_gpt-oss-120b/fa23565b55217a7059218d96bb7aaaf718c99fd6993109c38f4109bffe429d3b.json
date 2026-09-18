@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_hash": "fa23565b55217a7059218d96bb7aaaf718c99fd6993109c38f4109bffe429d3b",
+  "response": "**Maximum deduction under Section 80C (life‑insurance premium & PPF)**  \n\n- The aggregate amount that can be claimed under **Section 80C** (which includes life‑insurance premiums, contributions to a Public Provident Fund, and other eligible investments) is **Rs. 1,50,000** for the financial year 2024‑25【C1】.  \n- This ceiling applies jointly to the total of deductions claimed under **Section 80C, 80CCC and 80CCD(1)**【C3】.  \n\nTherefore, for an individual taxpayer (salaried) in FY 2024‑25, the maximum allowable deduction for life‑insurance premium **and** PPF together is **Rs. 1,50,000** under Section 80C.  \n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789713304.119404,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-120b"
+  }
+}

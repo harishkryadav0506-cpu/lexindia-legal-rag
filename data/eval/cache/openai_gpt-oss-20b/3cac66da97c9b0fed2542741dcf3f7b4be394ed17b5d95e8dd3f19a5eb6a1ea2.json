@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "3cac66da97c9b0fed2542741dcf3f7b4be394ed17b5d95e8dd3f19a5eb6a1ea2",
+  "response": "{\"score\":1,\"reason\":\"Answer does not address the rectification procedure under Section 154 and introduces unrelated provisions.\"}",
+  "timestamp": 1789756791.1556175,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

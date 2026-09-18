@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "8f477992772d0104bac47fe07ea7c0e528a4a8980a6797929aba9559840f85f7",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer completely ignores the user's question about Section 87A rebate under the New Tax Regime and instead hallucinates a discussion about standard deductions under Section 16(ia) with provisions not found in the context.\"}\n```",
+  "timestamp": 1789757160.2125893,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

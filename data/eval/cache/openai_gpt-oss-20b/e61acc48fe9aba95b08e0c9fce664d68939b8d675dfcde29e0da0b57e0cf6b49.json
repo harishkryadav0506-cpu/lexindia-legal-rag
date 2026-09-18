@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e61acc48fe9aba95b08e0c9fce664d68939b8d675dfcde29e0da0b57e0cf6b49",
+  "response": "{\"score\":5,\"reason\":\"The answer accurately reflects the statutory limits (₹75,000 for a dependent with disability, ₹125,000 for severe disability), the GTI cap, and the requirement of the old tax regime, all directly supported by the provided context.\"}",
+  "timestamp": 1789715195.8603413,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

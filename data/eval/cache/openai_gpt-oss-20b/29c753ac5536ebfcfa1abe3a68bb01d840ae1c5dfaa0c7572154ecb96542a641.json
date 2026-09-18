@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "29c753ac5536ebfcfa1abe3a68bb01d840ae1c5dfaa0c7572154ecb96542a641",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not mention Section 194C, TDS rate, or threshold limit, and instead cites unrelated sections, making it a complete hallucination.\"}",
+  "timestamp": 1789756000.9857566,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

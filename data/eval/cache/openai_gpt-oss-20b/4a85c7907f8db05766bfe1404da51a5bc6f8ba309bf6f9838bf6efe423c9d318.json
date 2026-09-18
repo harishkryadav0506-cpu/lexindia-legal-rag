@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "4a85c7907f8db05766bfe1404da51a5bc6f8ba309bf6f9838bf6efe423c9d318",
+  "response": "{\"score\": 5, \"reason\": \"The answer accurately reflects that the provided statutory context does not contain a specific monetary limit for Section 24(b) interest deduction on self‑occupied property, and it does not invent any provisions.\"}",
+  "timestamp": 1789715166.4546125,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

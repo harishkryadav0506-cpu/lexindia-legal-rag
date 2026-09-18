@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "27cc6dc055742b299234cde6880c1ee6b5d7371123684859d426aa73224de426",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the requested tax slabs for Section 115BAC and instead discusses unrelated deductions, with no support from the provided context.\"}",
+  "timestamp": 1789755640.552354,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

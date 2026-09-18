@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "068849f4a18349f70b949eb87283bb3ad1caf34fc781a73e94f72e97108754a0",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory information is provided in the retrieved context, which aligns with the absence of any mention of the GST rate on gold jewelry craftsmanship.\"}",
+  "timestamp": 1789756945.7125125,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

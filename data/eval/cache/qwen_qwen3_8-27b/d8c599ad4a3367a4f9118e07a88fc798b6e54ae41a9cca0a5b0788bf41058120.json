@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "d8c599ad4a3367a4f9118e07a88fc798b6e54ae41a9cca0a5b0788bf41058120",
+  "response": "I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789722371.922877,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

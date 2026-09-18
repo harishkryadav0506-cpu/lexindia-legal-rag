@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "dae936125014e00d820bca70a564a53b5979c1c4588eb400d5f82fd241979ebb",
+  "response": "Based on the provided authoritative legal context, there is insufficient information to provide a complete calculation method for Minimum Alternate Tax (MAT) under Section 115JB. The provided chunks contain references to Section 115JB in the context of surcharge limits, advance tax computation, and relief calculations, but they **do not** contain the specific statutory provisions defining the rate of MAT, the definition of \"book profit,\" or the step-by-step calculation formula for the tax payable under Section 115JB(1).\n\nSpecifically:\n*   Chunk [C1] discusses relief in tax payable under Section 115JB due to Section 115JB(2D) but does not define the base calculation of MAT itself.\n*   Chunk [C2] and [C7] discuss surcharge applicability on income chargeable under Section 115JB but do not provide the MAT rate or book profit definition.\n*   Chunk [C3] and [C6] mention that advance tax is computed with reference to rates specified in the relevant sections (including 115JB) but do not state those rates.\n*   Chunk [C5] references Section 115JC (AMT) and Form 29C, which is distinct from Section 115JB (MAT).\n\nTherefore, I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789722650.9431891,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

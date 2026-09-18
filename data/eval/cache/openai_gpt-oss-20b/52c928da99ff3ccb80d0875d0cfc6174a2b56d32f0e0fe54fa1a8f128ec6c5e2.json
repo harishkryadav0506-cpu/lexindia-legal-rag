@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "52c928da99ff3ccb80d0875d0cfc6174a2b56d32f0e0fe54fa1a8f128ec6c5e2",
+  "response": "{\"score\": 2, \"reason\": \"The answer fails to list the specific transactions excluded under Section 47 and merely repeats a generic reference to the section, so it lacks the necessary detail and is not faithful to the question.\"}",
+  "timestamp": 1789756473.3098733,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

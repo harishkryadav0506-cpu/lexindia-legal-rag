@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "9cc2aadb64c152d480adb895a8a646f88c8502bdc546cbb5c9d08468a2fa68c9",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no authoritative guidance is available in the provided context, which is consistent with the absence of UAE tax information.\"}",
+  "timestamp": 1789756996.2514043,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

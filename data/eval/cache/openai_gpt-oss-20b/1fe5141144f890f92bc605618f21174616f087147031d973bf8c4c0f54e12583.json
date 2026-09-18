@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "1fe5141144f890f92bc605618f21174616f087147031d973bf8c4c0f54e12583",
+  "response": "{\"score\": 1, \"reason\": \"The answer merely repeats excerpts of the statutory text without explaining the taxation mechanism for business trust distributions, thus failing to address the question and lacking any substantive legal analysis.\"}",
+  "timestamp": 1789755903.192088,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

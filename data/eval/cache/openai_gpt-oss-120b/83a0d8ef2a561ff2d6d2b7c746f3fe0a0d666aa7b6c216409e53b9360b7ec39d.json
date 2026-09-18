@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "prompt_hash": "83a0d8ef2a561ff2d6d2b7c746f3fe0a0d666aa7b6c216409e53b9360b7ec39d",
+  "response": "**Answer**\n\nYes – a deduction for the **preventive health‑check‑up of parents** can be claimed under **Section 80D**, but only when the **old tax regime** is chosen and subject to the statutory ceiling.\n\n| Requirement | What the rule says | Citation |\n|-------------|-------------------|----------|\n| **Eligibility of preventive health‑check‑up for parents** | The preventive‑health‑check‑up amount may be claimed for *self, family and/or parents*. | 【C1】 |\n| **Regime condition** | The deduction for preventive health‑check‑up is **available only if the “Old Tax Regime” is selected**. | 【C1】 |\n| **Maximum amount** | The total preventive‑health‑check‑up deduction (self + family + parents) cannot exceed **₹ 5,000**. | 【C1】 |\n| **Validation rule** | When the old regime is selected, the ITR‑4 validation checks the combined preventive‑health‑check‑up amount in Schedule 80D. | 【C2】 |\n\n**Key points for a salaried individual (FY 2024‑25)**  \n\n1. **Select the old tax regime** on the ITR form.  \n2. In **Schedule 80D**, enter the amount paid for preventive health‑check‑up of your parents under the appropriate field.  \n3. Ensure that the **aggregate amount** claimed for preventive health‑check‑up (including any amount claimed for self/family) does **not exceed ₹ 5,000**.  \n\nIf the old regime is not selected, the preventive health‑check‑up amount for parents (or any other person) **cannot be claimed** under Section 80D.  \n\n---\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789713331.0384169,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-120b"
+  }
+}

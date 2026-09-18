@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "0bb8365b3a5d3914ed403869f0c7067fd86413c13eb817dad6e80a63de7caea8",
+  "response": "{\"score\": 2, \"reason\": \"The answer omits the required higher TDS rate and does not provide the specific statutory reference for it, making it largely unfaithful to the question.\"}",
+  "timestamp": 1789756114.2004614,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "bb370e5b47872b0ef84854cf122a93fc982beb3e48cb61d102c50115ccbea621",
+  "response": "{\"score\": 5, \"reason\": \"The answer accurately reflects that the provided context does not contain the ₹2,00,000 limit for Section 24(b) and does not add any unsupported statements.\"}",
+  "timestamp": 1789716552.400266,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

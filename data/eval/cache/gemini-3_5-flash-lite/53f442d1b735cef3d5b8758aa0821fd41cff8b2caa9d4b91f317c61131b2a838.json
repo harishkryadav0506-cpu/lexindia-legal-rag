@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "53f442d1b735cef3d5b8758aa0821fd41cff8b2caa9d4b91f317c61131b2a838",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The generated answer correctly identifies HRA under Section 10(13A) as referenced in the context.\"}\n```",
+  "timestamp": 1789713732.9096227,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

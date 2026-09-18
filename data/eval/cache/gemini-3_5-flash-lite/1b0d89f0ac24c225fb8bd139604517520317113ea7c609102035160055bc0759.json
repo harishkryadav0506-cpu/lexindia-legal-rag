@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "1b0d89f0ac24c225fb8bd139604517520317113ea7c609102035160055bc0759",
+  "response": "```json\n{\"score\": 3, \"reason\": \"The answer correctly identifies text from the context about preventive health check-up limits for 'Self and Family', but erroneously hallucinates citations (e.g., C4, C3, C1, C2) that do not correspond to standard statutory chunk tags in the prompt, and gets confused about the context text which actually states 'Deduction of Preventive Health Check up under section 80D for Self and Family and/or Parents cannot be greater than 5000'.\"}\n```",
+  "timestamp": 1789757157.429273,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

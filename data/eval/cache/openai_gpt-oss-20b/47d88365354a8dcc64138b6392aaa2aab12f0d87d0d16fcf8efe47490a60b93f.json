@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "47d88365354a8dcc64138b6392aaa2aab12f0d87d0d16fcf8efe47490a60b93f",
+  "response": "{\"score\": 1, \"reason\": \"The answer discusses online gaming winnings under Section 115BBJ, which is unrelated to TDS on dividends under Section 194. It contains no supported provisions from the provided context and is therefore completely hallucinated.\"}",
+  "timestamp": 1789756293.0786777,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

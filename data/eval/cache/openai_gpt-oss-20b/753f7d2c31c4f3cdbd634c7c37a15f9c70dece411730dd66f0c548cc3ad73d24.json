@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "753f7d2c31c4f3cdbd634c7c37a15f9c70dece411730dd66f0c548cc3ad73d24",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about cost of acquisition under Section 49, contains irrelevant and garbled references, and does not reflect any information from the provided statutory context.\"}",
+  "timestamp": 1789756490.1185632,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

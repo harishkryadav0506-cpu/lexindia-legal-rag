@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "a069a199dff0b38b7af6886ed83646833e9c0f5401a1310a081c8fe617a577a9",
+  "response": "{\"score\": 1, \"reason\": \"The answer contains fabricated and irrelevant text, does not address the question, and provides no accurate information from the provided statutory context.\"}",
+  "timestamp": 1789756739.4822564,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

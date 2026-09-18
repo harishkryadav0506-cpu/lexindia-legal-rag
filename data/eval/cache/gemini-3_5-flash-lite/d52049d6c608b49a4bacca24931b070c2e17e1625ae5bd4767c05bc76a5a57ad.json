@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "d52049d6c608b49a4bacca24931b070c2e17e1625ae5bd4767c05bc76a5a57ad",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The answer accurately cites the proposed tax rate of 12.5% for long-term capital gains under Section 112A directly from the provided statutory context chunks.\"}\n```",
+  "timestamp": 1789757167.3291426,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

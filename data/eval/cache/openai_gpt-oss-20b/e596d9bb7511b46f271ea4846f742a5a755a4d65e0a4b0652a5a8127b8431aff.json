@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e596d9bb7511b46f271ea4846f742a5a755a4d65e0a4b0652a5a8127b8431aff",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 115BAB at all and instead references unrelated sections, thus it is completely hallucinated relative to the provided context.\"}",
+  "timestamp": 1789755842.2447348,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

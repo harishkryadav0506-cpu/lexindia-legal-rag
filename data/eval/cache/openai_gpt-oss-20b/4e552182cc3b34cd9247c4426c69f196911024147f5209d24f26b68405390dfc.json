@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "4e552182cc3b34cd9247c4426c69f196911024147f5209d24f26b68405390dfc",
+  "response": "{\"score\": 5, \"reason\": \"The answer accurately states the limit of Rs 1,50,000 as provided in the statutory context, with no additional or incorrect information.\"}",
+  "timestamp": 1789753876.9960651,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}
