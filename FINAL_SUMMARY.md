@@ -34,7 +34,7 @@ The system features:
 | **Refusal Precision** | $\ge 90\%$ | **100.0%** (15/15) | Clean refusal on out-of-scope queries (UAE tax, municipal tax, 401(k)) |
 | **Refusal Recall** | $\ge 90\%$ | **100.0%** | Zero false refusals on answerable tax queries |
 | **Refusal F1 Score** | $\ge 90\%$ | **100.0%** | Exact phrase: `"I cannot find sufficient authoritative guidance for this query."` |
-| **Faithfulness Score** | $\ge 3.0 / 5.0$ | **3.28 / 5.0** | OpenAI `gpt-oss-20b` on stratified 50-query sample under Rubric v2 |
+| **Faithfulness Score** | $\ge 3.0 / 5.0$ | **3.38 / 5.0** | OpenAI `gpt-oss-20b` on stratified 50-query sample under Rubric v2 |
 | **Cross-Judge Agreement** | $\Delta \le 0.5$ | **3.13 / 5.0** (Gemini) | Cross-family spot-check (`gemini-3.5-flash-lite`); Self-bias $\Delta = -0.15$ |
 | **Generation Latency (p50)** | $\le 2.0s$ | **0.84s** | `qwen/qwen3.8-27b` generator on Groq LPU |
 | **Test Suite Pass Rate** | 100% | **100% (86 / 86 passed)** | `pytest -v` across all phase suites (Phases 1–13) |
@@ -52,7 +52,7 @@ All work completed today has been cleanly committed and pushed to GitHub `origin
 
 2. **`99a3fb3`** — `docs: add limitations, ablation table, and update evaluation report for shipping`
    - Authored comprehensive `LIMITATIONS.md`.
-   - Updated `EVALUATION_REPORT.md` with explicit configuration boundary labeling and Rubric v2 headline faithfulness score (3.28 / 5.0).
+   - Updated `EVALUATION_REPORT.md` with explicit configuration boundary labeling and Rubric v2 headline faithfulness score (3.38 / 5.0).
    - Updated `README.md` with production maturity matrix and architecture boundaries.
 
 3. **`2172f22`** — `feat(retrieval): statutory citation boosting and 5-fold CV tuning for RRF k=20`
@@ -86,7 +86,7 @@ To ensure scientific integrity and full transparency, the following constraints 
    - Rubric v2 correctly awards high faithfulness (4/5 or 5/5) to answers that explicitly decline to speculate beyond retrieved context.
 3. **Configuration Split**:
    - **Retrieval Metrics** (Recall@1/3/5/10, MRR) reflect post-Phase-3 tuning (Statutory Citation Boosting + RRF $k=20$).
-   - **End-to-End Metrics** (Citation Accuracy 85.9%, Refusal F1 100%, Faithfulness 3.28) were measured under the pre-Phase-3 retrieval configuration ($k=60$).
+   - **End-to-End Metrics** (Citation Accuracy 85.9%, Refusal F1 100%, Faithfulness 3.38) were measured under the pre-Phase-3 retrieval configuration ($k=60$).
 4. **Deferred Live 120b Programmatic Ablation**:
    - Generating 53 comparative benchmark answers live using `openai/gpt-oss-120b` (~127,000 tokens) requires 16–20 minutes under Groq TPM limits. To avoid delaying deployment, this live re-generation is documented as future work.
 

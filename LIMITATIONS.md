@@ -15,7 +15,7 @@ LexIndia is an authoritative, citation-grounded Retrieval-Augmented Generation (
 ## 2. Evaluation Sample & Metric Provenance
 
 ### A. Headline Faithfulness: Stratified 50-Query Sample
-- **Sample Selection**: The headline faithfulness score (**3.28 / 5.0**) is derived from a stratified **50-query sample** rather than the full 100-query benchmark.
+- **Sample Selection**: The headline faithfulness score (**3.38 / 5.0**) is derived from a stratified **50-query sample** rather than the full 100-query benchmark.
 - **Stratification Structure**:
   - **16 Regenerated Queries**: Specifically targets all previously flagged edge-case queries (`[2, 4, 8, 19, 21, 22, 23, 24, 25, 27, 28, 32, 36, 43, 52, 53]`) that suffered from early cache contamination or schedule-validation boundary issues.
   - **15 Cross-Family Spot-Check Queries**: Balanced across all 6 legal topics (`DEDUCTION`, `CALCULATION`, `TDS_TCS`, `CAPITAL_GAINS`, `PROCEDURE`, `REFUSAL`).

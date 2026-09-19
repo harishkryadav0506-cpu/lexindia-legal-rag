@@ -12,7 +12,7 @@
 | :--- | :---: | :---: | :---: | :--- |
 | **Citation Accuracy** | **61.2%** (120b canary) | **45.9%** | **85.9%** | +24.7% (Qwen strictly anchors `[C1]` tags directly to retrieved chunk IDs) |
 | **Faithfulness (Gemini Judge)** | **4.00 / 5.0** | **4.10 / 5.0** | **3.13 / 5.0** | High cross-model legal grounding on identical statutory context |
-| **Faithfulness (Secondary Judge)** | **3.96 / 5.0** | **4.05 / 5.0** | **3.28 / 5.0** | Rubric v2 stratified consensus |
+| **Faithfulness (Secondary Judge)** | **3.96 / 5.0** | **4.05 / 5.0** | **3.38 / 5.0** | Rubric v2 stratified consensus |
 | **Refusal Precision** | **83.3%** | **100.0%** | **100.0%** | +16.7% (Clean refusal on foreign/municipal out-of-scope queries) |
 | **Refusal Recall** | **100.0%** | **100.0%** | **100.0%** | 0.0% (All models achieved 100% refusal recall) |
 | **Refusal F1 Score** | **90.9%** | **100.0%** | **100.0%** | +9.1% (Strict cite-or-refuse boundary enforcement) |

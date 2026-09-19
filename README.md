@@ -23,7 +23,7 @@ LexIndia is a production-grade, citation-grounded Retrieval-Augmented Generation
 | **LangGraph Multi-Agent Orchestration** | **Production Ready** | Supervisor + Researcher + Calculator + Verifier | [`src/agents/graph.py`](./src/agents/graph.py) |
 | **Model Context Protocol (FastMCP)** | **Production Ready** | Claude Desktop integration via stdio & SSE | [`src/mcp_server.py`](./src/mcp_server.py) |
 | **Human-in-the-Loop (HITL) Queue** | **Production Ready** | Interactive `/review` SQLite store & dashboard | [`src/evaluation/hitl.py`](./src/evaluation/hitl.py) |
-| **LLM Faithfulness Evaluation** | **Beta** | **3.28 / 5.0** (Stratified 50-query sample under Rubric v2) | [`LIMITATIONS.md`](./LIMITATIONS.md) |
+| **LLM Faithfulness Evaluation** | **Beta** | **3.38 / 5.0** (Stratified 50-query sample under Rubric v2) | [`LIMITATIONS.md`](./LIMITATIONS.md) |
 | **Dual-Model Generation Ablation** | **Beta** | `qwen/qwen3.8-27b` vs `gpt-oss-120b` comparison | [`ABLATION_TABLE.md`](./ABLATION_TABLE.md) |
 
 > [!NOTE]

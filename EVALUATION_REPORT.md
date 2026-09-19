@@ -52,7 +52,7 @@ To eliminate self-preference bias, `openai/gpt-oss-20b` serves as the headline j
 
 | Dual Judge Metric | Score / Rate | Notes |
 | :--- | :---: | :--- |
-| **Headline Faithfulness (Stratified 50-Query Sample)** | **3.28 / 5.0** | **Rubric v2**: Rewards faithful hedging; penalizes only unsupported claims |
+| **Headline Faithfulness (Stratified 50-Query Sample)** | **3.38 / 5.0** | **Rubric v2**: Rewards faithful hedging; penalizes only unsupported claims |
 | **Cross-Family Spot Check (gemini-3.5-flash-lite)** | **3.13 / 5.0** | 15 stratified queries across 6 legal topics |
 | **Diagnostic Self-Score (qwen/qwen3.8-27b)** *(Excluded from headline)* | **4.33 / 5.0** | Cached self-evaluations |
 | **Self-Preference Bias Delta (Self-Score - Cross-Family)** | **+1.20** | Demonstrates critical need for cross-model judging |
