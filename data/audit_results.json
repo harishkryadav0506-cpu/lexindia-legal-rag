@@ -467,10 +467,10 @@
   "check_5_review_store": {
     "check_name": "Check 5: Human-in-the-Loop Review Store & Training Pairs Audit",
     "reviews_db_exists": true,
-    "total_reviews": 85,
-    "decided_reviews": 45,
-    "pending_reviews": 40,
-    "human_pairs_count": 34,
+    "total_reviews": 105,
+    "decided_reviews": 57,
+    "pending_reviews": 48,
+    "human_pairs_count": 43,
     "passed": true
   }
 }

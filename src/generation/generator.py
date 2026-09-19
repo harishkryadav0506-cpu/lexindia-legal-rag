@@ -69,13 +69,21 @@ class AnswerGenerator:
                 content = parsed.choices[0].message.content.strip()
                 return content
             except RateLimitError as rle:
+                err_str = str(rle).lower()
+                if "tokens per day" in err_str or "tpd" in err_str:
+                    logger.warning(f"Groq TPD exhausted on {self.model}. Triggering immediate provider fallback.")
+                    raise rle
                 if attempt < max_retries:
                     retry_after = getattr(rle, "response", None) and rle.response.headers.get("retry-after")
                     groq_pacer.handle_rate_limit(retry_after, model=self.model, error_message=str(rle))
                     continue
                 raise rle
             except Exception as e:
-                if ("429" in str(e) or "rate_limit" in str(e).lower()) and attempt < max_retries:
+                err_str = str(e).lower()
+                if "tokens per day" in err_str or "tpd" in err_str:
+                    logger.warning(f"Groq TPD exhausted on {self.model}. Triggering immediate provider fallback.")
+                    raise e
+                if ("429" in str(e) or "rate_limit" in err_str) and attempt < max_retries:
                     groq_pacer.handle_rate_limit(model=self.model, error_message=str(e))
                     continue
                 raise e

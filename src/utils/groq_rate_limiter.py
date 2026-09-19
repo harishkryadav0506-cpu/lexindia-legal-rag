@@ -263,7 +263,7 @@ class GroqDynamicPacer:
         else:
             sleep_time = max(state.reset_duration + 1.0, 8.0)
 
-        sleep_time = min(max(sleep_time, 2.0), 300.0)
+        sleep_time = min(max(sleep_time, 2.0), 15.0)
         logger.warning(
             f"[Pacer:{state.model_name}] HTTP 429 encountered! Dynamically backing off for {sleep_time:.2f}s..."
         )
