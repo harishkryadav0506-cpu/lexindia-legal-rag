@@ -38,6 +38,14 @@ Rubric v2 explicitly decouples conversational helpfulness from legal faithfulnes
 - **Hedging & Abstention Policy**: If an answer explicitly identifies that the retrieved statutory text lacks a specific numerical threshold or date and declines to guess, it is scored as **fully faithful (5/5)**.
 - **Penalization**: Deductions apply strictly to hallucinations, fabricated section numbers, imagined tax rates, or ungrounded claims.
 
+### C. Judge Score Anchoring at Rubric Midpoint (Score 3/5 Heuristic)
+Forensic qualitative audit of judge reasoning reveals that the primary judge (`openai/gpt-oss-20b`) exhibits a pronounced **midpoint anchoring heuristic**:
+- **Granular Legal Reasoning**: The qualitative justification produced by the judge is genuinely topic-specific—it explicitly identifies exact statutory provisions (e.g., Section 80CCD(2), Section 115BAA, Section 194BA), precise numerical ceilings, and specific ungrounded clauses.
+- **Scoring Discretization**: However, whenever an answer contains both verified grounded statutory citations and a minor extrapolation or ungrounded figure, the judge uniformly assigns **3/5** rather than graduating continuously between 2/5 and 4/5.
+- **Cognitive Evaluation Pattern**: The judge adheres to an internal dual-clause template:  
+  `"The answer correctly states [X] supported by context... However, it also asserts [Y] which is not explicitly present in the provided statutory excerpts. Thus the answer is partially faithful." -> Score: 3/5`
+- **Methodological Impact**: This midpoint anchoring phenomenon compresses intermediate legal synthesis into a discrete 3/5 bucket, preventing fine-grained scoring gradations between minor caveats and moderate legal extrapolations.
+
 ---
 
 ## 4. Configuration Split: Retrieval Tuning vs End-to-End Generation
