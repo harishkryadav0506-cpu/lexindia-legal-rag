@@ -77,13 +77,29 @@ class HybridSearcher:
         # Generate 768-dim normalized embedding
         query_vec = self.embedding_model.encode(variant_text, normalize_embeddings=True).tolist()
 
+        # Statutory citation boosting: detect Section \d+ and inject BM25 must clause
+        import re
+        sections = re.findall(r'Section\s+[0-9]+[A-Za-z]*(?:\([0-9A-Za-z]+\))*', variant_text, re.IGNORECASE)
+
+        must_clauses: List[Dict[str, Any]] = [
+            {"match": {"text": {"query": variant_text, "boost": 1.0}}}
+        ]
+        for sec in sections:
+            must_clauses.append({
+                "bool": {
+                    "should": [
+                        {"match_phrase": {"section_id": {"query": sec, "boost": 3.0}}},
+                        {"match_phrase": {"text": {"query": sec, "boost": 2.0}}}
+                    ],
+                    "minimum_should_match": 1
+                }
+            })
+
         body: Dict[str, Any] = {
             "size": top_n,
             "query": {
                 "bool": {
-                    "must": [
-                        {"match": {"text": {"query": variant_text, "boost": 1.0}}}
-                    ]
+                    "must": must_clauses
                 }
             },
             "knn": {
