@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "41fa6edab7ed75a8a501e080e1bcc1664d0ccaa5f176222935a77498a5a95492",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the requested tax calculation and introduces deductions and caps that are not present in the provided context, indicating hallucination.\"}",
+  "timestamp": 1789791593.0212,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

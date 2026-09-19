@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "f8c8c3dbc32ad55b25379a3ce1aaf5f65c5b1feecfab317d0ec513d53390ea9b",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context does not contain information about the road tax slab rate for electric four-wheelers in Delhi NCR, which aligns with the absence of such details in the retrieved statutory text.\"}",
+  "timestamp": 1789792640.4387674,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

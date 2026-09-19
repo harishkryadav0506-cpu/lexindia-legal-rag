@@ -34,6 +34,7 @@ from src.agents.supervisor import SupervisorAgent
 from src.agents.researcher import ResearcherAgent
 from src.agents.calculator import CalculatorAgent
 from src.agents.compliance_verifier import ComplianceVerifierAgent
+from src.agents.citation_verifier import CitationVerifierAgent
 from src.agents.review_store import review_store
 from src.generation.generator import AnswerGenerator
 from src.generation.prompts import EXACT_REFUSAL_PHRASE, STANDARD_DISCLAIMER
@@ -49,6 +50,22 @@ def route_decision(state: LexIndiaState) -> str:
     return "researcher"
 
 
+def route_citation_verifier(state: LexIndiaState) -> str:
+    """
+    Conditional edge router after CitationVerifierAgent:
+    - If hallucinated citation tags found and retry_count < 2: return "generator" (RetryGeneration).
+    - If hallucinated citation tags found and retry_count >= 2: return "human_review" (escalate to HITL).
+    - If all citations valid: return "verifier" (pass to ComplianceVerifier).
+    """
+    hallucinated = state.get("hallucinated_citations", [])
+    if hallucinated:
+        retry_count = state.get("citation_retry_count", 0)
+        if retry_count < 2:
+            return "generator"
+        return "human_review"
+    return "verifier"
+
+
 class LexIndiaGraphBuilder:
     def __init__(
         self,
@@ -56,6 +73,7 @@ class LexIndiaGraphBuilder:
         researcher: Optional[ResearcherAgent] = None,
         calculator: Optional[CalculatorAgent] = None,
         verifier: Optional[ComplianceVerifierAgent] = None,
+        citation_verifier: Optional[CitationVerifierAgent] = None,
         generator: Optional[AnswerGenerator] = None,
         checkpoints_db_path: Optional[Path] = None
     ):
@@ -63,6 +81,7 @@ class LexIndiaGraphBuilder:
         self.researcher = researcher or ResearcherAgent()
         self.calculator = calculator or CalculatorAgent()
         self.verifier = verifier or ComplianceVerifierAgent()
+        self.citation_verifier = citation_verifier or CitationVerifierAgent()
         self.generator = generator or AnswerGenerator()
         self.checkpoints_db_path = checkpoints_db_path or settings.CHECKPOINTS_DB_PATH
         self.checkpoints_db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -89,20 +108,22 @@ class LexIndiaGraphBuilder:
         fy = state.get("financial_year", "2024-25")
         tp = state.get("taxpayer_type", "Individual (Salaried)")
         mock_429 = state.get("mock_429", False)
+        feedback = state.get("citation_verifier_feedback")
 
         gen_res = self.generator.generate_answer(
             question=question,
             chunks=chunks,
             financial_year=fy,
             taxpayer_type=tp,
-            mock_429=mock_429
+            mock_429=mock_429,
+            feedback=feedback
         )
 
         latency_ms = int((time.time() - t0) * 1000)
 
         trace_entry: AgentTraceEntry = {
             "agent": "GeneratorAgent",
-            "action": f"Synthesized answer (fallback_used={gen_res['fallback_used']})",
+            "action": f"Synthesized answer (fallback_used={gen_res['fallback_used']}, retry_feedback={'Yes' if feedback else 'None'})",
             "latency_ms": latency_ms,
             "inputs_summary": f"Question: '{question[:50]}...', Chunks: {len(chunks)}, FY: {fy}",
             "outputs_summary": f"Answer length: {len(gen_res['answer'])}, Refused: {gen_res['refused']}, Fallback: {gen_res['fallback_model']}"
@@ -117,6 +138,9 @@ class LexIndiaGraphBuilder:
         new_state.setdefault("agent_trace", []).append(trace_entry)
 
         return new_state
+
+    def citation_verifier_node(self, state: LexIndiaState) -> LexIndiaState:
+        return self.citation_verifier.run(state)
 
     def verifier_node(self, state: LexIndiaState) -> LexIndiaState:
         return self.verifier.run(state)
@@ -220,6 +244,7 @@ class LexIndiaGraphBuilder:
         builder.add_node("researcher", self.researcher_node)
         builder.add_node("calculator", self.calculator_node)
         builder.add_node("generator", self.generator_node)
+        builder.add_node("citation_verifier", self.citation_verifier_node)
         builder.add_node("verifier", self.verifier_node)
         builder.add_node("human_review", self.human_review_node)
 
@@ -235,7 +260,16 @@ class LexIndiaGraphBuilder:
         )
         builder.add_edge("researcher", "generator")
         builder.add_edge("calculator", "generator")
-        builder.add_edge("generator", "verifier")
+        builder.add_edge("generator", "citation_verifier")
+        builder.add_conditional_edges(
+            "citation_verifier",
+            route_citation_verifier,
+            {
+                "generator": "generator",
+                "human_review": "human_review",
+                "verifier": "verifier"
+            }
+        )
         builder.add_edge("verifier", "human_review")
         builder.add_edge("human_review", END)
 
@@ -293,6 +327,10 @@ def run_query(
         "must_refuse": False,
         "refused": False,
         "low_confidence": False,
+        "citation_retry_count": 0,
+        "citation_verifier_feedback": None,
+        "hallucinated_citations": [],
+        "verified_citations": [],
         "fallback_used": False,
         "fallback_model": None,
         "agent_trace": [],

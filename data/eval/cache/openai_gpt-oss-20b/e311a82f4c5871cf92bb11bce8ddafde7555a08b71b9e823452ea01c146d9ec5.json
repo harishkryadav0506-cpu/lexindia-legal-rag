@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e311a82f4c5871cf92bb11bce8ddafde7555a08b71b9e823452ea01c146d9ec5",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory guidance is present in the provided context, which is consistent with the absence of any mention of US 401(k) rollovers in the excerpts.\"}",
+  "timestamp": 1789792589.5819275,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

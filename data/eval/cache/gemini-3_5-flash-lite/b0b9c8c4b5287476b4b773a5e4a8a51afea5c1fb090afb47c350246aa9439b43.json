@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "b0b9c8c4b5287476b4b773a5e4a8a51afea5c1fb090afb47c350246aa9439b43",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The generated answer provides the exact textual extracts available in the retrieved context regarding section 44ADA and correctly refrains from inventing unprovided statutory limits like 75 lakhs since the context lacks that specific figure.\"}\n```",
+  "timestamp": 1789793169.6796148,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

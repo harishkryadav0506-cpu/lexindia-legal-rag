@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "938879361437e36f4875f1076e18985517df340a81c0195eae342a76081dc1b5",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about Section 89 relief for arrears of salary and instead discusses health and education cess, which is unrelated to the provided context.\"}",
+  "timestamp": 1789791634.4262128,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

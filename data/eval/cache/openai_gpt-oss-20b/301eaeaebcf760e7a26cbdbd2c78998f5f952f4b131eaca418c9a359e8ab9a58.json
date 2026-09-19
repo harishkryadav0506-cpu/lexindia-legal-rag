@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "301eaeaebcf760e7a26cbdbd2c78998f5f952f4b131eaca418c9a359e8ab9a58",
+  "response": "{\"score\": 1, \"reason\": \"The answer fabricates content unrelated to Section 54, misquotes the statute, and introduces irrelevant sections, contradicting the provided context.\"}",
+  "timestamp": 1789792009.6322076,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

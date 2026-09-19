@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "587bc2763f6f9a9ea54fc224dc8e78e72e6db249e61c59ad0eb8ff8f722f2ea9",
+  "response": "```json\n{\"score\": 3, \"reason\": \"The answer references some statutory context fragments, but it fails to directly and clearly state the specific turnover limits for mandatory tax audit under Section 44AB that are scattered in the context (e.g., turnover > Rs. 10 crores, gross receipts > Rs. 75/50 lakhs, or gross receipts u/s 44AD > Rs. 2 Crore).\"}\n```",
+  "timestamp": 1789793166.8402784,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

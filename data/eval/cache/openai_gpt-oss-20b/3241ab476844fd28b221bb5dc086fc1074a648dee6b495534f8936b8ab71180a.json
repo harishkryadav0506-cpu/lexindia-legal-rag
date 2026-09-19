@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "3241ab476844fd28b221bb5dc086fc1074a648dee6b495534f8936b8ab71180a",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not mention the procedure for rectifying mistakes under Section 154 and instead cites unrelated rules about Form 10BD, thus fabricating the relevant content.\"}",
+  "timestamp": 1789792385.2073739,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

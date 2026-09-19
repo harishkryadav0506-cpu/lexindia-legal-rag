@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "cde503fbc8d7f641e2775b990cf33fc28fac2d3c1b5345789bd554c0786f43d6",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to state the concessional tax rate for resident co‑operative societies and instead repeats unrelated excerpts, thus it is completely unfaithful to the provided statutory context.\"}",
+  "timestamp": 1789791531.1639285,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

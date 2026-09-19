@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "708f396daf683758f0bec8fba83ee97d7b03a2b882480200a7f7be2c2a81b465",
+  "response": "{\"score\": 3, \"reason\": \"The answer cites the relevant statutory excerpts but omits the explicit 4% rate of the Health and Education Cess, leaving a key numerical detail unsupported.\"}",
+  "timestamp": 1789791398.99006,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

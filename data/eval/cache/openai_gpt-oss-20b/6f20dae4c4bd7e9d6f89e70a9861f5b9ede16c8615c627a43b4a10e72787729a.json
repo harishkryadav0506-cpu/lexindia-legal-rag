@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "6f20dae4c4bd7e9d6f89e70a9861f5b9ede16c8615c627a43b4a10e72787729a",
+  "response": "{\"score\": 1, \"reason\": \"The answer incorrectly states a 30% TDS rate and cites Section 115BBJ, whereas the provided context clearly indicates that Section 194BA does not apply to online gaming winnings from July 1, 2023 onward, making the answer unsupported and misleading.\"}",
+  "timestamp": 1789791725.1649559,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

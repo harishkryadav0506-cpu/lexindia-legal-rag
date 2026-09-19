@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "46ed4f958c0e60010dfea8cdd402289a8311744dd4fc124974f4287d9658fd94",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly states that deductions can be 100% or 50% and that qualifying limits apply, but it introduces an unsupported 10% limit and omits the 85% rule for inter‑trust donations, so it is partially faithful.\"}",
+  "timestamp": 1789791048.9537137,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

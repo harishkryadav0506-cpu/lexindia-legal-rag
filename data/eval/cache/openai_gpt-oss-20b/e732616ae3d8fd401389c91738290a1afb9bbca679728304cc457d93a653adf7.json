@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e732616ae3d8fd401389c91738290a1afb9bbca679728304cc457d93a653adf7",
+  "response": "{\"score\":1,\"reason\":\"The answer does not address the question and contains no reference to Section 246A; it is fabricated.\"}",
+  "timestamp": 1789792483.916688,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

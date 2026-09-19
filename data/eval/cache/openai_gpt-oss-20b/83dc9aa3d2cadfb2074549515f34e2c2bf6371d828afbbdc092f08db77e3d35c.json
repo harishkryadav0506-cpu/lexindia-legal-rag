@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "83dc9aa3d2cadfb2074549515f34e2c2bf6371d828afbbdc092f08db77e3d35c",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 115BAB at all, instead cites unrelated sections and fails to provide any correct information about tax calculation for specified domestic companies.\"}",
+  "timestamp": 1789791514.330671,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

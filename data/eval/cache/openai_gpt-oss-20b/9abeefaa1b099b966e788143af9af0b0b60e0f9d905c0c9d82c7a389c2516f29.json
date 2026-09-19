@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "9abeefaa1b099b966e788143af9af0b0b60e0f9d905c0c9d82c7a389c2516f29",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the requested tax slabs for the new regime and contains unrelated deductions, with no support from the provided context.\"}",
+  "timestamp": 1789791329.00366,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

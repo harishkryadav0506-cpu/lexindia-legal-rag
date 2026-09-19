@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "898420d6b3d96bf019dd0a44a75b03864cae33c5f4c5f8dc89a6d4df9b37eb3e",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly cites Sections 10(13A) and 24(b) but introduces the Rs 2,00,000 limit and the phrase about rent actually paid, which are not present in the provided context, making it partially faithful.\"}",
+  "timestamp": 1789803117.780447,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

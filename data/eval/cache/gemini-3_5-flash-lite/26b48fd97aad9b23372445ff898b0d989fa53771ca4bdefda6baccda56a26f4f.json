@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "26b48fd97aad9b23372445ff898b0d989fa53771ca4bdefda6baccda56a26f4f",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The generated answer correctly states that it cannot find the specific TDS rate and threshold limit for Section 194C within the provided context, referencing the available sections accurately without hallucinating missing data.\"}\n```",
+  "timestamp": 1789793157.3625464,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

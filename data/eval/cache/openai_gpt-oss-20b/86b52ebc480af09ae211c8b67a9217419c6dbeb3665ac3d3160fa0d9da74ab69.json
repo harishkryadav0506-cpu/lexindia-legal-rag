@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "86b52ebc480af09ae211c8b67a9217419c6dbeb3665ac3d3160fa0d9da74ab69",
+  "response": "{\"score\": 1, \"reason\": \"The answer incorrectly cites Section 198 instead of Section 194C and fails to provide any TDS rate or threshold limit, thus it is entirely unfaithful to the question.\"}",
+  "timestamp": 1789791656.4118388,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

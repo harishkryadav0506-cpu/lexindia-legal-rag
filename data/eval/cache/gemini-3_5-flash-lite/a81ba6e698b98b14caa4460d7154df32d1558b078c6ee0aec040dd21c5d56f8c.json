@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "a81ba6e698b98b14caa4460d7154df32d1558b078c6ee0aec040dd21c5d56f8c",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The provided context does not state the specific numerical tax rate for short-term capital gains under Section 111A. The generated answer appropriately avoids hallucinating a rate and reflects what is found in the context.\"}\n```",
+  "timestamp": 1789793163.2814374,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

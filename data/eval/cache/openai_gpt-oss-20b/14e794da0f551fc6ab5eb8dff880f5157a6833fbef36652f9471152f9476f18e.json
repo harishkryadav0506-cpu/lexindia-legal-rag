@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "14e794da0f551fc6ab5eb8dff880f5157a6833fbef36652f9471152f9476f18e",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not state the correct tax rate for long‑term capital gains on other assets under Section 112, nor does it reflect the 20% rate with indexation mentioned in the provided context.\"}",
+  "timestamp": 1789792111.1857038,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

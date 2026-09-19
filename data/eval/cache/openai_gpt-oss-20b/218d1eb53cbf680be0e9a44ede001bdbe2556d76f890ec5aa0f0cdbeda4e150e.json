@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "218d1eb53cbf680be0e9a44ede001bdbe2556d76f890ec5aa0f0cdbeda4e150e",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no authoritative guidance is available in the provided context, which is consistent with the absence of stamp duty information.\"}",
+  "timestamp": 1789792570.8875964,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

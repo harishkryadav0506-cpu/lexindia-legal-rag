@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "7f43fd969def388c55a849f984d73820c41219e026a9e18e3488d3476984339e",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory guidance is present in the provided context, which aligns with the absence of any mention of gold jewelry GST rates.\"}",
+  "timestamp": 1789792553.950022,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "a3ccf115f2f32afb96011f3e5634b9e624d8fa05dc77b060b154f8c45685064f",
+  "response": "```json\n{\"score\": 3, \"reason\": \"The answer correctly identifies rules regarding parents and preventive health check-ups from the text, but the generated answer references citation markers like [C4], [C3], [C1], [C2] that do not match the structure of the provided context chunks.\"}\n```",
+  "timestamp": 1789793150.8848994,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

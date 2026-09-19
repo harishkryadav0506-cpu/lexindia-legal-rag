@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "8042d0ebbc0eca15b25495eb8ded3669cc1c3950e6ac659d215685e3d130731a",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to explain the taxation mechanism for business trust distributions and merely repeats rule text without addressing the question, constituting a hallucination of substantive content.\"}",
+  "timestamp": 1789791571.9882994,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

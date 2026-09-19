@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "c289d7194363b9550e1bcae9ea5a432d078b88f11f3b8fa413ea9b3826491336",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context does not contain any information about a luxury tax rate for 5‑star hotels in Goa, and it does not invent or misrepresent any statutory provisions.\"}",
+  "timestamp": 1789792820.4876826,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "832245c419c38597bf962c47a6843e0dc665ac0ed36b31f92870ec486438761a",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer fails to provide the presumptive taxation turnover limit and deemed profit rate under Section 44AD as requested, instead hallucinating references to Section 44ADA and quoting irrelevant text fragments.\"}\n```",
+  "timestamp": 1789793168.4035883,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "0a5805a6ee7f145049b5b12be3f9d66fbabf3a74af69282e823336c9d05fd785",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no specific duty rates or guidance are present in the provided context, which is consistent with the lack of relevant information in the retrieved statutory excerpts.\"}",
+  "timestamp": 1789792657.4227312,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

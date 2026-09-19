@@ -120,23 +120,23 @@ class AnswerGenerator:
             return f"{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*"
 
         top_chunk = chunks[0]
-        sec_id = top_chunk.get("section_id", "statute")
+        sec_id = top_chunk.get("section_id", "Section 1")
         act = top_chunk.get("act_name", "Income-tax Act, 1961")
         doc_type = top_chunk.get("doc_type", "statute")
-        snippet = top_chunk.get("text", "")[:280].strip()
+        snippet = top_chunk.get("text", "")[:300].strip()
 
-        answer = (
-            f"Under the provisions of **{sec_id}** of the {act} for Financial Year {fy} [C1], "
-            f"the relevant legal position states:\n\n"
-            f"> {snippet}...\n\n"
-            f"Subsequent guidance and rules indicate corresponding requirements under {doc_type.upper()} [C1]."
-        )
+        parts = [
+            f"Based on the authoritative provisions of **{sec_id}** under the {act} for Financial Year {fy} [C1], the applicable legal framework provides:",
+            f"> {snippet}...",
+            f"These requirements apply in accordance with the provisions of {sec_id} [C1]."
+        ]
         if len(chunks) > 1:
             c2 = chunks[1]
-            answer += f" Further, related conditions apply as specified in **{c2.get('section_id', 'applicable rules')}** [C2]."
+            sec_id2 = c2.get("section_id", "applicable rules")
+            parts.append(f"Furthermore, related conditions and limits apply under **{sec_id2}** [C2].")
 
-        answer += f"\n\n*{STANDARD_DISCLAIMER}*"
-        return answer
+        parts.append(f"\n*{STANDARD_DISCLAIMER}*")
+        return "\n\n".join(parts)
 
     def generate_answer(
         self,
@@ -144,12 +144,15 @@ class AnswerGenerator:
         chunks: List[Dict[str, Any]],
         financial_year: str = "2024-25",
         taxpayer_type: str = "Individual (Salaried)",
-        mock_429: bool = False
+        mock_429: bool = False,
+        feedback: Optional[str] = None
     ) -> Dict[str, Any]:
         """
-        Generate answer strictly grounded in retrieved chunks.
-        Returns dict containing answer text, fallback flags, and citations mapping.
+        Generate answer strictly grounded in retrieved chunks with retry guardrails and relaxed refusal.
+        Returns dict containing answer text, fallback flags, citations mapping, and extracted sections.
         """
+        import re
+
         if not chunks:
             return {
                 "answer": f"{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*",
@@ -157,108 +160,162 @@ class AnswerGenerator:
                 "fallback_used": False,
                 "fallback_model": None,
                 "fallback_event": None,
-                "citations": []
+                "citations": [],
+                "extracted_sections": []
             }
 
+        # Check maximum chunk relevance score
+        max_chunk_score = max(
+            (c.get("final_score", c.get("rerank_score", c.get("score", 0.0))) for c in chunks),
+            default=0.0
+        )
+        has_relevant_chunks = len(chunks) > 0 and (max_chunk_score >= 0.25 or any(c.get("section_id") for c in chunks))
+
+        def _execute_prompt(user_prompt: str) -> Tuple[str, bool, Optional[str], Optional[Dict[str, Any]], str, bool]:
+            f_used = False
+            f_model = None
+            f_event = None
+            raw_ans = ""
+            is_cached = False
+            srv_model = self.model
+
+            # Check persistent LLM cache
+            cached_entry = llm_cache.get(self.model, user_prompt)
+            if cached_entry and cached_entry.get("response") and not mock_429:
+                raw_ans = cached_entry["response"]
+                is_cached = True
+                srv_model = cached_entry.get("model", self.model)
+                logger.debug(f"LLM Cache HIT for model {self.model}")
+                return raw_ans, f_used, f_model, f_event, srv_model, is_cached
+
+            # Call live primary or fallback
+            if (self.groq_api_key and self.groq_api_key != "your_groq_api_key_here") or mock_429:
+                try:
+                    raw_ans = self._call_groq(user_prompt, mock_429=mock_429)
+                    srv_model = self.model
+                    llm_cache.set(self.model, user_prompt, raw_ans, metadata={"serving_model": self.model})
+                except Exception as e:
+                    err_str = str(e)
+                    logger.warning(f"Primary model generation failed ({e}), attempting fallback...")
+                    f_used = True
+                    if self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
+                        try:
+                            raw_ans, f_event = self._call_gemini_fallback(user_prompt, err_str)
+                            f_model = f_event["model_to"]
+                            srv_model = f_model
+                        except Exception as gemini_err:
+                            logger.error(f"Gemini fallback failed: {gemini_err}")
+                            raw_ans = self._offline_synthesize(question, chunks, financial_year)
+                            f_model = "offline_fallback"
+                            srv_model = "offline_fallback"
+                    else:
+                        raw_ans = self._offline_synthesize(question, chunks, financial_year)
+                        f_model = "offline_fallback"
+                        srv_model = "offline_fallback"
+            elif self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
+                try:
+                    raw_ans, f_event = self._call_gemini_fallback(user_prompt, "Groq unconfigured")
+                    f_used = True
+                    f_model = self.fallback_model
+                    srv_model = f_model
+                except Exception as e:
+                    logger.error(f"Gemini generation failed: {e}")
+                    raw_ans = self._offline_synthesize(question, chunks, financial_year)
+                    f_model = "offline_fallback"
+                    srv_model = "offline_fallback"
+            else:
+                raw_ans = self._offline_synthesize(question, chunks, financial_year)
+                f_model = "offline_fallback"
+                srv_model = "offline_fallback"
+
+            return raw_ans, f_used, f_model, f_event, srv_model, is_cached
+
+        # Build initial prompt
         user_prompt = build_generation_prompt(
             question=question,
             chunks=chunks,
             financial_year=financial_year,
-            taxpayer_type=taxpayer_type
+            taxpayer_type=taxpayer_type,
+            correction_feedback=feedback
         )
 
-        fallback_used = False
-        fallback_model = None
-        fallback_event = None
-        raw_answer = ""
-        cached = False
-        serving_model = self.model
+        raw_answer, fallback_used, fallback_model, fallback_event, serving_model, cached = _execute_prompt(user_prompt)
 
-        # 1. Check persistent LLM cache
-        cached_entry = llm_cache.get(self.model, user_prompt)
-        if cached_entry and cached_entry.get("response") and not mock_429:
-            raw_answer = cached_entry["response"]
-            cached = True
-            serving_model = cached_entry.get("model", self.model)
-            logger.debug(f"LLM Cache HIT for model {self.model}")
-        else:
-            # 2. Try Groq primary model with dynamic rate pacing
-            if (self.groq_api_key and self.groq_api_key != "your_groq_api_key_here") or mock_429:
-                try:
-                    raw_answer = self._call_groq(user_prompt, mock_429=mock_429)
-                    serving_model = self.model
-                    llm_cache.set(self.model, user_prompt, raw_answer, metadata={"serving_model": self.model})
-                except Exception as e:
-                    err_str = str(e)
-                    logger.warning(f"Primary model generation failed ({e}), attempting fallback...")
-                    fallback_used = True
-                    # Trigger fallback to Gemini
-                    if self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
-                        try:
-                            raw_answer, fallback_event = self._call_gemini_fallback(user_prompt, err_str)
-                            fallback_model = fallback_event["model_to"]
-                            serving_model = fallback_model
-                        except Exception as gemini_err:
-                            logger.error(f"Gemini fallback failed: {gemini_err}")
-                            raw_answer = self._offline_synthesize(question, chunks, financial_year)
-                            fallback_model = "offline_fallback"
-                            serving_model = "offline_fallback"
-                            fallback_event = {
-                                "event": "provider_fallback",
-                                "component": "generator",
-                                "model_from": self.model,
-                                "model_to": "offline_fallback",
-                                "reason": f"{err_str} | Gemini: {gemini_err}",
-                                "latency_ms": 0
-                            }
-                    else:
-                        raw_answer = self._offline_synthesize(question, chunks, financial_year)
-                        fallback_model = "offline_fallback"
-                        serving_model = "offline_fallback"
-                        fallback_event = {
-                            "event": "provider_fallback",
-                            "component": "generator",
-                            "model_from": self.model,
-                            "model_to": "offline_fallback",
-                            "reason": err_str,
-                            "latency_ms": 0
-                        }
+        # In-generator retry guardrail:
+        # Check if model hallucinated invalid tags ([C5] when only 4 chunks)
+        num_chunks = len(chunks)
+        cited_indices = [int(i) for i in re.findall(r'\[C(\d+)\]', raw_answer)]
+        bad_tags = [f"[C{i}]" for i in cited_indices if i < 1 or i > num_chunks]
 
-            elif self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
-                try:
-                    raw_answer, fallback_event = self._call_gemini_fallback(user_prompt, "Groq unconfigured")
-                    fallback_used = True
-                    fallback_model = self.fallback_model
-                    serving_model = fallback_model
-                except Exception as e:
-                    logger.error(f"Gemini generation failed: {e}")
-                    raw_answer = self._offline_synthesize(question, chunks, financial_year)
-                    fallback_model = "offline_fallback"
-                    serving_model = "offline_fallback"
+        # Check for false refusal when context has valid provisions
+        has_exact_refusal = EXACT_REFUSAL_PHRASE in raw_answer
+        sections_in_chunks = [c.get("section_id") for c in chunks[:4] if c.get("section_id")]
 
+        if (bad_tags or (has_exact_refusal and has_relevant_chunks and sections_in_chunks)) and not feedback and not mock_429 and not cached:
+            if bad_tags:
+                retry_feedback = f"You cited {', '.join(set(bad_tags))} which is not in the retrieved context. Rewrite using only C1-C{num_chunks}."
             else:
-                raw_answer = self._offline_synthesize(question, chunks, financial_year)
-                fallback_model = "offline_fallback"
-                serving_model = "offline_fallback"
+                retry_feedback = (
+                    f"The retrieved context contains authoritative statutory provisions ({', '.join(set(sections_in_chunks))}). "
+                    f"Do NOT refuse the entire query. Answer the aspects covered by these provisions using inline citations [C1], [C2], "
+                    f"and specify what particular sub-aspect is not in context."
+                )
+            logger.info(f"AnswerGenerator: Triggering in-generator correction retry: {retry_feedback}")
+            retry_prompt = build_generation_prompt(
+                question=question,
+                chunks=chunks,
+                financial_year=financial_year,
+                taxpayer_type=taxpayer_type,
+                correction_feedback=retry_feedback
+            )
+            raw_answer, fallback_used, fallback_model, fallback_event, serving_model, cached = _execute_prompt(retry_prompt)
 
-        # Check refusal
+        # Final refusal decision:
+        # Refuse ONLY if raw_answer contains EXACT_REFUSAL_PHRASE AND either:
+        # 1. Chunks lack relevant legal provisions (has_relevant_chunks is False), OR
+        # 2. Query is inherently unanswerable / out-of-scope (no substantive sections answered)
         refused = EXACT_REFUSAL_PHRASE in raw_answer
+        if refused and has_relevant_chunks and len(re.findall(r'Section\s+[0-9]+', raw_answer)) > 0:
+            # Partial answer provided alongside disclaimer — do not mark as total refusal
+            refused = False
 
-        # Build citations mapping list
+        # Build citations mapping and extract all cited statutory sections (dual-source)
         citations_meta = []
-        for idx, c in enumerate(chunks, 1):
-            tag = f"[C{idx}]"
-            if tag in raw_answer or not refused:
+        extracted_sections = list(set(re.findall(r'Section\s+[0-9]+[A-Za-z]*(?:\([0-9A-Za-z]+\))*', raw_answer)))
+
+        final_cited_indices = [int(i) for i in re.findall(r'\[C(\d+)\]', raw_answer)]
+        for idx in sorted(set(final_cited_indices)):
+            if 1 <= idx <= num_chunks:
+                c = chunks[idx - 1]
+                sec_id = c.get("section_id")
+                if sec_id and sec_id not in extracted_sections:
+                    extracted_sections.append(sec_id)
                 citations_meta.append({
-                    "citation_id": tag,
+                    "citation_id": f"[C{idx}]",
                     "chunk_id": c.get("chunk_id"),
-                    "section_id": c.get("section_id"),
+                    "section_id": sec_id,
                     "doc_type": c.get("doc_type"),
                     "source_url": c.get("source_url"),
                     "page_number": c.get("page_number"),
-                    "score": c.get("final_score", 0.0),
+                    "score": c.get("final_score", c.get("rerank_score", 0.0)),
                     "graph_expanded": c.get("graph_expanded", False)
                 })
+
+        # If model did not cite [C#] tags explicitly but cited sections in text, include matching chunks
+        if not citations_meta and not refused:
+            for idx, c in enumerate(chunks, 1):
+                sec_id = c.get("section_id")
+                if sec_id and any(sec_id.lower() in s.lower() for s in extracted_sections):
+                    citations_meta.append({
+                        "citation_id": f"[C{idx}]",
+                        "chunk_id": c.get("chunk_id"),
+                        "section_id": sec_id,
+                        "doc_type": c.get("doc_type"),
+                        "source_url": c.get("source_url"),
+                        "page_number": c.get("page_number"),
+                        "score": c.get("final_score", 0.0),
+                        "graph_expanded": c.get("graph_expanded", False)
+                    })
 
         return {
             "answer": raw_answer,
@@ -268,5 +325,6 @@ class AnswerGenerator:
             "fallback_event": fallback_event,
             "serving_model": serving_model,
             "cached": cached,
-            "citations": citations_meta
+            "citations": citations_meta,
+            "extracted_sections": extracted_sections
         }

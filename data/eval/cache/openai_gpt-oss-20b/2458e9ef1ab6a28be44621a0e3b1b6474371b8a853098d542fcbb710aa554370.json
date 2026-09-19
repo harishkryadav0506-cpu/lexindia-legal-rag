@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "2458e9ef1ab6a28be44621a0e3b1b6474371b8a853098d542fcbb710aa554370",
+  "response": "{\"score\": 1, \"reason\": \"The answer introduces the 15% book‑profit rule and the adjustment under Explanation 1 to Section 115JB(2), but none of these provisions appear in the supplied statutory excerpts. The answer therefore contains unsupported claims and is not faithful to the provided context.\"}",
+  "timestamp": 1789791461.2913418,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "72fdf34eb12ece2dd1f049f670f94246b391e87b0aa5b30b3404bfd09de02fe3",
+  "response": "{\"score\": 1, \"reason\": \"The answer contains no reference to Section 51 or the forfeiture of advance money, and it includes fabricated or irrelevant text, thus it is entirely unfaithful to the provided statutory context.\"}",
+  "timestamp": 1789792178.6918344,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

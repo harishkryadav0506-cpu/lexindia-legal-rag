@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "3372c137242dac6122b0ea7b92591d2615c0aed77e4bdeede1b2222f64dd1038",
+  "response": "{\"score\":1,\"reason\":\"Answer contains numerous statutory references and figures not found in the provided context, indicating hallucination.\"}",
+  "timestamp": 1789791242.3050761,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

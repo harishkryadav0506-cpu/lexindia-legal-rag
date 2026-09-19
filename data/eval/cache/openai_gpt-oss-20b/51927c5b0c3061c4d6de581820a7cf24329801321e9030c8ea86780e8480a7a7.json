@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "51927c5b0c3061c4d6de581820a7cf24329801321e9030c8ea86780e8480a7a7",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to identify who can submit Form 15G or 15H, merely restating the form requirement and adding unrelated references, thus it is not faithful to the question.\"}",
+  "timestamp": 1789791815.9906235,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

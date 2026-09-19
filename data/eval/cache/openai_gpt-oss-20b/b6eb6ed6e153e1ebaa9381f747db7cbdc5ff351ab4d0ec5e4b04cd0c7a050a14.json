@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b6eb6ed6e153e1ebaa9381f747db7cbdc5ff351ab4d0ec5e4b04cd0c7a050a14",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the grandfathering mechanism under Section 55(2)(ac) and instead discusses unrelated provisions (Section 112A, Section 47). It contains no support from the provided context for the requested information.\"}",
+  "timestamp": 1789792144.7257948,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

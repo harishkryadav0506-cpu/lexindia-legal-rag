@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "8d8fc69eaef9759da3e1854201ca359a459bf766e446ce1a96b117cc38bb1c0e",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question, contains no reference to Section 194LD or any interest rate, and is unrelated to the provided statutory context.\"}",
+  "timestamp": 1789791947.8417325,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

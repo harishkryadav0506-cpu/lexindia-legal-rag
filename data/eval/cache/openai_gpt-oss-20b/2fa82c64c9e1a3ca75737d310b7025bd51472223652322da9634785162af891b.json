@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "2fa82c64c9e1a3ca75737d310b7025bd51472223652322da9634785162af891b",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no relevant statutory information is present in the provided context, avoiding any hallucinated provisions.\"}",
+  "timestamp": 1789792674.293266,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

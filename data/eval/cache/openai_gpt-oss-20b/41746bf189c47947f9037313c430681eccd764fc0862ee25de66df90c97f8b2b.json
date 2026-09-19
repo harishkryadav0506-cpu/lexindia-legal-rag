@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "41746bf189c47947f9037313c430681eccd764fc0862ee25de66df90c97f8b2b",
+  "response": "{\"score\": 2, \"reason\": \"The answer repeats a generic statement from the context but fails to list the specific transactions excluded under Section 47, leaving the core question unanswered and lacking key details.\"}",
+  "timestamp": 1789792076.8270345,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

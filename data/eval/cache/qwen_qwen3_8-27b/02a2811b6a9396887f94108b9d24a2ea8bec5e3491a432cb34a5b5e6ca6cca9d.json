@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "02a2811b6a9396887f94108b9d24a2ea8bec5e3491a432cb34a5b5e6ca6cca9d",
+  "response": "Based on the provided authoritative legal context, I cannot find sufficient authoritative guidance for this query.\n\nThe provided chunks do not contain the specific statutory provisions (such as Section 115BBH or Section 115BBJ of the Income-tax Act, 1961) that define the tax rate for Virtual Digital Assets (VDA) or cryptocurrency mining income. While [C7] mentions \"Winnings from Online Games chargeable u/s 115BBJ\" and [C1] mentions \"TDS on virtual digital assets,\" neither chunk provides the specific tax rate (30%) or the classification of mining income under the Income-tax Act, 1961. Therefore, I cannot confirm or deny the 30% flat rate based strictly on the retrieved context.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789789600.3779614,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

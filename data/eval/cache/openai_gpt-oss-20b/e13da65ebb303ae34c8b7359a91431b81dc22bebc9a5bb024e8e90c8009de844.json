@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e13da65ebb303ae34c8b7359a91431b81dc22bebc9a5bb024e8e90c8009de844",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address marginal relief under Section 115BAC and instead discusses unrelated deductions, making it entirely unfaithful to the question and the provided context.\"}",
+  "timestamp": 1789791350.8760724,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

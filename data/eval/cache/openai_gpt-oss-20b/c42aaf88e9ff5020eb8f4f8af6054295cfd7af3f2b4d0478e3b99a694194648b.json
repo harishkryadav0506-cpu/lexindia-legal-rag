@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "c42aaf88e9ff5020eb8f4f8af6054295cfd7af3f2b4d0478e3b99a694194648b",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 50 or capital gains on depreciable assets; it cites unrelated sections and contains fabricated content.\"}",
+  "timestamp": 1789792161.5745509,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

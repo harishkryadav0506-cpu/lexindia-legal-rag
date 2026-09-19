@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "417b738037ba40d1e9306509394b8b460e11ef25b891a551d4759094a14739bc",
+  "response": "{\"score\": 1, \"reason\": \"The answer merely repeats fragments of the statutory text without explaining the computation rules for capital gains under Section 45, thus it is completely unfaithful to the question.\"}",
+  "timestamp": 1789792026.4587488,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

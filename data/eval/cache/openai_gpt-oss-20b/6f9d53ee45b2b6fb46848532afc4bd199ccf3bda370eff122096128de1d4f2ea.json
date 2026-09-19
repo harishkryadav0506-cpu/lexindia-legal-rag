@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "6f9d53ee45b2b6fb46848532afc4bd199ccf3bda370eff122096128de1d4f2ea",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about Section 144 or provide any circumstances for a Best Judgment Assessment, and it references unrelated sections, thus it is completely unfaithful.\"}",
+  "timestamp": 1789792411.136103,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

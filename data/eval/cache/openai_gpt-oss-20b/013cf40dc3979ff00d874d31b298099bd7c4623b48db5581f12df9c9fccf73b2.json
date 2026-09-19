@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "013cf40dc3979ff00d874d31b298099bd7c4623b48db5581f12df9c9fccf73b2",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not mention Section 234C, provides incorrect references, and contains fabricated or irrelevant information not supported by the provided context.\"}",
+  "timestamp": 1789792348.9052467,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

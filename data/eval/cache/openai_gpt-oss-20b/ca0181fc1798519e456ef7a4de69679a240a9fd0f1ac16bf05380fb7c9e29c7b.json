@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "ca0181fc1798519e456ef7a4de69679a240a9fd0f1ac16bf05380fb7c9e29c7b",
+  "response": "{\"score\": 1, \"reason\": \"The answer cites a Rs 2,00,000 deduction limit for self‑occupied property, but the provided statutory context contains no such figure or reference to that limit.\"}",
+  "timestamp": 1789790939.3188996,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

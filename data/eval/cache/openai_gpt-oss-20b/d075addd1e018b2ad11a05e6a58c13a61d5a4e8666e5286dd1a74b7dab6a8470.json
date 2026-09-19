@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "d075addd1e018b2ad11a05e6a58c13a61d5a4e8666e5286dd1a74b7dab6a8470",
+  "response": "{\"score\": 1, \"reason\": \"The answer cites Section 16(ia), standard deduction amounts, and new/old regime distinctions that are not present in any of the provided statutory context chunks.\"}",
+  "timestamp": 1789791283.7979372,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

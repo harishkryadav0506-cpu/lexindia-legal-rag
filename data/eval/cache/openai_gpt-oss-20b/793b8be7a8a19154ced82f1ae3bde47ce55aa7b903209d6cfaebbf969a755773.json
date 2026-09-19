@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "793b8be7a8a19154ced82f1ae3bde47ce55aa7b903209d6cfaebbf969a755773",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no authoritative guidance is found in the provided Indian tax context, which indeed contains no information about UAE corporate tax rates.\"}",
+  "timestamp": 1789792606.4759445,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

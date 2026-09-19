@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "cc961dfa5081b6c28aa2ab859e22304f20a610194221ddf9a93a2f1f0c6adf36",
+  "response": "{\"score\": 2, \"reason\": \"The answer merely repeats the instruction text and does not explain how interest is calculated under Section 234A, which is the core of the question. It omits the required calculation details that are not present in the provided context, making it largely unfaithful to the query.\"}",
+  "timestamp": 1789792315.1288197,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

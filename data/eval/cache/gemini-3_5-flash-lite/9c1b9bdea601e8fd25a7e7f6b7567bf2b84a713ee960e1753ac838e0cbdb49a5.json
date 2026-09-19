@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "9c1b9bdea601e8fd25a7e7f6b7567bf2b84a713ee960e1753ac838e0cbdb49a5",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer completely fabricates rules about standard deduction caps, Section 16, and tax regimes which are entirely absent from the provided context chunks (which only discuss validation rules for 80D, 80C, 80G, etc.).\"}\n```",
+  "timestamp": 1789793152.301259,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

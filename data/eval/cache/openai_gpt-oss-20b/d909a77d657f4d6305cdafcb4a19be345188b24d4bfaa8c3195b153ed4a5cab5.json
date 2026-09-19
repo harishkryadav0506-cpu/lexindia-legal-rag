@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "d909a77d657f4d6305cdafcb4a19be345188b24d4bfaa8c3195b153ed4a5cab5",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not provide the requested tax rate and contains no relevant statutory reference to the rate; it merely repeats unrelated excerpts, thus it is completely unfaithful.\"}",
+  "timestamp": 1789791983.2048547,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

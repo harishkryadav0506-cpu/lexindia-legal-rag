@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "94f588030b795074b7e5057074bb15911298ea4be72786990570ab9dbfce6f2c",
+  "response": "Based on the provided authoritative legal context, I cannot answer this specific aspect based on the retrieved context.\n\nThe provided chunks do not contain the specific statutory provisions (such as Section 115BBH or Section 115BBJ of the Income-tax Act, 1961) that define the tax rate for income from Virtual Digital Assets (VDA) or cryptocurrency mining. While the context mentions \"virtual digital assets\" in the context of TDS statements [C5] and ITR validation rules [C7], and references TDS rates generally [C1], it does not specify the applicable income tax rate (e.g., 30%) for mining income.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789803523.214304,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b"
+  }
+}

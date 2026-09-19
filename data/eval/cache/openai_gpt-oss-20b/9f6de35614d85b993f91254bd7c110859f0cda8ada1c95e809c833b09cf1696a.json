@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "9f6de35614d85b993f91254bd7c110859f0cda8ada1c95e809c833b09cf1696a",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 201 at all and instead cites unrelated sections, providing no factual support for the penalty or consequence under Section 201.\"}",
+  "timestamp": 1789791835.245114,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

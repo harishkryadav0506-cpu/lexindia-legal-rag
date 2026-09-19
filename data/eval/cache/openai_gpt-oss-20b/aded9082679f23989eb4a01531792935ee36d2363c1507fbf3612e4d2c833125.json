@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "aded9082679f23989eb4a01531792935ee36d2363c1507fbf3612e4d2c833125",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about Section 54EA, references unrelated sections, and contains no support from the provided context.\"}",
+  "timestamp": 1789792212.9313834,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

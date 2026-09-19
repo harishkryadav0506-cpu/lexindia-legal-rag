@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "cce3ac5d9890f79d7bae60c5c7ea29754d093c6d2b6dc0c41658f5245ca7ec5f",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that no authoritative guidance is found in the provided context, and it does not introduce any unsupported claims or provisions.\"}",
+  "timestamp": 1789792537.1457598,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "58feea58aecad07b07ef23e803ab6024feaa0d7287b7cfc2eecc56764356d7bd",
+  "response": "{\"score\": 1, \"reason\": \"The answer contains fabricated and irrelevant text, does not address the question, and lacks any concrete reference to Section 234B provisions from the provided context.\"}",
+  "timestamp": 1789792332.0516858,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

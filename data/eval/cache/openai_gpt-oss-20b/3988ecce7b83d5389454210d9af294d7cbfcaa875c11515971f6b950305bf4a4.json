@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "3988ecce7b83d5389454210d9af294d7cbfcaa875c11515971f6b950305bf4a4",
+  "response": "{\"score\": 5, \"reason\": \"The answer accurately cites the statutory text from Section 112A, stating the proposed 12.5% rate for all assets and the earlier 10% rate for STT‑paid listed equity shares, matching the provided context without adding unsupported information.\"}",
+  "timestamp": 1789791965.1979418,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

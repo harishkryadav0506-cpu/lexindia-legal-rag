@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "fc643630c724e76f0eedaefdef53b7763fb13f9ac5667d8077f2e2ce3d2e363b",
+  "response": "{\"score\": 1, \"reason\": \"The answer contains no accurate or supported information about the time limit or conditions for issuing a notice under Section 148; it merely repeats garbled text and references unrelated sections, thus it is completely hallucinated.\"}",
+  "timestamp": 1789792428.5780962,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

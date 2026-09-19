@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "bfdfab25ca7aa194a54de0443d7a1ac7ae45654a8c43a8ad97c5f5381f33ad3b",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer discusses standard deductions under Section 16(ia) and completely ignores the asked question regarding the rebate under Section 87A for taxable income up to 7 lakhs under the New Tax Regime.\"}\n```",
+  "timestamp": 1789793154.174349,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

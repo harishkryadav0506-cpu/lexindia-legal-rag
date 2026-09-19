@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "c8dd5a5fd80a723bc92a28409a32316b09aeaefdb44b60ddfea4cda47c9691a6",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not state the 7500 per month presumptive rate from Section 44AE and incorrectly cites Section 44AB, thus it is a hallucination of the required information.\"}",
+  "timestamp": 1789792365.93622,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

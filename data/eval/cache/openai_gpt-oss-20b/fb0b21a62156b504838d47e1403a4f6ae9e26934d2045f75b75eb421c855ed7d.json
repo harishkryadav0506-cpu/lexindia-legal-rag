@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "fb0b21a62156b504838d47e1403a4f6ae9e26934d2045f75b75eb421c855ed7d",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the tax treatment of a liquidation distribution, contains no specific provisions from Section 46, and appears to be fabricated or incomplete, lacking any support from the provided statutory context.\"}",
+  "timestamp": 1789792195.8119419,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

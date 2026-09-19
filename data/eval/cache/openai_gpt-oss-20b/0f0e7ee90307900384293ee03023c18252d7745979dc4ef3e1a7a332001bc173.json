@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "0f0e7ee90307900384293ee03023c18252d7745979dc4ef3e1a7a332001bc173",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the TDS rate under Section 192 and instead references unrelated sections, demonstrating a complete fabrication of the requested information.\"}",
+  "timestamp": 1789791673.2780259,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

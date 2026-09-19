@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "ebe36b0787664aea0031af77cc4cd17c1bebb52724a6f2b94e5d24b5c017d2ae",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question and contains no reference to the required preliminary enquiry under Section 148A; it merely repeats unrelated statutory text, thus it is completely unfaithful.\"}",
+  "timestamp": 1789792447.8299854,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "742f217f08a37aea483331a9f84194a9a3c10c59642cf46ab6a9e81df6491501",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 194P or the exemption for senior citizens aged 75+. It instead discusses unrelated sections (44ADA, ITR-V), thus it is entirely unfaithful.\"}",
+  "timestamp": 1789791708.0204992,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

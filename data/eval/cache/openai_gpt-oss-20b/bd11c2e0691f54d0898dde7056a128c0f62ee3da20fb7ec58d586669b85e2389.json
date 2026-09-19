@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "bd11c2e0691f54d0898dde7056a128c0f62ee3da20fb7ec58d586669b85e2389",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 49 or the cost of acquisition, instead cites unrelated sections and contains fabricated content.\"}",
+  "timestamp": 1789792093.9639463,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

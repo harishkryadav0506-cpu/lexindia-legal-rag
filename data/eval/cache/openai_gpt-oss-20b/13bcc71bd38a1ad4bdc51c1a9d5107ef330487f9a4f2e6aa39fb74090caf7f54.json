@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "13bcc71bd38a1ad4bdc51c1a9d5107ef330487f9a4f2e6aa39fb74090caf7f54",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to mention the specific tax rates (10% and 12.5%) or any statutory reference from Section 115QA, and instead provides unrelated, unsupported statements, constituting a complete hallucination.\"}",
+  "timestamp": 1789791497.517786,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

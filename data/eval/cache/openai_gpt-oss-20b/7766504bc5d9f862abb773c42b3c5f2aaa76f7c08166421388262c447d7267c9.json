@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "7766504bc5d9f862abb773c42b3c5f2aaa76f7c08166421388262c447d7267c9",
+  "response": "{\"score\": 1, \"reason\": \"The answer discusses NPS contributions and unrelated sections, providing no information about the 80C limit for life insurance premiums or PPF, thus it is entirely fabricated relative to the provided context.\"}",
+  "timestamp": 1789790854.5565434,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

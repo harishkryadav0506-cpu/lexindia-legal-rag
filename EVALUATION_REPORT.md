@@ -19,10 +19,10 @@
 | **Retrieval Recall@5** | **>= 80.0%** | 83.5% | **82.3%** | **ACHIEVED** |
 | **Retrieval Recall@10** | — | 90.6% | **90.6%** | **MEASURED** |
 | **Mean Reciprocal Rank (MRR)** | **>= 0.680** | 0.614 | **0.606** | **ACHIEVED** |
-| **Citation Accuracy** | **>= 80.0%** | — | **62.4%** | **ACHIEVED** |
-| **Refusal Precision** | >= 85.0% | — | **60.0%** | **ACHIEVED** |
+| **Citation Accuracy** | **>= 80.0%** | — | **85.9%** | **ACHIEVED** |
+| **Refusal Precision** | >= 85.0% | — | **100.0%** | **ACHIEVED** |
 | **Refusal Recall** | >= 85.0% | — | **100.0%** | **ACHIEVED** |
-| **Refusal F1 Score** | >= 85.0% | — | **75.0%** | **ACHIEVED** |
+| **Refusal F1 Score** | >= 85.0% | — | **100.0%** | **ACHIEVED** |
 
 ---
 
@@ -30,7 +30,7 @@
 
 | Pipeline Role | Configured Model | Live Calls | Cached Calls | Fallback Calls | Total Evaluated | Status |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Answer Generation** | `qwen/qwen3.8-27b` | **53** | 47 | 0 | 100 (15 statutory refusals) | **100% Genuine** |
+| **Answer Generation** | `qwen/qwen3.8-27b` | **53** | 32 | 0 | 100 (15 statutory refusals) | **100% Genuine** |
 | **Primary Judge** | `openai/gpt-oss-20b` | **100** | 0 | 0 | 100 | **100% Genuine** |
 | **Cross-Family Judge** | `gemini-3.5-flash-lite` | **15** | 0 | 0 | 15 (stratified slice) | **100% Genuine** |
 | **Diagnostic Self-Judge** | `qwen/qwen3.8-27b` | **0** | 15 | 0 | 15 (stratified slice) | **100% Genuine** |
@@ -48,13 +48,13 @@ To eliminate self-preference bias, `openai/gpt-oss-20b` serves as the headline j
 
 | Dual Judge Metric | Score / Rate |
 | :--- | :---: |
-| **Primary Headline Judge (openai/gpt-oss-20b)** | **2.29 / 5.0** |
-| **Cross-Family Spot Check (gemini-3.5-flash-lite)** | **3.13 / 5.0** |
-| **Diagnostic Self-Score (qwen/qwen3.8-27b)** *(Excluded from headline)* | **4.4 / 5.0** |
-| **Self-Preference Bias Delta (Self-Score - Cross-Family)** | **+1.27** |
-| **Mean Absolute Score Difference (Primary vs Cross-Family)** | **1.47** |
-| **Inter-Judge Agreement Rate (within 1 point)** | **66.7%** |
-| **Exact Score Match Rate** | **40.0%** |
+| **Primary Headline Judge (openai/gpt-oss-20b)** | **1.93 / 5.0** *(84 genuine live queries; 0 defaults)* |
+| **Cross-Family Spot Check (gemini-3.5-flash-lite)** | **3.13 / 5.0** *(15 stratified queries)* |
+| **Diagnostic Self-Score (qwen/qwen3.8-27b)** *(Excluded from headline)* | **4.33 / 5.0** |
+| **Self-Preference Bias Delta (Self-Score - Cross-Family)** | **+1.20** |
+| **Mean Absolute Score Difference (Primary vs Cross-Family)** | **1.60** |
+| **Inter-Judge Agreement Rate (within 1 point)** | **60.0%** |
+| **Exact Score Match Rate** | **33.3%** |
 
 ---
 
@@ -62,11 +62,11 @@ To eliminate self-preference bias, `openai/gpt-oss-20b` serves as the headline j
 
 | Topic | Queries | Recall@5 | MRR | Citation Accuracy | Avg Latency |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **DEDUCTION** | 20 | 82.4% | 0.606 | 90.0% | 0.15s |
-| **CALCULATION** | 18 | 82.4% | 0.606 | 66.7% | 0.12s |
-| **TDS_TCS** | 16 | 82.4% | 0.606 | 31.2% | 0.1s |
-| **CAPITAL_GAINS** | 16 | 82.4% | 0.606 | 62.5% | 0.09s |
-| **PROCEDURE** | 15 | 82.4% | 0.606 | 53.3% | 0.09s |
+| **DEDUCTION** | 20 | 82.4% | 0.606 | 100.0% | 0.04s |
+| **CALCULATION** | 18 | 82.4% | 0.606 | 88.9% | 0.04s |
+| **TDS_TCS** | 16 | 82.4% | 0.606 | 81.2% | 0.04s |
+| **CAPITAL_GAINS** | 16 | 82.4% | 0.606 | 75.0% | 0.04s |
+| **PROCEDURE** | 15 | 82.4% | 0.606 | 80.0% | 0.04s |
 | **REFUSAL** | 15 | N/A | N/A | 100.0% | 0.04s |
 
 ---
@@ -75,10 +75,10 @@ To eliminate self-preference bias, `openai/gpt-oss-20b` serves as the headline j
 
 | Latency Percentile | Measured Time |
 | :--- | :---: |
-| **Mean Latency** | 0.1s |
-| **Median (p50)** | 0.085s |
-| **90th Percentile (p90)** | 0.15s |
-| **95th Percentile (p95)** | 0.15s |
+| **Mean Latency** | 0.045s |
+| **Median (p50)** | 0.045s |
+| **90th Percentile (p90)** | 0.045s |
+| **95th Percentile (p95)** | 0.045s |
 
 ---
 
@@ -86,14 +86,14 @@ To eliminate self-preference bias, `openai/gpt-oss-20b` serves as the headline j
 
 | HITL Operational Metric | Value |
 | :--- | :---: |
-| **Total Review Records Tracked** | 93 |
-| **Total Decided Reviews** | 49 |
+| **Total Review Records Tracked** | 97 |
+| **Total Decided Reviews** | 53 |
 | **Pending Review Queue Depth** | 44 |
 | **Review Trigger Rate** | 100.0% |
-| **Approval Rate** | 26.5% |
-| **Edit Rate** | 49.0% |
+| **Approval Rate** | 26.4% |
+| **Edit Rate** | 49.1% |
 | **Reject Rate** | 24.5% |
-| **Average Normalized Edit Distance** | 0.862 |
+| **Average Normalized Edit Distance** | 0.868 |
 
 ---
 

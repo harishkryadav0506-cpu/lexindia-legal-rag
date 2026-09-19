@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "326e7e3cfe7bf1357c57529a9201c6e8891082e592604cc1bd54e3579447d979",
+  "response": "{\"score\": 1, \"reason\": \"The answer contains no accurate or supported information about Section 48 deductions and includes irrelevant, fabricated references, making it entirely unfaithful to the provided context.\"}",
+  "timestamp": 1789792042.971183,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "8e365340830d99fe4acecb714da639e6d65b886bbd551f8c5ad684d1bcf2b551",
+  "response": "```json\n{\"score\": 1, \"reason\": \"The generated answer completely hallucinated a response about employer contributions to the National Pension System (NPS) under Section 80CCD, whereas the question asked about the maximum limit for Section 80C for life insurance premium and PPF, and the provided context contains no mention of the Rs. 1,50,000 limit or NPS provisions.\"}\n```",
+  "timestamp": 1789793149.686635,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

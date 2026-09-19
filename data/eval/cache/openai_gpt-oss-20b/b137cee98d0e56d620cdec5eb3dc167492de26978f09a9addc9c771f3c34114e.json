@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b137cee98d0e56d620cdec5eb3dc167492de26978f09a9addc9c771f3c34114e",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the question about set‑off and carry‑forward periods under Sections 70 and 71, contains no relevant statutory references, and appears to be fabricated.\"}",
+  "timestamp": 1789792229.9170377,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "6d467fcb66edcf8f962976cf61a98c58897a32f66888a0346710ecb1cd88c2fa",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to state the higher TDS rate for non‑furnished PAN and includes irrelevant references, thus it does not reflect the statutory context.\"}",
+  "timestamp": 1789791753.4932892,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

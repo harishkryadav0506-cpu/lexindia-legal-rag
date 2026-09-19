@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "f2f8f535f9b6840940db594e0111cf983b84fca156a7546a5aa2d75ea3d71769",
+  "response": "```json\n{\"score\": 3, \"reason\": \"The context mentions Section 10(13A) limits and Section 24(b) house property validation rules, but it does not contain the rule explicitly stating whether an individual can claim both simultaneously, nor does it mention the Rs 2,00,000 limit for home loan interest.\"}\n```",
+  "timestamp": 1789793148.015845,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "0f290c7865046c76068d7b23db6a49e25149bfd751cd642cf9fb6a31404cc729",
+  "response": "{\"score\": 1, \"reason\": \"The answer incorrectly cites Sections 153C and 54 instead of Section 203, and omits the actual statutory requirement to furnish TDS certificates at the time of deduction or payment.\"}",
+  "timestamp": 1789791852.7394207,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

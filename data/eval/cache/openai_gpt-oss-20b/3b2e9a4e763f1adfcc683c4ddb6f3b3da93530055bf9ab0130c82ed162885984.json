@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "3b2e9a4e763f1adfcc683c4ddb6f3b3da93530055bf9ab0130c82ed162885984",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not provide the TDS rate on interest on securities under Section 193 and instead references unrelated sections, making it a hallucination.\"}",
+  "timestamp": 1789791869.363256,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

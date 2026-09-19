@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b1ce556abe655e384bacabf474e83949b86555429ead4eccaea4ff27255d336a",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly states that the provided context does not contain information about the BBMP municipal property tax rate, which aligns with the absence of such details in the retrieved statutory excerpts.\"}",
+  "timestamp": 1789792518.343152,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "d575b76880c2f017b32b9c0d3f4926e8f4b13695199982dd80530f39978fa1c9",
+  "response": "```json\n{\"score\": 2, \"reason\": \"The generated answer completely misses the actual answer found in Section 192 (deducting income-tax and super-tax at the average rate of income-tax and average rate of super-tax) and instead hallucinates irrelevant text about Section 80CCH and validation rules.\"}\n```",
+  "timestamp": 1789793158.96134,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

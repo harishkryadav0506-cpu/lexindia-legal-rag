@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "7bedf48ef5035c5f2a69b613f66b49ce85f89c12b7f38343406ab673665422a2",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not provide any accurate or supported information about Section 139A or the rules for quoting PAN, and it contains irrelevant references to other sections, making it a hallucination.\"}",
+  "timestamp": 1789792467.0276866,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

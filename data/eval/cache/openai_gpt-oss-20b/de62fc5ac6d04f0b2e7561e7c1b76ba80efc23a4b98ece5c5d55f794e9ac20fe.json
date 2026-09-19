@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "de62fc5ac6d04f0b2e7561e7c1b76ba80efc23a4b98ece5c5d55f794e9ac20fe",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address Section 87A rebate at all and instead discusses unrelated deductions, thus it is completely hallucinated.\"}",
+  "timestamp": 1789791306.7274826,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

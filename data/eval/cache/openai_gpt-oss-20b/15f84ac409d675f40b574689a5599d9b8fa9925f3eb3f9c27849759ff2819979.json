@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "15f84ac409d675f40b574689a5599d9b8fa9925f3eb3f9c27849759ff2819979",
+  "response": "{\"score\": 5, \"reason\": \"The answer accurately reflects the absence of a specific monetary limit in the provided context and correctly cites the procedural constraints from the validation rules without inventing any statutory provisions.\"}",
+  "timestamp": 1789791092.4820812,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

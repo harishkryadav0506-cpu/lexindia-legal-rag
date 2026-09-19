@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "e0360efe4d67bcaeaf2d2b93cee56f9ec92199a2ca42031bd0441ae596ff28bb",
+  "response": "```json\n{\"score\": 5, \"reason\": \"The answer accurately reflects the text in the context regarding the proposed reduction of TDS under section 194M from 5% to 2%, and properly states what is available in the provided chunks without hallucinating the missing threshold limit.\"}\n```",
+  "timestamp": 1789793160.6059027,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

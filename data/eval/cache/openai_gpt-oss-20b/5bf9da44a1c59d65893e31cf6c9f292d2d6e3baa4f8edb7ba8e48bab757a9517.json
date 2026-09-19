@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "5bf9da44a1c59d65893e31cf6c9f292d2d6e3baa4f8edb7ba8e48bab757a9517",
+  "response": "{\"score\": 1, \"reason\": \"The answer fails to address the question, contains no reference to the 75‑lakh threshold, and repeats unrelated excerpts, thus it is completely unfaithful.\"}",
+  "timestamp": 1789792280.4481373,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "22a12079c8ba9c0bf3eb1852a21d0e79f8d1ce9ae76757ebccf01735375797e4",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not address the requested tax exemption for Scheduled Tribes under Section 10(26) and instead discusses unrelated provisions of Section 10, making it a hallucination.\"}",
+  "timestamp": 1789791266.7968225,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "29c4ec10adb7f022a6c3c1eca5ed90f4af314d6d8717a14e6ca7b4637bec90ef",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly states the deduction limits of ₹75,000 for a dependent with disability and ₹1,25,000 for a dependent with severe disability, which are supported by the context. However, it adds unsupported claims about the old tax regime requirement and a Gross Total Income cap, which are not present in the provided statutory excerpts.\"}",
+  "timestamp": 1789790981.433679,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

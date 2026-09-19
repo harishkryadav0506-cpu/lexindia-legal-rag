@@ -135,7 +135,7 @@ Rate Faithfulness (1-5) and provide your concise JSON output:"""
                     {"role": "user", "content": user_prompt},
                 ],
                 "temperature": 0.0,
-                "max_tokens": 512,
+                "max_tokens": 1024,
             }
             if extra_body:
                 call_kwargs["extra_body"] = extra_body
@@ -149,27 +149,39 @@ Rate Faithfulness (1-5) and provide your concise JSON output:"""
             if not content and getattr(choice.message, "reasoning", None):
                 content = choice.message.reasoning.strip()
 
-            if content:
-                llm_cache.set(model_id, user_prompt, content, metadata={"serving_model": model_id})
+            if not content:
+                logger.warning(f"Empty content from {model_id} (finish_reason={choice.finish_reason}, attempt {attempt}/{max_retries})")
+                if attempt < max_retries:
+                    time.sleep(2.0)
+                    continue
+                raise ValueError("Empty response received from judge after retries")
+
+            llm_cache.set(model_id, user_prompt, content, metadata={"serving_model": model_id})
             result = _parse_judge_json(content)
             result["cached"] = False
             result["model"] = model_id
             return result
         except RateLimitError as rle:
+            err_str = str(rle).lower()
+            if "tokens per day" in err_str or "tpd" in err_str:
+                logger.error(f"TPD exhaustion detected on {model_id}: {rle}")
+                raise RuntimeError(f"TPD limit reached on {model_id}. Hard-stopping cleanly.") from rle
             if attempt < max_retries:
                 retry_after = getattr(rle, "response", None) and rle.response.headers.get("retry-after")
                 groq_pacer.handle_rate_limit(retry_after, model=model_id, error_message=str(rle))
                 continue
             logger.warning(f"Primary judge (Groq 20b) rate limit exhausted: {rle}")
-            return {"score": 4, "reason": "Groq rate limit retries exhausted"}
+            raise RuntimeError(f"Primary judge rate limit exhausted after {max_retries} attempts.") from rle
         except Exception as e:
-            if ("429" in str(e) or "limit" in str(e).lower()) and attempt < max_retries:
+            err_str = str(e).lower()
+            if "tokens per day" in err_str or "tpd" in err_str:
+                logger.error(f"TPD exhaustion detected on {model_id}: {e}")
+                raise RuntimeError(f"TPD limit reached on {model_id}. Hard-stopping cleanly.") from e
+            if ("429" in str(e) or "limit" in err_str) and attempt < max_retries:
                 groq_pacer.handle_rate_limit(model=model_id, error_message=str(e))
                 continue
             logger.warning(f"Primary judge (Groq 20b) call failed: {e}")
-            return {"score": 4, "reason": f"Groq call error: {str(e)[:60]}"}
-
-    return {"score": 4, "reason": "Primary judge call failed after retries."}
+            raise e
 
 
 def judge_cross_family_gemini(

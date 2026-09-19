@@ -65,8 +65,15 @@ class LexIndiaState(TypedDict):
     refused: bool
     low_confidence: bool
 
+    # Citation Grounding & Verification (Phase 4)
+    citation_retry_count: int
+    citation_verifier_feedback: Optional[str]
+    hallucinated_citations: List[str]
+    verified_citations: List[Dict[str, Any]]
+
     # Fallback & Traceability
     fallback_used: bool
     fallback_model: Optional[str]
     agent_trace: List[AgentTraceEntry]
     total_latency_ms: int
+

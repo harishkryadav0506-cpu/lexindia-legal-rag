@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "93d8308285b836a77b418682f0aabdf26994c8f71f28259f2fd3cf87e6698c11",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not provide the due date for filing income tax returns under Section 139(1) and instead cites unrelated sections, thus it is completely hallucinated and unfaithful.\"}",
+  "timestamp": 1789792297.4976177,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

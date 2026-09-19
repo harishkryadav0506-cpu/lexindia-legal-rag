@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "a8d342e8ff2806d1a7c238044c476c6f6f9acb25be5798d014be97da8f1eb907",
+  "response": "{\"score\": 1, \"reason\": \"The answer introduces figures (₹1,50,000, stamp duty limit ₹45,00,000, ownership restriction) and a sanction period that are not present in the provided statutory excerpts, and it contradicts the stated",
+  "timestamp": 1789791029.3196905,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

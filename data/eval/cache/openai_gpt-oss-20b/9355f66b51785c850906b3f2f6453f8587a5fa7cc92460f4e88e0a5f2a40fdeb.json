@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "9355f66b51785c850906b3f2f6453f8587a5fa7cc92460f4e88e0a5f2a40fdeb",
+  "response": "{\"score\": 1, \"reason\": \"The answer does not mention the 0.1% TCS rate on sales exceeding Rs. 50 lakh as stated in Section 206C, and instead incorrectly cites Section 194. It is a complete hallucination of the required information.\"}",
+  "timestamp": 1789791773.242517,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

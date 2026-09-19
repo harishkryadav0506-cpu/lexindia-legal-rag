@@ -4398,5 +4398,347 @@
     "action": "edit",
     "reviewer_note": "Verified against Section 80C(2)(xviii)",
     "verified_at": "2026-09-18T05:39:02.906506+00:00"
+  },
+  {
+    "thread_id": "thread_584c1faf2d07",
+    "query": "What is the Section 80C deduction limit for FY 2024-25?",
+    "financial_year": "2024-25",
+    "draft_answer": "Based on the provided authoritative legal context for Financial Year (FY) 2024-25, the sum of deductions allowed under Section 80C, Section 80CCC, and Section 80CCD(1) is subject to a maximum limit of Rs. 150,000 [C1]. \n\n*Note: If the New Tax Regime (Section 115BAC) is selected, deductions under Section 80C cannot be claimed and the sum of deductions claimed under Section 80C, Section 80CCC, and Section 80CCD(1) should not be more than zero [C4], [C5].*\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "final_answer": "Based on the provided authoritative legal context for Financial Year (FY) 2024-25, the sum of deductions allowed under Section 80C, Section 80CCC, and Section 80CCD(1) is subject to a maximum limit of Rs. 150,000 [C1]. \n\n*Note: If the New Tax Regime (Section 115BAC) is selected, deductions under Section 80C cannot be claimed and the sum of deductions claimed under Section 80C, Section 80CCC, and Section 80CCD(1) should not be more than zero [C4], [C5].*\n\n*LexIndia provides legal information, not professional tax advice.*",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr2_validation_rules_ay2024_25_p27_c44",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
+        "page_number": 27,
+        "score": 0.5838214874267578,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C4]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p15_c24",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 15,
+        "score": 0.05446135997772217,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr2_validation_rules_ay2024_25_p26_c43",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
+        "page_number": 26,
+        "score": 0.027021331340074537,
+        "graph_expanded": false
+      }
+    ],
+    "action": "approve",
+    "reviewer_note": "",
+    "verified_at": "2026-09-19T03:45:00.128029+00:00"
+  },
+  {
+    "thread_id": "thread_e64f4a7f9ebe",
+    "query": "Can I claim Section 80D deduction without health checkup?",
+    "financial_year": "2024-25",
+    "draft_answer": "Based on the provided authoritative legal context, here is the analysis regarding the claim of deduction under Section 80D without a preventive health checkup:\n\n**1. Independence of Health Insurance Premium and Health Checkup Deductions**\nThe provided context indicates that the deduction for health insurance premiums and the deduction for preventive health checkups are treated as separate line items within Schedule 80D.\n*   **Health Insurance Premiums:** The validation rules require details such as the \"Name of the Insurer and Policy number\" to claim deduction for health insurance at specific serial numbers (1a, 1b, 2a, 2b) [C3], [C4], [C5], [C7].\n*   **Preventive Health Checkup:** The deduction for preventive health checkups is subject to a specific cap and is validated separately. For instance, the amount of preventive health checkup combined should not exceed Rs. 5,000 [C2], [C6]. Similarly, for AY 2025-26, the deduction for preventive health checkup cannot be greater than Rs. 5,000 [C1].\n\nThe context does not state that claiming the health insurance premium deduction is conditional upon claiming the preventive health checkup deduction. Therefore, you can claim the deduction for health insurance premiums under Section 80D without claiming the preventive health checkup portion, provided you meet the eligibility criteria for the insurance premium itself (e.g., valid policy details).\n\n**2. Limits and Conditions for Section 80D (Old Tax Regime)**\nThe deduction under Section 80D is available **only if the \"Old Tax Regime\" is selected** [C1], [C2], [C6]. If the \"New Tax Regime\" is selected, Schedule 80D must be blank, and no deduction under this section can be claimed [C1].\n\nThe specific limits for the Old Tax Regime are as follows:\n*   **Self and Family (Non-Senior Citizen):** Deduction at Sl. No. 1a is allowed to the extent of Rs. 25,000 [C2], [C6].\n*   **Self and Family (Senior Citizen):** Deduction at Sl. No. 1b is allowed to the extent of Rs. 50,000 [C1], [C2].\n*   **Parents (Non-Senior Citizen):** Deduction at Sl. No. 2a is allowed to the extent of Rs. 25,000 [C1], [C2].\n*   **Parents (Senior Citizen):** Deduction at Sl. No. 2b is allowed to the extent of Rs. 50,000 [C1], [C2].\n*   **Total Eligible Amount",
+    "final_answer": "Under Section 80D, deduction up to Rs 25,000 is allowed for health insurance premiums. Preventive health check-up is allowed up to Rs 5,000 within the overall ceiling.",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p49_c78",
+        "section_id": "Section 80D",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 49,
+        "score": 0.5540157437324523,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C2]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p17_c28",
+        "section_id": "General",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 17,
+        "score": 0.40223007202148436,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C3]",
+        "chunk_id": "itr2_validation_rules_ay2025_26_p44_c76",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
+        "page_number": 44,
+        "score": 0.26173215508460995,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C4]",
+        "chunk_id": "itr1_validation_rules_ay2025_26_p19_c32",
+        "section_id": "Section 192",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 19,
+        "score": 0.25267637372016905,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p54_c87",
+        "section_id": "Section 80QQB",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 54,
+        "score": 0.15148245692253112,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C6]",
+        "chunk_id": "itr4_validation_rules_ay2025_26_p13_c20",
+        "section_id": "General",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 13,
+        "score": 0.10823613703250885,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C7]",
+        "chunk_id": "itr2_validation_rules_ay2025_26_p45_c77",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
+        "page_number": 45,
+        "score": 0.08981722891330719,
+        "graph_expanded": false
+      }
+    ],
+    "action": "edit",
+    "reviewer_note": "Clarified preventive checkup limit within overall ceiling",
+    "verified_at": "2026-09-19T03:45:34.792291+00:00"
+  },
+  {
+    "thread_id": "thread_4d563c62b484",
+    "query": "Deduction for home loan principal repayment under 80C",
+    "financial_year": "2024-25",
+    "draft_answer": "Based on the provided authoritative legal context for Financial Year 2024-25 (Assessment Year 2025-26), here is the legal analysis regarding the deduction for home loan principal repayment under Section 80C:\n\n**1. Statutory Limit and Aggregation**\n*   **Maximum Deduction Limit:** Under the Old Tax Regime, the total sum of deductions claimed under Section 80C, Section 80CCC, and Section 80CCD(1) cannot exceed **Rs. 1,50,000** [C1].\n*   **Aggregation Rule:** Home loan principal repayment is a qualifying investment under Section 80C. Therefore, the amount claimed for principal repayment must be aggregated with other Section 80C investments (such as PPF, ELSS, Life Insurance premiums, etc.) to ensure the total does not exceed the Rs. 1,50,000 cap [C1].\n\n**2. Filing and Validation Requirements (ITR-1 for Salaried Individuals)**\n*   **Schedule Consistency:** The deduction claimed under Section 80C in Schedule VIA must exactly match the \"Total of payment made as per schedule 80C\" [C2].\n*   **Detailed Disclosure:** To claim the deduction, the taxpayer must provide specific details in Schedule 80C, including the **Amount eligible for deduction** and the **Identification Number of the supporting document** [C6].\n*   **Regime Restriction:** These specific validation rules and the Rs. 1,50,000 limit apply when the **Old Tax Regime** is selected [C1]. Under the New Tax Regime (Section 115BAC), most Chapter VI-A deductions, including Section 80C, are generally not available, though the specific exclusion text for 80C under the new regime is not explicitly detailed in the provided chunks beyond the regime-specific validation rules for other sections [C1][C5].\n\n**3. Distinction from Interest Deduction (Section 24(b))**\n*   **Principal vs. Interest:** It is crucial to distinguish between principal repayment (Section 80C) and interest on borrowed capital (Section 24(b)).\n*   **Section 24(b) Limitations:** Interest on borrowed capital for a **self-occupied house property** cannot be claimed under the New Tax Regime [C2].\n*   **Interaction with 80EE/80EEA:** Deductions under Section 80EE and Section 80EEA can be claimed over and above the deduction under Section 24(b) only when the limit under Section 24(b) is exhausted [C5].\n    *   **Section 80EE:** Applicable only if the",
+    "final_answer": "Home loan principal repayment is deductible under Section 80C up to Rs 1.5 Lakh per financial year.",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr1_validation_rules_ay2025_26_p6_c6",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 6,
+        "score": 0.4640056729316711,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C2]",
+        "chunk_id": "itr4_validation_rules_ay2025_26_p20_c36",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 20,
+        "score": 0.2740419924259186,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr1_validation_rules_ay2025_26_p17_c28",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 17,
+        "score": 0.019325698167085646,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C6]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p53_c85",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 53,
+        "score": 0.019269564002752305,
+        "graph_expanded": false
+      }
+    ],
+    "action": "edit",
+    "reviewer_note": "Verified against Section 80C(2)(xviii)",
+    "verified_at": "2026-09-19T03:48:52.552359+00:00"
+  },
+  {
+    "thread_id": "thread_6d31c837ed5e",
+    "query": "What is the Section 80C deduction limit for FY 2024-25?",
+    "financial_year": "2024-25",
+    "draft_answer": "For the Financial Year (FY) 2024-25, regarding the deduction limit under Section 80C [C1]:\n\n* The sum of deductions under Section 80C, Section 80CCC, and Section 80CCD(1) is restricted to a maximum limit of Rs. 150,000 [C1].\n* If the New Tax Regime (Section 115BAC) is selected by the taxpayer, deductions under Section 80C cannot be claimed and the sum of deductions claimed under Section 80C, Section 80CCC, and Section 80CCD(1) should not be more than zero [C4], [C5]. \n\n*LexIndia provides legal information, not professional tax advice.*",
+    "final_answer": "For the Financial Year (FY) 2024-25, regarding the deduction limit under Section 80C [C1]:\n\n* The sum of deductions under Section 80C, Section 80CCC, and Section 80CCD(1) is restricted to a maximum limit of Rs. 150,000 [C1].\n* If the New Tax Regime (Section 115BAC) is selected by the taxpayer, deductions under Section 80C cannot be claimed and the sum of deductions claimed under Section 80C, Section 80CCC, and Section 80CCD(1) should not be more than zero [C4], [C5]. \n\n*LexIndia provides legal information, not professional tax advice.*",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr2_validation_rules_ay2024_25_p27_c44",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
+        "page_number": 27,
+        "score": 0.5838214874267578,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C4]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p15_c24",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 15,
+        "score": 0.05446135997772217,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr2_validation_rules_ay2024_25_p26_c43",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
+        "page_number": 26,
+        "score": 0.027021331340074537,
+        "graph_expanded": false
+      }
+    ],
+    "action": "approve",
+    "reviewer_note": "",
+    "verified_at": "2026-09-19T07:36:32.467246+00:00"
+  },
+  {
+    "thread_id": "thread_08af78069f7a",
+    "query": "Can I claim Section 80D deduction without health checkup?",
+    "financial_year": "2024-25",
+    "draft_answer": "Based on the provided authoritative legal context, here is the analysis regarding the claim of deduction under Section 80D without a preventive health checkup:\n\n**1. Independence of Health Checkup Deduction**\nThe deduction for preventive health checkups under Section 80D is a separate component from the deduction for health insurance premiums. The validation rules indicate that the amount for preventive health checkups is capped at Rs. 5,000 and is distinct from the insurance premium limits [C1]. [C2]. [C6].\n*   **For Self and Family:** The deduction for preventive health checkups cannot exceed Rs. 5,000 [C1]. [C2]. [C6].\n*   **For Parents:** The context provided does not explicitly state a separate cap for preventive health checkups for parents, but the total deduction limits for parents are Rs. 25,000 (non-senior) or Rs. 50,000 (senior) [C1]. [C2]. [C6].\n\n**2. Claiming Deduction Without Health Checkup**\nYes, you can claim the Section 80D deduction for health insurance premiums without claiming the preventive health checkup portion. The validation rules structure the schedule such that the \"Eligible amount of deduction\" (Sl. No. 3) is the sum of the insurance premiums (Sl. No. 1a, 1b, 2a, 2b) [C1]. [C2]. The preventive health checkup amount is a specific line item that can be zero if no such expense was incurred or claimed. The rules do not mandate that a health checkup must be claimed to qualify for the insurance premium deduction.\n\n**3. Tax Regime Restriction**\nIt is critical to note that the deduction under Section 80D is **only available if the \"Old Tax Regime\" is selected** [C1]. [C2]. [C6].\n*   If the \"New Tax Regime\" is selected, Schedule 80D must be left blank, and no deduction under Section 80D can be claimed [C1].\n*   Therefore, if you are opting for the New Tax Regime under Section 115BAC, you cannot claim any deduction under Section 80D, regardless of whether you have a health checkup or not [C1].\n\n**4. Documentation Requirements**\nTo claim the deduction for health insurance (which is the primary component of Section 80D), you are required to provide the **Name of the Insurer** and the **Policy Number** in Schedule 80D [C3]. [C4]. [C5]. [C7].\n*   For Self and Family (Sl. No. 1a/1b): Name",
+    "final_answer": "Under Section 80D, deduction up to Rs 25,000 is allowed for health insurance premiums. Preventive health check-up is allowed up to Rs 5,000 within the overall ceiling.",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p49_c78",
+        "section_id": "Section 80D",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 49,
+        "score": 0.5540157437324523,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C2]",
+        "chunk_id": "itr4_validation_rules_ay2024_25_p17_c28",
+        "section_id": "General",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
+        "page_number": 17,
+        "score": 0.40223007202148436,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C3]",
+        "chunk_id": "itr2_validation_rules_ay2025_26_p44_c76",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
+        "page_number": 44,
+        "score": 0.26173215508460995,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C4]",
+        "chunk_id": "itr1_validation_rules_ay2025_26_p19_c32",
+        "section_id": "Section 192",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 19,
+        "score": 0.25267637372016905,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C5]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p54_c87",
+        "section_id": "Section 80QQB",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 54,
+        "score": 0.15148245692253112,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C6]",
+        "chunk_id": "itr4_validation_rules_ay2025_26_p13_c20",
+        "section_id": "General",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 13,
+        "score": 0.10823613703250885,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C7]",
+        "chunk_id": "itr2_validation_rules_ay2025_26_p45_c77",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
+        "page_number": 45,
+        "score": 0.08981722891330719,
+        "graph_expanded": false
+      }
+    ],
+    "action": "edit",
+    "reviewer_note": "Clarified preventive checkup limit within overall ceiling",
+    "verified_at": "2026-09-19T07:36:45.712801+00:00"
+  },
+  {
+    "thread_id": "thread_9754a4215088",
+    "query": "Deduction for home loan principal repayment under 80C",
+    "financial_year": "2024-25",
+    "draft_answer": "Based on the provided authoritative legal context for Financial Year 2024-25 (Assessment Year 2025-26), here is the legal analysis regarding the deduction for home loan principal repayment under Section 80C:\n\n**1. Statutory Limit and Aggregation**\n*   **Maximum Deduction Limit:** Under the Old Tax Regime, the total sum of deductions claimed under Section 80C, Section 80CCC, and Section 80CCD(1) cannot exceed **Rs. 1,50,000** [C1].\n*   **Aggregation Rule:** Home loan principal repayment is a qualifying investment under Section 80C. Therefore, it is aggregated with other Section 80C investments (such as PPF, ELSS, Life Insurance, etc.) as well as contributions under Section 80CCC and Section 80CCD(1) to determine if the Rs. 1,50,000 cap is breached [C1].\n\n**2. Filing and Validation Requirements (ITR-1 for Salaried Individuals)**\n*   **Schedule Consistency:** The deduction claimed under Section 80C in Schedule VIA must exactly match the \"Total of payment made as per schedule 80C\" [C2].\n*   **Internal Consistency:** In Schedule 80C, the sum of individual rows for \"Amount of payment\" must match the \"Total of Payments\" as per the schedule [C2].\n*   **Documentation:** To claim the deduction, the taxpayer must provide details such as the \"Amount eligible for deduction u/s 80C\" and the \"Identification Number of supporting document\" in Schedule 80C [C6].\n*   **Regime Restriction:** These specific validation rules and the Rs. 1,50,000 limit apply when the **Old Tax Regime** is selected [C1].\n\n**3. Distinction from Interest Deduction (Section 24(b))**\n*   **Principal vs. Interest:** The deduction for **principal repayment** is claimed under Section 80C [C1]. The deduction for **interest on borrowed capital** is claimed under Section 24(b) [C2].\n*   **Self-Occupied Property:** For a self-occupied house property under the **New Tax Regime**, interest on borrowed capital (Section 24(b)) cannot be claimed [C2]. However, the context does not explicitly state whether Section 80C principal deductions are available under the New Regime, only that the specific validation rules cited are for the Old Regime [C1].\n*   **Additional Deductions:** Deductions under Section 80EE and Section 80EEA (for first-time home buyers) can be claimed over and",
+    "final_answer": "Home loan principal repayment is deductible under Section 80C up to Rs 1.5 Lakh per financial year.",
+    "citations": [
+      {
+        "citation_id": "[C1]",
+        "chunk_id": "itr1_validation_rules_ay2025_26_p6_c6",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 6,
+        "score": 0.4640056729316711,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C2]",
+        "chunk_id": "itr4_validation_rules_ay2025_26_p20_c36",
+        "section_id": "Section 24(b)",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
+        "page_number": 20,
+        "score": 0.2740419924259186,
+        "graph_expanded": false
+      },
+      {
+        "citation_id": "[C6]",
+        "chunk_id": "itr3_validation_rules_ay2025_26_p53_c85",
+        "section_id": "Section 80C",
+        "doc_type": "itr_instructions",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
+        "page_number": 53,
+        "score": 0.019269564002752305,
+        "graph_expanded": false
+      }
+    ],
+    "action": "edit",
+    "reviewer_note": "Verified against Section 80C(2)(xviii)",
+    "verified_at": "2026-09-19T07:39:50.355088+00:00"
   }
 ]

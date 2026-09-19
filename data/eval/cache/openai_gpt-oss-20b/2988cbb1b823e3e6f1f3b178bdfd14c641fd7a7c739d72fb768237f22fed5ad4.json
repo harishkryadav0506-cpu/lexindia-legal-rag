@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "2988cbb1b823e3e6f1f3b178bdfd14c641fd7a7c739d72fb768237f22fed5ad4",
+  "response": "{\"score\": 5, \"reason\": \"The answer correctly acknowledges the absence of relevant statutory information in the provided context and refrains from making unsupported claims.\"}",
+  "timestamp": 1789792623.4505696,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}

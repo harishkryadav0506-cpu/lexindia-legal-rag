@@ -1,0 +1,9 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_hash": "c663e7f4d19da6751d39621a914239e386bf45e021020c4712dc935b59e51249",
+  "response": "```json\n{\"score\": 2, \"reason\": \"The generated answer fails to provide the actual statutory mechanism for exemption under Section 54 (which is partially mentioned in the context under Section 154/misindexed text regarding purchasing or constructing a house property), instead quoting irrelevant text about market-linked debentures.\"}\n```",
+  "timestamp": 1789793165.043303,
+  "metadata": {
+    "serving_model": "gemini-3.5-flash-lite"
+  }
+}

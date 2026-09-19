@@ -1,0 +1,9 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "cb8244979c2726e59891a6b0387d4f837a1883f91ab5a8d012cd1c92a68a3915",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly cites the 2% TDS rate from the provided context but omits the threshold limit required by Section 194M, leaving the response incomplete and partially faithful.\"}",
+  "timestamp": 1789791690.8343823,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b"
+  }
+}
