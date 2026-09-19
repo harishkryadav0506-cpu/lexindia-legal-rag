@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "d1797973b61061ecf207392c01c5f13a7e699ef9c7300dbe9051cfe2796be956",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly cites Sections 10(13A) and 24(b) but includes details (e.g., rent paid, Rs 2,00,000 limit) that are not present in the provided context, making it partially faithful.\"}",
+  "timestamp": 1789819748.7885432,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

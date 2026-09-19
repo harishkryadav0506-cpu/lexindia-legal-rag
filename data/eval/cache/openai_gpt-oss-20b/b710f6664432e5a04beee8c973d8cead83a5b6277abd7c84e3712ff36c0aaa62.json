@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b710f6664432e5a04beee8c973d8cead83a5b6277abd7c84e3712ff36c0aaa62",
+  "response": "{\"score\": 1, \"reason\": \"The answer states a specific deduction limit and time condition that are not present in the retrieved context, making the claim unsupported.\"}",
+  "timestamp": 1789819964.6721208,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

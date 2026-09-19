@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "ed786c65c168a2ab5b3420f2ec32fb5dcd26117eee5d6283dc68f69dd1f20aba",
+  "response": "{\"score\": 2, \"reason\": \"The answer correctly cites the ₹75,000 and ₹1,25,000 limits for dependent and severely disabled dependents, but it adds unsupported claims about an Old Tax Regime restriction and a Gross Total Income cap, which are not present in the provided context.\"}",
+  "timestamp": 1789820027.4216094,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

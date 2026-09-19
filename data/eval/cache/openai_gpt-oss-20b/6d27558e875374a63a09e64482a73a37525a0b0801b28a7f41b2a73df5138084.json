@@ -1,0 +1,10 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "6d27558e875374a63a09e64482a73a37525a0b0801b28a7f41b2a73df5138084",
+  "response": "{\"score\": 1, \"reason\": \"The answer introduces the Rs. 1,50,000 cap and additional section details that are not present in the retrieved context, making the response largely unsupported by the provided statutory excerpts.\"}",
+  "timestamp": 1789819691.3975441,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "provenance": "live"
+  }
+}

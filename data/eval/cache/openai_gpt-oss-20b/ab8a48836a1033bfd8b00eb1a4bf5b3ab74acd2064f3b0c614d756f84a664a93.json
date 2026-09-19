@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "ab8a48836a1033bfd8b00eb1a4bf5b3ab74acd2064f3b0c614d756f84a664a93",
+  "response": "{\"score\": 1, \"reason\": \"",
+  "timestamp": 1789819774.1981657,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

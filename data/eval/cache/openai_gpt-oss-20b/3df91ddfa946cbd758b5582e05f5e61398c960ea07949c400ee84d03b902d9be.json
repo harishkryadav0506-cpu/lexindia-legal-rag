@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "3df91ddfa946cbd758b5582e05f5e61398c960ea07949c400ee84d03b902d9be",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly reflects that Section 80G allows 100% or 50% deductions depending on the schedule, which is supported by the context. However, it introduces an unsupported 10% qualifying‑limit figure, making the response partially faithful.\"}",
+  "timestamp": 1789820120.7439842,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

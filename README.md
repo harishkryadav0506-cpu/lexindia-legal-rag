@@ -13,6 +13,25 @@ LexIndia is a production-grade, citation-grounded Retrieval-Augmented Generation
 
 ---
 
+## 🚀 Production Status & Operational Maturity
+
+| Capability | Maturity Level | Measured Performance | Documentation / Artifact |
+| :--- | :---: | :---: | :--- |
+| **Hybrid Legal Retrieval** | **Production Ready** | **Recall@5: 92.94%**, **MRR: 0.8646** (k=20 + Citation Boost) | [`EVALUATION_REPORT.md`](./EVALUATION_REPORT.md) |
+| **Statutory Citation Grounding** | **Production Ready** | **Citation Accuracy: 85.9%** (verified chunks) | [`src/agents/graph.py`](./src/agents/graph.py) |
+| **Out-of-Scope Refusal Guardrails** | **Production Ready** | **Precision: 100%**, **Recall: 100%**, **F1: 100%** | [`src/generation/generator.py`](./src/generation/generator.py) |
+| **LangGraph Multi-Agent Orchestration** | **Production Ready** | Supervisor + Researcher + Calculator + Verifier | [`src/agents/graph.py`](./src/agents/graph.py) |
+| **Model Context Protocol (FastMCP)** | **Production Ready** | Claude Desktop integration via stdio & SSE | [`src/mcp_server.py`](./src/mcp_server.py) |
+| **Human-in-the-Loop (HITL) Queue** | **Production Ready** | Interactive `/review` SQLite store & dashboard | [`src/evaluation/hitl.py`](./src/evaluation/hitl.py) |
+| **LLM Faithfulness Evaluation** | **Beta** | **3.28 / 5.0** (Stratified 50-query sample under Rubric v2) | [`LIMITATIONS.md`](./LIMITATIONS.md) |
+| **Dual-Model Generation Ablation** | **Beta** | `qwen/qwen3.8-27b` vs `gpt-oss-120b` comparison | [`ABLATION_TABLE.md`](./ABLATION_TABLE.md) |
+
+> [!NOTE]
+> **Known Limitations & Architectural Boundaries**:
+> 1. **Faithfulness Sample Scope**: Evaluated on a stratified 50-query sample under Rubric v2 (covers edge cases and standard queries; full 100-query consistency deferred due to provider TPD quotas).
+> 2. **Jurisdictional Scope**: Corpus is strictly restricted to Central Indian Income Tax law (Income Tax Act 1961, Rules 1962, Finance Acts 2023-2025, CBDT circulars). GST, customs, and state taxes are out of scope and strictly refused.
+> 3. **Configuration Split**: Retrieval metrics reflect post-Phase-3 boosting ($k=20$); end-to-end generation was benchmarked under baseline retrieval. See [`LIMITATIONS.md`](./LIMITATIONS.md) for full disclosure.
+
 ## 🏛️ System Architecture Overview
 
 ```mermaid

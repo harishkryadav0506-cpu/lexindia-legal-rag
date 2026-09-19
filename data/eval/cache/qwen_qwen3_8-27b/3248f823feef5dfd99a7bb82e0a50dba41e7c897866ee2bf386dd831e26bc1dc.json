@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "3248f823feef5dfd99a7bb82e0a50dba41e7c897866ee2bf386dd831e26bc1dc",
+  "response": "Based on the provided authoritative legal context for Financial Year 2024-25 (Assessment Year 2025-26), here is the analysis regarding the standard deduction for salaried individuals under the New Tax Regime:\n\n**Standard Deduction under Section 16(ia) in the New Tax Regime**\n\n*   **Applicable Amount:** For a taxpayer being an employee who has selected the New Tax Regime under Section 115BAC, the standard deduction under Section 16(ia) can be claimed only to the extent of **Rs. 75,000** [C1].\n*   **Regime Specificity:** This limit of Rs. 75,000 is explicitly applicable in the case of the New Tax Regime [C1].\n*   **Contrast with Old Regime:** In contrast, under the Old Tax Regime, the standard deduction under Section 16(ia) is restricted to Rs. 50,000 or the salary, whichever is less [C5].\n\n**Note on Context Grounding:**\nThe retrieved context provides specific validation rules for e-filing ITR forms (ITR-1, ITR-2, ITR-3, ITR-4) for AY 2025-26 and AY 2024-25. These rules explicitly state the monetary limit for the standard deduction under Section 16(ia) for the New Tax Regime as Rs. 75,000 [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789810971.4800239,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

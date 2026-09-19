@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "fc00f4016aa25e0e17be4f4dc568bb691a9eada635379d475f2fd96609b17d27",
+  "response": "Based on the provided authoritative legal context, here is the analysis regarding the tax slabs for individuals opting for the New Tax Regime under Section 115BAC for Financial Year 2024-25 (Assessment Year 2025-26).\n\n### Tax Slabs under Section 115BAC for FY 2024-25\n\nFor the Assessment Year 2025-26 (corresponding to Financial Year 2024-25), the tax rates applicable to an individual, Hindu Undivided Family (HUF), Association of Persons (other than a co-operative society), Body of Individuals, or Artificial Juridical Person under **Section 115BAC** are as follows [C1]:\n\n| Total Income (Rs.) | Rate of Tax |\n| :--- | :--- |\n| Up to 3,00,000 | Nil |\n| From 3,00,001 to 6,00,000 | 5% |\n| From 6,00,001 to 9,00,000 | 10% |\n| From 9,00,001 to 12,00,000 | 15% |\n| From 12,00,001 to 15,00,000 | 20% |\n| Above 15,00,000 | 30% |\n\n**Key Legal Provisions and Context:**\n\n*   **Default Regime:** The rates specified in sub-section (1A) of **Section 115BAC** are the default rates applicable unless an option is exercised to opt out as per sub-section (6) of **Section 115BAC** [C1].\n*   **Applicability:** These rates apply to income chargeable to tax under clause (i) of sub-section (1A) of **Section 115BAC** [C1].\n*   **Surcharge:** For the Assessment Year 2025-26, the income-tax is increased by a surcharge for the purposes of the Union, computed for every individual or HUF [C1]. However, the specific surcharge rates for the New Regime (Section 115BAC) are not detailed in the provided context; the context only mentions the existence of the surcharge provision [C1].\n*   **Distinction from AY 2026-27:** It is important to note that the rates provided in **Section 115BAC** for AY 2024-25 remain the same as already enacted [C1]. The revised slab structure (",
+  "timestamp": 1789809240.3693295,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

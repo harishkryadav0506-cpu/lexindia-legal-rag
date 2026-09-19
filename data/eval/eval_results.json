@@ -214,12 +214,11 @@
         "Section 80C"
       ],
       "generated_citations": [
-        "Section 80CCD(1)",
-        "Section 80CCD(2)",
+        "Section 80CCC",
         "Section 80C",
-        "Section 80CCD",
-        "Section 36(1)(iva)",
-        "Section 36"
+        "Section 80CCD(1)",
+        "Section 80CCD(1B)",
+        "Section 24(b)"
       ],
       "verified_citations": [
         {
@@ -229,16 +228,6 @@
           "doc_type": "itr_instructions",
           "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/Instructions_ITR4_AY2020_21.pdf",
           "page_number": 10,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "instructions_itr2_ay2020_21_p23_c46",
-          "section_id": "Section 80C",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/Instructions_ITR2_AY2020_21_V1_0.pdf",
-          "page_number": 23,
           "score": 0.0,
           "graph_expanded": false
         },
@@ -253,31 +242,26 @@
           "graph_expanded": false
         },
         {
-          "citation_id": "[C6]",
-          "chunk_id": "income_tax_rules_1962_p547_c839",
-          "section_id": "General",
-          "doc_type": "rules",
-          "source_url": "https://www.incometaxindia.gov.in/documents/20117/1842422/Income-tax-Rules-1962_2026-04-01_05-44-55_6f86ac_en.pdf/912570c2-a404-2a4c-ac17-e93ea54d2602?version=11.0&t=1775132171126&download=true",
-          "page_number": 547,
+          "citation_id": "[C8]",
+          "chunk_id": "itr1_validation_rules_ay2025_26_p18_c30",
+          "section_id": "Section 24(b)",
+          "doc_type": "itr_instructions",
+          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
+          "page_number": 18,
           "score": 0.0,
           "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context, here is the analysis regarding the deductibility of employer contributions to the National Pension System (NPS) for a salaried individual in Financial Year 2024-25.\n\n### Legal Analysis\n\n**1. Distinction Between Employee and Employer Contributions**\nThe Income-tax Act, 1961, distinguishes between contributions made by the employee and those made by the employer to a pension scheme:\n*   **Employee Contributions (Section 80CCD(1)):** Deductions for the employee's own contribution to a pension scheme are covered under Section 80CCD(1). These deductions are subject to a combined cap with Sections 80C and 80CCC. The aggregate amount of deductions admissible under Sections 80C, 80CCC, and 80CCD(1) is restricted to a maximum limit of **Rs. 1,50,000** [C1]. This limit is further validated in the ITR-2 validation rules for AY 2024-25, which state that the sum of deductions under these sections should not exceed Rs. 1,50,000 [C6].\n*   **Employer Contributions (Section 80CCD(2)):** Deductions for the employer's contribution to the employee's pension scheme are covered under a separate provision, Section 80CCD(2) [C4].\n\n**2. Deductibility Beyond the 80C Limit**\nYes, employer contributions to the National Pension System (NPS) are deductible **beyond** the Rs. 1,50,000 limit applicable to Section 80C.\n*   Section 80CCD(2) provides for a specific deduction for the employer's contribution paid during the year to the employee's account under a pension scheme [C4].\n*   The validation rules for AY 2024-25 confirm that the deduction under Section 80CCD(2) is treated separately from the aggregate limit of Sections 80C, 80CCC, and 80CCD(1) [C6].\n*   Therefore, while the employee's own contribution (80CCD(1)) is capped within the Rs. 1,50,000 basket, the employer's contribution (80CCD(2)) is an additional deduction not included in that specific aggregate limit.\n\n**3. Limits on Employer Contribution Deduction**\nThe deduction for employer contributions under Section 80CCD(2) is subject to specific caps based on the employer's category:\n*   **General Limit:** For employers other than Central Government or State Government, the deduction is limited to **10% of the salary** of the employee in the previous year [C6].\n*   **Central/State Government Employees:** The provided context notes that the Finance Act, 2024, proposes to amend Section 36(1)(iva) to increase the employer contribution deduction limit from 10% to **14%** of the salary for certain categories (specifically referencing the amendment to Section 36, which governs employer deductions, and noting the context of Section 80CCD) [C3]. However, the specific validation rule for AY 2024-25 in the provided chunks explicitly states the 10% limit for employers \"other than Central Government or State Government\" [C6].\n*   **Maximum Cap:** The instructions for ITR-1 indicate that the amount eligible under Section 80CCD(2) is subject to a maximum limit of **Rs. 50,000** (Note: This Rs. 50,000 cap is typically for non-government employees under the old regime or specific conditions, but the primary statutory limit cited in the validation rules for AY 2024-25 is the percentage of salary) [C4]. *Correction based on strict context adherence:* The chunk [C4] mentions a \"maximum limit of Rs. 50,000\" in the context of instructions, but chunk [C6] (specific to AY 2024-25 validation) emphasizes the **10% of salary** limit for non-CG/SG employers. The Finance Act 2024 context [C3] discusses increasing the employer deduction limit to 14% for specific cases, implying the base was 10%.\n\n**4. Condition of No Double Claim**\nA critical condition for claiming the deduction under Section 80CCD(2) is that **no claim should have been made under sub-section (1)** (i.e., Section 80CCD(1)) in respect of the same amount [C4].",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context, here is the analysis regarding the maximum limit for deduction under Section 80C:\n\n**Statutory Limit for Section 80C**\nThe aggregate amount of deductions admissible under **Section 80C** [C1], **Section 80CCC** [C1], and **Section 80CCD(1)** [C1] is restricted to a maximum limit of **Rs. 1,50,000** [C1]. This combined cap applies to eligible investments and payments, which include life insurance premiums and contributions to Provident Funds [C1].\n\n**Eligible Investments under Section 80C**\nAccording to the instructions for filing Income Tax Returns, the following payments and deposits are eligible for deduction under **Section 80C** [C1]:\n*   Life insurance premium [C1].\n*   Contribution to any Provident Fund set up by the Government [C1].\n*   Employee’s contribution to a recognised Provident Fund or an approved superannuation fund [C1].\n*   Contribution to deferred annuity plan [C1].\n*   Subscription to National Savings Certificates [C1].\n*   Tuition fees [C1].\n*   Payment or repayment of amounts borrowed for purposes of purchase/construction of a residential house [C1].\n\n**Specific Conditions for Related Sections**\nWhile the user specifically asked about Section 80C, the context also outlines specific limits for related pension schemes that share the aggregate cap:\n*   **Section 80CCD(1):** The deduction is subject to a maximum limit of 10% of salary (for employees) or 20% of Gross Total Income (if no income from salary) [C1]. This amount also counts towards the aggregate Rs. 1,50,000 limit shared with Section 80C and Section 80CCC [C1].\n*   **Section 80CCD(1B):** This section allows an additional deduction of up to Rs. 50,000, provided no claim has been made under Section 80CCD(1) for the same amount [C1].\n\n**Filing Validation**\nWhen filing the Income Tax Return, the deduction claimed under **Section 80C** in Chapter VIA must match the \"Total Deduction u/s 80C\" as per the schedule [C4]. Additionally, the sum of individual rows for \"Amount of payment\" in Schedule 80C must match the \"Total of Payments\" as per the schedule [C8].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "DEDUCTION",
-      "latency_ms": 45,
+      "latency_ms": 4427,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 80C] Column Section Nature of deduction Instruction No. C1 80C Deduction in respect Please enter the amount paid or deposited towards life of life insurance insurance premium, contribution to any Provident Fund set premia, deferred up by the Government, employees contribution to a annuity, contributions recognised Provident Fund or an approved superannu\n\n[Section 80C] (If yes, please fill schedule DI) fill schedule DI, else tick ‘No’. # - Time-limit relaxed to 31.07.2020 as per The Taxation and Other Laws (Relaxation and Amendment of Certain Provisions) Act, 2020 Section Nature of deduction Instruction 80C Deduction in respect of life Please enter the amount paid or deposited towards life insurance premia, defer\n\n[Section 80C] 30.06.2020# for the purpose of claiming any the purpose of claiming any deduction under Part B of deduction under Part B of Chapter VIA? (If yes, Chapter VI-A by ticking the applicable checkbox please fill S.No. \"A\" of Schedule DI) Yes Tick  Yes  No No If yes is selected, please ensure that relevant details are mentioned at S. No. “A\" of schedu\n\n[Section 80C] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n780. Details of loan needs to be provided for claiming deduction u/s 80E in schedule 80E\n\n781. Details of loan needs to be provided for claiming deduction u/s 80EE in schedule 80EE\n\n782. Deduction u/s 80EE can be claimed only if maximum loan taken does not exceed Rs. 35 lakhs against the p\n\n[Rule 5] Limits of reserve for unexpired risks. 6E. In the computation of profits and gains of any business of insurance other than life insurance, the amount carried over to a reserve for unexpired risks inclu-ding any amount carried over to any such additional reserve which is to be allowed as a deduction under clause (c) of rule 5 of the First Schedule, \n\n[General] (e)  \"annuity contract\" means a contract under which the issuer agrees to make payments for a period of time determined in whole or in part by reference to the life expectancy of one or more individuals;\n\n(f)  \"cash value insurance contract\" means an insurance contract (other than an indemnity reinsurance contract between two insurance companies) t\n\n[Section 56] [Computation of income chargeable to tax under clause (xiii) of sub-section (2) of section 56. 11UACA. For the purpose of clause (xiii) of sub-section (2) of section 56, where any person receives at any time during any previous year any sum under a life insurance policy, then, the income chargeable to tax under the said clause during the previous y\n\n[Section 24(b)] Details of Form 10BA is required to provide to claim deduction u/s 80GG\n\n243. In schedule 80D, breakup of individual rows for \"amount of premium paid\" shall match\n\n244. with the health insurance premium entered by the user under \"Health insurance\" at sl.no.1a In schedule 80D, breakup of individual rows for \"amount of premium paid\" shall match\n\n245.",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer discusses NPS contributions and unrelated sections, providing no information about the 80C limit for life insurance premiums or PPF, thus it is entirely fabricated relative to the provided context.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 3,
@@ -354,12 +338,11 @@
         "Section 80CCD(2)"
       ],
       "generated_citations": [
-        "Section 80CCD(1)",
+        "Section 80CCC",
         "Section 80CCD(2)",
-        "Section 80C",
         "Section 80CCD",
-        "Section 36(1)(iva)",
-        "Section 36"
+        "Section 80C",
+        "Section 80CCD(1)"
       ],
       "verified_citations": [
         {
@@ -383,40 +366,26 @@
           "graph_expanded": false
         },
         {
-          "citation_id": "[C4]",
-          "chunk_id": "instructions_itr2_ay2020_21_p23_c46",
-          "section_id": "Section 80C",
+          "citation_id": "[C8]",
+          "chunk_id": "instructions_itr2_ay2020_21_p24_c48",
+          "section_id": "Section 80CCD",
           "doc_type": "itr_instructions",
           "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/Instructions_ITR2_AY2020_21_V1_0.pdf",
-          "page_number": 23,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C6]",
-          "chunk_id": "itr3_validation_rules_ay2025_26_p52_c83",
-          "section_id": "Section 80C",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
-          "page_number": 52,
+          "page_number": 24,
           "score": 0.0,
           "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context, here is the analysis regarding the deductibility of employer contributions to the National Pension System (NPS) for a salaried individual in Financial Year 2024-25.\n\n### Legal Analysis\n\n**1. Distinction Between Employee and Employer Contributions**\nThe Income-tax Act, 1961, distinguishes between contributions made by the employee and those made by the employer to a pension scheme:\n*   **Employee Contributions (Section 80CCD(1)):** Deductions for the employee's own contribution to a pension scheme are covered under Section 80CCD(1). These deductions are subject to a combined cap with Sections 80C and 80CCC. The aggregate amount of deductions admissible under Sections 80C, 80CCC, and 80CCD(1) is restricted to a maximum limit of **Rs. 1,50,000** [C1]. This limit is further validated in the ITR-2 validation rules for AY 2024-25, which state that the sum of deductions under these sections should not exceed Rs. 1,50,000 [C6].\n*   **Employer Contributions (Section 80CCD(2)):** Deductions for the employer's contribution to the employee's pension scheme are covered under a separate provision, Section 80CCD(2) [C4].\n\n**2. Deductibility Beyond the 80C Limit**\nYes, employer contributions to the National Pension System (NPS) are deductible **beyond** the Rs. 1,50,000 limit applicable to Section 80C.\n*   Section 80CCD(2) provides for a specific deduction for the employer's contribution paid during the year to the employee's account under a pension scheme [C4].\n*   The validation rules for AY 2024-25 confirm that the deduction under Section 80CCD(2) is treated separately from the aggregate limit of Sections 80C, 80CCC, and 80CCD(1) [C6].\n*   Therefore, while the employee's own contribution (80CCD(1)) is capped within the Rs. 1,50,000 basket, the employer's contribution (80CCD(2)) is an additional deduction not included in that specific aggregate limit.\n\n**3. Limits on Employer Contribution Deduction**\nThe deduction for employer contributions under Section 80CCD(2) is subject to specific caps based on the employer's category:\n*   **General Limit:** For employers other than Central Government or State Government, the deduction is limited to **10% of the salary** of the employee in the previous year [C6].\n*   **Central/State Government Employees:** The provided context notes that the Finance Act, 2024, proposes to amend Section 36(1)(iva) to increase the employer contribution deduction limit from 10% to **14%** of the salary for certain categories (specifically referencing the amendment to Section 36, which governs employer deductions, and noting the context of Section 80CCD) [C3]. However, the specific validation rule for AY 2024-25 in the provided chunks explicitly states the 10% limit for employers \"other than Central Government or State Government\" [C6].\n*   **Maximum Cap:** The instructions for ITR-1 indicate that the amount eligible under Section 80CCD(2) is subject to a maximum limit of **Rs. 50,000** (Note: This Rs. 50,000 cap is typically for non-government employees under the old regime or specific conditions, but the primary statutory limit cited in the validation rules for AY 2024-25 is the percentage of salary) [C4]. *Correction based on strict context adherence:* The chunk [C4] mentions a \"maximum limit of Rs. 50,000\" in the context of instructions, but chunk [C6] (specific to AY 2024-25 validation) emphasizes the **10% of salary** limit for non-CG/SG employers. The Finance Act 2024 context [C3] discusses increasing the employer deduction limit to 14% for specific cases, implying the base was 10%.\n\n**4. Condition of No Double Claim**\nA critical condition for claiming the deduction under Section 80CCD(2) is that **no claim should have been made under sub-section (1)** (i.e., Section 80CCD(1)) in respect of the same amount [C4].",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context, here is the analysis regarding the deductibility of employer contributions to the National Pension Scheme (NPS) in relation to the Section 80C limit for FY 2024-25.\n\n### 1. Distinction Between Employee and Employer Contributions\nThe provided context distinguishes between employee contributions and employer contributions under Section 80CCD:\n\n*   **Employee Contributions (Section 80CCD(1)):** Contributions made by the employee to a pension scheme notified by the Central Government are eligible for deduction under Section 80CCD(1) [C1]. These contributions are subject to a specific cap:\n    *   For salaried individuals, the limit is **10% of salary** [C1].\n    *   For non-salaried individuals, the limit is **20% of Gross Total Income (GTI)** [C1].\n    *   Crucially, the aggregate amount of deductions admissible under **Section 80C, Section 80CCC, and Section 80CCD(1)** is restricted to a maximum limit of **Rs. 1,50,000** [C1]. This confirms that employee contributions under 80CCD(1) share the common ceiling with Section 80C.\n\n*   **Employer Contributions (Section 80CCD(2)):** The context explicitly identifies a separate provision for employer contributions. Deductions in respect of the **employer’s contribution** to a pension scheme notified by the Central Government are eligible under **Section 80CCD(2)** [C8].\n    *   The validation rules and instructions do **not** list Section 80CCD(2) within the aggregate Rs. 1,50,000 limit that applies to Sections 80C, 80CCC, and 80CCD(1) [C1].\n    *   Instead, Section 80CCD(2) has its own distinct limits based on the nature of the employer:\n        *   If the employer is **other than Central Government or State Government**, the deduction is subject to a maximum limit of **10% of salary** [C8].\n        *   If the employer is **Central Government**, the deduction is subject to a maximum limit of **14% of salary** [C8].\n\n### 2. Applicability to New vs. Old Tax Regime\nThe deductibility of these contributions depends on the tax regime selected by the taxpayer:\n\n*   **Old Tax Regime:**\n    *   Deductions under Section 80CCD(1) and Section 80CCD(2) are available [C3].\n    *   The sum of deductions under Section 80C, 80CCC",
+      "confidence": 0.9,
       "refused": false,
       "route": "DEDUCTION",
-      "latency_ms": 45,
+      "latency_ms": 81952,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 80C] Column Section Nature of deduction Instruction No. C1 80C Deduction in respect Please enter the amount paid or deposited towards life of life insurance insurance premium, contribution to any Provident Fund set premia, deferred up by the Government, employees contribution to a annuity, contributions recognised Provident Fund or an approved superannu\n\n[Section 80C] (If yes, please fill schedule DI) fill schedule DI, else tick ‘No’. # - Time-limit relaxed to 31.07.2020 as per The Taxation and Other Laws (Relaxation and Amendment of Certain Provisions) Act, 2020 Section Nature of deduction Instruction 80C Deduction in respect of life Please enter the amount paid or deposited towards life insurance premia, defer\n\n[Section 80C] Deduction u/s 80CCD(2) cannot be claimed by taxpayer who has selected all employer\n\n357. category as CG-Pensioners, SG-Pensioners, PSU-Pensioners, Other- Pensioners Deduction u/s 80CCD(2) cannot be claimed more than 14% of salary if any of the\n\n358. employer is Central Government or State Government in case of Old tax regime Deduction u/s 80QQB can\n\n[Section 80C] 30.06.2020# for the purpose of claiming any the purpose of claiming any deduction under Part B of deduction under Part B of Chapter VIA? (If yes, Chapter VI-A by ticking the applicable checkbox please fill S.No. \"A\" of Schedule DI) Yes Tick  Yes  No No If yes is selected, please ensure that relevant details are mentioned at S. No. “A\" of schedu\n\n[Section 80C] 2.1 Category A: Table 2: Category A Rules Sl no. Publishing Document If Old Tax Regime is selected and Sum of deductions claimed u/s 80C, 80CCC & 80CCD (1)\n\n1. cannot be more than Rs. 1,50,000. If Old Tax is selected and employer category is \"CG-Pensioners\" \"SG-Pensioners\" \"PSU-Pensioners\"\n\n2. \"Other Pensioners” or Not Applicable, then Deduction u/\n\n[Section 80C] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n763. In schedule 80U, If deduction is > 0, then details of such donation are required\n\n764. In Schedule 80GGC, Sl. No. D \"Eligible Amount of contribution\" should be equal to sum of individual amounts restricted to GTI\n\n765. HUF can claim deductions u/s 80DD for dependent being \"Member of H\n\n[Section 80C] CBDT_e-Filing_ITR 2_Validation Rules for AY 2024-25 V.1.0 Deduction u/s 80CCD(2) should not be more than 10% of salary in case of employer\n\n368. category is other than Central Government or State Government\n\n369. Sum of deductions u/s 80C, 80CCC and 80CCD(1) is more than Rs. 150000.\n\n370. Deduction u/s 80CCH to be limited to 60% of salary.\n\n371. De\n\n[Section 80CCD] Instructions to Form ITR-2 (AY 2020-21) pension scheme Government, which is eligible for deduction under sub-section of Central (1B) of section 80CCD. Government The amount eligible under this sub-section is subject to a maximum limit of Rs. 50,000 and further condition that no claim should have been made under sub-section (1) in respect of the sam",
-      "primary_judge": {
-        "status": "pending_quota_window",
-        "score": null,
-        "reason": "Pending Groq TPD reset window; excluded from metrics per DATA-INTEGRITY RULE."
-      }
+      "primary_judge": null
     },
     {
       "id": 5,
@@ -611,11 +580,11 @@
         "Section 16"
       ],
       "generated_citations": [
-        "Section 16",
-        "Section 16(ii)",
+        "Section 16(ia)",
         "Section 115BAC",
-        "Section 16(iii)",
-        "Section 16(ia)"
+        "Section 115BAC(1A)(ii)",
+        "Section 10(13A)",
+        "Section 16"
       ],
       "verified_citations": [
         {
@@ -625,16 +594,6 @@
           "doc_type": "circular",
           "source_url": "https://www.incometaxindia.gov.in/documents/d/guest/circular-no-03-2025-pdf",
           "page_number": 13,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C2]",
-          "chunk_id": "instructions_itr1_ay2020_21_p7_c11",
-          "section_id": "Section 16",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/Instructions_ITR1_AY2020_21.pdf",
-          "page_number": 7,
           "score": 0.0,
           "graph_expanded": false
         },
@@ -649,60 +608,26 @@
           "graph_expanded": false
         },
         {
-          "citation_id": "[C4]",
-          "chunk_id": "itr3_validation_rules_ay2025_26_p16_c23",
+          "citation_id": "[C6]",
+          "chunk_id": "instructions_itr4_ay2020_21_p7_c12",
           "section_id": "Section 10(13A)",
           "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
-          "page_number": 16,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C5]",
-          "chunk_id": "finance_act_2024_p168_c208",
-          "section_id": "Section 16",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
-          "page_number": 168,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p16_c14",
-          "section_id": "Section 115BAC",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 16,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "cbdt_circular_03_2025_p15_c21",
-          "section_id": "Section 194P",
-          "doc_type": "circular",
-          "source_url": "https://www.incometaxindia.gov.in/documents/d/guest/circular-no-03-2025-pdf",
-          "page_number": 15,
+          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/Instructions_ITR4_AY2020_21.pdf",
+          "page_number": 7,
           "score": 0.0,
           "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the availability of the standard deduction under Section 16(ia) for salaried employees:\n\n**1. General Availability and Statutory Basis**\nThe standard deduction is a statutory deduction available to salaried employees under Section 16(ia) of the Income-tax Act, 1961 [C3]. This deduction is required to be entered in the Income Tax Return (ITR) under the specific field designated for \"Standard Deduction u/s 16(ia)\" [C5]. The amount admissible is typically as per Part B of Form 16 [C5].\n\n**2. Applicability Under the New Tax Regime (Section 115BAC)**\nThe standard deduction is available to taxpayers opting for the **New Tax Regime** (under Section 115BAC), subject to specific caps:\n*   **Cap on Deduction:** For the New Tax Regime, an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C2].\n*   **Comparison with Old Regime:** While the New Regime allows this deduction, other specific deductions under Section 16 are restricted. Specifically, Entertainment Allowance under Section 16(ii) and Professional Tax under Section 16(iii) **cannot** be claimed if the New Tax Regime is selected [C7].\n\n**3. Applicability Under the Old Tax Regime**\n*   **Entertainment Allowance:** If the taxpayer opts for the **Old Tax Regime**, the Entertainment Allowance under Section 16(ii) is allowed to the extent of Rs. 5,000 or 1/5th of the Basic Salary, whichever is lower [C4].\n*   **Professional Tax:** Under the Old Tax Regime, Professional Tax under Section 16(iii) is allowed only to the extent of Rs. 5,000 [C4].\n*   **Standard Deduction:** The context confirms that the standard deduction is a component of the salary deductions under Section 16, which applies generally, but the specific cap of Rs. 75,000 is explicitly linked to the New Tax Regime in the provided validation rules [C2].\n\n**4. Reporting Requirements**\n*   **Form 16:** The standard deduction is reported in Part B of Form 16 [C1], [C5].\n*   **ITR Validation:** When filing ITR-1, ITR-2, or ITR-3, the taxpayer must ensure that the sum of the dropdowns in Schedule Salary matches the individual dropdowns, including the standard deduction [C8].\n\n**Summary Table: Deductions under Section 16 for Salaried Individuals (FY 2024-25)**\n\n| Deduction | Section | New Regime (115BAC) | Old Regime |\n| :--- | :--- | :--- | :--- |\n| **Standard Deduction** | 16(ia) | **Available** (Max Rs. 75,000) [C2] | **Available** [C3], [C5] |\n| **Entertainment Allowance** | 16(ii) | **Not Available** [C7] | Available (Rs. 5,000 or 1/5th Basic, lower) [C4] |\n| **Professional Tax** | 16(iii) | **Not Available** [C7] | Available (Max Rs. 5,000) [C4] |\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "**Legal Analysis: Availability of Standard Deduction under Section 16(ia)**\n\nBased on the provided authoritative legal context for Financial Year 2024-25, the standard deduction is available to salaried employees under **Section 16(ia)** of the Income-tax Act, subject to specific limits and tax regime conditions.\n\n**1. Statutory Provision and Applicability**\nThe standard deduction is a deduction allowed from salary income under **Section 16(ia)**. It is explicitly listed as a deductible item in the computation of income chargeable under the head \"Salaries\" in Form 16 (Part B) and Income Tax Return (ITR) schedules [C1]. The deduction is applicable to salaried individuals, including those filing ITR-1 (Sahaj), ITR-3, and ITR-4 (Sugam) [C2, C3, C6].\n\n**2. Monetary Limit for FY 2024-25**\nFor the Financial Year 2024-25 (Assessment Year 2025-26), the standard deduction under **Section 16(ia)** is limited to **Rs. 50,000** or the amount of salary, whichever is less [C3, C5, C6].\n*   **Validation Rule:** The e-filing validation rules for AY 2024-25 confirm that the standard deduction under **Section 16(ia)** should not exceed Rs. 50,000 or the salary, whichever is less [C3].\n*   **Form Instruction:** The instructions for ITR-4 (Sugam) state that the standard deduction is an auto-populated field representing the lower of the net salary or Rs. 50,000 [C6].\n\n**3. Tax Regime Restriction (Old vs. New Regime)**\nThe availability of the standard deduction is contingent upon the taxpayer's choice of tax regime under **Section 115BAC**:\n*   **Old Regime:** The deduction under **Section 16(ia)** is available only if the taxpayer opts for the **Old Tax Regime** [C3].\n*   **New Regime (FY 2024-25):** The provided context does not explicitly state the standard deduction limit for the New Regime for FY 2024-25. However, it notes that amendments increasing the standard deduction to Rs. 75,000 for the New Regime (under **Section 115BAC(1A)(ii)**) take effect from **1st April 2025** and apply to **Assessment Year 2025-26** and subsequent years [C5, C7].",
+      "confidence": 0.9,
       "refused": false,
       "route": "DEDUCTION",
-      "latency_ms": 45,
+      "latency_ms": 62593,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 10(13A)] PART B (Annexure-I) n re Ia t.lo n to employees f or t ax d e d uc f Ion un d er sec f Ion 192 Details of Salary Paid and any other income and tax deducted A. Whelher opting for taxation uls 115BAG (IA)? [YESINO\n\n1. Gross Salary a) Salary as per provisions contained in sec.17(1) Rs .... b) Value of perquisites under section 17(2)(as per Form No 12B\n\n[Section 16] Field No. Field Name Instruction B1(iv)(a) Standard Deduction u/s 16(ia) Please enter the Standard Deduction admissible u/s 16(ia) (as per Part B of Form 16) B1(iv)(b) Entertainment allowance u/s 16(ii) Please enter the amount of Entertainment allowance admissible as deduction u/s 16(ii) (as per Part B of Form 16) B1(iv)(c) Professional tax u/s 16(\n\n[Section 16] C BDT_e-Filing_ITR 3_Validation Rules for AY 2024-25 V 1.0\n\n151. In Sc hedule Salary, Sum of Drop downs in Sl. No. 1a should be equal to sum of individual dropdowns at Sl No. 1a\n\n152. In Sc hedule Salary, Sum of Drop downs in Sl. No. 1b should be equal to sum of individual dropdowns at Sl No. 1b\n\n153. In Sc hedule Salary, Sum of Drop downs in Sl. N\n\n[Section 10(13A)] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n184. Relief u/s 89A at Sl.No. 2a of Sch Salary cannot be claimed by taxpayer if Sl.no 1d of Schedule Salary is Zero\n\n185. In Schedule Salary, one country cannot be selected more than one time at \"Income from retirement benefit account maintained in a notified country u/s 89A \".\n\n186. Exemp\n\n[Section 16] 160 This amendment will take effect from 1st October, 2024. Clause 10 of the Bill seeks to amend section 16 of the Income-tax Act relating to deductions from salaries. The provisions of clause (ia) of the said section provides that a deduction of fifty thousand rupees or the amount of the salary, whichever is less, shall be made before computing th\n\n[Section 10(13A)] Field No. Field Name Instruction Sec 10(7)- Allowances or perquisites paid or allowed as such outside India by the Government to a citizen of India for rendering services outside India Sec 10(10)- Death–cum-retirement gratuity received Sec 10(10A)- Commuted value of pension received Sec 10(10AA)- Earned leave encashment on retirement Note: If categ\n\n[Section 115BAC] deduction of fifty thousand rupees or the amount of the salary, whichever is less, shall be made before computing the income under the head “Salaries”.\n\n2. Further, the existing provision of clause (iia) of section 57 of the Act provides that in the case of income in the nature of family pension, a deduction of a sum equal to thirty-three and one-t\n\n[Section 194P] PART B (Annexure-II) In relation to specified senior citizen for tax deduction under section 194P A. Whether opting for taxation uls 115BAC(lA)? [YES/NO]\n\n1. Gross Salarv a) I Pension as per prm'isions contained in clause (ii) of section 17( 1) Rs ....\n\n2. Total amount of salary received Rs.\n\n3. Less: Deductions under section 16 a) I Standard deduc",
-      "primary_judge": {
-        "status": "pending_quota_window",
-        "score": null,
-        "reason": "Pending Groq TPD reset window; excluded from metrics per DATA-INTEGRITY RULE."
-      }
+      "primary_judge": null
     },
     {
       "id": 9,
@@ -1257,11 +1182,11 @@
         "Section 16"
       ],
       "generated_citations": [
+        "Section 16(ia)",
+        "Section 115BAC",
         "Section 16",
         "Section 16(ii)",
-        "Section 115BAC",
-        "Section 16(iii)",
-        "Section 16(ia)"
+        "Section 10(13A)"
       ],
       "verified_citations": [
         {
@@ -1283,73 +1208,18 @@
           "page_number": 7,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "itr1_validation_rules_ay2024_25_p7_c9",
-          "section_id": "Section 57",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%201_Validation%20Rules_AY2024-25_V1.0..pdf",
-          "page_number": 7,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "cbdt_circular_03_2025_p13_c17",
-          "section_id": "Section 10(13A)",
-          "doc_type": "circular",
-          "source_url": "https://www.incometaxindia.gov.in/documents/d/guest/circular-no-03-2025-pdf",
-          "page_number": 13,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C5]",
-          "chunk_id": "instructions_itr2_ay2020_21_p9_c16",
-          "section_id": "Section 10(13A)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/Instructions_ITR2_AY2020_21_V1_0.pdf",
-          "page_number": 9,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "itr2_validation_rules_ay2025_26_p8_c8",
-          "section_id": "Section 17(1)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
-          "page_number": 8,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "itr1_rules_ay2020_21_p7_c7",
-          "section_id": "Section 234A",
-          "doc_type": "rules",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/ITR_1_Rules_AY_2020-21_V1.3.pdf",
-          "page_number": 7,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the availability of the standard deduction under Section 16(ia) for salaried employees:\n\n**1. General Availability and Statutory Basis**\nThe standard deduction is a statutory deduction available to salaried employees under Section 16(ia) of the Income-tax Act, 1961 [C3]. This deduction is required to be entered in the Income Tax Return (ITR) under the specific field designated for \"Standard Deduction u/s 16(ia)\" [C5]. The amount admissible is typically as per Part B of Form 16 [C5].\n\n**2. Applicability Under the New Tax Regime (Section 115BAC)**\nThe standard deduction is available to taxpayers opting for the **New Tax Regime** (under Section 115BAC), subject to specific caps:\n*   **Cap on Deduction:** For the New Tax Regime, an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C2].\n*   **Comparison with Old Regime:** While the New Regime allows this deduction, other specific deductions under Section 16 are restricted. Specifically, Entertainment Allowance under Section 16(ii) and Professional Tax under Section 16(iii) **cannot** be claimed if the New Tax Regime is selected [C7].\n\n**3. Applicability Under the Old Tax Regime**\n*   **Entertainment Allowance:** If the taxpayer opts for the **Old Tax Regime**, the Entertainment Allowance under Section 16(ii) is allowed to the extent of Rs. 5,000 or 1/5th of the Basic Salary, whichever is lower [C4].\n*   **Professional Tax:** Under the Old Tax Regime, Professional Tax under Section 16(iii) is allowed only to the extent of Rs. 5,000 [C4].\n*   **Standard Deduction:** The context confirms that the standard deduction is a component of the salary deductions under Section 16, which applies generally, but the specific cap of Rs. 75,000 is explicitly linked to the New Tax Regime in the provided validation rules [C2].\n\n**4. Reporting Requirements**\n*   **Form 16:** The standard deduction is reported in Part B of Form 16 [C1], [C5].\n*   **ITR Validation:** When filing ITR-1, ITR-2, or ITR-3, the taxpayer must ensure that the sum of the dropdowns in Schedule Salary matches the individual dropdowns, including the standard deduction [C8].\n\n**Summary Table: Deductions under Section 16 for Salaried Individuals (FY 2024-25)**\n\n| Deduction | Section | New Regime (115BAC) | Old Regime |\n| :--- | :--- | :--- | :--- |\n| **Standard Deduction** | 16(ia) | **Available** (Max Rs. 75,000) [C2] | **Available** [C3], [C5] |\n| **Entertainment Allowance** | 16(ii) | **Not Available** [C7] | Available (Rs. 5,000 or 1/5th Basic, lower) [C4] |\n| **Professional Tax** | 16(iii) | **Not Available** [C7] | Available (Max Rs. 5,000) [C4] |\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the analysis regarding the relationship between Standard Deduction and Entertainment Allowance:\n\n**1. Distinct Statutory Provisions**\nThe provided context indicates that Standard Deduction and Entertainment Allowance are treated as separate, distinct deductions under Section 16 of the Income Tax Act, 1961. They are not applied to one another but are both deducted from the salary income.\n*   **Standard Deduction:** This is provided under **Section 16(ia)**. The validation rules specify that the Standard Deduction under Section 16(ia) should not exceed Rs. 50,000 or the salary, whichever is less [C1]. It is explicitly noted that this deduction is available only if the old tax regime is opted [C1].\n*   **Entertainment Allowance:** This is provided under **Section 16(ii)**. The context states that Entertainment Allowance under Section 16(ii) is allowed only to employees of Central Government, State Government, and Public Sector Undertakings (PSUs) [C1]. The limit is the lower of Rs. 5,000 or 1/5th of the basic salary [C1]. This deduction is also available only if the old tax regime is opted [C1].\n\n**2. Application Logic**\nThe context does not state that Standard Deduction applies *to* Entertainment Allowance. Rather, both are separate components of \"Deductions u/s 16\" which are subtracted from the Net Salary to arrive at the Income chargeable under the head Salaries.\n*   The total deductions under Section 16 are calculated as the sum of Standard Deduction (16(ia)), Entertainment Allowance (16(ii)), and Professional Tax (16(iii)) [C2].\n*   The Income chargeable under the head Salaries is the Net Salary minus these aggregate deductions under Section 16 [C2].\n\n**3. Regime Restriction**\nBoth deductions are subject to the same regime restriction: they are available only under the **Old Tax Regime** [C1]. If the New Tax Regime (Section 115BAC) is opted, neither the Standard Deduction nor the Entertainment Allowance is allowed [C1].\n\n**Conclusion**\nStandard Deduction (Section 16(ia)) does not \"apply to\" Entertainment Allowance (Section 16(ii)). Instead, both are independent deductions under Section 16 that are claimed separately by eligible government employees opting for the Old Tax Regime. The Standard Deduction is a flat amount (up to Rs. 50,000) [C1], while Entertainment Allowance is a specific allowance for government/PSU employees limited to Rs. 5,0",
+      "confidence": 0.9,
       "refused": false,
       "route": "DEDUCTION",
-      "latency_ms": 45,
+      "latency_ms": 61918,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 16] C BDT_e-Filing_ITR 3_Validation Rules for AY 2024-25 V 1.0\n\n151. In Sc hedule Salary, Sum of Drop downs in Sl. No. 1a should be equal to sum of individual dropdowns at Sl No. 1a\n\n152. In Sc hedule Salary, Sum of Drop downs in Sl. No. 1b should be equal to sum of individual dropdowns at Sl No. 1b\n\n153. In Sc hedule Salary, Sum of Drop downs in Sl. N\n\n[Section 10(13A)] Field No. Field Name Instruction Sec 10(7)- Allowances or perquisites paid or allowed as such outside India by the Government to a citizen of India for rendering services outside India Sec 10(10)- Death–cum-retirement gratuity received Sec 10(10A)- Commuted value of pension received Sec 10(10AA)- Earned leave encashment on retirement Note: If categ\n\n[Section 57] In \"Schedule Income Details\" Deduction u/s 57(iia) shall be allowed only if \"Family\n\n41. pension\" is offered to tax Deduction u/s 57(iia) cannot be more than lower of 1/3rd of Family pension or Rs.\n\n42. 15,000 only Interest from Income Tax Refund drop-down cannot be selected more than one\n\n43. time under Income from other sources. Family pension dr\n\n[Section 10(13A)] PART B (Annexure-I) n re Ia t.lo n to employees f or t ax d e d uc f Ion un d er sec f Ion 192 Details of Salary Paid and any other income and tax deducted A. Whelher opting for taxation uls 115BAG (IA)? [YESINO\n\n1. Gross Salary a) Salary as per provisions contained in sec.17(1) Rs .... b) Value of perquisites under section 17(2)(as per Form No 12B\n\n[Section 10(13A)] Instructions to Form ITR-2 (AY 2020-21) Sec 10(7)- Allowances or perquisites paid or allowed as such outside India by the Government to a citizen of India for rendering services outside India Sec 10(10)- Death–cum-retirement gratuity received Sec 10(10A)- Commuted value of pension received Sec 10(10AA)- Earned leave encashment on retirement Note: I\n\n[Section 17(1)] CBDT_e-Filing_ITR 2_Validation Rules for AY 2024-25 V.1.0 In Schedule S in Field 3 Total value of allowances to the extent exempt u/s 10\n\n31. excluding HRA u/s 10(13A) shall not exceed Sl. No. . 1(a)+1(b)+1© (of all the employers) as reduced by House Rent Allowance (of all the employers)\n\n32. Sum of Drop downs in Sl. No. 1a of Schedule S should be \n\n[Section 17(1)] In Sch S in Field 3 dropdown value of \"Sec 10(10B) Second proviso - Compensation under scheme approved by the Central Government \" should not be more than\n\n30. dropdown value of \"Compensation due/received by an assessee from his employer or former employer in connection with the termination of his employment or modification thereto\" in the Sl. No. \n\n[Section 234A] CBDT_e-Filing_ITR 1_Validation Rules for AY 2020-21 V 1.3 The amount at \"Total tax and Cess” should be consistent with the sum of \"Tax 32 after Rebate\" and \"Heath & Education Cess “Total Tax, Fees & Interest\" is different with the sum of “Total Tax & Cess, 33 Interest u/s 234A, 234B, 234C and fee u/s 234F as reduced by Relief u/s 89” As per the pro",
-      "primary_judge": {
-        "score": 1,
-        "reason": "Answer contains numerous statutory references and figures not found in the provided context, indicating hallucination.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 20,
@@ -1410,11 +1280,12 @@
         "Section 87A"
       ],
       "generated_citations": [
-        "Section 16",
-        "Section 16(ii)",
-        "Section 115BAC",
-        "Section 16(iii)",
-        "Section 16(ia)"
+        "Section 80CCC",
+        "Section 80D",
+        "Section 80G",
+        "Section 80C",
+        "Section 80CCD(1)",
+        "Section 10(14)(i)"
       ],
       "verified_citations": [
         {
@@ -1438,16 +1309,6 @@
           "graph_expanded": false
         },
         {
-          "citation_id": "[C3]",
-          "chunk_id": "itr2_validation_rules_ay2024_25_p7_c6",
-          "section_id": "Section 10(13A)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
-          "page_number": 7,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
           "citation_id": "[C4]",
           "chunk_id": "itr3_validation_rules_ay2025_26_p49_c78",
           "section_id": "Section 80D",
@@ -1456,53 +1317,18 @@
           "page_number": 49,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C5]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p12_c18",
-          "section_id": "Section 10(13A)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 12,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p7_c8",
-          "section_id": "Section 80G",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 7,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p16_c28",
-          "section_id": "Section 80C",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 16,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the availability of the standard deduction under Section 16(ia) for salaried employees:\n\n**1. General Availability and Statutory Basis**\nThe standard deduction is a statutory deduction available to salaried employees under Section 16(ia) of the Income-tax Act, 1961 [C3]. This deduction is required to be entered in the Income Tax Return (ITR) under the specific field designated for \"Standard Deduction u/s 16(ia)\" [C5]. The amount admissible is typically as per Part B of Form 16 [C5].\n\n**2. Applicability Under the New Tax Regime (Section 115BAC)**\nThe standard deduction is available to taxpayers opting for the **New Tax Regime** (under Section 115BAC), subject to specific caps:\n*   **Cap on Deduction:** For the New Tax Regime, an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C2].\n*   **Comparison with Old Regime:** While the New Regime allows this deduction, other specific deductions under Section 16 are restricted. Specifically, Entertainment Allowance under Section 16(ii) and Professional Tax under Section 16(iii) **cannot** be claimed if the New Tax Regime is selected [C7].\n\n**3. Applicability Under the Old Tax Regime**\n*   **Entertainment Allowance:** If the taxpayer opts for the **Old Tax Regime**, the Entertainment Allowance under Section 16(ii) is allowed to the extent of Rs. 5,000 or 1/5th of the Basic Salary, whichever is lower [C4].\n*   **Professional Tax:** Under the Old Tax Regime, Professional Tax under Section 16(iii) is allowed only to the extent of Rs. 5,000 [C4].\n*   **Standard Deduction:** The context confirms that the standard deduction is a component of the salary deductions under Section 16, which applies generally, but the specific cap of Rs. 75,000 is explicitly linked to the New Tax Regime in the provided validation rules [C2].\n\n**4. Reporting Requirements**\n*   **Form 16:** The standard deduction is reported in Part B of Form 16 [C1], [C5].\n*   **ITR Validation:** When filing ITR-1, ITR-2, or ITR-3, the taxpayer must ensure that the sum of the dropdowns in Schedule Salary matches the individual dropdowns, including the standard deduction [C8].\n\n**Summary Table: Deductions under Section 16 for Salaried Individuals (FY 2024-25)**\n\n| Deduction | Section | New Regime (115BAC) | Old Regime |\n| :--- | :--- | :--- | :--- |\n| **Standard Deduction** | 16(ia) | **Available** (Max Rs. 75,000) [C2] | **Available** [C3], [C5] |\n| **Entertainment Allowance** | 16(ii) | **Not Available** [C7] | Available (Rs. 5,000 or 1/5th Basic, lower) [C4] |\n| **Professional Tax** | 16(iii) | **Not Available** [C7] | Available (Max Rs. 5,000) [C4] |\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context for Financial Year 2025-26 (Assessment Year 2025-26), here is the analysis regarding the differences between the Old and New Tax Regimes for an individual salaried taxpayer.\n\n**Note on Scope:** The retrieved context consists of CBDT e-Filing validation rules for ITR-2, ITR-3, and ITR-4. It details which deductions and exemptions are permissible under each regime. **The retrieved context does not provide the specific income tax slab rates, basic exemption limits, or the calculation of the final tax liability for an income of ₹15 Lakhs.** Therefore, I cannot calculate the exact tax payable or compare the final tax outgo based on the provided chunks. I can only delineate the eligibility for deductions and exemptions as per the validation rules.\n\n### 1. Eligibility of Deductions under Section 80C, 80CCC, and 80CCD(1)\n*   **Old Tax Regime:** Deductions under Section 80C, Section 80CCC, and Section 80CCD(1) are available. For example, in Schedule 80C, details such as the amount eligible for deduction, policy number, or document identification number are required to claim the deduction [C1].\n*   **New Tax Regime:** If the New Tax Regime is selected, the sum of deductions claimed under Section 80C, Section 80CCC, and Section 80CCD(1) should not be more than zero [C2].\n\n### 2. Eligibility of Deductions under Section 80D (Health Insurance)\n*   **Old Tax Regime:** Deductions under Section 80D are available. Specific limits include:\n    *   Preventive health check-up for self/family/parents: Up to ₹5,000 [C4].\n    *   Premium for self/family (Senior Citizen): Up to ₹50,000 [C4].\n    *   Premium for parents: Up to ₹25,000 [C4].\n    *   Premium for parents (Senior Citizen): Up to ₹50,000 [C4].\n    *   Total eligible amount: Up to ₹1,00,000 [C4].\n*   **New Tax Regime:** Schedule 80D should be blank if the \"New Tax Regime\" is selected, implying no deduction is allowed [C4].\n\n### 3. Eligibility of Deductions under Section 80G (Donations)\n*   **Old Tax Regime:** Deductions under Section 80G are available, subject to providing details in Schedule 80G [C4].\n*   **New Tax Reg",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
+      "latency_ms": 59274,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 80C] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n763. In schedule 80U, If deduction is > 0, then details of such donation are required\n\n764. In Schedule 80GGC, Sl. No. D \"Eligible Amount of contribution\" should be equal to sum of individual amounts restricted to GTI\n\n765. HUF can claim deductions u/s 80DD for dependent being \"Member of H\n\n[Section 10(14)(i)] CBDT_e-Filing_ITR 4_Validation Rules for AY 2025-26 V 1.1 Sec 10(14)(ii) -Prescribed Allowances or benefits granted to meet personal expenses in performance of duties of office or employment or to compensate him for increased cost of living should not be more than \"0\" In income details, total of Dividend income should be equal to sum of “Quarterly \n\n[Section 10(13A)] CBDT_e-Filing_ITR 2_Validation Rules for AY 2024-25 V.1.0 In Part A General, \"Whether you are FII / FPI?\" should be selected \"Yes\" for enabling\n\n15. the Schedule 115AD(1)(b)(iiii)-Proviso In Part A general, if filed in response to a notice u/s 139(9)/142(1)/148 or order under\n\n16. section 119(2)(b)/170A then unique number /Document Identification N\n\n[Section 80D] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n713. Deduction of Preventive Health Check up under section 80D for Self and Family and/or Parents cannot be greater than 5000. Deduction is available only if \"Old Tax Regime\" is selected\n\n714. In Schedule 80D, Deduction at Sl. No. 1b Self and Family (Senior Citizen) will be allowed to the \n\n[Section 10(13A)] CBDT_e-Filing_ITR 4_Validation Rules for AY 2025-26 V 1.1 “The presumptive income offered u/s 44AE per vehicle is less than Rs.1000 per MT\n\n144 per month (where the tonnage capacity exceeds 12 MT) or Rs. 7500 per month (where the tonnage capacity does not exceed 12 MT)\".\n\n145 If Old Tax Regime is selected, Deduction u/s 80CCD1(B) is limited to 5000\n\n[Section 10(13A)] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n173. In Schedule Salary, Exempt allowance u/s 10(14)(i) Prescribed Allowances or benefits (not in a nature of perquisite) specifically granted to meet expenses wholly, necessarily and exclusively and to the extent actually incurred, in performance of duties of office or employment cannot b\n\n[Section 80G] CBDT_e-Filing_ITR 4_Validation Rules for AY 2025-26 V 1.1 Deduction u/s 80G claimed but however details are not provided in Schedule 80G If Old Tax Regime is selected\n\n34 and In Schedule 80G, Amount of deduction computed is more than the eligible amount If Old Tax Regime is selected\n\n35 and In Schedule VIA, deduction claimed u/s 80G is shall not be\n\n[Section 80C] CBDT_e-Filing_ITR 4_Validation Rules for AY 2025-26 V 1.1 In Schedule Salary, under line item \"Income from retirement benefit account\n\n231 maintained in a notified country u/s 89A \" in country drop-down, one country cannot be selected more than one time. TDS deducted value in schedule TDS 1 cannot be more than value in schedule Salary 232 \"sl.no.2.",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer cites Section 16(ia), standard deduction amounts, and new/old regime distinctions that are not present in any of the provided statutory context chunks.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 22,
@@ -1513,12 +1339,9 @@
         "Section 115BAC"
       ],
       "generated_citations": [
-        "Section 16",
-        "Section 16(ii)",
-        "Section 115BAC",
-        "Section 16(iii)",
-        "Section 16(ia)",
-        "Section 87A"
+        "Section 87A",
+        "Section 115BBH",
+        "Section 142"
       ],
       "verified_citations": [
         {
@@ -1542,71 +1365,26 @@
           "graph_expanded": false
         },
         {
-          "citation_id": "[C3]",
-          "chunk_id": "itr4_validation_rules_ay2024_25_p6_c6",
-          "section_id": "Section 17(2)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
-          "page_number": 6,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p7_c9",
-          "section_id": "Section 112A",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 7,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C5]",
-          "chunk_id": "itr2_validation_rules_ay2024_25_p36_c63",
+          "citation_id": "[C6]",
+          "chunk_id": "itr2_validation_rules_ay2024_25_p39_c68",
           "section_id": "Section 87A",
           "doc_type": "itr_instructions",
           "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
-          "page_number": 36,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "itr1_validation_rules_ay2025_26_p15_c25",
-          "section_id": "Section 80CCH",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 15,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "instructions_itr2_ay2020_21_p63_c127",
-          "section_id": "Section 87A",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/Instructions_ITR2_AY2020_21_V1_0.pdf",
-          "page_number": 63,
+          "page_number": 39,
           "score": 0.0,
           "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the availability of the standard deduction under Section 16(ia) for salaried employees:\n\n**1. General Availability and Statutory Basis**\nThe standard deduction is a statutory deduction available to salaried employees under Section 16(ia) of the Income-tax Act, 1961 [C3]. This deduction is required to be entered in the Income Tax Return (ITR) under the specific field designated for \"Standard Deduction u/s 16(ia)\" [C5]. The amount admissible is typically as per Part B of Form 16 [C5].\n\n**2. Applicability Under the New Tax Regime (Section 115BAC)**\nThe standard deduction is available to taxpayers opting for the **New Tax Regime** (under Section 115BAC), subject to specific caps:\n*   **Cap on Deduction:** For the New Tax Regime, an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C2].\n*   **Comparison with Old Regime:** While the New Regime allows this deduction, other specific deductions under Section 16 are restricted. Specifically, Entertainment Allowance under Section 16(ii) and Professional Tax under Section 16(iii) **cannot** be claimed if the New Tax Regime is selected [C7].\n\n**3. Applicability Under the Old Tax Regime**\n*   **Entertainment Allowance:** If the taxpayer opts for the **Old Tax Regime**, the Entertainment Allowance under Section 16(ii) is allowed to the extent of Rs. 5,000 or 1/5th of the Basic Salary, whichever is lower [C4].\n*   **Professional Tax:** Under the Old Tax Regime, Professional Tax under Section 16(iii) is allowed only to the extent of Rs. 5,000 [C4].\n*   **Standard Deduction:** The context confirms that the standard deduction is a component of the salary deductions under Section 16, which applies generally, but the specific cap of Rs. 75,000 is explicitly linked to the New Tax Regime in the provided validation rules [C2].\n\n**4. Reporting Requirements**\n*   **Form 16:** The standard deduction is reported in Part B of Form 16 [C1], [C5].\n*   **ITR Validation:** When filing ITR-1, ITR-2, or ITR-3, the taxpayer must ensure that the sum of the dropdowns in Schedule Salary matches the individual dropdowns, including the standard deduction [C8].\n\n**Summary Table: Deductions under Section 16 for Salaried Individuals (FY 2024-25)**\n\n| Deduction | Section | New Regime (115BAC) | Old Regime |\n| :--- | :--- | :--- | :--- |\n| **Standard Deduction** | 16(ia) | **Available** (Max Rs. 75,000) [C2] | **Available** [C3], [C5] |\n| **Entertainment Allowance** | 16(ii) | **Not Available** [C7] | Available (Rs. 5,000 or 1/5th Basic, lower) [C4] |\n| **Professional Tax** | 16(iii) | **Not Available** [C7] | Available (Max Rs. 5,000) [C4] |\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25 (Assessment Year 2025-26), here is the analysis regarding the rebate under Section 87A under the New Tax Regime:\n\n**1. Eligibility and Income Threshold**\nUnder the New Tax Regime, the rebate under Section 87A is available to a Resident Individual having total income of less than or equal to Rs. 7,00,000 [C2]. The context further specifies that this claim is subject to marginal relief if the total income exceeds Rs. 7,00,000 [C1]. Specifically, an assessee with total income exceeding Rs. 7,00,000 (subject to marginal relief, if any) cannot claim the rebate under Section 87A [C1].\n\n**2. Maximum Rebate Amount**\nThe maximum amount of rebate under Section 87A allowed is Rs. 12,500 [C2]. This limit applies when the Old Tax Regime is selected [C2], and the validation rules indicate that the maximum amount of rebate should be computed as per the provisions of Section 87A [C1]. While the context explicitly links the Rs. 12,500 cap to the Old Regime in some validation rules [C2], it also notes that under the New Tax Regime, the rebate is claimed by Resident Individuals having total income up to Rs. 7,00,000 [C2].\n\n**3. Restrictions and Conditions**\n*   **Residency Status:** The rebate under Section 87A can be claimed only by Resident Individuals [C2]. It is not allowed to Non-Resident Individuals [C6] or HUFs [C6].\n*   **Regime Selection:** If the New Tax Regime is selected, specific income heads (Sl. No. 1a to 1d in Schedule Part B-TTI) should not be more than zero, implying that certain deductions or exemptions are not applicable, but the rebate calculation follows the total income threshold [C1].\n*   **Marginal Relief:** The context repeatedly emphasizes that the Rs. 7,00,000 threshold is \"subject to marginal relief (if any)\" [C1]. This implies that individuals with income slightly above Rs. 7,00,000 may still receive a partial rebate to prevent a sudden jump in tax liability, though the specific calculation formula for marginal relief is not detailed in the provided chunks.\n\n**4. Clarification on \"Up to 7 Lakhs\"**\nThe context confirms that for the New Tax Regime, the rebate is applicable to Resident Individuals with total income of less than or equal to Rs. 7,00,000 [C",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
+      "latency_ms": 62603,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 115BBH] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n981. In Schedule Part B-TI, Income chargeable to tax at special rate has been shown, details of the same should be provided in the applicable schedules ,viz., Schedule Capital Gain /Schedule Other sources and Schedule SI.\n\n982. In Schedule Part B-TI, Sl.No. 3(ii) Income disclosed under Pro\n\n[Section 142] 1.1 Category A: Table 2: Category A Rules S. N Scenarios ITR-1 -\"Name\" of taxpayer in ITR does not match with the \"Name\" as per the PAN\n\n1. data base (This will be verified at the time of upload. To ensure that the name entered is as appearing in the PAN card)\n\n2. Taxpayer claiming benefit of senior citizen & super senior citizen, but date of birth\n\n[Section 17(2)] CBDT_e-Filing_ITR 4_Validation Rules for AY 2024-25 V 1.0\n\n5. Assessee is \"HUF\" or Firm (other than LLP) and amount in details of salary is more than zero\n\n6. If the original return is filed under section 142(1) then tax payer cannot file revised return\n\n7. First three alphabets should be as per list TAN codes on field TAN\n\n8. If New Tax regime is \n\n[Section 112A] 45 deductions\" Note: Gross total income shall include LTCG u/s 112A In case of old tax regime deduction u/s 80CCD (2) should not be more than 14% of 46 salary if the employer category is selected as Central Government or State Govt The name as entered by you in the return does not match with the name as per the 47 PAN date base\n\n48 Assessee should \n\n[Section 87A] 514. cannot claim Rebate u/s 87A. Please refer to section 87A of Income tax act, 1961. If Old tax regime is selected, then value in the field \"Rebate u/s 87A\" should not be\n\n515. more than Rs.12,500. \"Losses of current year to be carried forward\" at \"Part B TI\" should be equal to \"Total\n\n516. of Current Year Losses\" of Schedule CFL.\n\n517. Tax compu\n\n[Section 87A] CBDT_e-Filing_ITR 2_Validation Rules for AY 2024-25 V.1.0 In \"Schedule Part B TTI\" point 15a \"Advance Tax\" paid should be equal to the sum\n\n554. of total Tax Paid in schedule IT where date of deposit is between 01/04/2023 and 31/03/2024. If old tax regime is selected, then In Schedule Part BTTI, SL.no 1d Total tax payable\n\n555. on deemed total inco\n\n[Section 80CCH] 194. employees, state government employees, CG-Pensioners, SG- Pensioners, PSU-Pensioners, or Others-Pensioners Deduction u/s 80CCH should not exceed 46.2% of Salary u/s 17(1)\n\n195. Deduction u/s 80CCH can be claimed if Nature of employment is 'Central Government'\n\n196. and age is from 17 years to 27 years as on date of joining of armed forces. Exe\n\n[Section 87A] 153 Rebate u/s 87A is not allowed to HUF Status selected as \"HUF\" but S. No. 3: 87A in Part B - TTI is greater than ZERO.\n\n154 Rebate u/s 87A is claimed by Resident In Part B TI: SL No. 14: Total Income is more than 5 or Non Ordinarily Resident Individual Lakh but having Total income more than Rs. 5 S. No. 3: 87A in Part B - TTI is greater than ZER",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer does not address Section 87A rebate at all and instead discusses unrelated deductions, thus it is completely hallucinated.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 23,
@@ -1616,11 +1394,7 @@
         "Section 115BAC"
       ],
       "generated_citations": [
-        "Section 16",
-        "Section 16(ii)",
-        "Section 115BAC",
-        "Section 16(iii)",
-        "Section 16(ia)"
+        "Section 115BAC"
       ],
       "verified_citations": [
         {
@@ -1632,83 +1406,18 @@
           "page_number": 4,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C2]",
-          "chunk_id": "itr3_validation_rules_ay2025_26_p6_c5",
-          "section_id": "Section 115BAC",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
-          "page_number": 6,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p10_c8",
-          "section_id": "Section 194P",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 10,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p17_c31",
-          "section_id": "Section 115BAC",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 17,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C5]",
-          "chunk_id": "itr3_validation_rules_ay2025_26_p6_c6",
-          "section_id": "Section 115BAC",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
-          "page_number": 6,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "cbdt_circular_03_2025_p2_c1",
-          "section_id": "Section 192",
-          "doc_type": "circular",
-          "source_url": "https://www.incometaxindia.gov.in/documents/d/guest/circular-no-03-2025-pdf",
-          "page_number": 2,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "itr3_validation_rules_ay2025_26_p4_c3",
-          "section_id": "Section 119(2)(b)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
-          "page_number": 4,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the availability of the standard deduction under Section 16(ia) for salaried employees:\n\n**1. General Availability and Statutory Basis**\nThe standard deduction is a statutory deduction available to salaried employees under Section 16(ia) of the Income-tax Act, 1961 [C3]. This deduction is required to be entered in the Income Tax Return (ITR) under the specific field designated for \"Standard Deduction u/s 16(ia)\" [C5]. The amount admissible is typically as per Part B of Form 16 [C5].\n\n**2. Applicability Under the New Tax Regime (Section 115BAC)**\nThe standard deduction is available to taxpayers opting for the **New Tax Regime** (under Section 115BAC), subject to specific caps:\n*   **Cap on Deduction:** For the New Tax Regime, an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C2].\n*   **Comparison with Old Regime:** While the New Regime allows this deduction, other specific deductions under Section 16 are restricted. Specifically, Entertainment Allowance under Section 16(ii) and Professional Tax under Section 16(iii) **cannot** be claimed if the New Tax Regime is selected [C7].\n\n**3. Applicability Under the Old Tax Regime**\n*   **Entertainment Allowance:** If the taxpayer opts for the **Old Tax Regime**, the Entertainment Allowance under Section 16(ii) is allowed to the extent of Rs. 5,000 or 1/5th of the Basic Salary, whichever is lower [C4].\n*   **Professional Tax:** Under the Old Tax Regime, Professional Tax under Section 16(iii) is allowed only to the extent of Rs. 5,000 [C4].\n*   **Standard Deduction:** The context confirms that the standard deduction is a component of the salary deductions under Section 16, which applies generally, but the specific cap of Rs. 75,000 is explicitly linked to the New Tax Regime in the provided validation rules [C2].\n\n**4. Reporting Requirements**\n*   **Form 16:** The standard deduction is reported in Part B of Form 16 [C1], [C5].\n*   **ITR Validation:** When filing ITR-1, ITR-2, or ITR-3, the taxpayer must ensure that the sum of the dropdowns in Schedule Salary matches the individual dropdowns, including the standard deduction [C8].\n\n**Summary Table: Deductions under Section 16 for Salaried Individuals (FY 2024-25)**\n\n| Deduction | Section | New Regime (115BAC) | Old Regime |\n| :--- | :--- | :--- | :--- |\n| **Standard Deduction** | 16(ia) | **Available** (Max Rs. 75,000) [C2] | **Available** [C3], [C5] |\n| **Entertainment Allowance** | 16(ii) | **Not Available** [C7] | Available (Rs. 5,000 or 1/5th Basic, lower) [C4] |\n| **Professional Tax** | 16(iii) | **Not Available** [C7] | Available (Max Rs. 5,000) [C4] |\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context, here is the analysis regarding the tax slabs for individuals opting for the New Tax Regime under Section 115BAC for Financial Year 2024-25 (Assessment Year 2025-26).\n\n### Tax Slabs under Section 115BAC for FY 2024-25\n\nFor the Assessment Year 2025-26 (corresponding to Financial Year 2024-25), the tax rates applicable to an individual, Hindu Undivided Family (HUF), Association of Persons (other than a co-operative society), Body of Individuals, or Artificial Juridical Person under **Section 115BAC** are as follows [C1]:\n\n| Total Income (Rs.) | Rate of Tax |\n| :--- | :--- |\n| Up to 3,00,000 | Nil |\n| From 3,00,001 to 6,00,000 | 5% |\n| From 6,00,001 to 9,00,000 | 10% |\n| From 9,00,001 to 12,00,000 | 15% |\n| From 12,00,001 to 15,00,000 | 20% |\n| Above 15,00,000 | 30% |\n\n**Key Legal Provisions and Context:**\n\n*   **Default Regime:** The rates specified in sub-section (1A) of **Section 115BAC** are the default rates applicable unless an option is exercised to opt out as per sub-section (6) of **Section 115BAC** [C1].\n*   **Applicability:** These rates apply to income chargeable to tax under clause (i) of sub-section (1A) of **Section 115BAC** [C1].\n*   **Surcharge:** For the Assessment Year 2025-26, the income-tax is increased by a surcharge for the purposes of the Union, computed for every individual or HUF [C1]. However, the specific surcharge rates for the New Regime (Section 115BAC) are not detailed in the provided context; the context only mentions the existence of the surcharge provision [C1].\n*   **Distinction from AY 2026-27:** It is important to note that the rates provided in **Section 115BAC** for AY 2024-25 remain the same as already enacted [C1]. The revised slab structure (",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
+      "latency_ms": 62701,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 115BAC] proposed in tax rates either in these specific sections or in the First Schedule. The rates provided in sections 115BAA or 115BAB or 115BAC or 115BAD or 115BAE of the Act for the assessment year 2024-25 would be same as already enacted. Similarly rates laid down in Part III of the First Schedule to the Finance Act, 2023, for the purposes of computa\n\n[Section 115BAC] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n27. The date of Birth/ Formation should be before 01/04/20XX of AY for which ITR is being filled.\n\n28. Method of Opting out of New Regime is selected as \" by filing 10IEA\" and Questions for Set A is not selected\n\n29. Method of Opting out of New Regime is selected as 'by exercising the opti\n\n[Section 194P] III. Rates for deduction of income-tax at source from “Salaries”, computation of “advance tax” and charging of income-tax in special cases during the FY 2024-25 (Assessment Year 2025-26). The rates for deduction of income-tax at source from “Salaries” or under section 194P of the Act during the FY 2024-25 and also for computation of “advance tax” p\n\n[Section 115BAC] 275 Form 10IEA exist for AY 25-26 after due date and so new tax regime is applicable Form 10IEA exist for AY 25-26 but details are not provided in ITR in case of 276 reentering into- new tax regime Option for \"(A23) Have you exercised the option u/s 115BAC (6) of Opting out of new tax regime in Form 10-IEA in AY 2024-25? \"Question cannot be selecte\n\n[Section 115BAC] 38. In Part A General, if \"Method of opting-out of new tax regime (if applicable) for current AY \" is selected as \"by exercising the option in the return of income only (form 10IEA is not applicable\", then \"Have you exercised the option u/s 115BAC(6) of Opting out of new tax regime in Form 10-IEA in AY 2024-25? \" is not applicable\n\n39. Please choos\n\n[Section 17(2)] CBDT_e-Filing_ITR 4_Validation Rules for AY 2024-25 V 1.0\n\n5. Assessee is \"HUF\" or Firm (other than LLP) and amount in details of salary is more than zero\n\n6. If the original return is filed under section 142(1) then tax payer cannot file revised return\n\n7. First three alphabets should be as per list TAN codes on field TAN\n\n8. If New Tax regime is \n\n[Section 192] Amendments made vide the Finance (No.2) Aet of 2024, Finance ( o. 1) Act of 2024 and Finance Act of 2023 in respect of rates of deduction of income-tax from the puyment of income under the head \"Salaries\" under section 192 of the Income tax Aet,1961, during the financial year 2024-25 I. The term \"Salary\" has been defined in section 15 of the Act. I\n\n[Section 119(2)(b)] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0 Return data will be allowed to be uploaded but the taxpayer uploading the return will be D informed of a possibility of some of the deduction or claim not to be allowed or entertained unless the return is accompanied by the respective claim forms or particulars.\n\n2.1 Category A: Table 2: Ca",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer does not address the requested tax slabs for the new regime and contains unrelated deductions, with no support from the provided context.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 24,
@@ -1719,12 +1428,11 @@
         "Section 115BAC"
       ],
       "generated_citations": [
-        "Section 16",
-        "Section 16(ii)",
         "Section 115BAC",
-        "Section 16(iii)",
-        "Section 16(ia)",
-        "Section 87A"
+        "Section 80CCD(2)",
+        "Section 80CCH",
+        "Section 87A",
+        "Section 17(2)"
       ],
       "verified_citations": [
         {
@@ -1736,83 +1444,18 @@
           "page_number": 6,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C2]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p16_c28",
-          "section_id": "Section 80C",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 16,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p5_c3",
-          "section_id": "Section 115BAC",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 5,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "itr3_validation_rules_ay2025_26_p72_c120",
-          "section_id": "Section 115BBH",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
-          "page_number": 72,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C5]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p15_c13",
-          "section_id": "Section 2",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 15,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p8_c6",
-          "section_id": "Section 115E",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 8,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "itr2_validation_rules_ay2025_26_p35_c58",
-          "section_id": "Section 87A",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
-          "page_number": 35,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the availability of the standard deduction under Section 16(ia) for salaried employees:\n\n**1. General Availability and Statutory Basis**\nThe standard deduction is a statutory deduction available to salaried employees under Section 16(ia) of the Income-tax Act, 1961 [C3]. This deduction is required to be entered in the Income Tax Return (ITR) under the specific field designated for \"Standard Deduction u/s 16(ia)\" [C5]. The amount admissible is typically as per Part B of Form 16 [C5].\n\n**2. Applicability Under the New Tax Regime (Section 115BAC)**\nThe standard deduction is available to taxpayers opting for the **New Tax Regime** (under Section 115BAC), subject to specific caps:\n*   **Cap on Deduction:** For the New Tax Regime, an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C2].\n*   **Comparison with Old Regime:** While the New Regime allows this deduction, other specific deductions under Section 16 are restricted. Specifically, Entertainment Allowance under Section 16(ii) and Professional Tax under Section 16(iii) **cannot** be claimed if the New Tax Regime is selected [C7].\n\n**3. Applicability Under the Old Tax Regime**\n*   **Entertainment Allowance:** If the taxpayer opts for the **Old Tax Regime**, the Entertainment Allowance under Section 16(ii) is allowed to the extent of Rs. 5,000 or 1/5th of the Basic Salary, whichever is lower [C4].\n*   **Professional Tax:** Under the Old Tax Regime, Professional Tax under Section 16(iii) is allowed only to the extent of Rs. 5,000 [C4].\n*   **Standard Deduction:** The context confirms that the standard deduction is a component of the salary deductions under Section 16, which applies generally, but the specific cap of Rs. 75,000 is explicitly linked to the New Tax Regime in the provided validation rules [C2].\n\n**4. Reporting Requirements**\n*   **Form 16:** The standard deduction is reported in Part B of Form 16 [C1], [C5].\n*   **ITR Validation:** When filing ITR-1, ITR-2, or ITR-3, the taxpayer must ensure that the sum of the dropdowns in Schedule Salary matches the individual dropdowns, including the standard deduction [C8].\n\n**Summary Table: Deductions under Section 16 for Salaried Individuals (FY 2024-25)**\n\n| Deduction | Section | New Regime (115BAC) | Old Regime |\n| :--- | :--- | :--- | :--- |\n| **Standard Deduction** | 16(ia) | **Available** (Max Rs. 75,000) [C2] | **Available** [C3], [C5] |\n| **Entertainment Allowance** | 16(ii) | **Not Available** [C7] | Available (Rs. 5,000 or 1/5th Basic, lower) [C4] |\n| **Professional Tax** | 16(iii) | **Not Available** [C7] | Available (Max Rs. 5,000) [C4] |\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context for the Financial Year (FY) 2024-25, the following details apply regarding income limits, tax rebates, and filing validation rules concerning Section 115BAC and Section 87A:\n\n* **Rebate under Section 87A:** Assessees with total income exceeding ₹7,00,000 (subject to marginal relief, if any) cannot claim a rebate under Section 87A [C1, C2, C4, C8]. Under the old tax regime, the rebate under Section 87A is capped at a maximum of ₹12,500 for a resident individual having a total income of ₹5,00,000 [C2, C4].\n* **Tax Regimes and Form 10IEA:** \n  * The Old Tax Regime can be opted by filing Form 10IEA within the due date [C1].\n  * Opting for the tax regime under Section 115BAC requires fulfilling specific conditions regarding Form 10IEA. Specifically, the option for Section 115BAC can be selected as \"Yes, within due date\" or \"Yes, but beyond due date\" only if Form 10IEA is filed [C1]. \n  * If the New Tax Regime is selected under Section 115BAC, all deductions in Part C (Deductions and Taxable Total Income) must not exceed \"0\", other than those under Section 80CCD(2) and Section 80CCH [C1].\n\nI cannot answer this specific aspect based on the retrieved context regarding the exact step-by-step mathematical calculation formula for marginal relief when taxable income slightly exceeds ₹7,00,000 under Section 115BAC, as the provided validation rules only state that assessees with total income exceeding ₹7,00,000 are subject to marginal relief (if any) and cannot claim a rebate under Section 87A [C1, C2, C4, C8].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
-      "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
-      "fallback_used": false,
+      "latency_ms": 971119,
+      "serving_model": "gemini-3.5-flash-lite",
+      "cached": false,
+      "fallback_used": true,
       "retrieved_context": "[Section 17(2)] CBDT_e-Filing_ITR 4_Validation Rules for AY 2024-25 V 1.0\n\n5. Assessee is \"HUF\" or Firm (other than LLP) and amount in details of salary is more than zero\n\n6. If the original return is filed under section 142(1) then tax payer cannot file revised return\n\n7. First three alphabets should be as per list TAN codes on field TAN\n\n8. If New Tax regime is \n\n[Section 80C] CBDT_e-Filing_ITR 4_Validation Rules for AY 2025-26 V 1.1 In Schedule Salary, under line item \"Income from retirement benefit account\n\n231 maintained in a notified country u/s 89A \" in country drop-down, one country cannot be selected more than one time. TDS deducted value in schedule TDS 1 cannot be more than value in schedule Salary 232 \"sl.no.2.\n\n[Section 115BAC] individuals, whether incorporated or not, or every artificial juridical person referred to in sub-clause (vii) of clause (31) of section 2 of the Act,-\n\n(i) having a total income (including the income by way of dividend or income under the provisions of section 111A, section 112 and section 112A of the Act) exceeding fifty lakh rupees but not excee\n\n[Section 115BBH] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n981. In Schedule Part B-TI, Income chargeable to tax at special rate has been shown, details of the same should be provided in the applicable schedules ,viz., Schedule Capital Gain /Schedule Other sources and Schedule SI.\n\n982. In Schedule Part B-TI, Sl.No. 3(ii) Income disclosed under Pro\n\n[Section 2] 2. In the case of a company other than a domestic company, it is proposed that the rates of tax shall be reduced from 40% to 35%, on income other than income chargeable at special rates, specified in respective sections of Chapter XII of the Act.\n\n3. Surcharge at the rate of 7% shall continue to be levied in case of a domestic company (except those\n\n[Section 115BAC] of the Act, the rate of surcharge on the amount of income-tax computed in respect of that part of income shall not exceed 15%.\n\n4.2 Provided further that in case of an association of persons consisting of only companies as its members, the rate of surcharge on the amount of income-tax shall not exceed 15%.\n\n4.3 Further, for person whose income is c\n\n[Section 115E] (3) Marginal Relief— Marginal relief has also been provided in all cases where surcharge is proposed to be imposed.\n\n(4) Education Cess— For assessment year 2024-25, “Health and Education Cess” is to be levied at the rate of 4% on the amount of income-tax so computed, inclusive of surcharge wherever applicable, in all cases. No marginal relief shal\n\n[Section 87A] Assessee with total income exceeding Rs. 7,00,000 subject to marginal relief (if any)\n\n507. cannot claim Rebate u/s 87A. Please refer to section 87A of Income tax act, 1961. If Old tax regime is selected, then value in the field \"Rebate u/s 87A\" should not be\n\n508. more than Rs.12,500. \"Losses of current year to be carried forward\" at \"Part B TI\" s",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer does not address marginal relief under Section 115BAC and instead discusses unrelated deductions, making it entirely unfaithful to the question and the provided context.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 25,
@@ -1823,11 +1466,9 @@
         "Section 115BAC"
       ],
       "generated_citations": [
-        "Section 16",
-        "Section 16(ii)",
+        "Section 16(ia)",
         "Section 115BAC",
-        "Section 16(iii)",
-        "Section 16(ia)"
+        "Section 16"
       ],
       "verified_citations": [
         {
@@ -1837,36 +1478,6 @@
           "doc_type": "itr_instructions",
           "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
           "page_number": 17,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C2]",
-          "chunk_id": "itr2_validation_rules_ay2025_26_p26_c43",
-          "section_id": "Section 80C",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT__e-Filing_ITR%202_Validation%20Rules_AY%202025-26_V1.0.pdf",
-          "page_number": 26,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "itr1_validation_rules_ay2025_26_p17_c28",
-          "section_id": "Section 24(b)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 17,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "itr3_validation_rules_ay2025_26_p52_c83",
-          "section_id": "Section 80C",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-filing_ITR-3_Validation%20Rules_V1.0_AY%2025-26.pdf",
-          "page_number": 52,
           "score": 0.0,
           "graph_expanded": false
         },
@@ -1879,42 +1490,18 @@
           "page_number": 13,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p16_c28",
-          "section_id": "Section 80C",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 16,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "itr2_validation_rules_ay2024_25_p27_c44",
-          "section_id": "Section 80C",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
-          "page_number": 27,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the availability of the standard deduction under Section 16(ia) for salaried employees:\n\n**1. General Availability and Statutory Basis**\nThe standard deduction is a statutory deduction available to salaried employees under Section 16(ia) of the Income-tax Act, 1961 [C3]. This deduction is required to be entered in the Income Tax Return (ITR) under the specific field designated for \"Standard Deduction u/s 16(ia)\" [C5]. The amount admissible is typically as per Part B of Form 16 [C5].\n\n**2. Applicability Under the New Tax Regime (Section 115BAC)**\nThe standard deduction is available to taxpayers opting for the **New Tax Regime** (under Section 115BAC), subject to specific caps:\n*   **Cap on Deduction:** For the New Tax Regime, an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C2].\n*   **Comparison with Old Regime:** While the New Regime allows this deduction, other specific deductions under Section 16 are restricted. Specifically, Entertainment Allowance under Section 16(ii) and Professional Tax under Section 16(iii) **cannot** be claimed if the New Tax Regime is selected [C7].\n\n**3. Applicability Under the Old Tax Regime**\n*   **Entertainment Allowance:** If the taxpayer opts for the **Old Tax Regime**, the Entertainment Allowance under Section 16(ii) is allowed to the extent of Rs. 5,000 or 1/5th of the Basic Salary, whichever is lower [C4].\n*   **Professional Tax:** Under the Old Tax Regime, Professional Tax under Section 16(iii) is allowed only to the extent of Rs. 5,000 [C4].\n*   **Standard Deduction:** The context confirms that the standard deduction is a component of the salary deductions under Section 16, which applies generally, but the specific cap of Rs. 75,000 is explicitly linked to the New Tax Regime in the provided validation rules [C2].\n\n**4. Reporting Requirements**\n*   **Form 16:** The standard deduction is reported in Part B of Form 16 [C1], [C5].\n*   **ITR Validation:** When filing ITR-1, ITR-2, or ITR-3, the taxpayer must ensure that the sum of the dropdowns in Schedule Salary matches the individual dropdowns, including the standard deduction [C8].\n\n**Summary Table: Deductions under Section 16 for Salaried Individuals (FY 2024-25)**\n\n| Deduction | Section | New Regime (115BAC) | Old Regime |\n| :--- | :--- | :--- | :--- |\n| **Standard Deduction** | 16(ia) | **Available** (Max Rs. 75,000) [C2] | **Available** [C3], [C5] |\n| **Entertainment Allowance** | 16(ii) | **Not Available** [C7] | Available (Rs. 5,000 or 1/5th Basic, lower) [C4] |\n| **Professional Tax** | 16(iii) | **Not Available** [C7] | Available (Max Rs. 5,000) [C4] |\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25 (Assessment Year 2025-26), here is the analysis regarding the standard deduction for salaried individuals under the New Tax Regime:\n\n**Standard Deduction under Section 16(ia) in the New Tax Regime**\n\n*   **Applicable Amount:** For a taxpayer being an employee who has selected the New Tax Regime under Section 115BAC, the standard deduction under Section 16(ia) can be claimed only to the extent of **Rs. 75,000** [C1].\n*   **Regime Specificity:** This limit of Rs. 75,000 is explicitly applicable in the case of the New Tax Regime [C1].\n*   **Contrast with Old Regime:** In contrast, under the Old Tax Regime, the standard deduction under Section 16(ia) is restricted to Rs. 50,000 or the salary, whichever is less [C5].\n\n**Note on Context Grounding:**\nThe retrieved context provides specific validation rules for e-filing ITR forms (ITR-1, ITR-2, ITR-3, ITR-4) for AY 2025-26 and AY 2024-25. These rules explicitly state the monetary limit for the standard deduction under Section 16(ia) for the New Tax Regime as Rs. 75,000 [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
+      "latency_ms": 758726,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 115BAC] 275 Form 10IEA exist for AY 25-26 after due date and so new tax regime is applicable Form 10IEA exist for AY 25-26 but details are not provided in ITR in case of 276 reentering into- new tax regime Option for \"(A23) Have you exercised the option u/s 115BAC (6) of Opting out of new tax regime in Form 10-IEA in AY 2024-25? \"Question cannot be selecte\n\n[Section 80C] Deduction u/s 80CCD(2) cannot be claimed by taxpayer who has selected all employer\n\n357. category as CG-Pensioners, SG-Pensioners, PSU-Pensioners, Other- Pensioners Deduction u/s 80CCD(2) cannot be claimed more than 14% of salary if any of the\n\n358. employer is Central Government or State Government in case of Old tax regime Deduction u/s 80QQB can\n\n[Section 24(b)] \"Exempt Allowances\" in Salary under each section should be disclosed in one dropdown\n\n222. In case of new tax regime, deduction u/s 57(iia) can be availed upto 1/3rd of Family pension\n\n223. maximum of Rs. 25,000\n\n224. In case of New Tax Regime: Taxpayer being an employee can claim Standard deduction u/s 16ia only to the extent of Rs 75000. In case \n\n[Section 80C] C BDT_e-Filing_ITR 3_Validation Rules for AY 2025-26 V 1.0\n\n763. In schedule 80U, If deduction is > 0, then details of such donation are required\n\n764. In Schedule 80GGC, Sl. No. D \"Eligible Amount of contribution\" should be equal to sum of individual amounts restricted to GTI\n\n765. HUF can claim deductions u/s 80DD for dependent being \"Member of H\n\n[Section 16] C BDT_e-Filing_ITR 3_Validation Rules for AY 2024-25 V 1.0\n\n151. In Sc hedule Salary, Sum of Drop downs in Sl. No. 1a should be equal to sum of individual dropdowns at Sl No. 1a\n\n152. In Sc hedule Salary, Sum of Drop downs in Sl. No. 1b should be equal to sum of individual dropdowns at Sl No. 1b\n\n153. In Sc hedule Salary, Sum of Drop downs in Sl. N\n\n[Section 17(2)] CBDT_e-Filing_ITR 4_Validation Rules for AY 2024-25 V 1.0\n\n5. Assessee is \"HUF\" or Firm (other than LLP) and amount in details of salary is more than zero\n\n6. If the original return is filed under section 142(1) then tax payer cannot file revised return\n\n7. First three alphabets should be as per list TAN codes on field TAN\n\n8. If New Tax regime is \n\n[Section 80C] CBDT_e-Filing_ITR 4_Validation Rules for AY 2025-26 V 1.1 In Schedule Salary, under line item \"Income from retirement benefit account\n\n231 maintained in a notified country u/s 89A \" in country drop-down, one country cannot be selected more than one time. TDS deducted value in schedule TDS 1 cannot be more than value in schedule Salary 232 \"sl.no.2.\n\n[Section 80C] CBDT_e-Filing_ITR 2_Validation Rules for AY 2024-25 V.1.0 Deduction u/s 80CCD(2) should not be more than 10% of salary in case of employer\n\n368. category is other than Central Government or State Government\n\n369. Sum of deductions u/s 80C, 80CCC and 80CCD(1) is more than Rs. 150000.\n\n370. Deduction u/s 80CCH to be limited to 60% of salary.\n\n371. De",
-      "primary_judge": {
-        "status": "pending_quota_window",
-        "score": null,
-        "reason": "Pending Groq TPD reset window; excluded from metrics per DATA-INTEGRITY RULE."
-      }
+      "primary_judge": null
     },
     {
       "id": 26,
@@ -1972,10 +1559,7 @@
         "Section 115BBJ"
       ],
       "generated_citations": [
-        "Section 194BA",
-        "Section 115BBJ",
-        "Section 115E",
-        "Section 194LB"
+        "Section 115BBJ"
       ],
       "verified_citations": [
         {
@@ -1987,72 +1571,18 @@
           "page_number": 65,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C2]",
-          "chunk_id": "finance_act_2023_p186_c243",
-          "section_id": "Section 115BBJ",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
-          "page_number": 186,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "finance_act_2023_p197_c263",
-          "section_id": "Section 194B",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
-          "page_number": 197,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "finance_act_2023_p78_c87",
-          "section_id": "Section 194BA",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
-          "page_number": 78,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "finance_act_2024_p130_c159",
-          "section_id": "Section 2",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Finance_Bill.pdf",
-          "page_number": 130,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "finance_act_2025_p94_c107",
-          "section_id": "Section 194LC",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Finance_Bill.pdf",
-          "page_number": 94,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the tax rate on online gaming winnings under Section 115BBJ:\n\n**Tax Rate on Winnings from Online Games**\n\n*   **Applicable Tax Rate:** The income-tax rate applicable to income by way of winnings from online games is **30 per cent.** [C2] [C4] [C7].\n*   **Statutory Provision:** Section 115BBJ of the Income-tax Act, 1961, was inserted with effect from the 1st day of April, 2024, specifically to address tax on winnings from online games [C3].\n*   **Nature of Income:** Winnings from online games are chargeable under Section 115BBJ [C1].\n*   **TDS Implications:**\n    *   The rate of 30% is also specified in the context of deduction of income-tax at source (TDS) provisions, such as those referenced in Section 194LB and Section 115E contexts [C2] [C7].\n    *   However, it is noted that specific provisions regarding the deduction of income-tax on winnings from any online game on or after the 1st day of July, 2023, are excluded from certain TDS sections (like Section 194BA) as per the Finance Act, 2023 [C8].\n*   **DTAA Benefit:** For Resident taxpayers, Double Taxation Avoidance Agreement (DTAA) benefit is **not available** for income in the nature of winnings from online games chargeable under Section 115BBJ [C1].\n*   **Filing Requirement:** Taxpayers must ensure that income corresponding to winnings from online games chargeable under Section 115BBJ is offered to tax completely in their return of income [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "For **Financial Year (FY) 2024-25**, the tax rate on net winnings from online games under **Section 115BBJ** is **thirty per cent (30%)** [C1]. \n\nKey statutory details regarding **Section 115BBJ** include:\n* **Computation of Tax:** The income-tax payable on winnings from online games is calculated at the rate of 30% on the net winnings from such online games during the previous year, computed in the prescribed manner [C1].\n* **Aggregate Tax Liability:** The total tax liability includes this 30% tax on net online game winnings, combined with the tax that would have been chargeable had the assessee's total income been reduced by those net winnings [C1].\n* **Definition of Online Game:** An \"online game\" is defined under **Section 115BBJ** as a game that is offered on the internet and is accessible by a user through a computer resource, including any telecommunication device [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
-      "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
-      "fallback_used": false,
+      "latency_ms": 964601,
+      "serving_model": "gemini-3.5-flash-lite",
+      "cached": false,
+      "fallback_used": true,
       "retrieved_context": "[Section 115BBJ] 57\n\n(i) “horse race” shall have the meaning assigned to it in section 74A;\n\n(ii) “online game” shall have the meaning assigned to it in section 115BBJ.’. Insertion of new section 115BBJ.\n\n54. After section 115BBI of the Income-tax Act, the following section shall be inserted with effect from the 1st day of April, 2024, namely:–– Tax on winnings fro\n\n[Section 115BBJ] 178 It is proposed to amend the said section to insert a proviso to provide that nothing contained in said section shall apply to income by way of winnings from any online game for the assessment year beginning on or after 1st April, 2024. It is further proposed to substitute the Explanation to define the expression “horse race” and “online game”. \n\n[Section 194B] 189 Clause 82 of the Bill seeks to amend section 194B of the Income-tax Act relating to winnings from lottery or crossword puzzle. It is proposed to amend the said section so as to include winnings from gambling or betting of any form or nature whatsoever within the ambit of section 194B and accordingly proposed to amend the marginal heading. It is\n\n[Section 194BA] 70\n\n(iii) after the proviso, the following shall be inserted with effect from the 1st day of July, 2023, namely:–– ‘Provided further that nothing contained in this section shall apply to deduction of income-tax on winnings from any online game on or after the 1st day of July, 2023.\n\nExplanation.—For the purposes of this section, “online game” shall\n\n[Section 115BBJ] TDS made under the section quoted that income in the nature of Winnings from Online games chargeable u/s 115BBJ is derived by you in FY concerned. Must however it is\n\n22. seen from the content of return that income correspondent to Winnings from Online Games chargeable u/s 115BBJ is either not offered to tax or is not offered to tax completely. For\n\n[Section 115BBJ] (2) Sub-section (5) of the said section empowers the Board to make rules for the manner of exercising the option to file return. Clause 54 seeks to insert a new section 115BBJ in the Income-tax Act relating to tax on winnings from online games.\n\n[Section 2] 122 to sub-clause ( A) of clause ( a) of sub-section (1) of section 115A\n\n(M) on income by way of dividend other than the income referred to in sub-item (b)(ii)(L)\n\n20 per cent.;\n\n(N) on the whole of the other income\n\n30 per cent.\n\n2. In the case of a company—\n\n(a) where the company is a domestic company—\n\n(i) on income by way of interest other tha\n\n[Section 194LC] 86\n\n(a) where the company is a domestic company—\n\n(i) on income by way of interest other than “Interest on securities”\n\n10 per cent.;\n\n(ii) on income by way of winnings from lotteries, puzzles, card games and other games of any sort (other than winnings from online games)\n\n30 per cent.;\n\n(iii) on income by way of winnings from horse races\n\n30 per c",
-      "primary_judge": {
-        "status": "pending_quota_window",
-        "score": null,
-        "reason": "Pending Groq TPD reset window; excluded from metrics per DATA-INTEGRITY RULE."
-      }
+      "primary_judge": null
     },
     {
       "id": 28,
@@ -2062,21 +1592,10 @@
         "Section 115BAA"
       ],
       "generated_citations": [
-        "Section 2",
-        "Section 115BA",
-        "Section 115BAA"
+        "Section 115BAA",
+        "Section 115BA"
       ],
       "verified_citations": [
-        {
-          "citation_id": "[C1]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p15_c13",
-          "section_id": "Section 2",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 15,
-          "score": 0.0,
-          "graph_expanded": false
-        },
         {
           "citation_id": "[C2]",
           "chunk_id": "explanatory_memo_finance_bill_2024_p14_c12",
@@ -2088,21 +1607,16 @@
           "graph_expanded": false
         }
       ],
-      "answer": "Under the provisions of **Section 2** of the Explanatory Memorandum to Finance Bill 2024 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 2. In the case of a company other than a domestic company, it is proposed that the rates of tax shall be reduced from 40% to 35%, on income other than income chargeable at special rates, specified in respective sections of Chapter XII of the Act.\n\n3. Surcharge at the rate of 7% s...\n\nSubsequent guidance and rules indicate corresponding requirements under CIRCULAR [C1]. Further, related conditions apply as specified in **Section 115BA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the authoritative legal context provided for Financial Year (FY) 2024-25, here is the analysis regarding the concessional corporate tax rate under Section 115BAA:\n\n* **Tax Rate under Section 115BAA:** Domestic companies have the option to opt for taxation under **Section 115BAA** [C2] of the Income-tax Act, under which the applicable tax rate is **22%** [C2].\n* **Surcharge under Section 115BAA:** For domestic companies opting for taxation under **Section 115BAA** [C2], the surcharge is levied at the rate of **10%** [C2].\n\nRegarding any specific manufacturing-related conditions or other uncovered aspects of Section 115BAA, I cannot answer this specific aspect based on the retrieved context.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
-      "serving_model": "qwen/qwen3.8-27b",
+      "latency_ms": 904874,
+      "serving_model": "gemini-3.5-flash-lite",
       "cached": false,
-      "fallback_used": false,
+      "fallback_used": true,
       "retrieved_context": "[Section 2] 2. In the case of a company other than a domestic company, it is proposed that the rates of tax shall be reduced from 40% to 35%, on income other than income chargeable at special rates, specified in respective sections of Chapter XII of the Act.\n\n3. Surcharge at the rate of 7% shall continue to be levied in case of a domestic company (except those\n\n[Section 115BA] C. Firms In the case of firms, the rate of income-tax has been specified in Paragraph C of Part III of the First Schedule to the Bill. This rate will continue to be the same as that specified for FY 2023-24. The amount of income-tax shall be increased by a surcharge at the rate of 12% of such income-tax in case of a firm having a total income excee\n\n[Section 115BAA] 17\n\nProvided that in case where the total income includes any income by way of dividend or income chargeable under clause (b) of sub-section (1) of section 115AD of the Income-tax Act, the rate of surcharge on the advance tax computed on that part of income shall not exceed fifteen per cent.;\n\n(c) in the case of an association of persons consisting\n\n[Section 115AD] 5\n\n(iii) and (iv), at the rate of fifteen per cent. of such income-tax:\n\nProvided that in case where the total income includes any income by way of dividend or income chargeable under clause ( b) of sub-section ( 1) of section 115AD of the Income-tax Act, the rate of surcharge on the income-tax calculated on that part of income shall not exceed fif\n\n[Section 115BAA] 17\n\n(v) at the rate of fifteen per cent. of such “advance tax”, where the total income [including the income by way of dividend or income of the nature referred to in clause ( b) of sub-section ( 1) of section 115AD of the Income-tax Act] exceeds two crore rupees but is not covered in sub-clauses (iii) and (iv):\n\nProvided that in case where the tot\n\n[Section 115BAD] 5 Income-tax Act] exceeding five crore rupees, at the rate of thirty-seven per cent. of such income-tax; and\n\n(v) having a total income [including the income by way of dividend or income of the nature referred to in clause ( b) of sub-section ( 1) of section 115AD of the Income-tax Act] exceeding two crore rupees, but is not covered in sub-clauses \n\n[Section 115BAA] 6\n\n(e) in the case of every firm or local authority, at the rate of twelve per cent. of such income-tax, where the total income exceeds one crore rupees;\n\n(f) in the case of every domestic company except such domestic company whose income is chargeable to tax under section 115BAA or section 115BAB of the Income-tax Act,—\n\n(i) at the rate of seven p\n\n[Section 115AD] 16\n\n(v) at the rate of fifteen per cent. of such “advance tax”, where the total income [including the income by way of dividend or income of the nature referred to in clause (b) of sub-section ( 1) of section 115AD of the Income-tax Act] exceeds two crore rupees but is not covered in sub-clauses (iii) and (iv):\n\nProvided that in case where the tota",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer fails to provide the concessional corporate tax rate under Section 115BAA and does not reference any relevant statutory provision supporting such a rate, thus it is entirely unfaithful to the question and the provided context.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 29,
@@ -2249,8 +1763,11 @@
         "Section 115BAB"
       ],
       "generated_citations": [
+        "Section 115BAB",
+        "Section 115BAA",
         "Section 2",
-        "Section 115BA"
+        "Section 115BA",
+        "Section 115AD"
       ],
       "verified_citations": [
         {
@@ -2272,23 +1789,28 @@
           "page_number": 14,
           "score": 0.0,
           "graph_expanded": false
+        },
+        {
+          "citation_id": "[C3]",
+          "chunk_id": "finance_act_2023_p13_c12",
+          "section_id": "Section 115AD",
+          "doc_type": "finance_act",
+          "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
+          "page_number": 13,
+          "score": 0.0,
+          "graph_expanded": false
         }
       ],
-      "answer": "Under the provisions of **Section 2** of the Explanatory Memorandum to Finance Bill 2024 for Financial Year 2024-25 [C1], the relevant legal position states:\n\n> 2. In the case of a company other than a domestic company, it is proposed that the rates of tax shall be reduced from 40% to 35%, on income other than income chargeable at special rates, specified in respective sections of Chapter XII of the Act.\n\n3. Surcharge at the rate of 7% s...\n\nSubsequent guidance and rules indicate corresponding requirements under CIRCULAR [C1]. Further, related conditions apply as specified in **Section 115BA** [C2].\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context, here is the analysis regarding the tax calculation for specified domestic companies under Section 115BAB for Financial Year 2024-25:\n\n**1. Applicable Tax Rate**\nFor domestic companies that opt for taxation under Section 115BAB, the rate of income-tax is **15%** of the total income [C2]. This regime is available as an option to domestic companies upon fulfillment of the conditions contained in Section 115BAB [C2].\n\n**2. Surcharge**\nThe surcharge applicable to domestic companies whose income is chargeable to tax under Section 115BAB is **10%** [C2].\n\n**3. Exclusion from Standard Surcharge Provisions**\nThe standard surcharge rates applicable to other domestic companies (7% for income exceeding ₹1 crore up to ₹10 crore, and 12% for income exceeding ₹10 crore) do **not** apply to companies opting for Section 115BAB [C1]. Similarly, the general surcharge provisions for domestic companies explicitly exclude those whose income is chargeable to tax under Section 115BAA or Section 115BAB [C3].\n\n**4. Health and Education Cess**\nFor FY 2024-25, an additional surcharge known as the “Health and Education Cess on income-tax” is levied at the rate of **4%** on the amount of tax computed, inclusive of the surcharge (wherever applicable) [C1]. No marginal relief is available in respect of this cess [C1].\n\n**5. Marginal Relief**\nMarginal relief is provided in surcharge in all cases [C1].\n\n**Note on Specific Conditions:**\nThe provided context confirms the tax rate (15%) and surcharge (10%) for Section 115BAB [C2]. However, the specific eligibility criteria or conditions that a company must fulfill to opt for this regime are not detailed in the retrieved chunks. I cannot answer this specific aspect based on the retrieved context.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
+      "latency_ms": 580003,
       "serving_model": "qwen/qwen3.8-27b",
       "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 2] 2. In the case of a company other than a domestic company, it is proposed that the rates of tax shall be reduced from 40% to 35%, on income other than income chargeable at special rates, specified in respective sections of Chapter XII of the Act.\n\n3. Surcharge at the rate of 7% shall continue to be levied in case of a domestic company (except those\n\n[Section 115BA] C. Firms In the case of firms, the rate of income-tax has been specified in Paragraph C of Part III of the First Schedule to the Bill. This rate will continue to be the same as that specified for FY 2023-24. The amount of income-tax shall be increased by a surcharge at the rate of 12% of such income-tax in case of a firm having a total income excee\n\n[Section 115AD] 5\n\n(iii) and (iv), at the rate of fifteen per cent. of such income-tax:\n\nProvided that in case where the total income includes any income by way of dividend or income chargeable under clause ( b) of sub-section ( 1) of section 115AD of the Income-tax Act, the rate of surcharge on the income-tax calculated on that part of income shall not exceed fif\n\n[Section 2] 15\n\nProvided that in cases to which the provisions of Chapter XII or Chapter XII-A or section 115JB or section 115JC or Chapter XII-FA or Chapter XII-FB or sub-section ( 1A) of section 161 or section 164 or section 164A or section 167B of the Income- tax Act apply, “advance tax” shall be computed with reference to the rates imposed by this sub-sect\n\n[Section 164] 14 payable under Chapter XVII-C of the said Act has to be computed at the rate or rates in force, such income-tax or, as the case may be, “advance tax” shall be charged, deducted or computed at the rate or rates specified in Part III of the First Schedule and such tax shall be increased by a surcharge, for the purposes of the Union, calculated in s\n\n[Section 112A] 3\n\nProvided further that in the case of every individual, being a resident in India, who is of the age of eighty years or more at any time during the previous year, referred to in item (III) of Paragraph A of Part I of the First Schedule, the provisions of this sub-section shall have effect as if for the words “two lakh fifty thousand rupees”, the \n\n[Section 115BAA] 17\n\nProvided that in case where the total income includes any income by way of dividend or income chargeable under clause (b) of sub-section (1) of section 115AD of the Income-tax Act, the rate of surcharge on the advance tax computed on that part of income shall not exceed fifteen per cent.;\n\n(c) in the case of an association of persons consisting\n\n[Section 115JB] 8 Provided also that in the case of every company having total income chargeable to tax under section 115JB of the Income-tax Act, and such income exceeds ten crore rupees, the total amount payable as income-tax on such income and surcharge thereon, shall not exceed the total amount payable as income-tax and surcharge on a total income of ten crore",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer does not address Section 115BAB at all, instead cites unrelated sections and fails to provide any correct information about tax calculation for specified domestic companies.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 33,
@@ -2433,11 +1955,8 @@
         "Section 115BAC"
       ],
       "generated_citations": [
-        "Section 16",
-        "Section 16(ii)",
         "Section 115BAC",
-        "Section 16(iii)",
-        "Section 16(ia)"
+        "Section 87A"
       ],
       "verified_citations": [
         {
@@ -2449,83 +1968,18 @@
           "page_number": 4,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C2]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p10_c8",
-          "section_id": "Section 194P",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 10,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p17_c31",
-          "section_id": "Section 115BAC",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 17,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "itr4_validation_rules_ay2024_25_p6_c6",
-          "section_id": "Section 17(2)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202024-25_V1.0.pdf",
-          "page_number": 6,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C5]",
-          "chunk_id": "itr2_validation_rules_ay2024_25_p33_c56",
-          "section_id": "Section 115JC",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
-          "page_number": 33,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "itr2_validation_rules_ay2024_25_p7_c6",
-          "section_id": "Section 10(13A)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-06/CBDT_e-Filing_ITR%202_Validation%20Rules%20for%20AY%202024-25.pdf",
-          "page_number": 7,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "cbdt_circular_05_2026_p3_c3",
-          "section_id": "Section 9",
-          "doc_type": "circular",
-          "source_url": "https://www.incometaxindia.gov.in/documents/d/guest/circular_no_5_2026-pdf",
-          "page_number": 3,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the availability of the standard deduction under Section 16(ia) for salaried employees:\n\n**1. General Availability and Statutory Basis**\nThe standard deduction is a statutory deduction available to salaried employees under Section 16(ia) of the Income-tax Act, 1961 [C3]. This deduction is required to be entered in the Income Tax Return (ITR) under the specific field designated for \"Standard Deduction u/s 16(ia)\" [C5]. The amount admissible is typically as per Part B of Form 16 [C5].\n\n**2. Applicability Under the New Tax Regime (Section 115BAC)**\nThe standard deduction is available to taxpayers opting for the **New Tax Regime** (under Section 115BAC), subject to specific caps:\n*   **Cap on Deduction:** For the New Tax Regime, an employee can claim the standard deduction under Section 16(ia) only to the extent of **Rs. 75,000** [C2].\n*   **Comparison with Old Regime:** While the New Regime allows this deduction, other specific deductions under Section 16 are restricted. Specifically, Entertainment Allowance under Section 16(ii) and Professional Tax under Section 16(iii) **cannot** be claimed if the New Tax Regime is selected [C7].\n\n**3. Applicability Under the Old Tax Regime**\n*   **Entertainment Allowance:** If the taxpayer opts for the **Old Tax Regime**, the Entertainment Allowance under Section 16(ii) is allowed to the extent of Rs. 5,000 or 1/5th of the Basic Salary, whichever is lower [C4].\n*   **Professional Tax:** Under the Old Tax Regime, Professional Tax under Section 16(iii) is allowed only to the extent of Rs. 5,000 [C4].\n*   **Standard Deduction:** The context confirms that the standard deduction is a component of the salary deductions under Section 16, which applies generally, but the specific cap of Rs. 75,000 is explicitly linked to the New Tax Regime in the provided validation rules [C2].\n\n**4. Reporting Requirements**\n*   **Form 16:** The standard deduction is reported in Part B of Form 16 [C1], [C5].\n*   **ITR Validation:** When filing ITR-1, ITR-2, or ITR-3, the taxpayer must ensure that the sum of the dropdowns in Schedule Salary matches the individual dropdowns, including the standard deduction [C8].\n\n**Summary Table: Deductions under Section 16 for Salaried Individuals (FY 2024-25)**\n\n| Deduction | Section | New Regime (115BAC) | Old Regime |\n| :--- | :--- | :--- | :--- |\n| **Standard Deduction** | 16(ia) | **Available** (Max Rs. 75,000) [C2] | **Available** [C3], [C5] |\n| **Entertainment Allowance** | 16(ii) | **Not Available** [C7] | Available (Rs. 5,000 or 1/5th Basic, lower) [C4] |\n| **Professional Tax** | 16(iii) | **Not Available** [C7] | Available (Max Rs. 5,000) [C4] |\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "For Financial Year (FY) 2024-25, in the case of an individual (salaried) taxpayer with a total income of ₹9,00,000, the tax computation under the default New Tax Regime pursuant to **Section 115BAC** [C1] is structured across specific income slabs as follows:\n\n| Total Income Slab (₹) | Tax Rate |\n| :--- | :--- |\n| Up to 3,00,000 [C1] | Nil [C1] |\n| From 3,00,001 to 6,00,000 [C1] | 5% [C1] |\n| From 6,00,001 to 9,00,000 [C1] | 10% [C1] |\n\nBased on the income slabs provided under **Section 115BAC** [C1], the tax calculation for a total income of ₹9,00,000 is computed as follows:\n* **Up to ₹3,00,000:** Nil [C1]\n* **₹3,00,001 to ₹6,00,000 (Amounting to ₹3,00,000):** @ 5% = ₹15,000 [C1]\n* **₹6,00,001 to ₹9,00,000 (Amounting to ₹3,00,000):** @ 10% = ₹30,000 [C1]\n\n**Total Income Tax (before applicable rebates or surcharges):** ₹15,000 + ₹30,000 = **₹45,000**.\n\n*Note: The retrieved context contains filing schedule and validation rules, but does not provide specific details regarding marginal relief or the final rebate calculation under Section 87A for this exact total income bracket.*\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "CALCULATION",
-      "latency_ms": 45,
-      "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
-      "fallback_used": false,
+      "latency_ms": 965665,
+      "serving_model": "gemini-3.5-flash-lite",
+      "cached": false,
+      "fallback_used": true,
       "retrieved_context": "[Section 115BAC] proposed in tax rates either in these specific sections or in the First Schedule. The rates provided in sections 115BAA or 115BAB or 115BAC or 115BAD or 115BAE of the Act for the assessment year 2024-25 would be same as already enacted. Similarly rates laid down in Part III of the First Schedule to the Finance Act, 2023, for the purposes of computa\n\n[Section 194P] III. Rates for deduction of income-tax at source from “Salaries”, computation of “advance tax” and charging of income-tax in special cases during the FY 2024-25 (Assessment Year 2025-26). The rates for deduction of income-tax at source from “Salaries” or under section 194P of the Act during the FY 2024-25 and also for computation of “advance tax” p\n\n[Section 115BAC] 275 Form 10IEA exist for AY 25-26 after due date and so new tax regime is applicable Form 10IEA exist for AY 25-26 but details are not provided in ITR in case of 276 reentering into- new tax regime Option for \"(A23) Have you exercised the option u/s 115BAC (6) of Opting out of new tax regime in Form 10-IEA in AY 2024-25? \"Question cannot be selecte\n\n[Section 17(2)] CBDT_e-Filing_ITR 4_Validation Rules for AY 2024-25 V 1.0\n\n5. Assessee is \"HUF\" or Firm (other than LLP) and amount in details of salary is more than zero\n\n6. If the original return is filed under section 142(1) then tax payer cannot file revised return\n\n7. First three alphabets should be as per list TAN codes on field TAN\n\n8. If New Tax regime is \n\n[Section 115JC] CBDT_e-Filing_ITR 2_Validation Rules for AY 2024-25 V.1.0 If Old Tax regime is selected, In Schedule AMTC, Sl.no. 6 Amount of AMT liability\n\n453. available for credit in subsequent assessment years [total of 4 (D)] should be equal to Total of item no. 4D. In Schedule AMT, Sl. No. . 4 tax payable under section 115JC should be equal to\n\n454.\n\n18.5% o\n\n[Section 115BAC] 38. In Part A General, if \"Method of opting-out of new tax regime (if applicable) for current AY \" is selected as \"by exercising the option in the return of income only (form 10IEA is not applicable\", then \"Have you exercised the option u/s 115BAC(6) of Opting out of new tax regime in Form 10-IEA in AY 2024-25? \" is not applicable\n\n39. Please choos\n\n[Section 10(13A)] CBDT_e-Filing_ITR 2_Validation Rules for AY 2024-25 V.1.0 In Part A General, \"Whether you are FII / FPI?\" should be selected \"Yes\" for enabling\n\n15. the Schedule 115AD(1)(b)(iiii)-Proviso In Part A general, if filed in response to a notice u/s 139(9)/142(1)/148 or order under\n\n16. section 119(2)(b)/170A then unique number /Document Identification N\n\n[Section 9] alia provides that the determination of income referred to in section 9(1)(i) of the Income-tax Act, 1961 shall be subject to safe harbour rules. It was applicable for the entire previous year 2024-25. Hence, foreign mining companies can avail benefit of the safe harbour rules regime for the entirc period covering previous year 2024-25 for the purp",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer does not address the requested tax calculation and introduces deductions and caps that are not present in the provided context, indicating hallucination.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 37,
@@ -2882,9 +2336,7 @@
       ],
       "generated_citations": [
         "Section 194BA",
-        "Section 115BBJ",
-        "Section 115E",
-        "Section 194LB"
+        "General"
       ],
       "verified_citations": [
         {
@@ -2898,71 +2350,26 @@
           "graph_expanded": false
         },
         {
-          "citation_id": "[C2]",
-          "chunk_id": "income_tax_rules_1962_p594_c937",
-          "section_id": "Section 115BBJ",
-          "doc_type": "rules",
-          "source_url": "https://www.incometaxindia.gov.in/documents/20117/1842422/Income-tax-Rules-1962_2026-04-01_05-44-55_6f86ac_en.pdf/912570c2-a404-2a4c-ac17-e93ea54d2602?version=11.0&t=1775132171126&download=true",
-          "page_number": 594,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "finance_act_2023_p197_c263",
-          "section_id": "Section 194B",
+          "citation_id": "[C5]",
+          "chunk_id": "finance_act_2025_p88_c101",
+          "section_id": "General",
           "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
-          "page_number": 197,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "finance_act_2023_p217_c303",
-          "section_id": "Section 132",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
-          "page_number": 217,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "finance_act_2023_p186_c243",
-          "section_id": "Section 115BBJ",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
-          "page_number": 186,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "finance_act_2023_p65_c72",
-          "section_id": "Section 115BBJ",
-          "doc_type": "finance_act",
-          "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Finance_Bill.pdf",
-          "page_number": 65,
+          "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Finance_Bill.pdf",
+          "page_number": 88,
           "score": 0.0,
           "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the tax rate on online gaming winnings under Section 115BBJ:\n\n**Tax Rate on Winnings from Online Games**\n\n*   **Applicable Tax Rate:** The income-tax rate applicable to income by way of winnings from online games is **30 per cent.** [C2] [C4] [C7].\n*   **Statutory Provision:** Section 115BBJ of the Income-tax Act, 1961, was inserted with effect from the 1st day of April, 2024, specifically to address tax on winnings from online games [C3].\n*   **Nature of Income:** Winnings from online games are chargeable under Section 115BBJ [C1].\n*   **TDS Implications:**\n    *   The rate of 30% is also specified in the context of deduction of income-tax at source (TDS) provisions, such as those referenced in Section 194LB and Section 115E contexts [C2] [C7].\n    *   However, it is noted that specific provisions regarding the deduction of income-tax on winnings from any online game on or after the 1st day of July, 2023, are excluded from certain TDS sections (like Section 194BA) as per the Finance Act, 2023 [C8].\n*   **DTAA Benefit:** For Resident taxpayers, Double Taxation Avoidance Agreement (DTAA) benefit is **not available** for income in the nature of winnings from online games chargeable under Section 115BBJ [C1].\n*   **Filing Requirement:** Taxpayers must ensure that income corresponding to winnings from online games chargeable under Section 115BBJ is offered to tax completely in their return of income [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "For **Financial Year (FY) 2024-25**, the legal position regarding the TDS rate on net winnings from online games is as follows:\n\n* **TDS Rate:** Any person responsible for paying to any person any income by way of net winnings from an online game is required to deduct income tax at the **rates in force** [C1], which is specified as **30 per cent** for resident persons under **Section 194BA** [C5]. \n* **Timing of Deduction:** Tax is required to be deducted on the net winnings in the user account computed at the end of the financial year, or at the time of any withdrawal made from the user account during the financial year under **Section 194BA** [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "TDS_TCS",
-      "latency_ms": 45,
-      "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
-      "fallback_used": false,
+      "latency_ms": 904702,
+      "serving_model": "gemini-3.5-flash-lite",
+      "cached": false,
+      "fallback_used": true,
       "retrieved_context": "[Section 194BA] 70\n\n(iii) after the proviso, the following shall be inserted with effect from the 1st day of July, 2023, namely:–– ‘Provided further that nothing contained in this section shall apply to deduction of income-tax on winnings from any online game on or after the 1st day of July, 2023.\n\nExplanation.—For the purposes of this section, “online game” shall\n\n[Section 115BBJ] Calculation of net winnings from online games for purpose of section 115BBJ. [133. (1) Net winnings from online games during the previous year, for the purposes of section 115BBJ, shall be calculated using the following formula, namely:— Net winnings = (A+D) - (B+C), where— A = Aggregate amount withdrawn from the user account during the financial y\n\n[Section 194B] 189 Clause 82 of the Bill seeks to amend section 194B of the Income-tax Act relating to winnings from lottery or crossword puzzle. It is proposed to amend the said section so as to include winnings from gambling or betting of any form or nature whatsoever within the ambit of section 194B and accordingly proposed to amend the marginal heading. It is\n\n[Section 132] 209 The proposed amendment seeks to empower the Board to make rules to provide the manner of computation of the net winnings from online game during the previous year. Clause 63 of the Bill seeks to amend section 132 of the Income-tax Act relating to search and seizure. Sub-section (2) of the said section empowers the Board to make rules to provide\n\n[General] 80\n\n(b) having a total income exceeding ten crore rupees, at the rate of five per cent. of such income-tax:\n\nProvided that in the case of every company having a total income exceeding one crore rupees but not exceeding ten crore rupees, the total amount payable as income-tax and surcharge on such income shall not exceed the total amount payable as \n\n[Section 115BBJ] TDS made under the section quoted that income in the nature of Winnings from Online games chargeable u/s 115BBJ is derived by you in FY concerned. Must however it is\n\n22. seen from the content of return that income correspondent to Winnings from Online Games chargeable u/s 115BBJ is either not offered to tax or is not offered to tax completely. For\n\n[Section 115BBJ] 178 It is proposed to amend the said section to insert a proviso to provide that nothing contained in said section shall apply to income by way of winnings from any online game for the assessment year beginning on or after 1st April, 2024. It is further proposed to substitute the Explanation to define the expression “horse race” and “online game”. \n\n[Section 115BBJ] 57\n\n(i) “horse race” shall have the meaning assigned to it in section 74A;\n\n(ii) “online game” shall have the meaning assigned to it in section 115BBJ.’. Insertion of new section 115BBJ.\n\n54. After section 115BBI of the Income-tax Act, the following section shall be inserted with effect from the 1st day of April, 2024, namely:–– Tax on winnings fro",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer incorrectly states a 30% TDS rate and cites Section 115BBJ, whereas the provided context clearly indicates that Section 194BA does not apply to online gaming winnings from July 1, 2023 onward, making the answer unsupported and misleading.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 44,
@@ -3366,23 +2773,9 @@
         "Section 194"
       ],
       "generated_citations": [
-        "Section 194BA",
-        "Section 115BBJ",
-        "Section 115E",
-        "Section 194LB",
         "Section 194"
       ],
       "verified_citations": [
-        {
-          "citation_id": "[C1]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p42_c49",
-          "section_id": "Section 2",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 42,
-          "score": 0.0,
-          "graph_expanded": false
-        },
         {
           "citation_id": "[C2]",
           "chunk_id": "finance_act_2025_p163_c216",
@@ -3392,63 +2785,18 @@
           "page_number": 163,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "explanatory_memo_finance_bill_2024_p46_c55",
-          "section_id": "General",
-          "doc_type": "circular",
-          "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/memo.pdf",
-          "page_number": 46,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "itr1_validation_rules_ay2025_26_p20_c34",
-          "section_id": "Section 89A",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%201_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 20,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "itr1_validation_rules_ay2024_25_p14_c23",
-          "section_id": "Section 80CCH",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2024-04/CBDT_e-Filing_ITR%201_Validation%20Rules_AY2024-25_V1.0..pdf",
-          "page_number": 14,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "itr4_validation_rules_ay2025_26_p21_c38",
-          "section_id": "Section 10(13A)",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2025-07/CBDT_e-Filing_ITR%204_Validation%20Rules_AY%202025-26_V1.1.pdf",
-          "page_number": 21,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the tax rate on online gaming winnings under Section 115BBJ:\n\n**Tax Rate on Winnings from Online Games**\n\n*   **Applicable Tax Rate:** The income-tax rate applicable to income by way of winnings from online games is **30 per cent.** [C2] [C4] [C7].\n*   **Statutory Provision:** Section 115BBJ of the Income-tax Act, 1961, was inserted with effect from the 1st day of April, 2024, specifically to address tax on winnings from online games [C3].\n*   **Nature of Income:** Winnings from online games are chargeable under Section 115BBJ [C1].\n*   **TDS Implications:**\n    *   The rate of 30% is also specified in the context of deduction of income-tax at source (TDS) provisions, such as those referenced in Section 194LB and Section 115E contexts [C2] [C7].\n    *   However, it is noted that specific provisions regarding the deduction of income-tax on winnings from any online game on or after the 1st day of July, 2023, are excluded from certain TDS sections (like Section 194BA) as per the Finance Act, 2023 [C8].\n*   **DTAA Benefit:** For Resident taxpayers, Double Taxation Avoidance Agreement (DTAA) benefit is **not available** for income in the nature of winnings from online games chargeable under Section 115BBJ [C1].\n*   **Filing Requirement:** Taxpayers must ensure that income corresponding to winnings from online games chargeable under Section 115BBJ is offered to tax completely in their return of income [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the provided authoritative legal context, here is the analysis regarding the provisions of TDS on dividends under Section 194:\n\n**1. General Provision for TDS on Dividends**\nSection 194 of the Income-tax Act provides for the deduction of tax in respect of dividends paid by companies [C2].\n\n**2. Exemption Threshold for Non-Cash Dividends**\nThe first proviso to Section 194 specifies conditions under which no tax is required to be deducted at source [C2]. Specifically, no TDS is required if:\n*   The dividend is paid by the company by any mode other than cash; **and**\n*   The amount of such dividend, or the aggregate of the amounts of such dividend during the financial year by the company to the shareholder (being an individual), does not exceed **five thousand rupees** [C2].\n\n**3. Proposed Amendments (Finance Bill 2025)**\nThe retrieved context indicates that Clause 52 of the Finance Bill 2025 seeks to amend Section 194 [C2]. The amendment proposes to modify the first proviso to provide that no tax is required to be deducted at source if the amount or aggregate of the amounts of such [dividend] meets the specified criteria [C2]. *Note: The provided text cuts off before specifying the new monetary threshold or exact conditions of the proposed amendment, only confirming the intent to amend the existing proviso regarding non-cash dividends to individuals.*\n\n**4. Effective Date of Amendments**\nWhile the context mentions amendments to Section 194, it does not explicitly state the effective date for the Section 194 amendments in the provided snippet. However, it notes that other related TDS amendments (such as those regarding interest under Section 194) take effect from **1st April, 2025** [C2].\n\n**Limitations of Context:**\n*   I cannot answer this specific aspect based on the retrieved context: The exact new monetary threshold or specific conditions introduced by the proposed amendment to the first proviso of Section 194, as the text is truncated.\n*   I cannot answer this specific aspect based on the retrieved context: The TDS rate applicable to dividends (e.g., 10% or 20%), as the provided chunks do not state the substantive statutory rate for Section 194.\n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "TDS_TCS",
-      "latency_ms": 45,
+      "latency_ms": 533084,
       "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
+      "cached": false,
       "fallback_used": false,
       "retrieved_context": "[Section 2] 2. It is proposed that TDS under section 194M of the Act be reduced from 5% to 2%.\n\n3. The amendment will take effect from 1st day of October 2024. [Clause 60] Section 194-O - Payment of certain sums by e-commerce operator to e-commerce participant Section 194-O of the Act provides that notwithstanding anything to the contrary contained in any of t\n\n[Section 194] required to be deducted therein if the amount of interest paid or likely to be paid does not exceed ten thousand rupees. These amendments will take effect from 1st April, 2025. Clause 52 of the Bill seeks to amend section 194 of the Income-tax Act relating to dividends. The said section provides for deduction of tax in respect of dividends. The fir\n\n[General] D. WIDENING AND DEEPENING OF TAX BASE AND ANTI-AVOIDANCE Tax on distributed income of domestic company for buy-back of shares Special provisions relating to tax on distributed income of a domestic company from buy-back of shares were introduced by Finance Act, 2013, in line with the then schema of dividend distribution tax. Prior to the amendments \n\n[Section 89A] TDS section code such 194B, 194BB, 194BA,194IA,194IC,194LA or 194S as is selected under Schedule \"TDS2 Details of Tax Deducted at Source on Income Other than Salary\" at\n\n3. field 2a \"Section under which TDS deducted\" or assessee having income under special rate is not eligible to file ITR-1 TDS section code such 194B, 194BB, 194BA, 194IA,194IC,194L\n\n[Section 2] 2. Rationalisation of TDS rates is proposed as below. Section Present TDS Proposed With effect from Rate TDS Rate Section 194D - Payment of 5% 2% 1.4.2025 insurance commission (in case of person other than company) Section 194DA - Payment in 5% 2% 1.10.2024 respect of life insurance policy Section 194G – Commission etc 5% 2% 1.10.2024 on sale of lo\n\n[Section 100(3)] the details thereof? Ans, The applicable tax rate would be the rates as applicable to a foreign company (i.e. 35%) and surcharge, wherever applicable. The Safe Harbour Rules specifies that if an eligible assessee (foreign company) declares minimum 4% profit of gross receipts from eligible business (sale of raw diamonds in a notified zone) as income\n\n[Section 80CCH] 30% of Salary and employer can contribute upto 30% of Salary. Deduction u/s 80CCH can be claimed if Nature of employment is 'Central Government'.\n\n189. In Schedule TCS, “The Amount of TCS claimed this year” should not be more than\n\n190. “Tax collected”. In Schedule TCS total of col 6 TCS credit out of (5) being claimed this year should\n\n191. be equ\n\n[Section 10(13A)] CBDT_e-Filing_ITR 4_Validation Rules for AY 2025-26 V 1.1 B)Actual rent paid-10% of (salary+DA) C) 40% or 50% of (salary+DA) Taxpayers having salary income and exempt allowances needs to provide \"Nature of 345 employment\"\n\n346 \"Schedule 10(13A) needs to be filled for claiming exempt allowance u/s 10(13A) Sum of Basic salary, dearness allowance as p",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer discusses online gaming winnings under Section 115BBJ, which is unrelated to TDS on dividends under Section 194; it contains no relevant provisions from the provided context.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 53,
@@ -3458,10 +2806,8 @@
         "Section 194LB"
       ],
       "generated_citations": [
-        "Section 194BA",
-        "Section 115BBJ",
-        "Section 115E",
-        "Section 194LB"
+        "Section 194LB",
+        "Section 50AA"
       ],
       "verified_citations": [
         {
@@ -3473,73 +2819,18 @@
           "page_number": 38,
           "score": 0.0,
           "graph_expanded": false
-        },
-        {
-          "citation_id": "[C2]",
-          "chunk_id": "income_tax_rules_1962_p29_c53",
-          "section_id": "Section 10",
-          "doc_type": "rules",
-          "source_url": "https://www.incometaxindia.gov.in/documents/20117/1842422/Income-tax-Rules-1962_2026-04-01_05-44-55_6f86ac_en.pdf/912570c2-a404-2a4c-ac17-e93ea54d2602?version=11.0&t=1775132171126&download=true",
-          "page_number": 29,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C3]",
-          "chunk_id": "income_tax_rules_1962_p29_c54",
-          "section_id": "Section 139",
-          "doc_type": "rules",
-          "source_url": "https://www.incometaxindia.gov.in/documents/20117/1842422/Income-tax-Rules-1962_2026-04-01_05-44-55_6f86ac_en.pdf/912570c2-a404-2a4c-ac17-e93ea54d2602?version=11.0&t=1775132171126&download=true",
-          "page_number": 29,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C4]",
-          "chunk_id": "instructions_itr2_ay2020_21_p90_c180",
-          "section_id": "General",
-          "doc_type": "itr_instructions",
-          "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-05/Instructions_ITR2_AY2020_21_V1_0.pdf",
-          "page_number": 90,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C7]",
-          "chunk_id": "income_tax_rules_1962_p30_c57",
-          "section_id": "Section 18",
-          "doc_type": "rules",
-          "source_url": "https://www.incometaxindia.gov.in/documents/20117/1842422/Income-tax-Rules-1962_2026-04-01_05-44-55_6f86ac_en.pdf/912570c2-a404-2a4c-ac17-e93ea54d2602?version=11.0&t=1775132171126&download=true",
-          "page_number": 30,
-          "score": 0.0,
-          "graph_expanded": false
-        },
-        {
-          "citation_id": "[C8]",
-          "chunk_id": "income_tax_rules_1962_p102_c174",
-          "section_id": "Section 2",
-          "doc_type": "rules",
-          "source_url": "https://www.incometaxindia.gov.in/documents/20117/1842422/Income-tax-Rules-1962_2026-04-01_05-44-55_6f86ac_en.pdf/912570c2-a404-2a4c-ac17-e93ea54d2602?version=11.0&t=1775132171126&download=true",
-          "page_number": 102,
-          "score": 0.0,
-          "graph_expanded": false
         }
       ],
-      "answer": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the tax rate on online gaming winnings under Section 115BBJ:\n\n**Tax Rate on Winnings from Online Games**\n\n*   **Applicable Tax Rate:** The income-tax rate applicable to income by way of winnings from online games is **30 per cent.** [C2] [C4] [C7].\n*   **Statutory Provision:** Section 115BBJ of the Income-tax Act, 1961, was inserted with effect from the 1st day of April, 2024, specifically to address tax on winnings from online games [C3].\n*   **Nature of Income:** Winnings from online games are chargeable under Section 115BBJ [C1].\n*   **TDS Implications:**\n    *   The rate of 30% is also specified in the context of deduction of income-tax at source (TDS) provisions, such as those referenced in Section 194LB and Section 115E contexts [C2] [C7].\n    *   However, it is noted that specific provisions regarding the deduction of income-tax on winnings from any online game on or after the 1st day of July, 2023, are excluded from certain TDS sections (like Section 194BA) as per the Finance Act, 2023 [C8].\n*   **DTAA Benefit:** For Resident taxpayers, Double Taxation Avoidance Agreement (DTAA) benefit is **not available** for income in the nature of winnings from online games chargeable under Section 115BBJ [C1].\n*   **Filing Requirement:** Taxpayers must ensure that income corresponding to winnings from online games chargeable under Section 115BBJ is offered to tax completely in their return of income [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
-      "confidence": 0.92,
+      "answer": "Based on the authoritative legal context provided for Financial Year (FY) 2024-25, here is the analysis regarding tax deduction at source:\n\n* I cannot answer this specific aspect based on the retrieved context, as the provided materials do not contain the specific statutory provisions, tax rates, or threshold details under Section 194LB concerning concessional TDS rates for non-residents on interest received from infrastructure debt funds. \n\nHowever, the context notes general rationalisations proposed for Tax Deducted at Source (TDS) rates to improve compliance and ease of doing business [C1]. \n\n*LexIndia provides legal information, not professional tax advice.*",
+      "confidence": 0.9,
       "refused": false,
       "route": "TDS_TCS",
-      "latency_ms": 45,
-      "serving_model": "qwen/qwen3.8-27b",
-      "cached": true,
-      "fallback_used": false,
+      "latency_ms": 965707,
+      "serving_model": "gemini-3.5-flash-lite",
+      "cached": false,
+      "fallback_used": true,
       "retrieved_context": "[Section 50AA] (b) a fund which invests sixty five per cent or more of its total proceeds in units of a fund referred to in sub-clause (a). The above amendment under clause (ii) of Explanation of section 50AA is proposed to be brought into effect from 1st day of April, 2026 and shall be applicable from AY 2026-27 onwards. [Clause 21] Rationalisation of Tax Deduct\n\n[Section 10] [Guidelines for setting up an Infrastructure Debt Fund for the purpose of exemption under clause (47) of section 10. 2F. [ (1) The Infrastructure Debt Fund shall be set up as a Non-Banking Financial Company conforming to and satisfying the conditions laid down in the regulatory framework provided by the Reserve Bank of India.\n\n(2) The funds of the \n\n[Section 139] (6) The investment made by the Infrastructure Debt Fund in an individual project or project belonging to a group at any time, shall not exceed twenty per cent of the corpus of the fund. [(7) No investment shall be made by the Infrastructure Debt Fund in any project where its specified shareholder or the associated enterprise or the group of such sp\n\n[General] 412 Special income offered in schedule OS In schedule SI , Income chargeable u/s S. No. 2d is not equal to corresponding 115A(1)(a)(iia)' Interest received by non-resident income in schedule SI from infrastructure debt fund' is not equal to the amount entered at corresponding item of S. No. . 2d of Schedule OS after reducing applicable DTAA income \n\n[Section 18] 18. Substituted by the IT (Third Amdt.) Rules, 2025, w.e.f. 7-2-2025. Prior to their substitution, sub-rules (1) and (2) as amended by the IT (Seventeenth Amdt.) Rules, 2015, w.r.e.f. 14-5-2015, read as under: \"(1) The Infrastructure Debt Fund shall be set up as a Non-Banking Financial Company conforming to and satisfying the conditions provided by\n\n[General] 430 Special income offered in schedule OS In schedule SI , Pass through Income Chargeable u/s S. No. 2e is not equal to corresponding 115A(1)(a)(iia)' Interest received by non-resident income in schedule SI from infrastructure debt fund' is not equal to the amount entered at corresponding item of S. No. . 2e of Schedule OS after reducing applicable\n\n[Section 18] 20. Omitted by the IT (Seventh Amdt.) Rules, 2019, w.e.f. 16-9-2019. Prior to its omission, proviso read as under : \"Provided that the investment made by a non-resident investor in such bonds shall be subject to a lock in period of not less than three years, but the non-resident investor may transfer the bond to another non-resident investor within\n\n[Section 2] Guidelines for notification of zero coupon bond. 8B. (1) An application by an infrastructure capital company or [infrastructure capital fund or infrastructure debt fund] or a public sector company for notification under clause (48) of section 2 of any zero coupon bond proposed to be issued by it shall be made in Form No. 5B at least three months be",
-      "primary_judge": {
-        "score": 1,
-        "reason": "The answer discusses online gaming winnings under Section 115BBJ, which is unrelated to the question about TDS rates for non-residents on interest from infrastructure debt funds under Section 194LB. It contains no relevant statutory references from the provided context.",
-        "cached": false,
-        "model": "openai/gpt-oss-20b"
-      }
+      "primary_judge": null
     },
     {
       "id": 54,

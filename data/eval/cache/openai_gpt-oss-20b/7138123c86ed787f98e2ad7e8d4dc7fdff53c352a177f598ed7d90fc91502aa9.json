@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "7138123c86ed787f98e2ad7e8d4dc7fdff53c352a177f598ed7d90fc91502aa9",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly cites eligibility, age, old regime, and ₹50,000 limit from the context, but it adds unsupported claims about fixed deposits, validation errors for non‑deposit income, and 80TTA restrictions that are not present in the retrieved chunks.\"}",
+  "timestamp": 1789819994.6657748,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

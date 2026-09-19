@@ -198,3 +198,35 @@ def test_refusal_precision_on_answerable_queries(mock_chunks):
 
     assert res_empty["refused"] is True, "Query with zero chunks must be refused"
     assert EXACT_REFUSAL_PHRASE in res_empty["answer"]
+
+
+def test_cache_never_stores_fallback_outputs(tmp_path):
+    """
+    Regression test: verify that llm_cache strictly rejects fallback and offline synthesis outputs.
+    Only responses with provenance='live' and non-empty content may be cached.
+    """
+    from src.utils.llm_cache import LLMCache
+
+    cache = LLMCache(cache_dir=tmp_path)
+    model = "test-model"
+    prompt = "What is Section 80C?"
+
+    # 1. Attempt to cache fallback output
+    cache.set(model, prompt, "Fallback response text", provenance="fallback")
+    assert cache.get(model, prompt) is None, "Fallback output must NEVER be cached"
+
+    # 2. Attempt to cache offline synthesis
+    cache.set(model, prompt, "Offline synthesis text", provenance="offline")
+    assert cache.get(model, prompt) is None, "Offline synthesis must NEVER be cached"
+
+    # 3. Attempt to cache empty text with live provenance
+    cache.set(model, prompt, "   ", provenance="live")
+    assert cache.get(model, prompt) is None, "Empty text must NEVER be cached"
+
+    # 4. Valid live output should be cached with provenance metadata
+    cache.set(model, prompt, "Legitimate live model response", provenance="live")
+    cached = cache.get(model, prompt)
+    assert cached is not None, "Live output must be cached"
+    assert cached["response"] == "Legitimate live model response"
+    assert cached["metadata"].get("provenance") == "live"
+

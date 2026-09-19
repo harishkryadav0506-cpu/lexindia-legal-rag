@@ -52,9 +52,16 @@ class LLMCache:
         model_id: str,
         prompt: str,
         response_text: str,
-        metadata: Optional[Dict[str, Any]] = None
+        metadata: Optional[Dict[str, Any]] = None,
+        provenance: str = "live"
     ) -> None:
-        """Store an LLM response with timestamp and execution metadata. Never caches empty strings."""
+        """
+        Store an LLM response with timestamp and execution metadata.
+        PROVENANCE GUARD: Only responses with provenance='live' are stored.
+        Fallback/offline synthesis outputs are NEVER cached.
+        """
+        if provenance != "live":
+            return
         if not response_text or not response_text.strip():
             return
 
@@ -63,12 +70,15 @@ class LLMCache:
         model_dir = self.cache_dir / slug
         model_dir.mkdir(parents=True, exist_ok=True)
 
+        meta = dict(metadata or {})
+        meta["provenance"] = provenance
+
         data = {
             "model": model_id,
             "prompt_hash": phash,
             "response": response_text.strip(),
             "timestamp": time.time(),
-            "metadata": metadata or {}
+            "metadata": meta
         }
         entry_path = model_dir / f"{phash}.json"
         with open(entry_path, "w", encoding="utf-8") as f:

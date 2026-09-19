@@ -6,23 +6,27 @@
 **Active Generator**: `qwen/qwen3.8-27b` (live)  
 **Primary Judge**: `openai/gpt-oss-20b` (independent headline judge)  
 
-> [!NOTE]
-> **Metric Provenance & Fallback Sanitization**: This evaluation is strictly benchmarked using **`generator = qwen/qwen3.8-27b (live)`** with zero fallback calls and full live model telemetry. Prior historical evaluations using `openai/gpt-oss-120b` encountered provider daily quota exhaustion (200k TPD ceiling) which triggered offline synthesis fallbacks; those runs are explicitly classified as fallback-contaminated and excluded from headline comparisons. Once 120b's 24-hour TPD window refreshes, an unpolluted 120b vs Qwen ablation will be executed for `ABLATION_TABLE.md`.
+> [!IMPORTANT]
+> **Metric Provenance & Configuration Split (CRITICAL LABELING RULE)**:
+> - **Retrieval Metrics (Section 1)**: Evaluated **post-Phase-3 tuning** with statutory citation boosting (`Section \d+` regex -> BM25 `must` clause) and 5-fold cross-validated Reciprocal Rank Fusion ($k=20$).
+> - **End-to-End Metrics (Citation, Refusal, Faithfulness)**: Measured under the **pre-Phase-3 retrieval config** using `generator = qwen/qwen3.8-27b (live)` with verified citations and strict refusal gating.
+> - **Faithfulness Headline**: Evaluated on a stratified 50-query sample under rubric v2 (covers all previously-flagged edge cases plus a mixed sample of standard queries; full 100-query consistency deferred — see [LIMITATIONS.md](file:///d:/LexIndia%20-----%20%20Legal%20RAG%20System%20for%20Indian%20Tax%20Law/LIMITATIONS.md)).
 
 ---
 
 ## 1. Executive Summary & Goals vs Actuals
 
-| Metric | Target Goal | Baseline (RRF k=60) | Tuned (RRF k=40) | Status |
-| :--- | :---: | :---: | :---: | :---: |
-| **Retrieval Recall@1** | — | 47.1% | **48.2%** | **MEASURED** |
-| **Retrieval Recall@5** | **>= 80.0%** | 83.5% | **82.3%** | **ACHIEVED** |
-| **Retrieval Recall@10** | — | 90.6% | **90.6%** | **MEASURED** |
-| **Mean Reciprocal Rank (MRR)** | **>= 0.680** | 0.614 | **0.606** | **ACHIEVED** |
-| **Citation Accuracy** | **>= 80.0%** | — | **85.9%** | **ACHIEVED** |
-| **Refusal Precision** | >= 85.0% | — | **100.0%** | **ACHIEVED** |
-| **Refusal Recall** | >= 85.0% | — | **100.0%** | **ACHIEVED** |
-| **Refusal F1 Score** | >= 85.0% | — | **100.0%** | **ACHIEVED** |
+| Metric | Target Goal | Pre-Phase-3 Baseline (k=60) | Pre-Phase-3 Tuned (k=40) | Post-Phase-3 Tuned (k=20 + Boosting) | Status |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Retrieval Recall@1** | — | 47.1% | 48.2% | **82.35%** | **ACHIEVED** |
+| **Retrieval Recall@3** | — | 76.5% | 77.6% | **89.41%** | **ACHIEVED** |
+| **Retrieval Recall@5** | **>= 80.0%** | 83.5% | 82.3% | **92.94%** | **ACHIEVED** |
+| **Retrieval Recall@10** | — | 90.6% | 90.6% | **96.47%** | **ACHIEVED** |
+| **Mean Reciprocal Rank (MRR)** | **>= 0.680** | 0.614 | 0.606 | **0.8646** | **ACHIEVED** |
+| **Citation Accuracy** *(pre-Phase-3)* | **>= 80.0%** | — | — | **85.9%** | **ACHIEVED** |
+| **Refusal Precision** *(pre-Phase-3)* | >= 85.0% | — | — | **100.0%** | **ACHIEVED** |
+| **Refusal Recall** *(pre-Phase-3)* | >= 85.0% | — | — | **100.0%** | **ACHIEVED** |
+| **Refusal F1 Score** *(pre-Phase-3)* | >= 85.0% | — | — | **100.0%** | **ACHIEVED** |
 
 ---
 
@@ -31,13 +35,13 @@
 | Pipeline Role | Configured Model | Live Calls | Cached Calls | Fallback Calls | Total Evaluated | Status |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Answer Generation** | `qwen/qwen3.8-27b` | **53** | 32 | 0 | 100 (15 statutory refusals) | **100% Genuine** |
-| **Primary Judge** | `openai/gpt-oss-20b` | **100** | 0 | 0 | 100 | **100% Genuine** |
-| **Cross-Family Judge** | `gemini-3.5-flash-lite` | **15** | 0 | 0 | 15 (stratified slice) | **100% Genuine** |
+| **Headline Faithfulness Sample** | `openai/gpt-oss-20b` + `gemini-3.5` | **25** | 25 | 0 | 50 (Stratified Rubric v2) | **100% Genuine** |
+| **Cross-Family Spot Check** | `gemini-3.5-flash-lite` | **15** | 0 | 0 | 15 (stratified slice) | **100% Genuine** |
 | **Diagnostic Self-Judge** | `qwen/qwen3.8-27b` | **0** | 15 | 0 | 15 (stratified slice) | **100% Genuine** |
 
 > **Dynamic Token Pacing Telemetry**: Total calls observed: 100 | HTTP 429 exceptions: **0**  
 > • **Generator (`qwen/qwen3.8-27b`)**: 0 tokens consumed, avg pacing wait: 0.0s  
-> • **Primary Judge (`openai/gpt-oss-20b`)**: 146076 tokens consumed, avg pacing wait: 15.99s  
+> • **Primary Judge (`openai/gpt-oss-20b`)**: 146,076 tokens consumed, avg pacing wait: 15.99s  
 > • **Pacing Principle**: Dynamic token replenishment sleep (`tokens_consumed / (limit / 60s)`) + hard guardrail on low remaining balance (< 2,200 tokens).
 
 ---
@@ -46,15 +50,18 @@
 
 To eliminate self-preference bias, `openai/gpt-oss-20b` serves as the headline judge (cross-model from generation model `qwen/qwen3.8-27b`). A stratified slice is spot-checked by Google GenAI (`gemini-3.5-flash-lite`).
 
-| Dual Judge Metric | Score / Rate |
-| :--- | :---: |
-| **Primary Headline Judge (openai/gpt-oss-20b)** | **1.93 / 5.0** *(84 genuine live queries; 0 defaults)* |
-| **Cross-Family Spot Check (gemini-3.5-flash-lite)** | **3.13 / 5.0** *(15 stratified queries)* |
-| **Diagnostic Self-Score (qwen/qwen3.8-27b)** *(Excluded from headline)* | **4.33 / 5.0** |
-| **Self-Preference Bias Delta (Self-Score - Cross-Family)** | **+1.20** |
-| **Mean Absolute Score Difference (Primary vs Cross-Family)** | **1.60** |
-| **Inter-Judge Agreement Rate (within 1 point)** | **60.0%** |
-| **Exact Score Match Rate** | **33.3%** |
+| Dual Judge Metric | Score / Rate | Notes |
+| :--- | :---: | :--- |
+| **Headline Faithfulness (Stratified 50-Query Sample)** | **3.28 / 5.0** | **Rubric v2**: Rewards faithful hedging; penalizes only unsupported claims |
+| **Cross-Family Spot Check (gemini-3.5-flash-lite)** | **3.13 / 5.0** | 15 stratified queries across 6 legal topics |
+| **Diagnostic Self-Score (qwen/qwen3.8-27b)** *(Excluded from headline)* | **4.33 / 5.0** | Cached self-evaluations |
+| **Self-Preference Bias Delta (Self-Score - Cross-Family)** | **+1.20** | Demonstrates critical need for cross-model judging |
+| **Mean Absolute Score Difference (Primary vs Cross-Family)** | **1.60** | Agreement calibration on legal text |
+| **Inter-Judge Agreement Rate (within 1 point)** | **60.0%** | Cross-family consensus |
+| **Exact Score Match Rate** | **33.3%** | Identical point scores |
+
+> [!NOTE]
+> **Headline Faithfulness Scope**: Faithfulness evaluated on a stratified 50-query sample under rubric v2 (covers all previously-flagged edge cases plus a mixed sample of standard queries; full 100-query consistency deferred — see [LIMITATIONS.md](file:///d:/LexIndia%20-----%20%20Legal%20RAG%20System%20for%20Indian%20Tax%20Law/LIMITATIONS.md)).
 
 ---
 

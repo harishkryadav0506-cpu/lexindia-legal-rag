@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "d6af7863f33d5f4d8b27592fd3f562d8df30a0d49ce90efb038da04394c7a5a7",
+  "response": "{\"score\": 1, \"reason\": \"The answer introduces specific figures and conditions (₹1,50,000 deduction, loan sanction dates, stamp duty limit, no other property) that are not present in the retrieved context, making the response largely unsupported.\"}",
+  "timestamp": 1789820096.3402762,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

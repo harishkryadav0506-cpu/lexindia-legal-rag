@@ -11,6 +11,7 @@ SPEC #11 Architecture:
 import json
 import logging
 import re
+import time
 from typing import Dict, Any, List, Optional
 import numpy as np
 from openai import OpenAI
@@ -23,17 +24,36 @@ logger = logging.getLogger(__name__)
 
 JUDGE_SYSTEM_PROMPT = """You are an impartial legal research judge evaluating the Faithfulness of an AI-generated legal answer based strictly on provided authoritative statutory context chunks.
 
-EVALUATION CRITERIA (Faithfulness 1 to 5):
-- 5 (Completely Faithful): Every legal rule, number, threshold, and statutory reference in the answer is explicitly supported by the provided context. If the answer states a refusal ("I cannot find sufficient authoritative guidance..."), and the context indeed lacks the answer, rate 5.
-- 4 (Substantially Faithful): The core legal conclusions and cited sections are supported; minor general statements are legally aligned with context without hallucinating provisions.
-- 3 (Partially Faithful): Some claims are grounded in context, but key numbers, conditions, or interpretations lack direct textual support.
-- 2 (Mostly Unfaithful): The answer contains major legal statements, sections, or tax slabs not found in the context, or misinterprets provisions.
-- 1 (Completely Hallucinated): The answer fabricates legal sections, rules, or contradicts the retrieved context.
+EVALUATION CRITERIA:
+Score ONLY whether each claim in the answer is supported by the retrieved context.
+If the answer states the context lacks a figure and declines to guess, that is FULLY faithful (5/5).
+Penalize only claims absent from context.
+
+SCORING RUBRIC (Faithfulness 1 to 5):
+- 5 (Completely Faithful): Every claim in the answer is supported by the context. If the answer states the context lacks a specific figure or condition and declines to guess (faithful hedging), that is fully faithful (5/5). Standard statutory refusals where context lacks guidance are also 5/5.
+- 4 (Substantially Faithful): The substantive legal claims are grounded in context; minor connecting phrases without legal consequence are ungrounded.
+- 3 (Partially Faithful): Some claims are grounded in context, but key numbers, conditions, or rates are stated without textual support in the chunks.
+- 2 (Mostly Unfaithful): Multiple material claims, numbers, or section references are made that cannot be found in or deduced from the context.
+- 1 (Completely Hallucinated / Irrelevant Boilerplate): Fabricates legal provisions, introduces numbers not in context, or outputs boilerplate text completely unrelated to the retrieved context chunks.
+
+WORKED EXAMPLES:
+Example 1 (Faithful Hedging -> Score 5):
+Context: [C1] Section 194BA provides for deduction of tax at source on net winnings from online gaming.
+Question: What is the TDS rate under Section 194BA?
+Answer: Under Section 194BA [C1], tax is deductible on net winnings from online games. The retrieved context does not state the specific TDS rate percentage, so under strict context grounding I cannot state the rate.
+Output: {"score": 5, "reason": "The answer faithfully reports what is in context and explicitly declines to speculate on the missing tax rate."}
+
+Example 2 (Boilerplate / Irrelevant -> Score 1):
+Context: [C1] Section 115BAA prescribes a 22% corporate tax rate for domestic manufacturing companies.
+Question: What is the concessional corporate tax rate under Section 115BAA?
+Answer: Under Section 16(ia) [C1], salaried individuals are entitled to a standard deduction of Rs 50,000.
+Output: {"score": 1, "reason": "The answer discusses standard deduction for salaried individuals, which is completely absent and ungrounded in the retrieved Section 115BAA context."}
 
 OUTPUT FORMAT:
 Respond ONLY with a valid JSON object:
 {"score": <integer from 1 to 5>, "reason": "<concise 1-2 sentence justification>"}
 """
+
 
 
 def _parse_judge_json(raw_text: str) -> Dict[str, Any]:
@@ -102,9 +122,10 @@ GENERATED LEGAL ANSWER:
 Rate Faithfulness (1-5) and provide your concise JSON output:"""
 
     model_id = settings.JUDGE_PRIMARY  # openai/gpt-oss-20b
+    cache_prompt = f"RUBRIC_V2::{JUDGE_SYSTEM_PROMPT}::{user_prompt}"
 
     # 1. Check persistent cache
-    cached = llm_cache.get(model_id, user_prompt)
+    cached = llm_cache.get(model_id, cache_prompt)
     if cached and cached.get("response"):
         parsed = _parse_judge_json(cached["response"])
         parsed["cached"] = True
@@ -135,7 +156,7 @@ Rate Faithfulness (1-5) and provide your concise JSON output:"""
                     {"role": "user", "content": user_prompt},
                 ],
                 "temperature": 0.0,
-                "max_tokens": 1024,
+                "max_tokens": 600,
             }
             if extra_body:
                 call_kwargs["extra_body"] = extra_body
@@ -156,7 +177,7 @@ Rate Faithfulness (1-5) and provide your concise JSON output:"""
                     continue
                 raise ValueError("Empty response received from judge after retries")
 
-            llm_cache.set(model_id, user_prompt, content, metadata={"serving_model": model_id})
+            llm_cache.set(model_id, cache_prompt, content, metadata={"serving_model": model_id, "rubric": "v2"}, provenance="live")
             result = _parse_judge_json(content)
             result["cached"] = False
             result["model"] = model_id
@@ -164,6 +185,13 @@ Rate Faithfulness (1-5) and provide your concise JSON output:"""
         except RateLimitError as rle:
             err_str = str(rle).lower()
             if "tokens per day" in err_str or "tpd" in err_str:
+                m = re.search(r"try again in (?:(\d+)m)?(\d+(?:\.\d+)?)s", str(rle))
+                if m:
+                    wait_secs = (int(m.group(1)) if m.group(1) else 0) * 60 + float(m.group(2))
+                    if wait_secs <= 180:
+                        logger.info(f"TPD rolling window pause: waiting {wait_secs:.1f}s for sliding quota release...")
+                        time.sleep(wait_secs + 2.0)
+                        continue
                 logger.error(f"TPD exhaustion detected on {model_id}: {rle}")
                 raise RuntimeError(f"TPD limit reached on {model_id}. Hard-stopping cleanly.") from rle
             if attempt < max_retries:
@@ -175,6 +203,13 @@ Rate Faithfulness (1-5) and provide your concise JSON output:"""
         except Exception as e:
             err_str = str(e).lower()
             if "tokens per day" in err_str or "tpd" in err_str:
+                m = re.search(r"try again in (?:(\d+)m)?(\d+(?:\.\d+)?)s", str(e))
+                if m:
+                    wait_secs = (int(m.group(1)) if m.group(1) else 0) * 60 + float(m.group(2))
+                    if wait_secs <= 180:
+                        logger.info(f"TPD rolling window pause: waiting {wait_secs:.1f}s for sliding quota release...")
+                        time.sleep(wait_secs + 2.0)
+                        continue
                 logger.error(f"TPD exhaustion detected on {model_id}: {e}")
                 raise RuntimeError(f"TPD limit reached on {model_id}. Hard-stopping cleanly.") from e
             if ("429" in str(e) or "limit" in err_str) and attempt < max_retries:
@@ -208,9 +243,10 @@ GENERATED LEGAL ANSWER:
 Rate Faithfulness (1-5) and provide your concise JSON output:"""
 
     model_id = settings.JUDGE_CROSS_FAMILY
+    cache_prompt = f"RUBRIC_V2::{JUDGE_SYSTEM_PROMPT}::{user_prompt}"
 
     # 1. Check cache
-    cached = llm_cache.get(model_id, user_prompt)
+    cached = llm_cache.get(model_id, cache_prompt)
     if cached and cached.get("response"):
         parsed = _parse_judge_json(cached["response"])
         parsed["cached"] = True
@@ -232,7 +268,7 @@ Rate Faithfulness (1-5) and provide your concise JSON output:"""
                     ),
                 )
                 text = response.text or ""
-                llm_cache.set(jm, user_prompt, text, metadata={"serving_model": jm})
+                llm_cache.set(jm, cache_prompt, text, metadata={"serving_model": jm, "rubric": "v2"}, provenance="live")
                 res = _parse_judge_json(text)
                 res["cached"] = False
                 res["model"] = jm

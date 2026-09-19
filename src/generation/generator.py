@@ -193,7 +193,7 @@ class AnswerGenerator:
                 try:
                     raw_ans = self._call_groq(user_prompt, mock_429=mock_429)
                     srv_model = self.model
-                    llm_cache.set(self.model, user_prompt, raw_ans, metadata={"serving_model": self.model})
+                    llm_cache.set(self.model, user_prompt, raw_ans, metadata={"serving_model": self.model}, provenance="live")
                 except Exception as e:
                     err_str = str(e)
                     logger.warning(f"Primary model generation failed ({e}), attempting fallback...")
@@ -230,13 +230,32 @@ class AnswerGenerator:
 
             return raw_ans, f_used, f_model, f_event, srv_model, is_cached
 
+        # Retrieval-side guard: detect schedule-validation chunks ONLY
+        # Applied conditionally so unaffected queries retain identical prompt hashes.
+        sched_keywords = ["schedule ", "itr-", "validation rule", "schema", "table format"]
+        is_schedule_validation = (
+            sum(
+                1 for c in chunks[:4]
+                if any(k in c.get("text", "").lower() or k in c.get("section_id", "").lower() for k in sched_keywords)
+            ) >= 2
+        )
+        effective_feedback = feedback
+        if is_schedule_validation and not feedback:
+            effective_feedback = (
+                "NOTE ON CONTEXT: The retrieved context contains tax return filing schedule validation rules or form structures. "
+                "Under strict context grounding, cite only what is stated in these rules using [C#]. "
+                "If the substantive tax rate or statutory limit is not provided in these validation rules, "
+                "state: 'The retrieved context contains filing schedule rules but does not state the substantive statutory provision or limit.' "
+                "Do NOT guess or speculate."
+            )
+
         # Build initial prompt
         user_prompt = build_generation_prompt(
             question=question,
             chunks=chunks,
             financial_year=financial_year,
             taxpayer_type=taxpayer_type,
-            correction_feedback=feedback
+            correction_feedback=effective_feedback
         )
 
         raw_answer, fallback_used, fallback_model, fallback_event, serving_model, cached = _execute_prompt(user_prompt)

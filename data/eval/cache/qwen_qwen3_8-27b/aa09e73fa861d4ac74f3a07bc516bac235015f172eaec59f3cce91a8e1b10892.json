@@ -1,9 +1,0 @@
-{
-  "model": "qwen/qwen3.8-27b",
-  "prompt_hash": "aa09e73fa861d4ac74f3a07bc516bac235015f172eaec59f3cce91a8e1b10892",
-  "response": "Based on the provided authoritative legal context for Financial Year 2024-25, here is the legal analysis regarding the tax rate on online gaming winnings under Section 115BBJ:\n\n**Tax Rate on Winnings from Online Games**\n\n*   **Applicable Tax Rate:** The income-tax rate applicable to income by way of winnings from online games is **30 per cent.** [C2] [C4] [C7].\n*   **Statutory Provision:** Section 115BBJ of the Income-tax Act, 1961, was inserted with effect from the 1st day of April, 2024, specifically to address tax on winnings from online games [C3].\n*   **Nature of Income:** Winnings from online games are chargeable under Section 115BBJ [C1].\n*   **TDS Implications:**\n    *   The rate of 30% is also specified in the context of deduction of income-tax at source (TDS) provisions, such as those referenced in Section 194LB and Section 115E contexts [C2] [C7].\n    *   However, it is noted that specific provisions regarding the deduction of income-tax on winnings from any online game on or after the 1st day of July, 2023, are excluded from certain TDS sections (like Section 194BA) as per the Finance Act, 2023 [C8].\n*   **DTAA Benefit:** For Resident taxpayers, Double Taxation Avoidance Agreement (DTAA) benefit is **not available** for income in the nature of winnings from online games chargeable under Section 115BBJ [C1].\n*   **Filing Requirement:** Taxpayers must ensure that income corresponding to winnings from online games chargeable under Section 115BBJ is offered to tax completely in their return of income [C1].\n\n*LexIndia provides legal information, not professional tax advice.*",
-  "timestamp": 1789722310.4366474,
-  "metadata": {
-    "serving_model": "qwen/qwen3.8-27b"
-  }
-}

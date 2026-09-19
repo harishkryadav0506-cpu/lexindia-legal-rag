@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "baedcde65e9862e306518e70e8d47c8accb85a9f017d8bb5e3c8d048e29789bd",
+  "response": "Based on the provided authoritative legal context, here is the analysis regarding the tax calculation for specified domestic companies under Section 115BAB for Financial Year 2024-25:\n\n**1. Applicable Tax Rate**\nFor domestic companies that opt for taxation under Section 115BAB, the rate of income-tax is **15%** of the total income [C2]. This regime is available as an option to domestic companies upon fulfillment of the conditions contained in Section 115BAB [C2].\n\n**2. Surcharge**\nThe surcharge applicable to domestic companies whose income is chargeable to tax under Section 115BAB is **10%** [C2].\n\n**3. Exclusion from Standard Surcharge Provisions**\nThe standard surcharge rates applicable to other domestic companies (7% for income exceeding ₹1 crore up to ₹10 crore, and 12% for income exceeding ₹10 crore) do **not** apply to companies opting for Section 115BAB [C1]. Similarly, the general surcharge provisions for domestic companies explicitly exclude those whose income is chargeable to tax under Section 115BAA or Section 115BAB [C3].\n\n**4. Health and Education Cess**\nFor FY 2024-25, an additional surcharge known as the “Health and Education Cess on income-tax” is levied at the rate of **4%** on the amount of tax computed, inclusive of the surcharge (wherever applicable) [C1]. No marginal relief is available in respect of this cess [C1].\n\n**5. Marginal Relief**\nMarginal relief is provided in surcharge in all cases [C1].\n\n**Note on Specific Conditions:**\nThe provided context confirms the tax rate (15%) and surcharge (10%) for Section 115BAB [C2]. However, the specific eligibility criteria or conditions that a company must fulfill to opt for this regime are not detailed in the retrieved chunks. I cannot answer this specific aspect based on the retrieved context.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789813422.5229952,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

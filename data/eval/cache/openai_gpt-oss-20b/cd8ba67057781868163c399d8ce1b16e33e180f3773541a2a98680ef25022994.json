@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "cd8ba67057781868163c399d8ce1b16e33e180f3773541a2a98680ef25022994",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly states that employer contributions under 80CCD(2) are separate from the Rs.1,50,000 aggregate limit and gives the correct 10%/14% salary limits, which are supported by the context. However, it also asserts employee contribution limits of 10% of salary for salaried and 20% of GTI for non‑salaried, and that these are part of the aggregate limit, which are not explicitly present in the provided statutory excerpts. Thus the answer is partially faithful.\"}",
+  "timestamp": 1789819931.8589096,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

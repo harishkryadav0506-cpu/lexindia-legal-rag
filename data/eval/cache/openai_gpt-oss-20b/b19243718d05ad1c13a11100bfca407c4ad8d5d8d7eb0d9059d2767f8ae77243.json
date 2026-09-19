@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "b19243718d05ad1c13a11100bfca407c4ad8d5d8d7eb0d9059d2767f8ae77243",
+  "response": "{\"score\": 2, \"reason\": \"The answer contains several unsupported claims (e.g., tax regime restrictions, new regime details, ITR form applicability, e‑filing validation rules, auto‑populated field) that are not present in the retrieved context.\"}",
+  "timestamp": 1789820057.98792,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}

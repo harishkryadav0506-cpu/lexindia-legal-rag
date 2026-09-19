@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "prompt_hash": "e4d61f586b7986c117f7b0b7e4938058ba39011ea41c5fc92f29466b49d8315d",
+  "response": "{\"score\": 3, \"reason\": \"The answer correctly cites the Rs. 25,000 limit for parents and the Rs. 5,000 cap for preventive health check‑ups, but it also makes unsupported claims about Sl. No. 2b and misstates that the Rs. 5,000 cap for parents is not explicitly present, which is inaccurate according to the provided context.\"}",
+  "timestamp": 1789819856.140485,
+  "metadata": {
+    "serving_model": "openai/gpt-oss-20b",
+    "rubric": "v2",
+    "provenance": "live"
+  }
+}
