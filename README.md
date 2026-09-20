@@ -305,16 +305,51 @@ See [`ABLATION_TABLE.md`](ABLATION_TABLE.md) for the comparative analysis betwee
 
 ## Screenshots & Demo
 
-> Place screenshots in `docs/screenshots/` and update paths below.
+The following screenshots demonstrate the core capabilities of LexIndia, including grounded legal research, citations, knowledge-graph exploration, multi-agent execution, and human review.
 
-| Screen | Filename |
+| Screen | Screenshot |
 |---|---|
-| Research Portal (home page) | `docs/screenshots/research_portal.png` |
-| Grounded Answer with Citations | `docs/screenshots/answer_citations.png` |
-| Interactive Knowledge Graph | `docs/screenshots/knowledge_graph.png` |
-| Multi-Agent Execution Trace | `docs/screenshots/execution_trace.png` |
-| Human Review Queue | `docs/screenshots/review_queue.png` |
-| Out-of-Scope Refusal | `docs/screenshots/refusal_example.png` |
+| Research Portal | ![Research Portal](docs/screenshots/research_portal.png) |
+| Grounded Answer with Citations | ![Grounded Answer with Citations](docs/screenshots/answer_citations.png) |
+| Interactive Knowledge Graph | ![Interactive Knowledge Graph](docs/screenshots/knowledge_graph.png) |
+| Multi-Agent Execution Trace | ![Multi-Agent Execution Trace](docs/screenshots/execution_trace.png) |
+| Human Review Queue | ![Human Review Queue](docs/screenshots/review_queue.png) |
+
+### Demo Walkthrough
+
+#### 1. Research Portal
+
+Open the LexIndia research portal and enter an Indian income-tax research question.
+
+![Research Portal](docs/screenshots/research_portal.png)
+
+#### 2. Grounded Legal Answer
+
+Ask:
+
+> What is the maximum deduction under Section 80C?
+
+The system generates a grounded answer with source citations.
+
+![Grounded Answer with Citations](docs/screenshots/answer_citations.png)
+
+#### 3. Interactive Knowledge Graph
+
+The knowledge graph provides contextual relationships between the legal provision, entities, and retrieved sources.
+
+![Interactive Knowledge Graph](docs/screenshots/knowledge_graph.png)
+
+#### 4. Multi-Agent Execution
+
+LexIndia uses multiple specialized agents to process the research request and provides an execution trace for transparency.
+
+![Multi-Agent Execution Trace](docs/screenshots/execution_trace.png)
+
+#### 5. Human Review Queue
+
+Research outputs requiring additional verification can be routed to the human review workflow.
+
+![Human Review Queue](docs/screenshots/review_queue.png)
 
 ### Demo Walkthrough (6 Steps)
 
