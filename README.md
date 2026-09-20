@@ -338,13 +338,6 @@ See [`LIMITATIONS.md`](LIMITATIONS.md) for full engineering transparency on eval
 - **Test database isolation** — HITL integration tests share the production SQLite database; test isolation with ephemeral databases is deferred
 - **Hedge-tag placement** — Low-confidence hedge markers occasionally appear inside markdown table cells rather than as standalone notes
 
-**Future Work & Production Roadmap:**
-
-- Corpus expansion to cover TDS rate schedules, recent CBDT notifications, and state-level amendments
-- Per-citation semantic verification depth (claim-level entailment rather than document-level)
-- Multi-statute support (GST Act, Companies Act) as separate indexed corpora
-- Full 100-query Rubric v2 evaluation once provider daily token quotas reset
-- Elasticsearch HNSW vector optimization for sub-10ms hybrid fusion latency
 
 ---
 
