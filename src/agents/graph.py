@@ -345,6 +345,10 @@ def run_query(
 
     if is_interrupted:
         draft = run_result.get("draft_answer", "")
+        refused = bool(
+            run_result.get("refused", False) or
+            (draft and (EXACT_REFUSAL_PHRASE in draft or draft.strip().startswith("I cannot find sufficient")))
+        )
         return {
             "status": "awaiting_review",
             "thread_id": tid,
@@ -353,7 +357,7 @@ def run_query(
             "citations": run_result.get("citations", []),
             "confidence": run_result.get("confidence", 0.0),
             "route": run_result.get("route", "UNKNOWN"),
-            "refused": run_result.get("refused", False),
+            "refused": refused,
             "retrieved_chunks": run_result.get("retrieved_chunks", []),
             "calculation_result": run_result.get("calculation_result"),
             "review_required": True,
@@ -364,6 +368,10 @@ def run_query(
         }
     else:
         answer = run_result.get("final_answer") or run_result.get("draft_answer", "")
+        refused = bool(
+            run_result.get("refused", False) or
+            (answer and (EXACT_REFUSAL_PHRASE in answer or answer.strip().startswith("I cannot find sufficient")))
+        )
         return {
             "status": "complete",
             "thread_id": tid,
@@ -372,7 +380,7 @@ def run_query(
             "draft_answer": run_result.get("draft_answer", ""),
             "citations": run_result.get("citations", []),
             "confidence": run_result.get("confidence", 0.0),
-            "refused": run_result.get("refused", False),
+            "refused": refused,
             "route": run_result.get("route", "UNKNOWN"),
             "retrieved_chunks": run_result.get("retrieved_chunks", []),
             "calculation_result": run_result.get("calculation_result"),
@@ -417,7 +425,10 @@ def resume_query_review(
         "draft_answer": final_state.get("draft_answer", ""),
         "citations": final_state.get("citations", []),
         "confidence": final_state.get("confidence", 0.0),
-        "refused": final_state.get("refused", False),
+        "refused": bool(
+            final_state.get("refused", False) or
+            (final_ans and (EXACT_REFUSAL_PHRASE in final_ans or final_ans.strip().startswith("I cannot find sufficient")))
+        ),
         "route": final_state.get("route", "UNKNOWN"),
         "retrieved_chunks": final_state.get("retrieved_chunks", []),
         "calculation_result": final_state.get("calculation_result"),

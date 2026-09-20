@@ -23,9 +23,13 @@ CRITICAL RULES:
 4. REFUSAL: ONLY output the exact refusal phrase:
    "{EXACT_REFUSAL_PHRASE}"
    if the entire query is completely out-of-scope (e.g. GST, customs, criminal law) OR if none of the provided chunks contain relevant statutory guidance. DO NOT refuse an answerable question if relevant provisions are present in the context.
-5. FINANCIAL YEAR: Note the specific Financial Year (FY) requested by the user. If tax laws or slab rates differ between the Old and New Regime (Section 115BAC), explicitly delineate the difference.
-6. TONE & STRUCTURE: Maintain a professional, objective legal advisory tone. Format complex provisions using clear markdown bullet points or comparative tables.
-7. DISCLAIMER: Always conclude your response with the disclaimer:
+5. FINANCIAL YEAR & ASSESSMENT YEAR (AY) MAPPING: Note the specific Financial Year (FY) requested by the user. In Indian income tax law, Assessment Year (AY) is strictly the year immediately following the Financial Year (FY) (i.e. AY = FY + 1). For example, FY 2024-25 = AY 2025-26, and FY 2025-26 = AY 2026-27. NEVER pair an FY with an identical AY (e.g. FY 2025-26 is NEVER AY 2025-26).
+   If the user's question specifies a Financial Year that differs from the selected Financial Year, do NOT relabel or misattribute the retrieved provisions to the queried year. Include a visible one-line note:
+   "Note: Answer evaluated for selected Financial Year [selected FY]. Statutory provisions for [queried FY] may differ."
+   If tax laws or slab rates differ between the Old and New Regime (Section 115BAC), explicitly delineate the difference.
+6. LOW-CONFIDENCE CHUNKS: Chunks with retrieval/rerank score < 0.05 are marked "LOW CONFIDENCE". Any claim citing a low-confidence chunk must NOT be asserted as plain fact. Either omit that claim, or explicitly hedge with low-confidence phrasing (e.g., "A low-confidence excerpt indicates...").
+7. TONE & STRUCTURE: Maintain a professional, objective legal advisory tone. Format complex provisions using clear markdown bullet points or comparative tables.
+8. DISCLAIMER: Always conclude your response with the disclaimer:
    "*{STANDARD_DISCLAIMER}*"
 """
 
@@ -45,10 +49,12 @@ def build_generation_prompt(
         doc_type = c.get("doc_type", "statute")
         act_name = c.get("act_name", c.get("doc_id", "Income-tax Act, 1961"))
         page_num = c.get("page_number", 1)
+        score = float(c.get("final_score", c.get("rerank_score", c.get("score", 0.0))))
+        low_conf_label = " | LOW CONFIDENCE (<0.05)" if score < 0.05 else ""
         text = c.get("text", "").strip()
 
         block = (
-            f"[C{idx}] (ID: {chunk_id} | {section_id} | {act_name} | {doc_type.upper()} | Page {page_num}):\n"
+            f"[C{idx}] (ID: {chunk_id} | {section_id} | {act_name} | {doc_type.upper()} | Page {page_num}{low_conf_label}):\n"
             f"{text}"
         )
         context_blocks.append(block)
@@ -76,6 +82,8 @@ USER QUESTION:
 Please provide your cited legal analysis below strictly grounded in the numbered chunks above. Remember:
 - Name the statutory section explicitly alongside its citation chip (e.g. Section 80C [C1]).
 - If certain sub-aspects are not in the context, state "I cannot answer this specific aspect based on the retrieved context" for those parts rather than refusing the entire question.
+- Assessment Year is strictly FY + 1 (e.g. FY 2024-25 is AY 2025-26; FY 2025-26 is AY 2026-27). Never relabel data across years.
+- Any claim citing a chunk marked LOW CONFIDENCE (<0.05) must not be asserted as plain fact; either omit it or qualify it with explicit hedging.
 - Every single legal claim must be followed immediately by [C1], [C2], etc."""
     return user_prompt
 

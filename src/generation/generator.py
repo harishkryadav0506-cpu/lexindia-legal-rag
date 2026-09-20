@@ -9,6 +9,7 @@ Strictly adheres to SPEC.md section #8:
 - Includes mock_429 support for verifying fallback behavior in automated tests.
 """
 
+import re
 import json
 import logging
 import time
@@ -26,6 +27,108 @@ from src.utils.llm_cache import llm_cache
 from src.utils.groq_rate_limiter import groq_pacer
 
 logger = logging.getLogger("LexIndiaGenerator")
+
+
+def clean_and_repair_truncation(text: str) -> str:
+    """
+    BUG 1 Fix: Detect and repair responses truncated mid-sentence or mid-citation.
+    - Removes incomplete trailing citation chips (e.g. '[C', '[C2' without ']').
+    - Trims incomplete trailing sentences cut off mid-word to the last completed sentence.
+    - Never shows a citation tag missing its closing ']'.
+    - Ensures standard disclaimer is present.
+    """
+    if not text:
+        return text
+
+    # Remove incomplete citation tag at the very end (e.g. '[C', '[C2', '[')
+    text = re.sub(r'\[C\d*$', '', text).strip()
+    text = re.sub(r'\[[^\]]*$', '', text).strip()
+
+    # If already an authoritative refusal, preserve it
+    if EXACT_REFUSAL_PHRASE in text:
+        if not text.endswith(f"*{STANDARD_DISCLAIMER}*"):
+            text = f"{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*"
+        return text
+
+    # Check for disclaimer
+    has_disclaimer = STANDARD_DISCLAIMER in text
+    body = text
+    if has_disclaimer:
+        body = text.split(STANDARD_DISCLAIMER)[0].strip()
+        body = body.rstrip("*_ \n\t")
+
+    # If body ends mid-sentence without terminal punctuation
+    if body and body[-1] not in ".!?\"')]*|#":
+        # Find last sentence-ending punctuation or table boundary
+        last_punct = -1
+        for idx in range(len(body) - 1, -1, -1):
+            if body[idx] in ".!?\n|":
+                last_punct = idx
+                break
+        if last_punct > 0:
+            body = body[:last_punct + 1].strip()
+
+    # Clean any dangling bracket
+    body = re.sub(r'\[C\d*$', '', body).strip()
+    body = re.sub(r'\[[^\]]*$', '', body).strip()
+
+    if body:
+        if not body.endswith(f"*{STANDARD_DISCLAIMER}*"):
+            body = f"{body}\n\n*{STANDARD_DISCLAIMER}*"
+        return body
+
+    return text
+
+
+def enforce_low_confidence_hedging(text: str, chunks: list) -> str:
+    """
+    BUG 2 Fix: Any claim citing a chunk with retrieval/rerank score < 0.05
+    must not be stated as plain fact. If missing hedging language, qualify it.
+    """
+    if not text or not chunks or EXACT_REFUSAL_PHRASE in text:
+        return text
+
+    low_conf_c_indices = set()
+    for idx, c in enumerate(chunks, 1):
+        sc = float(c.get("final_score", c.get("rerank_score", c.get("score", 0.0))))
+        if sc < 0.05:
+            low_conf_c_indices.add(idx)
+
+    if not low_conf_c_indices:
+        return text
+
+    lines = text.split("\n")
+    hedged_lines = []
+    hedge_words = ["suggest", "indicat", "may", "note", "low-confidence", "unverified", "unconfirmed", "disclaimer", "purport"]
+
+    for line in lines:
+        cited_in_line = [int(i) for i in re.findall(r'\[C(\d+)\]', line)]
+        has_low_conf = any(i in low_conf_c_indices for i in cited_in_line)
+        if has_low_conf and not any(w in line.lower() for w in hedge_words) and STANDARD_DISCLAIMER not in line and line.strip():
+            # Qualify line with explicit low-confidence phrasing
+            line = f"*(Note: Low-confidence excerpt)* {line}"
+        hedged_lines.append(line)
+
+    return "\n".join(hedged_lines)
+
+
+def enforce_fy_conflict_notice(text: str, question: str, financial_year: str) -> str:
+    """
+    BUG 7 Fix: When the FY named in the question differs from dropdown FY,
+    ensure answer does not relabel one year's data as another year's,
+    and include a visible one-line note if not already present.
+    """
+    if not text or EXACT_REFUSAL_PHRASE in text:
+        return text
+
+    fy_matches = re.findall(r'20\d\d[-/]\d\d', question)
+    if fy_matches:
+        queried_fy = fy_matches[0].replace("/", "-")
+        if queried_fy != financial_year:
+            notice = f"Note: Answer evaluated for selected Financial Year {financial_year}. Statutory provisions for {queried_fy} may differ."
+            if notice.lower() not in text.lower() and f"selected financial year {financial_year}" not in text.lower():
+                text = f"{notice}\n\n{text}"
+    return text
 
 
 class AnswerGenerator:
@@ -61,7 +164,7 @@ class AnswerGenerator:
                         {"role": "user", "content": user_prompt}
                     ],
                     temperature=0.1,
-                    max_tokens=600
+                    max_tokens=1800
                 )
                 parsed = raw_res.parse()
                 usage_tokens = getattr(parsed, "usage", None) and getattr(parsed.usage, "total_tokens", None)
@@ -297,14 +400,21 @@ class AnswerGenerator:
             )
             raw_answer, fallback_used, fallback_model, fallback_event, serving_model, cached = _execute_prompt(retry_prompt)
 
-        # Final refusal decision:
-        # Refuse ONLY if raw_answer contains EXACT_REFUSAL_PHRASE AND either:
-        # 1. Chunks lack relevant legal provisions (has_relevant_chunks is False), OR
-        # 2. Query is inherently unanswerable / out-of-scope (no substantive sections answered)
-        refused = EXACT_REFUSAL_PHRASE in raw_answer
+        # Apply truncation repair, low-confidence hedging, and FY conflict notice
+        raw_answer = clean_and_repair_truncation(raw_answer)
+        raw_answer = enforce_low_confidence_hedging(raw_answer, chunks)
+        raw_answer = enforce_fy_conflict_notice(raw_answer, question, financial_year)
+
+        # Final refusal decision (Bug 9 Fix):
+        # Refuse whenever raw_answer contains or starts with the refusal phrase
+        refused = (
+            EXACT_REFUSAL_PHRASE in raw_answer or
+            raw_answer.strip().startswith("I cannot find sufficient")
+        )
         if refused and has_relevant_chunks and len(re.findall(r'Section\s+[0-9]+', raw_answer)) > 0:
-            # Partial answer provided alongside disclaimer — do not mark as total refusal
-            refused = False
+            # Partial answer provided alongside disclaimer — do not mark as total refusal only if not outright refusal
+            if not raw_answer.strip().startswith(EXACT_REFUSAL_PHRASE) and not raw_answer.strip().startswith("I cannot find sufficient"):
+                refused = False
 
         # Build citations mapping and extract all cited statutory sections (dual-source)
         citations_meta = []

@@ -26,11 +26,17 @@ export default function QueryInput({ onSubmit, isLoading }: QueryInputProps) {
     if (e) e.preventDefault();
     if (!question.trim() || isLoading) return;
 
+    // Deterministically read checkbox DOM state at submit time to prevent stale closure state
+    const checkboxEl = typeof document !== "undefined"
+      ? (document.getElementById("require-review-toggle") as HTMLInputElement | null)
+      : null;
+    const isChecked = checkboxEl !== null ? Boolean(checkboxEl.checked) : Boolean(requireReview);
+
     onSubmit({
       question: question.trim(),
       financial_year: financialYear,
       taxpayer_type: taxpayerType,
-      require_review: requireReview,
+      require_review: isChecked,
     });
   };
 

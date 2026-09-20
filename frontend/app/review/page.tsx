@@ -15,6 +15,19 @@ import {
 import { fetchPendingReviews, fetchReviewStats, submitReviewDecision } from "@/lib/api";
 import { ReviewPendingItem, ReviewStatsResponse } from "@/types";
 
+function formatAge(ageMinutes: number): string {
+  if (ageMinutes < 1) return "just now";
+  if (ageMinutes < 60) return `${Math.round(ageMinutes)}m ago`;
+  const hours = ageMinutes / 60;
+  if (hours < 24) return `${Math.round(hours)}h ago`;
+  const days = hours / 24;
+  if (days < 7) {
+    const d = Math.round(days * 10) / 10;
+    return `${d} ${d === 1 ? "day" : "days"} ago`;
+  }
+  return `${Math.round(days)} days ago`;
+}
+
 export default function ReviewQueuePage() {
   const [pending, setPending] = useState<ReviewPendingItem[]>([]);
   const [stats, setStats] = useState<ReviewStatsResponse | null>(null);
@@ -218,7 +231,7 @@ export default function ReviewQueuePage() {
                         </span>
                         <span className="text-[10px] text-slate-500 flex items-center gap-1">
                           <Clock className="w-3 h-3" />
-                          {item.age_minutes}m ago
+                          {formatAge(item.age_minutes)}
                         </span>
                       </div>
 

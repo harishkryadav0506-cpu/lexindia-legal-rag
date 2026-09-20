@@ -52,7 +52,19 @@ class ComplianceVerifierAgent:
         insufficient_authority = best_rerank < self.rerank_threshold
         insufficient_entailment = mean_entailment < self.entailment_threshold
 
-        must_refuse = already_refused or (insufficient_authority and len(chunks) == 0)
+        has_hedging = any(h in draft.lower() for h in [
+            "retrieved context does not contain",
+            "does not state",
+            "cannot answer this specific aspect",
+            "insufficient authoritative guidance",
+            "low-confidence",
+            "no specific provision"
+        ])
+
+        # Bug 3 & 4 Fix: If entailment is low (<0.50) REGARDLESS of rerank score (0.06-0.65 dangerous middle zone),
+        # require hedging or full refusal - moderate rerank alone must not allow plain factual assertion.
+        unfaithful_and_unhedged = insufficient_entailment and not has_hedging
+        must_refuse = already_refused or (insufficient_authority and len(chunks) == 0) or unfaithful_and_unhedged
 
         final_answer = draft
         if must_refuse:
@@ -62,7 +74,12 @@ class ComplianceVerifierAgent:
         else:
             # Combined confidence score
             confidence = round(min(1.0, max(0.1, (best_rerank * 0.4) + (mean_entailment * 0.6))), 3)
-            refused = False
+            # Bug 9 Fix: Refused flag must be True if final answer is a refusal
+            refused = (
+                EXACT_REFUSAL_PHRASE in final_answer or
+                final_answer.strip().startswith("I cannot find sufficient") or
+                state.get("refused", False)
+            )
 
         # Review escalation: confidence < 0.6 OR must_refuse=True (escalation)
         review_required = current_review_req or (confidence < 0.60) or must_refuse
@@ -74,7 +91,7 @@ class ComplianceVerifierAgent:
             "action": "Verified grounding, authority score, and faithfulness",
             "latency_ms": latency_ms,
             "inputs_summary": f"Best Rerank: {best_rerank:.4f}, Entailment: {mean_entailment:.4f}",
-            "outputs_summary": f"Confidence: {confidence:.3f}, MustRefuse: {must_refuse}, ReviewRequired: {review_required}"
+            "outputs_summary": f"Confidence: {confidence:.3f}, MustRefuse: {must_refuse}, Refused: {refused}, ReviewRequired: {review_required}"
         }
 
         new_state = dict(state)
