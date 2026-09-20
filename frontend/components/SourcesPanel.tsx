@@ -79,7 +79,7 @@ export default function SourcesPanel({
                   <th className="py-2.5 px-3">Section / Provision</th>
                   <th className="py-2.5 px-3">Authority Level</th>
                   <th className="py-2.5 px-3">Doc Type</th>
-                  <th className="py-2.5 px-3">Score</th>
+                  <th className="py-2.5 px-3" title="Statutory Authority-Weighted Retrieval Score">Auth-Weighted Score</th>
                   <th className="py-2.5 px-3">Origin</th>
                   <th className="py-2.5 px-3 text-right">Action</th>
                 </tr>

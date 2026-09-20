@@ -23,6 +23,10 @@ export default function HomePage() {
     try {
       const response = await sendQuery(req);
       setQueryResponse(response);
+      // P13 / FIX 12: Trigger Navbar badge update on query completed
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("lexindia:query_completed"));
+      }
     } catch (err: any) {
       console.error("Query failed:", err);
       setErrorMessage(

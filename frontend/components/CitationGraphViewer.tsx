@@ -148,7 +148,10 @@ export default function CitationGraphViewer({
   };
 
   useEffect(() => {
-    loadGraph(initialSectionId, hops);
+    if (initialSectionId) {
+      setSectionId(initialSectionId);
+      loadGraph(initialSectionId, hops);
+    }
     return () => {
       if (cyRef.current) {
         cyRef.current.destroy();

@@ -43,12 +43,18 @@ export default function ReviewQueuePage() {
         fetchPendingReviews(),
         fetchReviewStats(),
       ]);
-      setPending(pendingList);
+      // P12 / FIX 11: Sort newest-first
+      const sortedPending = [...pendingList].sort((a, b) => {
+        const timeA = a.created_at ? new Date(a.created_at).getTime() : 0;
+        const timeB = b.created_at ? new Date(b.created_at).getTime() : 0;
+        return timeB - timeA;
+      });
+      setPending(sortedPending);
       setStats(statsData);
 
-      if (pendingList.length > 0 && !selectedReview) {
-        setSelectedReview(pendingList[0]);
-        setEditedAnswer(pendingList[0].draft_answer);
+      if (sortedPending.length > 0 && !selectedReview) {
+        setSelectedReview(sortedPending[0]);
+        setEditedAnswer(sortedPending[0].draft_answer);
       }
     } catch (e) {
       console.error("Failed to load review data:", e);
@@ -88,12 +94,17 @@ export default function ReviewQueuePage() {
         fetchPendingReviews(),
         fetchReviewStats(),
       ]);
-      setPending(newPending);
+      const sortedNew = [...newPending].sort((a, b) => {
+        const timeA = a.created_at ? new Date(a.created_at).getTime() : 0;
+        const timeB = b.created_at ? new Date(b.created_at).getTime() : 0;
+        return timeB - timeA;
+      });
+      setPending(sortedNew);
       setStats(newStats);
 
-      if (newPending.length > 0) {
-        setSelectedReview(newPending[0]);
-        setEditedAnswer(newPending[0].draft_answer);
+      if (sortedNew.length > 0) {
+        setSelectedReview(sortedNew[0]);
+        setEditedAnswer(sortedNew[0].draft_answer);
       } else {
         setSelectedReview(null);
       }

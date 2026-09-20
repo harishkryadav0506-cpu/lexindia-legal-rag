@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Sparkles, UserCheck, ArrowRight, Loader2 } from "lucide-react";
 import { QueryRequest } from "@/types";
 
@@ -21,16 +21,28 @@ export default function QueryInput({ onSubmit, isLoading }: QueryInputProps) {
   const [financialYear, setFinancialYear] = useState("2024-25");
   const [taxpayerType, setTaxpayerType] = useState("Individual (Salaried)");
   const [requireReview, setRequireReview] = useState(false);
+  const requireReviewRef = useRef(false);
+  const checkboxDomRef = useRef<HTMLInputElement | null>(null);
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.checked;
+    requireReviewRef.current = val;
+    setRequireReview(val);
+  };
 
   const handleSubmit = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (!question.trim() || isLoading) return;
 
-    // Deterministically read checkbox DOM state at submit time to prevent stale closure state
-    const checkboxEl = typeof document !== "undefined"
-      ? (document.getElementById("require-review-toggle") as HTMLInputElement | null)
-      : null;
-    const isChecked = checkboxEl !== null ? Boolean(checkboxEl.checked) : Boolean(requireReview);
+    // P3 / Bug C Fix: Read through controlled ref and attached DOM element ref
+    const domVal = checkboxDomRef.current ? checkboxDomRef.current.checked : null;
+    const refVal = requireReviewRef.current;
+    if (domVal !== null && domVal !== refVal) {
+      console.warn(
+        `require_review disagreement detected at submit start: DOM=${domVal}, Ref=${refVal}. Resolving to DOM state.`
+      );
+    }
+    const isChecked = domVal !== null ? domVal : refVal;
 
     onSubmit({
       question: question.trim(),
@@ -124,10 +136,11 @@ export default function QueryInput({ onSubmit, isLoading }: QueryInputProps) {
           <div className="flex flex-col justify-end">
             <label className="flex items-center gap-2 cursor-pointer select-none bg-slate-900/60 hover:bg-slate-900 px-3 py-2 rounded-lg border border-slate-700/80 transition-colors">
               <input
+                ref={checkboxDomRef}
                 id="require-review-toggle"
                 type="checkbox"
                 checked={requireReview}
-                onChange={(e) => setRequireReview(e.target.checked)}
+                onChange={handleCheckboxChange}
                 className="w-4 h-4 rounded text-amber-500 bg-slate-800 border-slate-600 focus:ring-amber-400 focus:ring-offset-slate-900"
               />
               <div className="flex items-center gap-1.5 text-xs text-slate-300">

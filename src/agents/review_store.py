@@ -98,6 +98,20 @@ class ReviewStore:
             conn.execute("CREATE INDEX IF NOT EXISTS idx_reviews_action ON reviews(action);")
             conn.commit()
 
+    def find_pending_review_by_query_and_fy(self, query: str, financial_year: str) -> Optional[Dict[str, Any]]:
+        """
+        P11 / FIX 10: Find existing pending review thread for identical query text and FY.
+        """
+        with self._get_connection() as conn:
+            cursor = conn.execute(
+                "SELECT * FROM reviews WHERE query = ? AND financial_year = ? AND action = 'pending' ORDER BY created_at DESC LIMIT 1",
+                (query.strip(), (financial_year or "2024-25").strip())
+            )
+            row = cursor.fetchone()
+            if not row:
+                return None
+            return self._row_to_dict(row)
+
     def create_review_entry(
         self,
         thread_id: str,
@@ -112,6 +126,12 @@ class ReviewStore:
         action: str = "pending"
     ) -> Dict[str, Any]:
         """Insert or update a pending review entry for a thread."""
+        # P11 / FIX 10: If an identical (query + FY) review is already pending, reuse its thread_id to update it
+        if action == "pending":
+            existing = self.find_pending_review_by_query_and_fy(query, financial_year)
+            if existing:
+                thread_id = existing["thread_id"]
+
         citations_json = json.dumps(citations, ensure_ascii=False)
         agent_trace_json = json.dumps(agent_trace, ensure_ascii=False)
         now_str = datetime.now(timezone.utc).isoformat()
@@ -141,7 +161,7 @@ class ReviewStore:
             ))
             conn.commit()
 
-        logger.info(f"Created review entry for thread_id={thread_id}, route={route}, action={action}")
+        logger.info(f"Created/updated review entry for thread_id={thread_id}, route={route}, action={action}")
         return self.get_review_by_thread_id(thread_id) or {}
 
     def get_review_by_thread_id(self, thread_id: str) -> Optional[Dict[str, Any]]:
@@ -154,10 +174,12 @@ class ReviewStore:
             return self._row_to_dict(row)
 
     def get_pending_reviews(self) -> List[Dict[str, Any]]:
-        """List all pending reviews ordered by creation time."""
+        """
+        P12 / FIX 11: List all pending reviews ordered newest-first.
+        """
         with self._get_connection() as conn:
             cursor = conn.execute(
-                "SELECT * FROM reviews WHERE action = 'pending' ORDER BY created_at ASC"
+                "SELECT * FROM reviews WHERE action = 'pending' ORDER BY created_at DESC"
             )
             rows = cursor.fetchall()
 

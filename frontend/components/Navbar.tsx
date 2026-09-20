@@ -11,6 +11,14 @@ export default function Navbar() {
   const [esConnected, setEsConnected] = useState<boolean | null>(null);
   const [pendingCount, setPendingCount] = useState<number>(0);
 
+  const refreshStats = () => {
+    fetchReviewStats()
+      .then((data) => {
+        setPendingCount(data.pending_count || 0);
+      })
+      .catch(() => {});
+  };
+
   useEffect(() => {
     fetchHealth()
       .then((data) => {
@@ -18,11 +26,17 @@ export default function Navbar() {
       })
       .catch(() => setEsConnected(false));
 
-    fetchReviewStats()
-      .then((data) => {
-        setPendingCount(data.pending_count || 0);
-      })
-      .catch(() => {});
+    refreshStats();
+
+    // P13 / FIX 12: Refetch pending count on route focus and query completed events
+    if (typeof window !== "undefined") {
+      window.addEventListener("focus", refreshStats);
+      window.addEventListener("lexindia:query_completed", refreshStats);
+      return () => {
+        window.removeEventListener("focus", refreshStats);
+        window.removeEventListener("lexindia:query_completed", refreshStats);
+      };
+    }
   }, [pathname]);
 
   return (

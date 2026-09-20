@@ -82,8 +82,9 @@ def clean_and_repair_truncation(text: str) -> str:
 
 def enforce_low_confidence_hedging(text: str, chunks: list) -> str:
     """
-    BUG 2 Fix: Any claim citing a chunk with retrieval/rerank score < 0.05
-    must not be stated as plain fact. If missing hedging language, qualify it.
+    P5 / FIX 4: Any claim citing a chunk with retrieval/rerank score < 0.05
+    must not be stated as plain fact. Attach qualifier as inline sentence suffix only,
+    and sanitize markdown tables so the tag never becomes a cell/row.
     """
     if not text or not chunks or EXACT_REFUSAL_PHRASE in text:
         return text
@@ -102,11 +103,19 @@ def enforce_low_confidence_hedging(text: str, chunks: list) -> str:
     hedge_words = ["suggest", "indicat", "may", "note", "low-confidence", "unverified", "unconfirmed", "disclaimer", "purport"]
 
     for line in lines:
+        stripped = line.strip()
+        # Sanitize markdown tables: never inject hedge tag into a table row
+        if stripped.startswith("|"):
+            # Strip any leaked hedge tags from inside table cells
+            line = re.sub(r'\s*\*?\(?Note:\s*Low-confidence excerpt\)?\*?', '', line)
+            hedged_lines.append(line)
+            continue
+
         cited_in_line = [int(i) for i in re.findall(r'\[C(\d+)\]', line)]
         has_low_conf = any(i in low_conf_c_indices for i in cited_in_line)
-        if has_low_conf and not any(w in line.lower() for w in hedge_words) and STANDARD_DISCLAIMER not in line and line.strip():
-            # Qualify line with explicit low-confidence phrasing
-            line = f"*(Note: Low-confidence excerpt)* {line}"
+        if has_low_conf and not any(w in line.lower() for w in hedge_words) and STANDARD_DISCLAIMER not in line and stripped:
+            # Attach qualifier as an inline sentence suffix only
+            line = f"{line.rstrip()} *(Note: Low-confidence excerpt)*"
         hedged_lines.append(line)
 
     return "\n".join(hedged_lines)
@@ -114,20 +123,47 @@ def enforce_low_confidence_hedging(text: str, chunks: list) -> str:
 
 def enforce_fy_conflict_notice(text: str, question: str, financial_year: str) -> str:
     """
-    BUG 7 Fix: When the FY named in the question differs from dropdown FY,
-    ensure answer does not relabel one year's data as another year's,
-    and include a visible one-line note if not already present.
+    P6 / FIX 5: Emit the note ONLY when an FY explicitly detected in query text
+    differs from dropdown FY; otherwise omit / strip.
     """
     if not text or EXACT_REFUSAL_PHRASE in text:
         return text
 
     fy_matches = re.findall(r'20\d\d[-/]\d\d', question)
+    has_conflict = False
     if fy_matches:
         queried_fy = fy_matches[0].replace("/", "-")
         if queried_fy != financial_year:
+            has_conflict = True
             notice = f"Note: Answer evaluated for selected Financial Year {financial_year}. Statutory provisions for {queried_fy} may differ."
             if notice.lower() not in text.lower() and f"selected financial year {financial_year}" not in text.lower():
                 text = f"{notice}\n\n{text}"
+
+    # If no conflict exists (query mentions no FY, or query FY matches dropdown), strip any hallucinated conflict note
+    if not has_conflict:
+        text = re.sub(r'Note:\s*Answer evaluated for selected Financial Year[^\n]*\n*', '', text, flags=re.IGNORECASE).strip()
+    return text
+
+
+def sanitize_ungrounded_acts(text: str, chunks: list) -> str:
+    """
+    P7 / FIX 6: Strip or hedge any Finance Act or statute reference not found in retrieved chunks.
+    """
+    if not text or not chunks or EXACT_REFUSAL_PHRASE in text:
+        return text
+
+    context_corpus = " ".join(
+        f"{c.get('text', '')} {c.get('act_name', '')} {c.get('doc_id', '')} {c.get('source_url', '')}"
+        for c in chunks
+    ).lower()
+
+    # Find Finance Act patterns (e.g. 'Finance (No. 2) Act, 2024', 'Finance Act 2024')
+    act_matches = re.findall(r'Finance\s+(?:\(No\.\s*2\)\s+)?Act[,\s]+20\d\d', text, re.IGNORECASE)
+    for act in set(act_matches):
+        act_norm = act.lower()
+        if act_norm not in context_corpus:
+            # Replace ungrounded specific Act title with generic statutory reference
+            text = text.replace(act, "applicable Finance Act provisions")
     return text
 
 
@@ -305,24 +341,31 @@ class AnswerGenerator:
                     raw_ans = self._call_groq(user_prompt, mock_429=mock_429)
                     srv_model = self.model
                     llm_cache.set(self.model, user_prompt, raw_ans, metadata={"serving_model": self.model}, provenance="live")
-                except Exception as e:
-                    err_str = str(e)
-                    logger.warning(f"Primary model generation failed ({e}), attempting fallback...")
-                    f_used = True
-                    if self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
-                        try:
-                            raw_ans, f_event = self._call_gemini_fallback(user_prompt, err_str)
-                            f_model = f_event["model_to"]
-                            srv_model = f_model
-                        except Exception as gemini_err:
-                            logger.error(f"Gemini fallback failed: {gemini_err}")
+                except Exception as first_exc:
+                    logger.warning(f"Primary model initial generation failed ({first_exc}), retrying with 2s backoff before fallback...")
+                    time.sleep(2.0)
+                    try:
+                        raw_ans = self._call_groq(user_prompt, mock_429=mock_429)
+                        srv_model = self.model
+                        llm_cache.set(self.model, user_prompt, raw_ans, metadata={"serving_model": self.model}, provenance="live")
+                    except Exception as second_exc:
+                        combined_err = f"Initial: {first_exc} | Retry: {second_exc}"
+                        logger.warning(f"Primary model retry failed ({second_exc}), triggering fallback. Reason: {combined_err}")
+                        f_used = True
+                        if self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
+                            try:
+                                raw_ans, f_event = self._call_gemini_fallback(user_prompt, combined_err)
+                                f_model = f_event["model_to"]
+                                srv_model = f_model
+                            except Exception as gemini_err:
+                                logger.error(f"Gemini fallback failed: {gemini_err}")
+                                raw_ans = self._offline_synthesize(question, chunks, financial_year)
+                                f_model = "offline_fallback"
+                                srv_model = "offline_fallback"
+                        else:
                             raw_ans = self._offline_synthesize(question, chunks, financial_year)
                             f_model = "offline_fallback"
                             srv_model = "offline_fallback"
-                    else:
-                        raw_ans = self._offline_synthesize(question, chunks, financial_year)
-                        f_model = "offline_fallback"
-                        srv_model = "offline_fallback"
             elif self.gemini_api_key and self.gemini_api_key != "your_gemini_api_key_here":
                 try:
                     raw_ans, f_event = self._call_gemini_fallback(user_prompt, "Groq unconfigured")
@@ -400,10 +443,11 @@ class AnswerGenerator:
             )
             raw_answer, fallback_used, fallback_model, fallback_event, serving_model, cached = _execute_prompt(retry_prompt)
 
-        # Apply truncation repair, low-confidence hedging, and FY conflict notice
+        # Apply truncation repair, low-confidence hedging, FY conflict notice, and ungrounded act sanitization
         raw_answer = clean_and_repair_truncation(raw_answer)
         raw_answer = enforce_low_confidence_hedging(raw_answer, chunks)
         raw_answer = enforce_fy_conflict_notice(raw_answer, question, financial_year)
+        raw_answer = sanitize_ungrounded_acts(raw_answer, chunks)
 
         # Final refusal decision (Bug 9 Fix):
         # Refuse whenever raw_answer contains or starts with the refusal phrase

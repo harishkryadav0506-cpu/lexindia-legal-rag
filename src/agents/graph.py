@@ -159,6 +159,22 @@ class LexIndiaGraphBuilder:
         needs_review = new_state.get("review_required", False)
 
         if needs_review:
+            # P11 / FIX 10: Deduplicate pending review threads for identical query and FY
+            existing_pending = review_store.find_pending_review_by_query_and_fy(
+                query=new_state.get("question", ""),
+                financial_year=new_state.get("financial_year", "2024-25")
+            )
+            if existing_pending:
+                thread_id = existing_pending["thread_id"]
+                new_state["thread_id"] = thread_id
+
+            # P1 / Bug A Fix: When must_refuse or refused, ensure draft is strictly refusal message and clear citations
+            if new_state.get("must_refuse") or new_state.get("refused"):
+                refusal_text = new_state.get("final_answer") or f"{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*"
+                new_state["draft_answer"] = refusal_text
+                new_state["final_answer"] = refusal_text
+                new_state["citations"] = []
+
             logger.info(f"Human review triggered for thread_id={thread_id}")
             # 1. Record pending review entry in SQLite review store
             review_store.create_review_entry(
@@ -344,17 +360,25 @@ def run_query(
     is_interrupted = bool(run_result.get("__interrupt__"))
 
     if is_interrupted:
+        must_refuse = bool(run_result.get("must_refuse", False))
         draft = run_result.get("draft_answer", "")
         refused = bool(
             run_result.get("refused", False) or
+            must_refuse or
             (draft and (EXACT_REFUSAL_PHRASE in draft or draft.strip().startswith("I cannot find sufficient")))
         )
+        if must_refuse or refused:
+            draft = run_result.get("final_answer") or draft
+            if not (EXACT_REFUSAL_PHRASE in draft or draft.strip().startswith("I cannot find sufficient")):
+                draft = f"{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*"
+        cites = [] if (must_refuse or refused) else run_result.get("citations", [])
+
         return {
             "status": "awaiting_review",
             "thread_id": tid,
             "draft_answer": draft,
             "final_answer": draft,  # provided for test compatibility
-            "citations": run_result.get("citations", []),
+            "citations": cites,
             "confidence": run_result.get("confidence", 0.0),
             "route": run_result.get("route", "UNKNOWN"),
             "refused": refused,
@@ -367,18 +391,25 @@ def run_query(
             "total_latency_ms": total_latency
         }
     else:
+        must_refuse = bool(run_result.get("must_refuse", False))
         answer = run_result.get("final_answer") or run_result.get("draft_answer", "")
         refused = bool(
             run_result.get("refused", False) or
+            must_refuse or
             (answer and (EXACT_REFUSAL_PHRASE in answer or answer.strip().startswith("I cannot find sufficient")))
         )
+        if must_refuse or refused:
+            if not (EXACT_REFUSAL_PHRASE in answer or answer.strip().startswith("I cannot find sufficient")):
+                answer = f"{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*"
+        cites = [] if (must_refuse or refused) else run_result.get("citations", [])
+
         return {
             "status": "complete",
             "thread_id": tid,
             "answer": answer,
             "final_answer": answer,
-            "draft_answer": run_result.get("draft_answer", ""),
-            "citations": run_result.get("citations", []),
+            "draft_answer": answer if (must_refuse or refused) else run_result.get("draft_answer", ""),
+            "citations": cites,
             "confidence": run_result.get("confidence", 0.0),
             "refused": refused,
             "route": run_result.get("route", "UNKNOWN"),

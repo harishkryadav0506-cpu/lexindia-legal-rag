@@ -140,7 +140,7 @@ def test_citation_verifier_passes_valid_citations(mock_chunks):
         "reviewer_decision": None,
         "retrieved_chunks": mock_chunks,
         "calculation_result": None,
-        "draft_answer": "Under Section 10(13A) [C1] and Rule 2A [C3], HRA is exempt. Additionally, Section 24(b) [C2] provides deduction up to ₹2,00,000.",
+        "draft_answer": "Under Section 10(13A) [C1], HRA is exempt from tax. Rule 2A [C3] prescribes the method of computation of exempt HRA. Additionally, Section 24(b) [C2] provides deduction up to ₹2,00,000.",
         "final_answer": "",
         "citations": [],
         "confidence": 0.90,

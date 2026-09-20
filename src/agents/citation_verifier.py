@@ -95,10 +95,67 @@ class CitationVerifierAgent:
             new_state.setdefault("agent_trace", []).append(trace_entry)
             return new_state
 
-        # All citations valid (or no citations if refusal/empty)
+        # All citation indices within chunk range: verify section alignment per sentence
         new_state["citation_verifier_feedback"] = None
+        
+        # P4 / FIX 3: Per-citation section mismatch detection and dropping
+        dropped_citations = []
+        updated_draft = draft
+        
+        # Split draft into lines/sentences to inspect per-citation context
+        # We process sentence by sentence
+        sentences = re.split(r'(?<=[.!?\n])\s+', updated_draft)
+        cleaned_sentences = []
+        
+        for sent in sentences:
+            sent_cites = [int(i) for i in re.findall(r'\[C(\d+)\]', sent)]
+            if not sent_cites:
+                cleaned_sentences.append(sent)
+                continue
+                
+            sent_sections_raw = re.findall(r'(?:Section|Sec\.?)\s*([0-9]+[A-Za-z0-9\(\)]*)', sent, re.IGNORECASE)
+            sent_sections = [re.sub(r'[^0-9a-zA-Z\(\)]', '', s).lower() for s in sent_sections_raw if s.strip()]
+            
+            modified_sent = sent
+            for c_idx in sent_cites:
+                if 1 <= c_idx <= num_chunks:
+                    c = chunks[c_idx - 1]
+                    c_sec_raw = c.get("section_id") or ""
+                    c_sec_clean = re.sub(r'[^0-9a-zA-Z\(\)]', '', re.sub(r'^(?:Section|Sec\.?)\s*', '', c_sec_raw, flags=re.IGNORECASE)).lower()
+                    
+                    # If the sentence explicitly names one or more sections, ensure chunk matches at least one
+                    if sent_sections and c_sec_clean:
+                        matches_any = any(
+                            c_sec_clean == s or c_sec_clean.startswith(s) or s.startswith(c_sec_clean)
+                            for s in sent_sections
+                        )
+                        if not matches_any:
+                            # Section mismatch! Drop this citation tag from sentence
+                            tag_to_drop = f"[C{c_idx}]"
+                            modified_sent = modified_sent.replace(tag_to_drop, "")
+                            dropped_citations.append({
+                                "citation_id": tag_to_drop,
+                                "chunk_id": c.get("chunk_id"),
+                                "sentence_sections": sent_sections_raw,
+                                "chunk_section": c_sec_raw
+                            })
+                            logger.warning(
+                                f"CitationVerifier: Dropped mismatched citation {tag_to_drop} (chunk: {c_sec_raw}) "
+                                f"from sentence claiming {sent_sections_raw}"
+                            )
+            cleaned_sentences.append(modified_sent)
+            
+        updated_draft = " ".join(cleaned_sentences)
+        # Clean up any leftover double spaces or orphan bracket spacing
+        updated_draft = re.sub(r' +', ' ', updated_draft)
+        updated_draft = re.sub(r' \.', '.', updated_draft)
+        new_state["draft_answer"] = updated_draft
+        
+        # Remaining valid citation indices after dropping mismatches
+        surviving_indices = [int(i) for i in re.findall(r'\[C(\d+)\]', updated_draft)]
+        
         verified_meta = []
-        for idx in sorted(set(cited_indices)):
+        for idx in sorted(set(surviving_indices)):
             c = chunks[idx - 1]
             verified_meta.append({
                 "citation_id": f"[C{idx}]",
@@ -112,16 +169,19 @@ class CitationVerifierAgent:
             })
 
         new_state["verified_citations"] = verified_meta
-        if verified_meta:
-            new_state["citations"] = verified_meta
+        new_state["citations"] = verified_meta
+
+        action_summary = f"Verified {len(verified_meta)} grounded citations"
+        if dropped_citations:
+            action_summary += f" (dropped {len(dropped_citations)} section mismatches)"
 
         trace_entry: AgentTraceEntry = {
             "agent": "CitationVerifierAgent",
-            "action": f"Verified {len(valid_tags)} grounded citations",
+            "action": action_summary,
             "latency_ms": int((time.time() - t0) * 1000),
             "inputs_summary": f"Draft citations: {valid_tags}, Chunks: {num_chunks}",
-            "outputs_summary": f"Verified {len(verified_meta)} chunk mappings. Zero hallucinations."
+            "outputs_summary": f"Verified {len(verified_meta)} chunk mappings. Dropped {len(dropped_citations)} mismatches."
         }
         new_state.setdefault("agent_trace", []).append(trace_entry)
-        logger.info(f"CitationVerifier: Successfully validated {len(verified_meta)} citations: {valid_tags}")
+        logger.info(f"CitationVerifier: Successfully validated {len(verified_meta)} citations (dropped {len(dropped_citations)} mismatches)")
         return new_state

@@ -68,9 +68,13 @@ class ComplianceVerifierAgent:
 
         final_answer = draft
         if must_refuse:
-            final_answer = f"{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*"
+            fy_note = ""
+            if draft.startswith("Note: Answer evaluated for selected Financial Year"):
+                fy_note = draft.split("\n\n")[0] + "\n\n"
+            final_answer = f"{fy_note}{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*"
             confidence = 0.20
             refused = True
+            draft = final_answer
         else:
             # Combined confidence score
             confidence = round(min(1.0, max(0.1, (best_rerank * 0.4) + (mean_entailment * 0.6))), 3)
@@ -80,6 +84,8 @@ class ComplianceVerifierAgent:
                 final_answer.strip().startswith("I cannot find sufficient") or
                 state.get("refused", False)
             )
+            if refused:
+                draft = final_answer
 
         # Review escalation: confidence < 0.6 OR must_refuse=True (escalation)
         review_required = current_review_req or (confidence < 0.60) or must_refuse
@@ -90,12 +96,15 @@ class ComplianceVerifierAgent:
             "agent": "ComplianceVerifierAgent",
             "action": "Verified grounding, authority score, and faithfulness",
             "latency_ms": latency_ms,
-            "inputs_summary": f"Best Rerank: {best_rerank:.4f}, Entailment: {mean_entailment:.4f}",
+            "inputs_summary": f"Best Rerank (Raw): {best_rerank:.4f}, Entailment: {mean_entailment:.4f}",
             "outputs_summary": f"Confidence: {confidence:.3f}, MustRefuse: {must_refuse}, Refused: {refused}, ReviewRequired: {review_required}"
         }
 
         new_state = dict(state)
+        new_state["draft_answer"] = draft
         new_state["final_answer"] = final_answer
+        if must_refuse or refused:
+            new_state["citations"] = []
         new_state["confidence"] = confidence
         new_state["must_refuse"] = must_refuse
         new_state["refused"] = refused

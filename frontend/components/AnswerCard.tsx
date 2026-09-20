@@ -25,7 +25,16 @@ interface AnswerCardProps {
 export default function AnswerCard({ data, onSelectCitation }: AnswerCardProps) {
   const [copied, setCopied] = useState(false);
 
-  const answerText = data.final_answer || data.answer || data.draft_answer || "";
+  const rawText = data.final_answer || data.answer || data.draft_answer || "";
+  let answerText = rawText;
+  if (data.refused) {
+    // P1 / Bug A Fix: Never render unhedged/fabricated content alongside refusal banner
+    // Keep only the FY note (if present) and the clean refusal phrase + disclaimer
+    const fyMatch = rawText.match(/^(Note:\s*Answer evaluated for selected Financial Year[^\n]*\n*)/i);
+    const fyPrefix = fyMatch ? fyMatch[1].trim() + "\n\n" : "";
+    answerText = `${fyPrefix}I cannot find sufficient authoritative guidance for this query.\n\n*LexIndia provides legal information, not professional tax advice.*`;
+  }
+
   const isAwaiting = data.status === "awaiting_review";
   const confidencePercent = Math.round((data.confidence || 0) * 100);
 
