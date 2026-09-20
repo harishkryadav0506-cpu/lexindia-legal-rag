@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "793aee4bd2118929cf3050d73c655f7f7124c7f2ed8719d421715572e99eef33",
+  "response": "[\"Income-tax Act 1961 Section 112A new tax regime FY 2025-26 slab rates Finance Act 2024\", \"What are the income tax rates and slabs for the new tax regime in financial year 2025-26?\", \"new tax regime FY 2025-26 slab rates Section 112A Finance Act 2024\"]",
+  "timestamp": 1789883530.482563,
+  "metadata": {
+    "provenance": "live"
+  }
+}

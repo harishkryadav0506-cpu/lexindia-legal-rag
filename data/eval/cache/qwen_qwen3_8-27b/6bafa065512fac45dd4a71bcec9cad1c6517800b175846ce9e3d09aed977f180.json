@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "6bafa065512fac45dd4a71bcec9cad1c6517800b175846ce9e3d09aed977f180",
+  "response": "[\"Income-tax Act 1961 Section 10(13A) HRA exemption and Section 24(b) home loan interest deduction simultaneous claim eligibility\", \"Can I get tax benefits for both house rent allowance and home loan interest in the same financial year?\", \"Section 10(13A) vs Section 24(b) dual deduction HRA and home loan interest conditions\"]",
+  "timestamp": 1789882305.9245615,
+  "metadata": {
+    "provenance": "live"
+  }
+}

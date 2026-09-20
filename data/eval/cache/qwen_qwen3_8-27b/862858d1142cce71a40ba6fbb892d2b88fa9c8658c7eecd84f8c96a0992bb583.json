@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "862858d1142cce71a40ba6fbb892d2b88fa9c8658c7eecd84f8c96a0992bb583",
+  "response": "[\"Income-tax Act 1961 Section 115BAC optional tax regime slab rates and Section 87A rebate eligibility and limits\", \"What are the tax rates under the new tax regime Section 115BAC and who is eligible for the income tax rebate under Section 87A?\", \"Section 115BAC slab rates vs Section 87A rebate threshold new tax regime 2024-25\"]",
+  "timestamp": 1789821556.755042,
+  "metadata": {
+    "provenance": "live"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "9ae48ac6917c82d2a2f6e7afcb6504d92f6bedaf2eb3808a6ecc8647a5f876f3",
+  "response": "[\"Section 194I Income-tax Act 1961 TDS rate on rent payment FY 2024-25 threshold limits\", \"What is the current tax deduction at source percentage for rent payments in the 2024-25 financial year?\", \"194I rent TDS rate 2024-25 10% 2% threshold 30000 50000\"]",
+  "timestamp": 1789912039.939743,
+  "metadata": {
+    "provenance": "live"
+  }
+}

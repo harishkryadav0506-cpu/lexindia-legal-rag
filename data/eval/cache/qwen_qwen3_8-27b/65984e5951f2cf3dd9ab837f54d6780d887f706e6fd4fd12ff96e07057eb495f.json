@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "65984e5951f2cf3dd9ab837f54d6780d887f706e6fd4fd12ff96e07057eb495f",
+  "response": "[\"Income-tax Act 1961 Section 10(13A) HRA exemption and Section 24(b) home loan interest deduction eligibility under old tax regime FY 2024-25\", \"Can I get tax benefits for both house rent allowance and home loan interest if I choose the old tax regime for the 2024-25 financial year?\", \"old tax regime FY 2024-25 HRA exemption Section 10(13A) AND home loan interest Section 24(b) simultaneous claim conditions\"]",
+  "timestamp": 1789910532.5830574,
+  "metadata": {
+    "provenance": "live"
+  }
+}

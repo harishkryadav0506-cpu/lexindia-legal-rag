@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "d00ee93ee0481e6fc50d140a52042b21eeb68b1772506f29c501367a1e43ae12",
+  "response": "[\"Income-tax Act 1961 Section 10(13A) House Rent Allowance exemption calculation rules and conditions\", \"How to calculate HRA tax exemption for salaried employees\", \"HRA exemption computation Section 10(13A) lowest of three conditions rent paid 50% 40% basic salary\"]",
+  "timestamp": 1789820991.0125551,
+  "metadata": {
+    "provenance": "live"
+  }
+}

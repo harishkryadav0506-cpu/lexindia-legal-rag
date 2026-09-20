@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "bdf0fbe3ca9aa5d27fddee0c0cc6487c02a7e5c79ad601e1dd9c3c5158e96cf9",
+  "response": "Based on the provided authoritative legal context, I cannot answer this specific aspect based on the retrieved context.\n\nThe provided chunks do not contain any statutory provisions, definitions, or tax rates specifically relating to **cryptocurrency mining** or **virtual digital assets (VDAs)**.\n\nWhile the context contains references to a 30% tax rate for other specific heads of income, such as:\n*   Winnings from online games under Section 115BBJ [C6] (LOW CONFIDENCE).\n*   Other income under Section 115BAC (New Regime) for amounts above Rs. 15,00,000 [C7] (LOW CONFIDENCE).\n*   Winnings from lotteries, puzzles, and card games under Section 111A/115BBJ contexts [C1] (LOW CONFIDENCE).\n\nNone of these provisions explicitly address cryptocurrency mining. Therefore, I cannot confirm or deny the applicability of a flat 30% tax rate to cryptocurrency mining based strictly on the provided text.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789887715.8329477,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "f182f0df7afd74886e64ec063d0177bb55b6e3b35ac5ab32a78cab3b1bf34388",
+  "response": "[\"Income-tax Act 1961 Section 80C maximum deduction limit aggregate amount 1,50,000\", \"What is the maximum amount I can claim as a tax deduction under section 80C\", \"Section 80C cap limit 150000 eligible investments PPF ELSS insurance\"]",
+  "timestamp": 1789820881.539697,
+  "metadata": {
+    "provenance": "live"
+  }
+}

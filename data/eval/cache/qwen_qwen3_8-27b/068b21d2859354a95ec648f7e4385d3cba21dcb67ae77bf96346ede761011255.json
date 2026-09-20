@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "068b21d2859354a95ec648f7e4385d3cba21dcb67ae77bf96346ede761011255",
+  "response": "Based on the provided authoritative legal context, there is **no provision** for a specific tax or charge on UPI (Unified Payments Interface) transactions for individual salaried taxpayers. The provided chunks do not contain any statutory guidance regarding taxation of digital payment transactions, UPI fees, or transaction-level taxes for individuals.\n\nThe retrieved context addresses the following unrelated or distinct tax provisions:\n*   **Section 194Q and Section 206C(1H):** These sections relate to Tax Deducted at Source (TDS) and Tax Collected at Source (TCS) on the sale of goods exceeding fifty lakh rupees, not on payment methods like UPI [C1].\n*   **Section 194M:** This section relates to TDS on payments for work, commission, brokerage, or professional services by individuals/HUFs, with a rate reduction from 5% to 2% effective October 1, 2024 [C2].\n*   **Section 194-IA and Section 194-IB:** These sections relate to TDS on the transfer of immovable property and rent payments, respectively, with specific thresholds and rate changes effective October 1, 2024 [C8].\n*   **Section 115UA:** These provisions relate to the taxation of income distributed by business trusts to unit holders [C9], [C10], [C11], [C12].\n\nI cannot answer this specific aspect based on the retrieved context.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789879701.3188226,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

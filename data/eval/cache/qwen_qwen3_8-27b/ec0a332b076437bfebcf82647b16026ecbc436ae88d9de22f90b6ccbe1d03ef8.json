@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "ec0a332b076437bfebcf82647b16026ecbc436ae88d9de22f90b6ccbe1d03ef8",
+  "response": "[\"Income-tax Act 1961 Section 11A tax slabs for individual assessees under new tax regime FY 2025-26 AY 2026-27\", \"What are the income tax rates and slab limits for individuals choosing the new tax regime for the financial year 2025-26\", \"New tax regime FY 2025-26 slab rates individual 11A income tax act 1961\"]",
+  "timestamp": 1789880003.6049895,
+  "metadata": {
+    "provenance": "live"
+  }
+}

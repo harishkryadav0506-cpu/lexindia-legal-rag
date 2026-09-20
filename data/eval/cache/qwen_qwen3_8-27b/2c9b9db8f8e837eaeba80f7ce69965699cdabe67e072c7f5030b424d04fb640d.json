@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "2c9b9db8f8e837eaeba80f7ce69965699cdabe67e072c7f5030b424d04fb640d",
+  "response": "I cannot find sufficient authoritative guidance for this query.",
+  "timestamp": 1789883180.2261634,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

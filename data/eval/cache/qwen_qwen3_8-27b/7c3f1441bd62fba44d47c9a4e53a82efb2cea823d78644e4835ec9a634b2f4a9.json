@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "7c3f1441bd62fba44d47c9a4e53a82efb2cea823d78644e4835ec9a634b2f4a9",
+  "response": "Based on the provided authoritative legal context, I cannot find sufficient authoritative guidance for this query.\n\nThe retrieved chunks do not contain specific statutory provisions, sections, or circulars addressing the taxation of cryptocurrency mining or the classification of virtual digital assets (VDAs) under the Income Tax Act, 1961. While the context includes general tax rates for various heads of income (such as winnings from online games under Section 115BBJ [C6] or general income slabs under Section 115BAC [C7]), it does not explicitly link cryptocurrency mining income to a specific section or a flat 30% tax rate. Therefore, I cannot provide a legally grounded answer regarding the specific tax treatment of cryptocurrency mining based strictly on the provided text.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789904883.0559447,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

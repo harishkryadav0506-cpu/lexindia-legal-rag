@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "1ba36fb68664b0407129d55ee1c0e1e17d1ff4ae4b6b8da1a0eb57a91ee149d5",
+  "response": "[\"Internal Revenue Code (IRC) Section 6012 filing requirements, Form 1040 instructions, and IRS Publication 17 for individual income tax returns\", \"How to file a US federal income tax return using Form 1040, including deadlines and required documents\", \"IRS Form 1040 filing procedure, tax year deadlines, and individual income tax return submission guidelines\"]",
+  "timestamp": 1789883099.06925,
+  "metadata": {
+    "provenance": "live"
+  }
+}

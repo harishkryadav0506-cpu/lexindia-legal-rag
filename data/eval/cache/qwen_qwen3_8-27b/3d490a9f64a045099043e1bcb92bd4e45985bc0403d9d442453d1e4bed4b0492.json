@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "3d490a9f64a045099043e1bcb92bd4e45985bc0403d9d442453d1e4bed4b0492",
+  "response": "[\"Income-tax Act 1961 Section 10(13A) House Rent Allowance and Section 24(b) interest on housing loan deduction eligibility and conditions for simultaneous claim\", \"Can I deduct both house rent allowance and home loan interest from my taxable income in the same financial year?\", \"Section 10(13A) HRA exemption vs Section 24(b) home loan interest deduction simultaneous claim conditions self occupied vs let out property\"]",
+  "timestamp": 1789820865.0659416,
+  "metadata": {
+    "provenance": "live"
+  }
+}

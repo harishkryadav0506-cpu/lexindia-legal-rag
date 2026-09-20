@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "2481a40abf84c4612da6dc53314a4614cc7cecc6b7dec7842fde002f9edd8eb5",
+  "response": "[\"Income-tax Act 1961 Section 194Q TDS on sale of goods exceeding 50 lakh rupees and applicability to UPI digital payments\", \"Is there any extra tax or fee charged by the government on UPI transactions in India and what are the standard bank charges for online payments\", \"UPI transaction tax India 2024 Section 194Q threshold 50 lakh digital payment fee structure\"]",
+  "timestamp": 1789879677.816299,
+  "metadata": {
+    "provenance": "live"
+  }
+}

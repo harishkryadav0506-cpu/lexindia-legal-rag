@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "f71be279f1af99da23f2ff1e4fb21564092a110dcff001c011f14b775cdbd0b7",
+  "response": "[\"Income-tax Act, 1961, Section 80C, maximum deduction limit for eligible investments and expenses\", \"What is the maximum amount I can claim as a tax deduction under Section 80C?\", \"Section 80C deduction limit 1.5 lakh eligible investments PPF ELSS life insurance\"]",
+  "timestamp": 1789881548.3197422,
+  "metadata": {
+    "provenance": "live"
+  }
+}

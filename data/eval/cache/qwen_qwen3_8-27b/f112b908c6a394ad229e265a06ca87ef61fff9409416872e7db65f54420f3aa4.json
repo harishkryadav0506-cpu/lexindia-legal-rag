@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "f112b908c6a394ad229e265a06ca87ef61fff9409416872e7db65f54420f3aa4",
+  "response": "Based on the provided authoritative legal context, I cannot answer this specific aspect based on the retrieved context.\n\nThe provided chunks do not contain specific statutory provisions, definitions, or tax rates explicitly addressing \"cryptocurrency mining\" or \"virtual digital assets\" (VDA). While the context provides general tax rates for \"other income\" and specific rates for online games, it does not establish a legal basis for a flat 30% tax rate specifically for cryptocurrency mining.\n\nHowever, for the sake of completeness regarding the general tax structure for individuals in FY 2024-25 as per the provided context:\n\n*   **General Tax Rates (Old Regime):** Under Section 174 of the Income-tax Act, read with the First Schedule to the Finance Act, 2023, income that does not fall under specific heads (such as capital gains, dividends, or interest on securities) is taxed as \"other income\" at a rate of **30 per cent** [C1].\n*   **New Regime (Section 115BAC):** For the Assessment Year 2024-25, under Section 115BAC, the tax rates for individuals are slab-based, ranging from Nil to 30% depending on the total income bracket [C7]. Specifically, income above Rs. 15,00,000 is taxed at 30% [C7].\n\nSince \"cryptocurrency mining\" is not explicitly defined or categorized in the provided chunks [C1]-[C12], I cannot confirm if it is taxed at a flat 30% or if it falls under a different specific provision (such as capital gains or business income) based strictly on this context.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789885911.803336,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

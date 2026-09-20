@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "a1549de9e5cdee740914a8d5299b04fd0873f77e09d3464cbd18fd91cedc7f77",
+  "response": "[\"Income-tax Act 1961 Section 80D deduction limit for health insurance premium paid for senior citizen parents\", \"How much can I save on taxes for my elderly parents' health insurance premiums under Section 80D?\", \"Section 80D senior citizen parents health insurance maximum deduction limit 50000\"]",
+  "timestamp": 1789912172.229003,
+  "metadata": {
+    "provenance": "live"
+  }
+}

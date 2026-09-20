@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "370c9100b95748f09c819d9355dac875196cea6ecd46ba7f2e4ef114a7cbb254",
+  "response": "[\"Income-tax Act 1961 Section 44AD presumptive taxation scheme rates and turnover limits for Assessment Year 2025-26 (Financial Year 2024-25)\", \"What is the income tax rate and maximum business turnover allowed for small businesses under the presumptive tax scheme for the 2024-25 tax year?\", \"Section 44AD FY 2024-25 8% presumptive rate turnover limit 3 crore 44AD(2) 6% rate conditions\"]",
+  "timestamp": 1789912712.446129,
+  "metadata": {
+    "provenance": "live"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "8712438b80121f99dba46f4b1e1c69e9ec335461ba5cb88958474e615eaee3e0",
+  "response": "[\"Income-tax Act 1961 Section 111B new tax regime slabs FY 2024-25 Finance Act 2024\", \"What are the income tax rates and slab limits for the new tax regime in the financial year 2024-25?\", \"FY 2024-25 new tax regime slab rates 0-3L 3-7L 7-10L 10-12L 12-15L 15-20L 20-25L 25L+ Finance Act 2024\"]",
+  "timestamp": 1789881944.592506,
+  "metadata": {
+    "provenance": "live"
+  }
+}

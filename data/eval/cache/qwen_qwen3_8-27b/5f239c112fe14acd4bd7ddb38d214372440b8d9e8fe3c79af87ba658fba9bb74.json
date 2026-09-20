@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "5f239c112fe14acd4bd7ddb38d214372440b8d9e8fe3c79af87ba658fba9bb74",
+  "response": "[\"Income-tax Act 1961 Section 44AB threshold limits for audit of accounts based on turnover and gross receipts\", \"What are the minimum sales or business income limits that require a mandatory tax audit for companies and individuals?\", \"Section 44AB audit threshold turnover limits gross receipts business profession audit requirement\"]",
+  "timestamp": 1789820897.9815378,
+  "metadata": {
+    "provenance": "live"
+  }
+}

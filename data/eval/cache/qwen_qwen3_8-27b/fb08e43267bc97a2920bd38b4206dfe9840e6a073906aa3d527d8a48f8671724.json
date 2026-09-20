@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "fb08e43267bc97a2920bd38b4206dfe9840e6a073906aa3d527d8a48f8671724",
+  "response": "[\"Eligibility for House Rent Allowance (HRA) exemption under Section 10(13A) of the Income-tax Act, 1961 and Section 80GG deduction for tenants not receiving HRA\", \"Can I claim tax deduction on rent paid if I am a salaried employee or self-employed and do not receive HRA?\", \"Income-tax Act 1961 Section 10(13A) HRA exemption conditions vs Section 80GG rent deduction for non-HRA recipients\"]",
+  "timestamp": 1789821573.4622698,
+  "metadata": {
+    "provenance": "live"
+  }
+}

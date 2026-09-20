@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "06921f9e71bd07622e23ccb4f6bb061428fcf45b39cc1283fcf76782d3ee2bb2",
+  "response": "Based on the provided authoritative legal context, I cannot find sufficient authoritative guidance for this query.\n\nThe retrieved chunks do not contain specific statutory provisions, sections, or rates of tax applicable to **cryptocurrency mining** or **virtual digital assets (VDAs)**. While the context includes general tax rates for specific heads of income (such as winnings from online games under Section 115BBJ [C6] or general income slabs under Section 115BAC [C7]), it does not address the taxation of cryptocurrency mining activities, which are typically governed by specific provisions regarding Virtual Digital Assets (e.g., Section 115BBH) that are not present in the provided text.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789890172.6868663,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

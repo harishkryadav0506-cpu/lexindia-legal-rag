@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "1e6c2703f576b17bf84ac7c5ff38bfe8c423a938a5bd121dea0da737f4e6abe4",
+  "response": "[\"Income-tax Act 1961 Section 54 conditions for exemption of capital gains on transfer of residential house property including time limits for investment in new asset under Rule 114\", \"What are the rules and deadlines for saving tax on profit from selling a home under Section 54?\", \"Section 54 capital gains exemption eligibility criteria time limits for purchase or construction of new residential property\"]",
+  "timestamp": 1789914733.494528,
+  "metadata": {
+    "provenance": "live"
+  }
+}

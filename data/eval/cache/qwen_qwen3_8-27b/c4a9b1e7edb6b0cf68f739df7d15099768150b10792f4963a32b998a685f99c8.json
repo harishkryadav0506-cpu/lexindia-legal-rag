@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "c4a9b1e7edb6b0cf68f739df7d15099768150b10792f4963a32b998a685f99c8",
+  "response": "[\"Income-tax Act, 1961, Section 44AB, threshold limits for tax audit based on turnover and gross receipts\", \"What is the business turnover limit for mandatory tax audit under Section 44AB?\", \"Section 44AB tax audit turnover limit threshold gross receipts\"]",
+  "timestamp": 1789821613.92591,
+  "metadata": {
+    "provenance": "live"
+  }
+}

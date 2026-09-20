@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "dcbfa844bc982cf06ea841415ad5540fe523f09ba3dd0a5fe74fce3246e73e30",
+  "response": "[\"Income-tax Act 1961 Section 28 Income from House Property\", \"How to make sourdough bread at home\", \"sourdough bread recipe baking instructions\"]",
+  "timestamp": 1789886982.1317103,
+  "metadata": {
+    "provenance": "live"
+  }
+}

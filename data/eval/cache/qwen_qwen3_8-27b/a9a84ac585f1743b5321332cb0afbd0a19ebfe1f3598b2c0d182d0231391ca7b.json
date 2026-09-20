@@ -1,0 +1,10 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "a9a84ac585f1743b5321332cb0afbd0a19ebfe1f3598b2c0d182d0231391ca7b",
+  "response": "Based on the provided authoritative legal context, I cannot answer this specific aspect based on the retrieved context.\n\nThe provided chunks do not contain any statutory provisions, sections, or rules specifically addressing the taxation of **cryptocurrency mining** or **virtual digital assets (VDAs)**. The context primarily covers:\n*   Tax rates for specific heads of income such as winnings from online games, capital gains, and dividends under the Finance Act 2023 [C1].\n*   Provisions related to insurance companies and interest on securities [C2].\n*   General tax rate slabs for individuals under Section 174 and Section 115BAC (New Regime) for Assessment Year 2024-25 [C3], [C7].\n*   Provisions regarding house property income and business income definitions [C8], [C9], [C10], [C11], [C12].\n*   Specific provisions for winnings from online games under Section 115BBJ [C6].\n\nWhile Section 115BBJ [C6] and Section 174 [C1] mention \"winnings from online games\" taxed at 30%, there is no mention of cryptocurrency, virtual digital assets, or mining activities in the provided text. Therefore, I cannot confirm or deny the 30% flat rate for cryptocurrency mining using only the supplied sources.\n\n*LexIndia provides legal information, not professional tax advice.*",
+  "timestamp": 1789890235.5947893,
+  "metadata": {
+    "serving_model": "qwen/qwen3.8-27b",
+    "provenance": "live"
+  }
+}

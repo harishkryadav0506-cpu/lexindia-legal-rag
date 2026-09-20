@@ -1,0 +1,9 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "prompt_hash": "52d94560f300fea18b16df8143a7478bbb3e936399af6c692819cc94a944e1a9",
+  "response": "[\"Income-tax Act 1961 Section 44AB turnover threshold for tax audit applicability\", \"What is the maximum business turnover limit before a mandatory tax audit is required under Section 44AB?\", \"Section 44AB audit limit turnover threshold cash transactions digital payments\"]",
+  "timestamp": 1789821824.6647196,
+  "metadata": {
+    "provenance": "live"
+  }
+}
