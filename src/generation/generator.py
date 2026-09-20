@@ -280,7 +280,7 @@ class AnswerGenerator:
             (c.get("final_score", c.get("rerank_score", c.get("score", 0.0))) for c in chunks),
             default=0.0
         )
-        has_relevant_chunks = len(chunks) > 0 and (max_chunk_score >= 0.25 or any(c.get("section_id") for c in chunks))
+        has_relevant_chunks = len(chunks) > 0 and max_chunk_score >= 0.25
 
         def _execute_prompt(user_prompt: str) -> Tuple[str, bool, Optional[str], Optional[Dict[str, Any]], str, bool]:
             f_used = False
