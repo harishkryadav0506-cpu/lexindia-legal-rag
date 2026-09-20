@@ -150,8 +150,14 @@ class LexIndiaGraphBuilder:
         Human-in-the-loop review node.
         If review_required=True, triggers LangGraph interrupt() and saves state to checkpoints.
         On resume, receives Command(resume=decision) to apply approve | edit | reject.
+
+        NOTE: thread_id deduplication (create-or-reuse for identical query+FY) is handled
+        upstream in run_query() BEFORE graph.invoke(), so the state's thread_id here already
+        reflects the canonical persisted ID that the frontend banner will display.
         """
         new_state = dict(state)
+        # thread_id is already resolved by run_query(); fall back to a fresh ID only if
+        # this node is called outside of run_query() (e.g. unit tests).
         thread_id = new_state.get("thread_id") or f"thread_{uuid.uuid4().hex[:12]}"
         new_state["thread_id"] = thread_id
 
@@ -159,15 +165,6 @@ class LexIndiaGraphBuilder:
         needs_review = new_state.get("review_required", False)
 
         if needs_review:
-            # P11 / FIX 10: Deduplicate pending review threads for identical query and FY
-            existing_pending = review_store.find_pending_review_by_query_and_fy(
-                query=new_state.get("question", ""),
-                financial_year=new_state.get("financial_year", "2024-25")
-            )
-            if existing_pending:
-                thread_id = existing_pending["thread_id"]
-                new_state["thread_id"] = thread_id
-
             # P1 / Bug A Fix: When must_refuse or refused, ensure draft is strictly refusal message and clear citations
             if new_state.get("must_refuse") or new_state.get("refused"):
                 refusal_text = new_state.get("final_answer") or f"{EXACT_REFUSAL_PHRASE}\n\n*{STANDARD_DISCLAIMER}*"
@@ -176,7 +173,8 @@ class LexIndiaGraphBuilder:
                 new_state["citations"] = []
 
             logger.info(f"Human review triggered for thread_id={thread_id}")
-            # 1. Record pending review entry in SQLite review store
+            # 1. Record pending review entry in SQLite review store.
+            #    create_review_entry uses INSERT OR REPLACE so duplicate calls are safe.
             review_store.create_review_entry(
                 thread_id=thread_id,
                 query=new_state.get("question", ""),
@@ -317,11 +315,35 @@ def run_query(
     Execute full multi-agent workflow for a given query.
     If review is triggered, graph pauses at human_review node and returns awaiting_review status.
     Otherwise, returns complete status with final answer and citations.
+
+    BUG 2 FIX: Thread-ID deduplication (create-or-reuse for identical query+FY pending reviews)
+    is resolved HERE, before graph.invoke(), so the ID returned to the frontend in
+    'thread_id' always matches the canonical ID that exists in the review store queue.
+    Previously, deduplication happened inside human_review_node after the LangGraph checkpoint
+    key was already set, causing the banner to show the original UUID while the queue stored
+    the older deduplicated ID.
     """
     t_start = time.time()
     graph = get_graph()
 
-    tid = thread_id or f"thread_{uuid.uuid4().hex[:12]}"
+    # Resolve canonical thread ID before invoking the graph.
+    # If require_review=True and an identical (query, FY) is already pending, reuse its
+    # thread_id so the frontend banner and the queue always show the same ID.
+    if thread_id:
+        tid = thread_id
+    elif require_review:
+        existing = review_store.find_pending_review_by_query_and_fy(
+            query=question,
+            financial_year=financial_year or "2024-25"
+        )
+        if existing:
+            tid = existing["thread_id"]
+            logger.info(f"run_query: reusing existing pending thread_id={tid} for duplicate query+FY")
+        else:
+            tid = f"thread_{uuid.uuid4().hex[:12]}"
+    else:
+        tid = f"thread_{uuid.uuid4().hex[:12]}"
+
     config = {"configurable": {"thread_id": tid}}
 
     initial_state: LexIndiaState = {

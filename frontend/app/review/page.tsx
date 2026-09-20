@@ -35,9 +35,11 @@ export default function ReviewQueuePage() {
   const [editedAnswer, setEditedAnswer] = useState("");
   const [reviewerNote, setReviewerNote] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [feedbackMsg, setFeedbackMsg] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   const loadData = async () => {
+    setIsRefreshing(true);
     try {
       const [pendingList, statsData] = await Promise.all([
         fetchPendingReviews(),
@@ -56,8 +58,15 @@ export default function ReviewQueuePage() {
         setSelectedReview(sortedPending[0]);
         setEditedAnswer(sortedPending[0].draft_answer);
       }
+
+      // BUG 1 FIX: Notify Navbar to refresh its badge count after a manual refresh
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("lexindia:query_completed"));
+      }
     } catch (e) {
       console.error("Failed to load review data:", e);
+    } finally {
+      setIsRefreshing(false);
     }
   };
 
@@ -141,10 +150,11 @@ export default function ReviewQueuePage() {
 
           <button
             onClick={loadData}
-            className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg text-xs font-medium text-slate-300 flex items-center gap-1.5 transition-colors"
+            disabled={isRefreshing}
+            className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg text-xs font-medium text-slate-300 flex items-center gap-1.5 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <RefreshCw className="w-3.5 h-3.5" />
-            <span>Refresh Queue</span>
+            <RefreshCw className={`w-3.5 h-3.5 ${isRefreshing ? "animate-spin" : ""}`} />
+            <span>{isRefreshing ? "Refreshing..." : "Refresh Queue"}</span>
           </button>
         </div>
 
