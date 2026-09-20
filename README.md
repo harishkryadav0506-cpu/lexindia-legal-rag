@@ -327,7 +327,7 @@ See [`ABLATION_TABLE.md`](ABLATION_TABLE.md) for the comparative analysis betwee
 
 ---
 
-## Limitations & Future Work & Production Roadmap
+## Limitations
 
 See [`LIMITATIONS.md`](LIMITATIONS.md) for full engineering transparency on evaluation methodology, rubric evolution, and known boundaries.
 
