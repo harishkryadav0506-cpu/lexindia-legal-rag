@@ -1,8 +1,7 @@
 # LexIndia — Legal RAG System for Indian Tax Law Research
 
-**🎥 Full Demo Walkthrough:** [Watch on YouTube](https://youtu.be/ZhfsX7DGrBo)
-
-[![LexIndia Demo Video](https://img.youtube.com/vi/ZhfsX7DGrBo/maxresdefault.jpg)](https://youtu.be/ZhfsX7DGrBo)
+**🎥 Full Demo Walkthrough:**
+   **🎥 Full Demo Walkthrough:** [DEMO VIDEO](https://youtu.be/ZhfsX7DGrBo)
 
 **Strict cite-or-refuse legal RAG for Indian Tax Law**
 
